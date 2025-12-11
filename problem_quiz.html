@@ -152,6 +152,11 @@
         .overlay.show { display: block; }
         .reset-btn { width: 100%; padding: 10px; margin-bottom: 15px; background: #ff4757; color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 0.9em; }
         .reset-btn:hover { background: #ff6b7a; }
+
+        /* Out of lives options */
+        .options-row { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+        .option-btn { padding: 10px 15px; background: #16213e; border: 1px solid #444; border-radius: 8px; color: #ccc; cursor: pointer; font-size: 0.9em; transition: all 0.2s; }
+        .option-btn:hover { border-color: #ff9f43; color: #ff9f43; }
     </style>
 </head>
 <body>
@@ -364,6 +369,35 @@ const ALL_NOTATIONS = ["a₍c₎ = v² / r = 4π²rf²", "T = 1 / f = 1 / (2.00 
             updateNavButtons();
         }
 
+        function retryPhase() {
+            goToPhase(phase);
+        }
+
+        function showPhaseAnswer(phaseNum) {
+            let feedback, html;
+
+            if (phaseNum === 1) {
+                feedback = document.getElementById('formulaFeedback');
+                const formulas = currentItem.correctFormulas.map(f => '<strong>' + f.name + '</strong>: ' + f.formula).join('<br>• ');
+                html = '<strong>Correct formulas:</strong><br>• ' + formulas;
+            } else if (phaseNum === 2) {
+                feedback = document.getElementById('varFeedback');
+                const vars = currentItem.variables.map(v => '<strong>' + v.symbol + '</strong> = ' + v.meaning).join('<br>• ');
+                html = '<strong>Correct variables:</strong><br>• ' + vars;
+            } else {
+                feedback = document.getElementById('stepsFeedback');
+                const steps = currentItem.steps.map((s, i) => '<strong>Step ' + (i+1) + ':</strong> ' + s.explanation + '<br>→ ' + s.notations).join('<br><br>');
+                html = '<strong>Correct steps:</strong><br><br>' + steps;
+            }
+
+            html += '<br><br><div class="options-row">' +
+                '<button class="option-btn" onclick="retryPhase()">Try Again</button>' +
+                (phaseNum < 3 ? '<button class="option-btn" onclick="goToPhase(' + (phaseNum + 1) + ')">Next Phase</button>' : '') +
+                '<button class="option-btn" onclick="nextQuestion()">New Problem</button></div>';
+
+            feedback.innerHTML = html;
+        }
+
         function shuffleArray(array) {
             const arr = [...array];
             for (let i = arr.length - 1; i > 0; i--) {
@@ -573,7 +607,11 @@ const ALL_NOTATIONS = ["a₍c₎ = v² / r = 4π²rf²", "T = 1 / f = 1 / (2.00 
                     });
 
                     const correctFormulasStr = currentItem.correctFormulas.map(f => f.name + ': ' + f.formula).join('<br>• ');
-                    feedback.innerHTML = '✗ Out of lives! Here are the correct formulas:<br>• ' + correctFormulasStr + '<br><br><button class="continue-btn" onclick="goToPhase2()">Continue →</button>';
+                    feedback.innerHTML = '✗ Out of lives!<br><br><div class="options-row">' +
+                        '<button class="option-btn" onclick="retryPhase()">Try Again</button>' +
+                        '<button class="option-btn" onclick="goToPhase2()">Next Phase</button>' +
+                        '<button class="option-btn" onclick="nextQuestion()">New Problem</button>' +
+                        '<button class="option-btn" onclick="showPhaseAnswer(1)">See Answer</button></div>';
                     feedback.className = 'feedback show wrong';
                 }
             }
@@ -666,8 +704,11 @@ const ALL_NOTATIONS = ["a₍c₎ = v² / r = 4π²rf²", "T = 1 / f = 1 / (2.00 
                 } else {
                     // Out of lives
                     const feedback = document.getElementById('varFeedback');
-                    const correctVars = currentItem.variables.map(v => v.symbol + ' = ' + v.meaning).join('<br>• ');
-                    feedback.innerHTML = '✗ Out of lives! Here are the correct variables:<br>• ' + correctVars + '<br><br><button class="continue-btn" onclick="goToPhase3()">Continue →</button>';
+                    feedback.innerHTML = '✗ Out of lives!<br><br><div class="options-row">' +
+                        '<button class="option-btn" onclick="retryPhase()">Try Again</button>' +
+                        '<button class="option-btn" onclick="goToPhase3()">Next Phase</button>' +
+                        '<button class="option-btn" onclick="nextQuestion()">New Problem</button>' +
+                        '<button class="option-btn" onclick="showPhaseAnswer(2)">See Answer</button></div>';
                     feedback.className = 'feedback show wrong';
                 }
             }
@@ -777,11 +818,11 @@ const ALL_NOTATIONS = ["a₍c₎ = v² / r = 4π²rf²", "T = 1 / f = 1 / (2.00 
                 } else {
                     // Out of lives
                     const feedback = document.getElementById('stepsFeedback');
-                    const correctStepsStr = currentItem.steps.map((s, i) => '<strong>Step ' + (i+1) + ':</strong> ' + s.explanation + '<br>→ ' + s.notations).join('<br><br>');
-                    feedback.innerHTML = '✗ Out of lives! Here are the correct steps:<br><br>' + correctStepsStr + '<br><br><button class="continue-btn" onclick="showStudyGuide()">View Study Guide →</button>';
+                    feedback.innerHTML = '✗ Out of lives!<br><br><div class="options-row">' +
+                        '<button class="option-btn" onclick="retryPhase()">Try Again</button>' +
+                        '<button class="option-btn" onclick="nextQuestion()">New Problem</button>' +
+                        '<button class="option-btn" onclick="showPhaseAnswer(3)">See Answer</button></div>';
                     feedback.className = 'feedback show wrong';
-                    problemStatus[currentItem.problem] = 'failed';
-                    saveProgress();
                 }
             }
         }
