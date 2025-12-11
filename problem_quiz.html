@@ -100,10 +100,55 @@
         .complete h2 { color: #00ff88; font-size: 2em; }
         .restart-btn { padding: 15px 40px; background: #ff9f43; color: #1a1a2e; border: none; border-radius: 10px; font-size: 1.1em; cursor: pointer; font-weight: bold; margin-top: 20px; }
         .stats { margin-top: 20px; color: #888; }
+
+        /* Hamburger Menu */
+        .header-row { display: flex; align-items: center; justify-content: center; position: relative; margin-bottom: 10px; }
+        .hamburger { position: absolute; left: 0; background: none; border: none; cursor: pointer; padding: 10px; display: flex; flex-direction: column; gap: 5px; }
+        .hamburger span { display: block; width: 25px; height: 3px; background: #ff9f43; border-radius: 2px; transition: all 0.3s; }
+        .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(6px, 6px); }
+        .hamburger.open span:nth-child(2) { opacity: 0; }
+        .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(6px, -6px); }
+
+        /* Problem List Sidebar */
+        .sidebar { position: fixed; top: 0; left: -320px; width: 300px; height: 100vh; background: #16213e; z-index: 1000; transition: left 0.3s ease; overflow-y: auto; padding: 20px; box-shadow: 2px 0 10px rgba(0,0,0,0.5); }
+        .sidebar.open { left: 0; }
+        .sidebar-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px solid #333; }
+        .sidebar-title { color: #ff9f43; font-size: 1.2em; font-weight: bold; }
+        .close-btn { background: none; border: none; color: #888; font-size: 1.5em; cursor: pointer; padding: 5px; }
+        .close-btn:hover { color: #fff; }
+        .problem-list { list-style: none; padding: 0; margin: 0; }
+        .problem-item { padding: 12px 15px; margin-bottom: 8px; background: #0d1b2a; border-radius: 8px; cursor: pointer; transition: all 0.2s; border-left: 3px solid transparent; }
+        .problem-item:hover { background: #1a3a5c; border-left-color: #ff9f43; }
+        .problem-item.current { border-left-color: #00d4ff; background: #1a3a5c; }
+        .problem-item.completed { border-left-color: #00ff88; }
+        .problem-item-number { color: #ff9f43; font-weight: bold; font-size: 0.85em; margin-bottom: 4px; }
+        .problem-item-text { color: #aaa; font-size: 0.85em; line-height: 1.3; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+        .problem-item.completed .problem-item-number::after { content: ' ✓'; color: #00ff88; }
+        .problem-item.failed { border-left-color: #ff4757; }
+        .problem-item.failed .problem-item-number::after { content: ' ✗'; color: #ff4757; }
+        .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 999; display: none; }
+        .overlay.show { display: block; }
     </style>
 </head>
 <body>
-    <h1>Physics Problem Quiz</h1>
+    <!-- Sidebar -->
+    <div class="overlay" id="overlay" onclick="closeSidebar()"></div>
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <span class="sidebar-title">All Problems</span>
+            <button class="close-btn" onclick="closeSidebar()">&times;</button>
+        </div>
+        <ul class="problem-list" id="problemList"></ul>
+    </div>
+
+    <div class="header-row">
+        <button class="hamburger" id="hamburger" onclick="toggleSidebar()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <h1>Physics Problem Quiz</h1>
+    </div>
     <div class="progress"><span id="score">0</span> / <span id="total">0</span> completed</div>
     <div class="progress-bar"><div class="progress-fill" id="progressFill" style="width: 0%"></div></div>
     
@@ -179,12 +224,75 @@ const ALL_MEANINGS = ["mass of the ball", "radius of circular path", "rotational
 const ALL_NOTATIONS = ["a₍c₎ = v² / r = 4π²rf²", "T = 1 / f = 1 / (2.00 s⁻¹) = 0.500 s", "v = 2πrf = 2π(0.600 m)(2.00 s⁻¹) = 2.4π ≈ 7.54 m·s⁻¹", "a₍c₎ = v² / r = (7.54 m·s⁻¹)² / 0.600 m ≈ 9.47 × 10¹ m·s⁻²", "a₍c₎ ≈ 9.5 × 10¹ m·s⁻² inward", "F₍tension₎ = F₍c₎", "v = 2πrf", "v = 2π(0.600 m)(2.00 s⁻¹) = 2.4π ≈ 7.54 m·s⁻¹", "a₍c₎ = v² / r", "a₍c₎ = (7.54 m·s⁻¹)² / 0.600 m ≈ 94.7 m·s⁻²", "F₍c₎ = m a₍c₎", "F₍c₎ = (0.150 kg)(94.7 m·s⁻²) ≈ 14.2 N", "F₍c₎ ≈ 1.4 × 10¹ N", "T₍top₎ + mg = m v₍top₎² / r", "mg = m v₍top₎² / r ⟹ v₍top₎,min = √(gr)", "v₍top₎,min = √[(9.80 m·s⁻²)(1.10 m)] ≈ 3.28 m·s⁻¹", "v₍bottom₎ = 2 v₍top₎,min ≈ 6.56 m·s⁻¹", "T₍bottom₎ = m v₍bottom₎² / r + mg", "T₍bottom₎ = (0.150 kg)(6.56 m·s⁻¹)² / 1.10 m + (0.150 kg)(9.80 m·s⁻²) ≈ 7.3 N", "F₍fric₎ = m a₍req₎", "a₍req₎ = v² / r = (15.0 m·s⁻¹)² / 50.0 m = 4.50 m·s⁻²", "μ₍s,min₎ = a₍req₎ / g = 4.50 / 9.80 ≈ 0.46", "μ₍s,dry₎ = 0.60 > 0.46 → car follows curve; μ₍s,ice₎ = 0.25 < 0.46 → car skids", "Dry pavement: safe. Icy pavement: insufficient friction, car slides outward.", "N cosθ = mg,  N sinθ = m v² / r", "tanθ = (N sinθ) / (N cosθ) = v² / (rg)", "v₍design₎ = 50 km·h⁻¹ = 13.9 m·s⁻¹", "tanθ = (13.9 m·s⁻¹)² / [(50.0 m)(9.80 m·s⁻²)] ≈ 0.394", "θ = arctan(0.394) ≈ 21.5°", "r = 2R₍E₎ = 2(6.38 × 10⁶ m) = 1.28 × 10⁷ m", "F₍g₎ = G m₍s₎ m₍E₎ / r²", "F₍g₎ = (m₍s₎ g₀) / 4 ≈ (2.00 × 10³ kg)(9.80 m·s⁻²)/4", "F₍g₎ ≈ 4.9 × 10³ N directed toward Earth", "g(h) = g₀ [R₍E₎ / (R₍E₎ + h)]²", "R₍E₎ / (R₍E₎ + h) = 6.38 × 10⁶ m / 6.38885 × 10⁶ m ≈ 0.9986", "[R₍E₎ / (R₍E₎ + h)]² ≈ 0.9972", "g(h) ≈ (0.9972)(9.80 m·s⁻²) ≈ 9.77 m·s⁻² downward", "θ₍rad₎ = θ₍deg₎ × π / 180°", "θ₍rad,a₎ = π/3 ≈ 1.05", "θ₍rad,b₎ = (89/36)π ≈ 7.77", "f = 7200 / 60 = 120 rev·s⁻¹,   ω = 2πf = 240π rad·s⁻¹ ≈ 7.54 × 10² rad·s⁻¹", "v = (240π rad·s⁻¹)(0.0300 m) = 7.2π ≈ 2.26 × 10¹ m·s⁻¹", "R₍bit₎ = v / ℓ₍bit₎ = 22.6 m·s⁻¹ / (5.0 × 10⁻⁷ m) ≈ 4.5 × 10⁷ bits·s⁻¹", "ωᵢ = (120)(2π/60) = 4π rad·s⁻¹;  ω₍f₎ = (280)(2π/60) = (28/3)π rad·s⁻¹", "α = [ω₍f₎ − ωᵢ] / Δt = [(28/3)π − 4π] / 4 = (4π/3) rad·s⁻² ≈ 4.19 rad·s⁻²", "ω(t₁) = ωᵢ + α t₁ = 4π + (4π/3)(2) = (20π/3) rad·s⁻¹ ≈ 20.9 rad·s⁻¹", "a₍t₎ = α r = (4π/3)(0.305 m) ≈ 1.28 m·s⁻²", "a₍r₎ = ω(t₁)² r = [(20π/3) rad·s⁻¹]² (0.305 m) ≈ 1.34 × 10² m·s⁻²", "m₍w₎ = 98.44 g − 35.00 g = 63.44 g", "m₍f₎ = 89.22 g − 35.00 g = 54.22 g", "SG = m₍f₎ / m₍w₎ = 54.22 / 63.44 ≈ 0.855", "P₍SI₎ = 17.0 × 1.013 × 10⁵ Pa ≈ 1.72 × 10⁶ Pa", "A = π (0.1275 m)² ≈ 5.11 × 10⁻² m²", "F₍max₎ = (1.72 × 10⁶ Pa)(5.11 × 10⁻² m²) ≈ 8.8 × 10⁴ N", "m₍max₎ = F₍max₎ / g ≈ 8.8 × 10⁴ N / 9.80 m·s⁻² ≈ 9.0 × 10³ kg", "ΔP = (1.00 × 10³ kg·m⁻³)(9.80 m·s⁻²)(44.0 m) ≈ 4.3 × 10⁵ Pa", "ΔP ≈ 4.3 × 10⁵ Pa ≈ 4.3 atm", "m − m₍app₎ = 9.28 kg − 6.18 kg = 3.10 kg", "V = (m − m₍app₎) / ρ₍w₎ = 3.10 kg / (1.00 × 10³ kg·m⁻³) = 3.10 × 10⁻³ m³", "ρ₍rock₎ = m / V = 9.28 kg / 3.10 × 10⁻³ m³ ≈ 3.0 × 10³ kg·m⁻³", "B = (1.025 × 10³ kg·m⁻³)(9.80 m·s⁻²)(6.96 × 10⁻² m³) ≈ 7.0 × 10² N", "W = 72.8 kg × 9.80 m·s⁻² ≈ 7.13 × 10² N", "B < W → diver sinks", "P₍out₎ − P₍in₎ = ½ρ₍air₎ (v₍in₎² − v₍out₎²) = ½ρ₍air₎ v₍in₎²", "ΔP = 0.5(1.20 kg·m⁻³)(83.3 m·s⁻¹)² ≈ 4.2 × 10³ Pa", "P₍in₎ ≈ 1.01 × 10⁵ Pa − 4.2 × 10³ Pa ≈ 9.7 × 10⁴ Pa", "(f₁ / f₂)² = [(k / m) / (k / (m + Δm))] = (m + Δm) / m", "(0.83 / 0.60)² = 1 + Δm / m  ⟹ 1.91 = 1 + 0.780 / m", "0.91 = 0.780 / m  ⟹  m ≈ 0.86 kg", "λ = v / f = 343 m·s⁻¹ / 282 s⁻¹ ≈ 1.22 m", "h = ½ g t₁²", "t₁ + h / v₍sound₎ = 2.7 s", "t₁ + (½ g t₁²)/v₍sound₎ = 2.7 s  ⟹  t₁ ≈ 2.60 s", "h = ½ (9.80)(2.60)² ≈ 3.3 × 10¹ m", "Δβ = 10 log₁₀(120 / 75) = 10 log₁₀(1.60) ≈ 2.0 dB", "f₁ = 50.0 kHz × (343 − 27.5)/343", "f₂ = f₁ × 343/(343 + 27.5) = f₀ (343 − 27.5)/(343 + 27.5)", "f₂ = 50.0 kHz × 315.5/370.5 ≈ 4.3 × 10⁴ Hz", "W₍g₎ = F₍g₎ Δy = mg Δy", "W₍g₎ = (280 kg)(9.80 m·s⁻²)(2.80 m) ≈ 7.7 × 10³ J", "d = (20 m × 10 m) / 0.50 m = 400 m", "W₍mech₎ = 15 N × 400 m = 6.0 × 10³ J", "A·B = (2.0x²)(11.0) + (−4.0x)(2.5x) + (5.0)(0)", "A·B = 22.0x² − 10.0x² = 12.0x²", "W = −½ m vᵢ²", "W = −½ (9.11 × 10⁻³¹ kg)(1.40 × 10⁶ m·s⁻¹)² ≈ −8.9 × 10⁻¹⁹ J", "W = 105 N × 0.750 m = 78.8 J", "78.8 J = ½ (0.0850 kg) v²  ⟹  v = √[2W/m] ≈ 4.3 × 10¹ m·s⁻¹", "x = √(2Uₛ / k)", "x = √[2(35.0 J) / 820 N·m⁻¹] ≈ 0.29 m", "ΔU = (56.5 kg)(9.80 m·s⁻²)(1.39 × 10³ m) ≈ 7.7 × 10⁵ J", "W₍min₎ = ΔU ≈ 7.7 × 10⁵ J", "W₍actual₎ ≥ W₍min₎ due to nonconservative forces", "mgh = ½ m v²", "v = √(2gh) = √[2(9.80)(125)] ≈ 5.0 × 10¹ m·s⁻¹", "K₍each₎ = ½ (5.60 × 10⁴ kg)(26.4 m·s⁻¹)² ≈ 2.0 × 10⁷ J", "ΔEₜ = 2 K₍each₎ ≈ 4.0 × 10⁷ J", "W = (335 kg)(9.80 m·s⁻²)(16.0 m) ≈ 5.3 × 10⁴ J", "t = 5.3 × 10⁴ J / 1750 W ≈ 30 s", "(7.70 × 10³ kg)(14.0 m·s⁻¹) = (7.70 × 10³ kg + m₂)(5.0 m·s⁻¹)", "m₂ = [m₁(v₁ᵢ − v₍f₎)] / v₍f₎ ≈ (7.70 × 10³ kg)(9.0/5.0) ≈ 1.39 × 10⁴ kg", "v₍A₎ = (2v₀ + Δv₍rel₎)/2 = 8.00 × 10³ m·s⁻¹;  v₍B₎ = (2v₀ − Δv₍rel₎)/2 = 5.20 × 10³ m·s⁻¹ (both away from Earth)", "K₀ = ½ M v₀²;  K₍f₎ = ½ m v₍A₎² + ½ m v₍B₎²", "ΔK = K₍f₎ − K₀ ≈ 7.1 × 10⁸ J (energy input)", "J = (0.50 kg)(3.0 m·s⁻¹) = 1.5 N·s in the throw direction", "v₁f = [(m₁ − m₂)/(m₁ + m₂)] v₁ᵢ = (0.440 − 0.220)/0.660 × 3.80 ≈ +1.27 m·s⁻¹", "v₂f = [2m₁/(m₁ + m₂)] v₁ᵢ = (0.880/0.660) × 3.80 ≈ +5.07 m·s⁻¹", "Ball 1: 1.3 m·s⁻¹ east; Ball 2: 5.1 m·s⁻¹ east", "θ₍rad₎ = θᵢ × π / 180°", "θ₍a₎ = π/4, θ₍b₎ = π/3, θ₍c₎ = π/2", "θ₍d₎ = 2π, θ₍e₎ = (89/36)π", "ωᵢ = 12.6, ω₍f₎ = 29.3 rad·s⁻¹", "α = (29.3 − 12.6)/4.0 ≈ 4.19 rad·s⁻²", "ω(t₁) = 12.6 + (4.19)(2.0) ≈ 21.0 rad·s⁻¹", "a₍r₎ = (21.0)²(0.305) ≈ 1.3 × 10² m·s⁻²;  a₍t₎ = (4.19)(0.305) ≈ 1.3 m·s⁻²", "ω₀ = (95/3.6)/0.40 ≈ 66.1 rad·s⁻¹; ω₁ = (55/3.6)/0.40 ≈ 38.2 rad·s⁻¹", "α = (ω₁² − ω₀²)/(2θ) ≈ −3.1 rad·s⁻²", "t₍stop₎ = −ω₁/α ≈ 12 s", "θ₂ = −ω₁²/(2α) ≈ 2.38 × 10² rad → r θ₂ ≈ 95 m; initial 75 rev → r (75 × 2π) ≈ 1.88 × 10² m; total ≈ 2.8 × 10² m", "τ₍applied₎ = (28)(0.24) − (18)(0.24) − (35)(0.12) = −1.8 N·m", "τ₍net₎ = −1.8 N·m + 0.60 N·m = −1.2 N·m → 1.2 N·m clockwise", "τ₍left₎ = + m g ℓ₂, τ₍right₎ = − m g ℓ₁", "τ = m g (ℓ₂ − ℓ₁), direction clockwise if ℓ₂ > ℓ₁", "I = (2/5)(10.8 kg)(0.648 m)² ≈ 1.8 kg·m²", "d = √(4I / M)", "d = √[4(1.9 × 10⁻⁴⁶) / (5.3 × 10⁻²⁶)] ≈ 1.2 × 10⁻¹⁰ m", "I₍y₎ = (m + M)[(0.50 m)² + (1.00 m)²] = (5.6 kg)(1.25 m²) ≈ 7.0 kg·m²", "I₍x₎ = (2m + 2M)(0.25 m)² = 2(5.6 kg)(0.0625 m²) ≈ 0.70 kg·m²", "Harder to accelerate about the vertical (y) axis", "α = 2θ / t² = 2(320π) / (15.0)² rad·s⁻²", "M = 5τ / (2 r² α) = [5(10.8)(15.0)²] / [4(0.36)²(320π)] ≈ 2.3 × 10¹ kg", "F₍TA₎ = m₍A₎ (g sin32° + a) ≈ (8.0)[9.80 sin32° + 1.00] ≈ 5.0 × 10¹ N;  F₍TB₎ = m₍B₎ (g sin61° − a) ≈ 7.6 × 10¹ N", "τ₍net₎ = (F₍TB₎ − F₍TA₎) R = (75.7 − 49.6) N × 0.15 m ≈ 3.9 N·m (clockwise)", "I = τ₍net₎ R / a = (3.9)(0.15)/1.00 ≈ 0.59 kg·m²", "K₍daily₎ = ½ (2/5 M₍E₎ R₍E₎²) ω₍day₎² ≈ 2.6 × 10²⁹ J", "K₍yearly₎ = ½ M₍E₎ (ω₍year₎ R₍orb₎)² ≈ 2.7 × 10³³ J", "K₍total₎ ≈ 2.7 × 10³³ J (orbital term dominates)", "mgR = mgr + ½ m v² + ½ (2/5 m r²)(v/r)²", "v = √[(10/7) g (R − r)]", "(m₍B₎ − m₍A₎) g h = ½ (m₍A₎ + m₍B₎) v² + ½ (½ M₍p₎ R²)(v/R)²", "v = √[2(m₍B₎ − m₍A₎) g h / (m₍A₎ + m₍B₎ + ½ M₍p₎)] ≈ 2.0 m·s⁻¹", "L = ½ (2.8)(0.28)² × 136 ≈ 15 kg·m²·s⁻¹", "τ = −15 / 6.0 ≈ −2.5 N·m (opposes rotation)", "L = I ω = constant", "I₍f₎/Iᵢ = ωᵢ / ω₍f₎ = 0.90 / 0.60 = 1.5 → inertia increased by 50%", "ω₍f₎ = ωᵢ [I₍disk₎ / (I₍disk₎ + I₍rod₎)] = ωᵢ [(½) / (½ + 1/3)] = (3/5) ωᵢ", "ω₍f₎ ≈ (3/5)(3.3) ≈ 2.0 rev/s", "0 = I₍T₎ ω₍T₎ + m R (v₍rel₎ + R ω₍T₎) → ω₍T₎ = − (m R v₍rel₎)/(I₍T₎ + m R²)", "ω₍T₎ = −[(65)(2.75)(4.0)] / [1850 + 65(2.75)²] ≈ −0.31 rad·s⁻¹ (opposite the runner)", "a = 100/0.060 ≈ 1.67 × 10³ m·s⁻²,  v = √(2 a d) ≈ 5.2 × 10¹ m·s⁻¹", "W = 100 × 0.80 = 80 J = ½ m v²", "t = v / a ≈ 5.16 × 10¹ / 1.67 × 10³ ≈ 3.1 × 10⁻² s;  P₍avg₎ = 80 / 0.031 ≈ 2.6 kW", "v' = (m/(M + m)) v", "½ (M + m) v'^2 ≥ (M + m) g (2ℓ) ⇒ v' ≥ √(4 g ℓ)", "v ≥ (M + m)/m × √(4 g ℓ)", "v = √(2 × 9.80 × 125) ≈ 50 m·s⁻¹", "a = g sin13°, L = h / sin13°,  v² = 2 a L → v ≈ 50 m·s⁻¹", "F₍per tire₎ = (2.40 × 10⁵ Pa)(1.90 × 10⁻² m²) ≈ 4.56 × 10³ N", "m₍car₎ = 4F / g ≈ 4(4.56 × 10³) / 9.80 ≈ 1.9 × 10³ kg", "ρ₍oil₎ h₍oil₎ = ρ₍w₎ h₍water₎", "ρ₍oil₎ = ρ₍w₎ (h₍water₎ / h₍oil₎) = (1.00 × 10³)(0.1858 / 0.272) ≈ 6.8 × 10² kg·m⁻³", "m₍cargo₎ = (ρ₍air₎ − ρ₍He₎) V − m₍skin₎", "m₍cargo₎ = (1.29 − 0.179) × (4/3)π(7.15)³ − 930 ≈ 7.7 × 10² kg (≈ 7.6 kN load)", "V₍sub₎/V₍ice₎ = SG₍ice₎ / SG₍sea₎ = 0.917 / 1.025 ≈ 0.895", "V₍above₎/V₍ice₎ = 1 − 0.895 = 0.105 ⇒ about 10.5% of the iceberg is above water", "m₍wood₎ − m₍apparent₎ = ρ₍alcohol₎ m₍wood₎ / ρ₍wood₎ ⟹ ρ₍wood₎ = ρ₍alcohol₎ m₍wood₎ / (m₍wood₎ − m₍apparent₎)", "SG₍wood₎ = ρ₍wood₎/ρ_water = SG₍alc₎ × m₍wood₎ / (m₍wood₎ − m₍apparent₎) = 0.79 × 0.48 / (0.48 − 0.047) ≈ 0.88", "v = √[2(9.80)(12.0)] ≈ 15.3 m·s⁻¹", "Q = π (0.00925 m)² (15.3 m·s⁻¹) ≈ 4.1 × 10⁻³ m³·s⁻¹", "k = (66 × 9.80) / (5.0 × 10⁻³) ≈ 1.29 × 10⁵ N·m⁻¹", "f = (1/2π) √[1.29 × 10⁵ / (1700 + 66)] ≈ 1.4 Hz", "k = 91.0 / 0.175 ≈ 5.2 × 10² N·m⁻¹", "v = x √(k / m) ≈ 0.175 √(520/0.160) ≈ 1.0 × 10¹ m·s⁻¹", "T = 2π √(0.47 / 9.80) ≈ 1.4 s", "T → undefined in free fall", "I₄₅/I₁₅ = (r₁/r₂)² = (15/45)² = 0.11", "A₄₅/A₁₅ = √(I₄₅/I₁₅) = 15/45 = 0.33", "n = 4 ⇒ f₁ = 240/4 = 60 Hz", "f₂ = 2f₁, f₃ = 3f₁, f₅ = 5f₁", "λ = 97 / 475 ≈ 0.204 m", "Δx₍node₎ = λ/2 ≈ 0.102 m (≈ 0.10 m)", "λ₍20 Hz₎ ≈ 17 m; λ₍20 kHz₎ ≈ 1.7 cm", "λ₍18 MHz₎ = 343 / (1.8 × 10⁷) ≈ 1.9 × 10⁻⁵ m", "I₁/I₂ = (r₂/r₁)² = (√5)² = 5", "Δβ = 10 log₁₀(5) ≈ 7 dB (person underneath hears ~7 dB louder)", "L₍min₎ = v / (2 f₍min₎) = 343 / (40) ≈ 8.6 m", "L₍max freq₎ = v / (2 f₍max₎) = 343 / (4.0 × 10⁴) ≈ 8.6 × 10⁻³ m", "Range ≈ 8.6 m → 8.6 mm", "f₍beat₎ = |277 − 262| = 15 Hz", "f₍beat,lower₎ = 15 / 4 = 3.75 Hz ≈ 3.8 Hz", "f' = 1650 [1 + (30.0/343)] ≈ 1.79 × 10³ Hz", "f' = 1650 [1 − (30.0/343)] ≈ 1.51 × 10³ Hz", "N = P V / (k₍B₎ T) = (1.0 × 10⁻¹²)(1.0 × 10⁻⁶)/[(1.38 × 10⁻²³)(273)] ≈ 3.0 × 10² molecules", "n ≈ 300 cm⁻³", "½ m v² = 3/2 k₍B₎ T ⇒ v = √(3 k₍B₎ T / m)", "v = √[3(1.38 × 10⁻²³)(295) / (1.0 × 10⁻³)] ≈ 3.5 × 10⁻⁹ m·s⁻¹", "v₍rms₎ = √{3 (P V / N) / m}", "v₍rms₎ = √(3P / ρ)", "Phase at (0.01 atm, 90°C): vapor", "Phase at (0.01 atm, −20°C): solid", "(P₍sat₎ − P₍atm₎) = (1.99 − 1.01) × 10⁵ Pa", "m = (P₍sat₎ − P₍atm₎) π r² / g ≈ 0.071 kg", "E = 2500 × 4.186 × 10³ ≈ 1.0 × 10⁷ J", "E = 2500 / 860 ≈ 2.9 kWh", "Cost ≈ 2.9 kWh × $0.10 ≈ $0.29 per day → not enough to buy actual food", "Q = (1.0)(4186)(80) ≈ 3.35 × 10⁵ J", "t = 3.35 × 10⁵ / 60 ≈ 5.6 × 10³ s (≈ 93 min)", "Q = [(0.280)(900) + (0.75)(4186)] × 89 ≈ 3.0 × 10⁵ J", "t = 3.0 × 10⁵ / 750 ≈ 4.0 × 10² s ≈ 6.7 min", "C = m c", "C₍1kg water₎ ≈ 4.2 × 10³ J·°C⁻¹", "C₍45kg₎ = 45 × 4186 ≈ 1.9 × 10⁵ J·°C⁻¹", "m₍steam₎ = m₍ice₎ [L₍F₎ + c (30)] / [L₍V₎ + c (70)]", "m₍steam₎ ≈ [3.33 × 10⁵ + 4186 × 30] / [2.26 × 10⁶ + 4186 × 70] ≈ 0.18 kg", "E = ½ (64)(7.5)² × 0.50 ≈ 1.8 × 10⁵ J", "m₍ice₎ = E / L₍F₎ ≈ 1.8 × 10⁵ / 3.33 × 10⁵ ≈ 2.7 × 10⁻³ kg (≈ 2.7 g)", "ℓ = k A ΔT / P = (0.20)(1.5)(0.50)/150 ≈ 1.0 × 10⁻³ m", "ℓ ≈ 1 mm", "Q̇ = (195 ft²)(35 °F)/(0.69 + 19) ≈ 3.5 × 10² Btu·h⁻¹", "≈ 350 Btu·h⁻¹ ≈ 1.0 × 10² W", "Q = (8.2)(3.33 × 10⁵) ≈ 2.7 × 10⁶ J", "t = Q ℓ / (k A ΔT) ≈ 3.1 × 10⁴ s ≈ 8.7 h", "μₛ m g ≥ m a ⇒ μₛ ≥ a/g", "μₛ ≥ 0.20", "m₍B₎ g ≤ μₛ m₍A₎ g ⇒ m₍A₎ ≥ m₍B₎ / μₛ", "m₍B₎ g = μₖ m₍A₎ g ⇒ m₍A₎ = m₍B₎ / μₖ", "tanθ = v² / (R g)", "v = √(R g tanθ)", "T₍outer₎ = m₍B₎ r₍B₎ ω²", "T₍inner₎ − T₍outer₎ = m₍A₎ r₍A₎ ω² ⇒ T₍inner₎ = m₍A₎ r₍A₎ ω² + m₍B₎ r₍B₎ ω²", "W₍g₎ = (260)(9.80)(2.80) ≈ 7.1 × 10³ J", "W = 105 × 0.75 = 78.8 J", "v = √(2 W / m) = √[2(78.8)/0.085] ≈ 43 m·s⁻¹", "W = −½ (9.11 × 10⁻³¹)(1.40 × 10⁶)² ≈ −8.9 × 10⁻¹⁹ J (magnitude 8.9 × 10⁻¹⁹ J)", "Δy₍B₎ = +L upward ⇒ W₍g,B₎ = m₍B₎ g (−L) = −m₍B₎ g L", "W_{g,2} = m₂ g h", "W_{g,1} = −m₁ g h", "W_{g,net} = (m₂ − m₁) g h", "ΔK_total = W_{g,net}; ΔK_{m₂} ≠ W_{g,2}", "Work by tension on m₂ = −T H", "Work by tension on m₁ = +T H", "v = √[2 g h (m₂ − m₁)/(m₁ + m₂)]", "FBD includes F, N, mg", "W_N = 0", "W_g = −m g L sinθ", "W_F = F L cosθ", "½ m v² = W_F + W_g ⇒ v = √[2 (F L cosθ − m g L sinθ)/m]", "FBD includes mg, N, f_k", "N = m g cosθ", "f_k = μ₍k₎ m g cosθ", "W_f = −f_k L = −μ₍k₎ m g cosθ L", "½ m v² = m g L sinθ − μ₍k₎ m g cosθ L ⇒ v = √[2 g L (sinθ − μ₍k₎ cosθ)]", "K uses v², p uses v; p has direction, K does not.", "Use energy for frictionless motion, springs, gravitational potential changes.", "Use momentum for collisions, recoil problems, or interacting particles.", "½ k x₍max₎² = ½ m₁ v₀² − ½ (m₁ + m₂) v_c² ⇒ x₍max₎ = √[m₁ m₂ v₀² / ((m₁ + m₂) k)]", "v₁f = [(m₁ − m₂)/(m₁ + m₂)] v₀,   v₂f = [2 m₁/(m₁ + m₂)] v₀", "Condition: m₂ > m₁", "x = − m R /(M + m) (block moves left by |x|)", "m g R = ½ M (m²/M²) u² + ½ m u² ⇒ u = √[2 g R M /(M + m)]", "V = (m/M) u = √[2 g R m /(M + m)]", "v₁ = \\frac{v₀}{2√2} [ (√3+1) + (m₂/m₁)(√3−1) ],   v₂ = \\frac{v₀}{2√2} [ (√3+1) + (m₁/m₂)(1−√3) ]", "Use the chosen geometry from the figure when applying the formulas.", "τ = r F sinφ", "Sign determined by sense of rotation in the diagram", "τ₁ = R₁ F₁ sinθ₁,   τ₂ = R₂ F₂ sinθ₂", "τ_net = τ₁ − τ₂ (if F₂ tends to oppose F₁)", "α = τ_net / I with its sign indicating CCW or CW", "τ = m g L sinθ₀ (direction opposite the displacement)", "Translational and rotational kinetic energies are equal", "v = √[2 g L (1 − cosθ₀)]", "a = R α", "T = ½ m₁ a", "m₂ g − ½ m₁ a = m₂ a ⇒ a = m₂ g /(m₂ + ½ m₁)", "ω = √(2 a Δy)/R", "m g h = ½ m v² + ½ I (v/r)²", "I = r² (2 m g h − m v²)/v²", "m₍b₎ v₍b₎ + m₍r₎ v₍r₎ = 0", "v₍r₎ = −(m₍b₎ / m₍r₎) v₍b₎ = −(0.020 / 5.0)(620) ≈ −2.5 m·s⁻¹", "J = m₍hand₎ (0 − 10) ≈ −7.0 N·s (magnitude 7 N·s)", "F̄ ≈ J / Δt = 7.0 / (5.0 × 10⁻³) ≈ 1.4 × 10³ N", "Impulse ≈ 7 N·s opposite motion; average force ≈ 1.4 kN on the board", "v₍A₎' = v₍B₎,   v₍B₎' = v₍A₎", "v₍A₎' = 0,  v₍B₎' = v₍A₎", "x₍CM₎ = (1.0 + 5.0 + 6.0)/3 = 4.0 m from the left end"];
 
         let remaining = [];
+        let allProblems = [];  // All problems in order
+        let problemStatus = {}; // 'passed', 'failed', or undefined (not attempted)
         let total = 0;
         let correct = 0;
         let currentItem = null;
+        let currentIndex = -1;  // Index in allProblems
         let phase = 1;
         let phasesPassed = 0;
         let lives = 3;
+
+        function toggleSidebar() {
+            document.getElementById('sidebar').classList.toggle('open');
+            document.getElementById('overlay').classList.toggle('show');
+            document.getElementById('hamburger').classList.toggle('open');
+            updateProblemList();
+        }
+
+        function closeSidebar() {
+            document.getElementById('sidebar').classList.remove('open');
+            document.getElementById('overlay').classList.remove('show');
+            document.getElementById('hamburger').classList.remove('open');
+        }
+
+        function updateProblemList() {
+            const list = document.getElementById('problemList');
+            list.innerHTML = '';
+            allProblems.forEach((p, i) => {
+                const li = document.createElement('li');
+                li.className = 'problem-item';
+                if (problemStatus[p.problem] === 'passed') li.classList.add('completed');
+                if (problemStatus[p.problem] === 'failed') li.classList.add('failed');
+                if (currentItem && p.problem === currentItem.problem) li.classList.add('current');
+
+                li.innerHTML = `
+                    <div class="problem-item-number">Problem ${i + 1}</div>
+                    <div class="problem-item-text">${p.problem.substring(0, 80)}${p.problem.length > 80 ? '...' : ''}</div>
+                `;
+                li.onclick = () => jumpToProblem(i);
+                list.appendChild(li);
+            });
+        }
+
+        function jumpToProblem(index) {
+            closeSidebar();
+            currentIndex = index;
+            currentItem = allProblems[index];
+
+            // Reset phase state
+            phase = 1;
+            phasesPassed = 0;
+            lives = 3;
+            updateLives();
+
+            // Hide study guide if showing
+            document.getElementById('studyGuide').style.display = 'none';
+            document.getElementById('quiz').style.display = 'block';
+
+            document.getElementById('problemSource').textContent = currentItem.source;
+            document.getElementById('problemChapter').textContent = currentItem.chapter;
+            document.getElementById('problemText').textContent = currentItem.problem;
+
+            document.getElementById('phase1').style.display = 'block';
+            document.getElementById('phase2').style.display = 'none';
+            document.getElementById('phase3').style.display = 'none';
+            document.getElementById('nextBtn').className = 'next-btn';
+
+            updateDots();
+            setupFormulasPhase();
+        }
 
         function shuffleArray(array) {
             const arr = [...array];
@@ -203,9 +311,10 @@ const ALL_NOTATIONS = ["a₍c₎ = v² / r = 4π²rf²", "T = 1 / f = 1 / (2.00 
         }
 
         function initQuiz() {
-            remaining = PROBLEMS.filter(p => p.variables.length >= 2 && p.steps.length > 0);
-            remaining = shuffleArray(remaining);
-            total = remaining.length;
+            allProblems = PROBLEMS.filter(p => p.variables.length >= 2 && p.steps.length > 0);
+            remaining = shuffleArray([...allProblems]);
+            problemStatus = {};  // Reset status
+            total = allProblems.length;
             correct = 0;
             document.getElementById('total').textContent = total;
             document.getElementById('score').textContent = correct;
@@ -533,6 +642,7 @@ const ALL_NOTATIONS = ["a₍c₎ = v² / r = 4π²rf²", "T = 1 / f = 1 / (2.00 
                 phasesPassed = 3;
                 updateDots();
                 remaining = remaining.filter(item => item.problem !== currentItem.problem);
+                problemStatus[currentItem.problem] = 'passed';
                 correct++;
                 document.getElementById('score').textContent = correct;
                 document.getElementById('progressFill').style.width = (correct / total) * 100 + '%';
@@ -566,7 +676,8 @@ const ALL_NOTATIONS = ["a₍c₎ = v² / r = 4π²rf²", "T = 1 / f = 1 / (2.00 
                     feedback.innerHTML = '✗ Out of lives! Here are the correct steps:<br><br>' + correctStepsStr;
                     feedback.className = 'feedback show wrong';
 
-                    // Show study guide after a moment
+                    // Mark as failed and show study guide after a moment
+                    problemStatus[currentItem.problem] = 'failed';
                     setTimeout(() => {
                         showStudyGuide();
                     }, 2500);
