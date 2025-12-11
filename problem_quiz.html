@@ -346,22 +346,105 @@ const ALL_NOTATIONS = ["a₍c₎ = v² / r = 4π²rf²", "T = 1 / f = 1 / (2.00 
         }
 
         function updateNavButtons() {
+            // Back is disabled only on phase 1
             document.getElementById('prevPhaseBtn').disabled = (phase <= 1);
+            // Next is disabled only on phase 3
             document.getElementById('nextPhaseBtn').disabled = (phase >= 3);
         }
 
         function prevPhase() {
             if (phase > 1) {
-                goToPhase(phase - 1);
+                viewPhase(phase - 1);
             }
         }
 
         function nextPhase() {
             if (phase < 3) {
-                goToPhase(phase + 1);
+                viewPhase(phase + 1);
             }
         }
 
+        // View a phase without resetting it (for navigation)
+        function viewPhase(targetPhase) {
+            // Hide all phases
+            document.getElementById('phase1').style.display = 'none';
+            document.getElementById('phase2').style.display = 'none';
+            document.getElementById('phase3').style.display = 'none';
+
+            // Show target phase
+            document.getElementById('phase' + targetPhase).style.display = 'block';
+            phase = targetPhase;
+
+            // If this phase was already completed, show the completed view
+            if (targetPhase <= phasesPassed) {
+                if (targetPhase === 1) showCompletedFormulas();
+                else if (targetPhase === 2) showCompletedVariables();
+                else if (targetPhase === 3) showCompletedSteps();
+            } else {
+                // Setup fresh if not yet attempted
+                lives = 3;
+                updateLives();
+                if (targetPhase === 1) setupFormulasPhase();
+                else if (targetPhase === 2) setupVariablesPhase();
+                else if (targetPhase === 3) setupStepsPhase();
+            }
+
+            updateDots();
+            updateNavButtons();
+        }
+
+        // Show completed formulas phase (read-only)
+        function showCompletedFormulas() {
+            const container = document.getElementById('formulasContainer');
+            let html = '';
+            currentItem.correctFormulas.forEach(f => {
+                html += '<div class="formula-option correct disabled">';
+                html += '<div class="formula-checkbox checked"></div>';
+                html += '<div class="formula-text"><div class="formula-name">' + f.name + '</div><div class="formula-eq">' + f.formula + '</div></div>';
+                html += '</div>';
+            });
+            container.innerHTML = html;
+            document.getElementById('lockFormulas').style.display = 'none';
+            document.getElementById('formulaFeedback').innerHTML = '<span style="color:#00ff88">✓ Phase completed</span>';
+            document.getElementById('formulaFeedback').className = 'feedback show';
+        }
+
+        // Show completed variables phase (read-only)
+        function showCompletedVariables() {
+            const container = document.getElementById('variablesContainer');
+            let html = '<div class="var-question" style="text-align:left">';
+            currentItem.variables.forEach(v => {
+                html += '<div class="completed-phase-item" style="display:flex;justify-content:space-between;margin-bottom:8px;padding:12px;background:#16213e;border-radius:8px;border-left:3px solid #00ff88">';
+                html += '<span class="symbol" style="color:#ff9f43;font-family:STIX Two Math,Cambria Math,serif;font-size:1.2em">' + v.symbol + '</span>';
+                html += '<span class="meaning" style="color:#aaa">' + v.meaning + '</span>';
+                html += '</div>';
+            });
+            html += '</div>';
+            container.innerHTML = html;
+            document.getElementById('lockVars').style.display = 'none';
+            document.getElementById('varFeedback').innerHTML = '<span style="color:#00ff88">✓ Phase completed</span>';
+            document.getElementById('varFeedback').className = 'feedback show';
+        }
+
+        // Show completed steps phase (read-only)
+        function showCompletedSteps() {
+            const container = document.getElementById('stepsContainer');
+            let html = '<div class="step-question" style="text-align:left">';
+            currentItem.steps.forEach((s, i) => {
+                html += '<div style="margin-bottom:12px;padding:12px;background:#16213e;border-radius:8px;border-left:3px solid #00ff88">';
+                html += '<div style="color:#ff9f43;font-weight:bold;margin-bottom:5px">Step ' + (i+1) + '</div>';
+                html += '<div style="color:#aaa;margin-bottom:8px;font-size:0.95em">' + s.explanation + '</div>';
+                html += '<div style="color:#00d4ff;font-family:STIX Two Math,Cambria Math,serif">' + s.notations + '</div>';
+                html += '</div>';
+            });
+            html += '</div>';
+            container.innerHTML = html;
+            document.getElementById('lockSteps').style.display = 'none';
+            document.getElementById('stepsFeedback').innerHTML = '<span style="color:#00ff88">✓ Phase completed</span>';
+            document.getElementById('stepsFeedback').className = 'feedback show';
+        }
+
+        // Reset and restart a phase (for retry button)
         function goToPhase(targetPhase) {
             // Hide all phases
             document.getElementById('phase1').style.display = 'none';
@@ -372,11 +455,10 @@ const ALL_NOTATIONS = ["a₍c₎ = v² / r = 4π²rf²", "T = 1 / f = 1 / (2.00 
             document.getElementById('phase' + targetPhase).style.display = 'block';
             phase = targetPhase;
 
-            // Reset lives for this phase
+            // Always reset lives and setup when using goToPhase
             lives = 3;
             updateLives();
 
-            // Setup the phase
             if (targetPhase === 1) setupFormulasPhase();
             else if (targetPhase === 2) setupVariablesPhase();
             else if (targetPhase === 3) setupStepsPhase();
