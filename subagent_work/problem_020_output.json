@@ -44,5 +44,6 @@
       "explanation": "Calculate the logarithm and multiply by 10",
       "notations": "Δβ = 10 × 0.204 ≈ 2.0 dB"
     }
-  ]
+  ],
+  "solution": "Δβ = 10 log₁₀(P₂ / P₁)\nGiven: P₁ = 75 W, P₂ = 120 W\nΔβ = 10 log₁₀(120 / 75)\nΔβ = 10 log₁₀(1.60)\nΔβ = 10 × 0.204 ≈ 2.0 dB"
 }

@@ -32,13 +32,13 @@
     },
     {
       "name": "Mass-spring frequency",
-      "formula": "f = (1/2π) √(k/m)"
+      "formula": "f = (1/2π)√(k/m)"
     }
   ],
   "steps": [
     {
       "explanation": "State the fundamental formulas that will be used to solve this problem.",
-      "notations": "We will use Hooke's law: F = kΔx, and the mass-spring frequency formula: f = (1/2π) √(k/m)"
+      "notations": "We will use Hooke's law: F = kΔx, and the mass-spring frequency formula: f = (1/2π)√(k/m)"
     },
     {
       "explanation": "Define the variables with values given in the problem.",
@@ -46,7 +46,7 @@
     },
     {
       "explanation": "Find the spring constant using Hooke's law. The force compressing the spring is the driver's weight.",
-      "notations": "From F = kΔx, we get k = F/Δx. The force is the driver's weight: F = m₍driver₎ g"
+      "notations": "From F = kΔx, we get k = F/Δx. The force is the driver's weight: F = m₍driver₎g"
     },
     {
       "explanation": "Substitute the numerical values to calculate the spring constant.",
@@ -58,11 +58,12 @@
     },
     {
       "explanation": "Substitute the values into the frequency formula.",
-      "notations": "f = (1/2π) √(k/m) = (1/2π) √(1.29 × 10⁵ N/m / 1766 kg)"
+      "notations": "f = (1/2π)√(k/m) = (1/2π)√(1.29 × 10⁵ N/m / 1766 kg)"
     },
     {
       "explanation": "Calculate the frequency.",
-      "notations": "f = (1/2π) √(73.05 s⁻²) = (1/2π) × 8.55 s⁻¹ = 1.36 Hz ≈ 1.4 Hz"
+      "notations": "f = (1/2π)√(73.05 s⁻²) = (1/2π) × 8.55 s⁻¹ = 1.36 Hz ≈ 1.4 Hz"
     }
-  ]
+  ],
+  "solution": "F = kΔx\nf = (1/2π)√(k/m)\n\nGiven: m₍car₎ = 1700 kg, m₍driver₎ = 66 kg, Δx = 5.0 × 10⁻³ m, g = 9.80 m/s²\n\nF = m₍driver₎g = 66 kg × 9.80 m/s² = 646.8 N\nk = F/Δx = 646.8 N / (5.0 × 10⁻³ m) = 1.29 × 10⁵ N/m\n\nm = m₍car₎ + m₍driver₎ = 1700 kg + 66 kg = 1766 kg\n\nf = (1/2π)√(k/m)\nf = (1/2π)√(1.29 × 10⁵ N/m / 1766 kg)\nf = (1/2π)√(73.05 s⁻²)\nf = (1/2π) × 8.55 s⁻¹\nf = 1.36 Hz ≈ 1.4 Hz"
 }

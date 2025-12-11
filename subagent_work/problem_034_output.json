@@ -24,29 +24,38 @@
   "correctFormulas": [
     {
       "name": "Impulse-momentum theorem",
-      "formula": "J = Δp = m v₍f₎ − m vᵢ"
+      "formula": "J = Δp"
+    },
+    {
+      "name": "Change in momentum",
+      "formula": "Δp = m(v_f - v_i)"
     }
   ],
   "steps": [
     {
-      "explanation": "Start with the fundamental formula. We will use the impulse-momentum theorem, which states that impulse equals the change in momentum.",
-      "notations": "J = Δp = m v₍f₎ − m vᵢ"
+      "explanation": "Start with the fundamental formulas. We will use the impulse-momentum theorem, which states that impulse equals the change in momentum.",
+      "notations": "J = Δp and Δp = m(v_f - v_i)"
     },
     {
       "explanation": "Define variables from the problem. The newspaper has mass m = 0.50 kg, starts from rest (vᵢ = 0 m/s), and reaches a final velocity v₍f₎ = 3.0 m/s.",
       "notations": "m = 0.50 kg, vᵢ = 0 m/s, v₍f₎ = 3.0 m/s"
     },
     {
-      "explanation": "Substitute the numerical values into the impulse formula.",
-      "notations": "J = (0.50 kg)(3.0 m/s) − (0.50 kg)(0 m/s)"
+      "explanation": "Combine the formulas by substituting the change in momentum expression into the impulse equation.",
+      "notations": "J = m(v_f - v_i)"
     },
     {
-      "explanation": "Simplify the calculation. Since the initial velocity is zero, the second term vanishes.",
-      "notations": "J = 1.5 kg·m/s − 0 = 1.5 kg·m/s"
+      "explanation": "Substitute the numerical values into the formula.",
+      "notations": "J = (0.50 kg)(3.0 m/s - 0 m/s)"
+    },
+    {
+      "explanation": "Simplify the calculation. Since the initial velocity is zero, we get the final momentum.",
+      "notations": "J = (0.50 kg)(3.0 m/s) = 1.5 kg·m/s"
     },
     {
       "explanation": "Express the final answer in proper units. Note that 1 kg·m/s = 1 N·s.",
       "notations": "J = 1.5 N·s in the throw direction"
     }
-  ]
+  ],
+  "solution": "J = Δp\nΔp = m(v_f - v_i)\nJ = m(v_f - v_i)\nGiven: m = 0.50 kg, v_i = 0 m/s, v_f = 3.0 m/s\nJ = (0.50 kg)(3.0 m/s - 0 m/s)\nJ = (0.50 kg)(3.0 m/s)\nJ = 1.5 kg·m/s = 1.5 N·s"
 }

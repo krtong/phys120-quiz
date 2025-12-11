@@ -1,6 +1,6 @@
 # Physics Problem Restructuring Task
 
-You are restructuring a physics problem JSON to separate FUNDAMENTAL FORMULAS from PROBLEM-SOLVING STEPS.
+You are restructuring a physics problem JSON to separate FUNDAMENTAL FORMULAS from PROBLEM-SOLVING STEPS, and adding a SOLUTION field.
 
 ## What FORMULAS should contain:
 
@@ -55,6 +55,21 @@ The steps show the FULL problem-solving process in this order:
 
 If multiple formulas are needed, show the steps of using each one in sequence.
 
+## What SOLUTION should contain:
+
+The solution field is a SINGLE TEXT STRING that shows the complete mathematical derivation from start to finish. It should:
+
+1. Start with the fundamental formula(s)
+2. Show substitution of given values/symbols
+3. Show each algebraic manipulation step
+4. End with the final numerical answer
+
+Format it as a clean mathematical flow, using line breaks (\n) to separate steps. Example:
+
+"a_c = v²/r\nv = 2πrf = 2π(0.600 m)(2.00/s) = 7.54 m/s\na_c = (7.54 m/s)² / (0.600 m)\na_c = 56.85 m²/s² / 0.600 m\na_c = 94.7 m/s²"
+
+The solution should read like showing your work on an exam - each line follows logically from the previous.
+
 ## Your Task:
 
 1. Read the input problem JSON file at: /Users/kevintong/Documents/phys120/quiz/subagent_work/problem_XXX_input.json
@@ -66,7 +81,8 @@ If multiple formulas are needed, show the steps of using each one in sequence.
    - Substitute scalars for numbers
    - Substitute symbols for numbers in fundamental formula
    - Show algebraic steps for solving
-5. Output the corrected JSON
+5. Add a "solution" field with the complete mathematical derivation as a single text string
+6. Output the corrected JSON
 
 ## Output Format:
 
@@ -92,8 +108,12 @@ The JSON structure:
       "explanation": "What this step does",
       "notations": "The mathematical notation showing the work"
     }
-  ]
+  ],
+  "solution": "Formula line 1\nSubstitution line 2\nSimplification line 3\nFinal answer line 4"
 }
 ```
 
-IMPORTANT: Make sure you preserve all fields from the original (problem, source, sourceFile, chapter, image if exists, variables). Only modify correctFormulas and steps.
+IMPORTANT:
+- Make sure you preserve all fields from the original (problem, source, sourceFile, chapter, image if exists, variables). Only modify correctFormulas and steps, and ADD the solution field.
+- Use \n for line breaks in the solution string (not actual newlines)
+- Use proper Unicode characters for superscripts (² not ^2), subscripts, Greek letters, etc.

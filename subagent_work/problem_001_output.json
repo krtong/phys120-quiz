@@ -52,5 +52,6 @@
       "explanation": "Calculate the centripetal acceleration",
       "notations": "a₍c₎ = (1.04 × 10⁶ m²/s²) / (3.84 × 10⁸ m) = 2.71 × 10⁻³ m/s²"
     }
-  ]
+  ],
+  "solution": "v = 2πr/T\nv = 2π(3.84 × 10⁸ m)/(2.36 × 10⁶ s)\nv = 1.02 × 10³ m/s\na₍c₎ = v²/r\na₍c₎ = (1.02 × 10³ m/s)²/(3.84 × 10⁸ m)\na₍c₎ = (1.04 × 10⁶ m²/s²)/(3.84 × 10⁸ m)\na₍c₎ = 2.71 × 10⁻³ m/s²"
 }

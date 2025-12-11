@@ -24,20 +24,33 @@
   "correctFormulas": [],
   "steps": [
     {
-      "explanation": "We will use the water phase diagram to determine the phase of water at given temperature and pressure conditions. The phase diagram shows regions for solid (ice), liquid, and vapor (gas) phases separated by phase boundaries.",
-      "notations": "Method: Read phase diagram at point (P, T)"
+      "explanation": "Identify the approach: use the water phase diagram to determine the phase at given pressure and temperature coordinates",
+      "notations": "Method: Locate points (P, T) on phase diagram"
     },
     {
-      "explanation": "Define the given values for both cases.",
-      "notations": "Given: P = 0.01 atm, T₍a₎ = 90°C, T₍b₎ = −20°C"
+      "explanation": "Given values for part (a)",
+      "notations": "P = 0.01 atm, T₍a₎ = 90°C"
     },
     {
-      "explanation": "For case (a), locate the point on the phase diagram at pressure 0.01 atm and temperature 90°C. At this low pressure and high temperature, we are in the vapor region of the phase diagram, well above the liquid-vapor boundary.",
-      "notations": "Phase at (P = 0.01 atm, T = 90°C): vapor"
+      "explanation": "Locate the point (0.01 atm, 90°C) on the phase diagram",
+      "notations": "At (0.01 atm, 90°C): This point falls in the vapor region"
     },
     {
-      "explanation": "For case (b), locate the point on the phase diagram at pressure 0.01 atm and temperature −20°C. At this low pressure and low (below freezing) temperature, we are in the solid region of the phase diagram.",
-      "notations": "Phase at (P = 0.01 atm, T = −20°C): solid"
+      "explanation": "Conclusion for part (a)",
+      "notations": "Phase (a): vapor"
+    },
+    {
+      "explanation": "Given values for part (b)",
+      "notations": "P = 0.01 atm, T₍b₎ = −20°C"
+    },
+    {
+      "explanation": "Locate the point (0.01 atm, −20°C) on the phase diagram",
+      "notations": "At (0.01 atm, −20°C): This point falls in the solid region"
+    },
+    {
+      "explanation": "Conclusion for part (b)",
+      "notations": "Phase (b): solid"
     }
-  ]
+  ],
+  "solution": "Using the water phase diagram:\n(a) At P = 0.01 atm and T = 90°C:\nThis point is in the vapor region\nPhase: vapor\n\n(b) At P = 0.01 atm and T = −20°C:\nThis point is in the solid region\nPhase: solid"
 }

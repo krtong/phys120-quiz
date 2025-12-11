@@ -43,7 +43,7 @@
       "formula": "PE = mgh"
     },
     {
-      "name": "Kinetic energy",
+      "name": "Translational kinetic energy",
       "formula": "KE = ½mv²"
     },
     {
@@ -51,7 +51,7 @@
       "formula": "KE_rot = ½Iω²"
     },
     {
-      "name": "Moment of inertia for uniform cylinder",
+      "name": "Moment of inertia for solid cylinder",
       "formula": "I = ½MR²"
     },
     {
@@ -61,56 +61,45 @@
   ],
   "steps": [
     {
-      "explanation": "State the fundamental formulas we will use: conservation of energy, kinetic energy, rotational kinetic energy, moment of inertia for a cylinder, and the no-slip condition.",
-      "notations": "E_initial = E_final, PE = mgh, KE = ½mv², KE_rot = ½Iω², I = ½MR², v = ωR"
+      "explanation": "State the fundamental formulas we will use: conservation of energy with gravitational potential energy, translational and rotational kinetic energy, moment of inertia for a cylinder, and the no-slip condition.",
+      "notations": "E_initial = E_final\nPE = mgh\nKE = ½mv²\nKE_rot = ½Iω²\nI = ½MR²\nv = ωR"
     },
     {
-      "explanation": "Define the given variables from the problem.",
-      "notations": "m₍A₎ = 32.0 kg, m₍B₎ = 38.0 kg, M₍p₎ = 3.1 kg, R = 0.311 m, h = 2.5 m, g = 9.8 m/s²"
+      "explanation": "Define the variables from the problem.",
+      "notations": "Given: m₍A₎ = 32.0 kg, m₍B₎ = 38.0 kg, M₍p₎ = 3.1 kg, R = 0.311 m, h = 2.5 m, g = 9.8 m/s²"
     },
     {
-      "explanation": "Set up the initial energy state: m₍B₎ has potential energy mgh relative to the ground, m₍A₎ is on the ground, and nothing is moving.",
-      "notations": "E_initial = m₍B₎ g h + 0 + 0 = m₍B₎ g h"
+      "explanation": "Apply conservation of energy. Initially, the system is at rest (no kinetic energy). Finally, both masses move with speed v and the pulley rotates with angular speed ω. Mass B loses potential energy m₍B₎gh while mass A gains potential energy m₍A₎gh.",
+      "notations": "Initial energy: PE_initial = m₍B₎gh (taking ground as reference)\nFinal energy: PE_final = m₍A₎gh, KE_final = ½m₍A₎v² + ½m₍B₎v² + ½Iω²\nConservation: m₍B₎gh = m₍A₎gh + ½m₍A₎v² + ½m₍B₎v² + ½Iω²"
     },
     {
-      "explanation": "Set up the final energy state: just before m₍B₎ hits the ground, both masses are moving with speed v, the pulley is rotating with angular velocity ω, m₍B₎ has zero potential energy, and m₍A₎ has risen by height h.",
-      "notations": "E_final = m₍A₎ g h + ½ m₍A₎ v² + ½ m₍B₎ v² + ½ I ω²"
-    },
-    {
-      "explanation": "Apply conservation of energy to equate initial and final energy.",
-      "notations": "m₍B₎ g h = m₍A₎ g h + ½ m₍A₎ v² + ½ m₍B₎ v² + ½ I ω²"
-    },
-    {
-      "explanation": "Simplify the left side by combining potential energy terms.",
-      "notations": "(m₍B₎ − m₍A₎) g h = ½ m₍A₎ v² + ½ m₍B₎ v² + ½ I ω²"
+      "explanation": "Simplify the energy equation by combining terms.",
+      "notations": "(m₍B₎ − m₍A₎)gh = ½(m₍A₎ + m₍B₎)v² + ½Iω²"
     },
     {
       "explanation": "Substitute the moment of inertia for the pulley and the no-slip condition.",
-      "notations": "(m₍B₎ − m₍A₎) g h = ½ m₍A₎ v² + ½ m₍B₎ v² + ½ (½ M₍p₎ R²)(v/R)²"
+      "notations": "I = ½M₍p₎R²\nω = v/R\n(m₍B₎ − m₍A₎)gh = ½(m₍A₎ + m₍B₎)v² + ½(½M₍p₎R²)(v/R)²"
     },
     {
       "explanation": "Simplify the rotational kinetic energy term.",
-      "notations": "(m₍B₎ − m₍A₎) g h = ½ m₍A₎ v² + ½ m₍B₎ v² + ¼ M₍p₎ v²"
+      "notations": "½(½M₍p₎R²)(v/R)² = ½(½M₍p₎)v² = ¼M₍p₎v²\n(m₍B₎ − m₍A₎)gh = ½(m₍A₎ + m₍B₎)v² + ¼M₍p₎v²"
     },
     {
-      "explanation": "Factor out v² from the kinetic energy terms.",
-      "notations": "(m₍B₎ − m₍A₎) g h = ½ v² (m₍A₎ + m₍B₎ + ½ M₍p₎)"
-    },
-    {
-      "explanation": "Solve for v algebraically.",
-      "notations": "v = √[2(m₍B₎ − m₍A₎) g h / (m₍A₎ + m₍B₎ + ½ M₍p₎)]"
+      "explanation": "Factor out v² and solve for v.",
+      "notations": "(m₍B₎ − m₍A₎)gh = [½(m₍A₎ + m₍B₎) + ¼M₍p₎]v²\nv² = 2(m₍B₎ − m₍A₎)gh / (m₍A₎ + m₍B₎ + ½M₍p₎)\nv = √[2(m₍B₎ − m₍A₎)gh / (m₍A₎ + m₍B₎ + ½M₍p₎)]"
     },
     {
       "explanation": "Substitute the numerical values into the formula.",
-      "notations": "v = √[2(38.0 − 32.0)(9.8)(2.5) / (32.0 + 38.0 + ½(3.1))]"
+      "notations": "v = √[2(38.0 kg − 32.0 kg)(9.8 m/s²)(2.5 m) / (32.0 kg + 38.0 kg + ½(3.1 kg))]"
     },
     {
       "explanation": "Calculate the numerator and denominator.",
-      "notations": "v = √[2(6.0)(9.8)(2.5) / (70.0 + 1.55)] = √[294 / 71.55]"
+      "notations": "Numerator: 2(6.0 kg)(9.8 m/s²)(2.5 m) = 2(147 kg·m²/s²) = 294 kg·m²/s²\nDenominator: 32.0 kg + 38.0 kg + 1.55 kg = 71.55 kg\nv = √(294 / 71.55) m/s"
     },
     {
       "explanation": "Complete the calculation to find the final speed.",
-      "notations": "v = √4.109 ≈ 2.0 m/s"
+      "notations": "v = √(4.109) m/s\nv ≈ 2.03 m/s ≈ 2.0 m/s"
     }
-  ]
+  ],
+  "solution": "E_initial = E_final\nm₍B₎gh = m₍A₎gh + ½m₍A₎v² + ½m₍B₎v² + ½Iω²\n(m₍B₎ − m₍A₎)gh = ½(m₍A₎ + m₍B₎)v² + ½Iω²\nI = ½M₍p₎R², ω = v/R\n(m₍B₎ − m₍A₎)gh = ½(m₍A₎ + m₍B₎)v² + ½(½M₍p₎R²)(v/R)²\n(m₍B₎ − m₍A₎)gh = ½(m₍A₎ + m₍B₎)v² + ¼M₍p₎v²\n(m₍B₎ − m₍A₎)gh = [½(m₍A₎ + m₍B₎) + ¼M₍p₎]v²\nv = √[2(m₍B₎ − m₍A₎)gh / (m₍A₎ + m₍B₎ + ½M₍p₎)]\nv = √[2(38.0 − 32.0)(9.8)(2.5) / (32.0 + 38.0 + 1.55)] m/s\nv = √[294 / 71.55] m/s\nv = √4.109 m/s\nv ≈ 2.0 m/s"
 }

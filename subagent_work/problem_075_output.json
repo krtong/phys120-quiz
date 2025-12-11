@@ -32,7 +32,7 @@
   "correctFormulas": [
     {
       "name": "RMS speed from kinetic theory",
-      "formula": "v₍rms₎ = √(3k₍B₎ T / m)"
+      "formula": "v₍rms₎ = √(3k₍B₎T/m)"
     },
     {
       "name": "Ideal gas law",
@@ -45,28 +45,29 @@
   ],
   "steps": [
     {
-      "explanation": "Start with the fundamental rms speed formula from kinetic theory.",
-      "notations": "v₍rms₎ = √(3k₍B₎T/m)"
+      "explanation": "Start with the fundamental formulas we will use",
+      "notations": "v₍rms₎ = √(3k₍B₎T/m)\nPV = Nk₍B₎T\nρ = Nm/V"
     },
     {
-      "explanation": "Use the ideal gas law to express k₍B₎T in terms of pressure.",
-      "notations": "PV = Nk₍B₎T  →  k₍B₎T = PV/N"
+      "explanation": "Rearrange the ideal gas law to solve for k₍B₎T",
+      "notations": "k₍B₎T = PV/N"
     },
     {
-      "explanation": "Substitute k₍B₎T = PV/N into the rms speed formula.",
+      "explanation": "Substitute k₍B₎T into the rms speed formula",
       "notations": "v₍rms₎ = √(3(PV/N)/m) = √(3PV/(Nm))"
     },
     {
-      "explanation": "Simplify by rearranging the expression.",
-      "notations": "v₍rms₎ = √(3PV/(Nm)) = √(3P/(Nm/V))"
+      "explanation": "Rearrange the expression to group Nm/V",
+      "notations": "v₍rms₎ = √(3P/(Nm/V))"
     },
     {
-      "explanation": "Recognize that Nm/V equals the gas density ρ.",
+      "explanation": "Recognize that Nm/V equals the gas density ρ",
       "notations": "ρ = Nm/V"
     },
     {
-      "explanation": "Substitute ρ for Nm/V to obtain the final result.",
+      "explanation": "Substitute ρ for Nm/V to obtain the final result",
       "notations": "v₍rms₎ = √(3P/ρ)"
     }
-  ]
+  ],
+  "solution": "v₍rms₎ = √(3k₍B₎T/m)\nPV = Nk₍B₎T → k₍B₎T = PV/N\nv₍rms₎ = √(3(PV/N)/m) = √(3PV/(Nm))\nv₍rms₎ = √(3P/(Nm/V))\nρ = Nm/V\nv₍rms₎ = √(3P/ρ)"
 }

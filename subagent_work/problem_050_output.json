@@ -56,5 +56,6 @@
       "explanation": "Interpretation: The moment of inertia increased by a factor of 1.5 (or 50% increase). This is because raising the arms redistributes mass farther from the rotation axis, increasing the moment of inertia, and forcing the angular velocity to decrease to conserve angular momentum.",
       "notations": "I₍f₎ = 1.5 Iᵢ"
     }
-  ]
+  ],
+  "solution": "L = Iω\nSince no external torque acts: Lᵢ = L₍f₎\nIᵢ ωᵢ = I₍f₎ ω₍f₎\nI₍f₎/Iᵢ = ωᵢ / ω₍f₎\nI₍f₎/Iᵢ = 0.90 / 0.60\nI₍f₎/Iᵢ = 1.5\nThe moment of inertia increased by a factor of 1.5"
 }

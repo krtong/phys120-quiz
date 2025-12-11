@@ -112,5 +112,6 @@
       "explanation": "(d) Substitute v = ωR into v² = 2aΔy and solve for ω.",
       "notations": "(ωR)² = 2aΔy ⇒ ω²R² = 2aΔy ⇒ ω = √(2aΔy)/R"
     }
-  ]
+  ],
+  "solution": "(a) a = Rα\n\n(b) Block: m₂g − T = m₂a\nPulley: TR = Iα\nTR = (½m₁R²)(a/R) = ½m₁Ra\nT = ½m₁a\n\n(c) m₂g − ½m₁a = m₂a\nm₂g = (m₂ + ½m₁)a\na = m₂g/(m₂ + ½m₁)\n\n(d) v² = 2aΔy\nv = ωR\n(ωR)² = 2aΔy\nω²R² = 2aΔy\nω = √(2aΔy)/R"
 }

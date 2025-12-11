@@ -76,5 +76,6 @@
       "explanation": "Perform the calculation to find the mass.",
       "notations": "m = (9.8 × 10⁴ × 7.07 × 10⁻⁶) / 9.8 kg = 0.693 / 9.8 kg ≈ 0.071 kg = 71 g"
     }
-  ]
+  ],
+  "solution": "P = F/A, F = mg, A = πr²\nGiven: d = 3.0 mm = 3.0 × 10⁻³ m, r = 1.5 × 10⁻³ m, P₍atm₎ = 1.01 × 10⁵ Pa, P₍sat₎ = 1.99 × 10⁵ Pa, g = 9.8 m/s²\nmg = (P₍sat₎ − P₍atm₎) A\nA = πr² = π(1.5 × 10⁻³ m)² = 7.07 × 10⁻⁶ m²\nP₍sat₎ − P₍atm₎ = (1.99 − 1.01) × 10⁵ Pa = 9.8 × 10⁴ Pa\nm = (P₍sat₎ − P₍atm₎) A / g\nm = (9.8 × 10⁴ Pa)(7.07 × 10⁻⁶ m²) / (9.8 m/s²)\nm = 0.693 / 9.8 kg\nm ≈ 0.071 kg = 71 g"
 }

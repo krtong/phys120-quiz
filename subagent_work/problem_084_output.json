@@ -60,5 +60,6 @@
       "explanation": "State the result in more familiar units.",
       "notations": "ℓ ≈ 1 mm"
     }
-  ]
+  ],
+  "solution": "P = k A ΔT / ℓ\nℓ = k A ΔT / P\nℓ = (0.20)(1.5)(0.50) / 150\nℓ = 0.15 / 150\nℓ = 1.0 × 10⁻³ m ≈ 1 mm"
 }

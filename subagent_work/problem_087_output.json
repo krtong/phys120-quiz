@@ -24,7 +24,7 @@
     },
     {
       "name": "Static friction force",
-      "formula": "f_s = μ_s N"
+      "formula": "f_s = μₛN"
     },
     {
       "name": "Normal force on horizontal surface",
@@ -33,36 +33,37 @@
   ],
   "steps": [
     {
-      "explanation": "Identify the fundamental formulas needed: Newton's second law in the horizontal direction, the static friction force formula, and the normal force on a horizontal surface.",
-      "notations": "F = ma, f_s = μ_s N, N = mg"
+      "explanation": "We will use Newton's second law (F = ma), the static friction force formula (f_s = μₛN), and the normal force on a horizontal surface (N = mg).",
+      "notations": "F = ma, f_s = μₛN, N = mg"
     },
     {
-      "explanation": "Define the given values from the problem.",
-      "notations": "a = 0.20 g"
+      "explanation": "Define the given variable: the train's acceleration is 0.20 g.",
+      "notations": "a = 0.20g"
     },
     {
-      "explanation": "Apply Newton's second law in the horizontal direction. The friction force must provide the acceleration.",
+      "explanation": "For the person to not slip, the friction force must provide the horizontal force needed for acceleration. Apply Newton's second law in the horizontal direction.",
       "notations": "f_s = ma"
     },
     {
-      "explanation": "Apply vertical force equilibrium. The normal force equals the weight since there's no vertical acceleration.",
-      "notations": "N = mg"
+      "explanation": "Substitute the static friction formula into the force equation.",
+      "notations": "μₛN = ma"
     },
     {
-      "explanation": "Substitute the static friction formula and normal force into the horizontal force equation.",
-      "notations": "μ_s N = ma → μ_s (mg) = ma"
+      "explanation": "Substitute the normal force expression (N = mg) into the equation.",
+      "notations": "μₛ(mg) = ma"
     },
     {
-      "explanation": "Simplify by canceling mass from both sides.",
-      "notations": "μ_s g = a → μ_s = a/g"
+      "explanation": "Simplify by canceling mass m from both sides.",
+      "notations": "μₛg = a"
     },
     {
-      "explanation": "Substitute the numerical value a = 0.20 g.",
-      "notations": "μ_s = (0.20 g)/g = 0.20"
+      "explanation": "Solve for the coefficient of static friction.",
+      "notations": "μₛ = a/g"
     },
     {
-      "explanation": "State the final answer for the minimum coefficient of static friction.",
-      "notations": "μ_s ≥ 0.20"
+      "explanation": "Substitute a = 0.20g into the equation.",
+      "notations": "μₛ = 0.20g/g = 0.20"
     }
-  ]
+  ],
+  "solution": "F = ma, f_s = μₛN, N = mg\nGiven: a = 0.20g\nFor no slipping: f_s = ma\nμₛN = ma\nμₛ(mg) = ma\nμₛg = a\nμₛ = a/g\nμₛ = 0.20g/g\nμₛ = 0.20"
 }

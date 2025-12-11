@@ -104,5 +104,6 @@
       "explanation": "Calculate the energy supplied by the explosion, which is the change in kinetic energy.",
       "notations": "ΔK = K₍f₎ − K₀\nΔK = 1.65 × 10¹⁰ J − 1.579 × 10¹⁰ J\nΔK ≈ 7.1 × 10⁸ J"
     }
-  ]
+  ],
+  "solution": "Part (a): Finding velocities of each section\nConservation of momentum: Mv₀ = mv₍A₎ + mv₍B₎\nSince m = M/2: 2v₀ = v₍A₎ + v₍B₎\nRelative velocity: v₍A₎ − v₍B₎ = Δv₍rel₎\n\nAdding equations: 2v₍A₎ = 2v₀ + Δv₍rel₎\nv₍A₎ = (2 × 6.60 × 10³ + 2.80 × 10³)/2 = 16.0 × 10³/2 = 8.00 × 10³ m/s\n\nSubtracting equations: 2v₍B₎ = 2v₀ − Δv₍rel₎\nv₍B₎ = (2 × 6.60 × 10³ − 2.80 × 10³)/2 = 10.4 × 10³/2 = 5.20 × 10³ m/s\n\nBoth sections move away from Earth.\n\nPart (b): Energy from explosion\nK₀ = ½Mv₀² = ½(725)(6.60 × 10³)² = ½(725)(4.356 × 10⁷) = 1.579 × 10¹⁰ J\n\nK₍f₎ = ½m(v₍A₎² + v₍B₎²) = ½(362.5)[(8.00 × 10³)² + (5.20 × 10³)²]\nK₍f₎ = ½(362.5)[6.40 × 10⁷ + 2.704 × 10⁷] = ½(362.5)(9.104 × 10⁷) = 1.65 × 10¹⁰ J\n\nΔK = K₍f₎ − K₀ = 1.65 × 10¹⁰ − 1.579 × 10¹⁰ = 7.1 × 10⁸ J"
 }

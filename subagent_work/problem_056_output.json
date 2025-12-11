@@ -32,29 +32,30 @@
     },
     {
       "name": "Weight",
-      "formula": "W = mg"
+      "formula": "F = mg"
     }
   ],
   "steps": [
     {
-      "explanation": "We will use the pressure formula F = PA to find the force from each tire, and the weight formula W = mg. The total upward force from all tires must equal the weight of the car.",
-      "notations": "F = PA and W = mg"
+      "explanation": "We will use the pressure formula F = PA to find the upward force from each tire, and F = mg for the weight of the car. The total upward force from all tires must equal the car's weight.",
+      "notations": "F = PA and F₍weight₎ = mg"
     },
     {
       "explanation": "Define the given values from the problem.",
-      "notations": "P₍g₎ = 240 kPa = 2.40 × 10⁵ Pa, A₍tire₎ = 190 cm² = 1.90 × 10⁻² m², N = 4 tires, g = 9.80 m/s²"
+      "notations": "P₍g₎ = 240 kPa = 2.40 × 10⁵ Pa\nA₍tire₎ = 190 cm² = 1.90 × 10⁻² m²\nN = 4 tires\ng = 9.80 m/s²"
     },
     {
-      "explanation": "Calculate the upward force from each tire using the pressure formula.",
+      "explanation": "Calculate the upward force from each tire using F = PA.",
       "notations": "F₍per tire₎ = P₍g₎ A₍tire₎ = (2.40 × 10⁵ Pa)(1.90 × 10⁻² m²) = 4.56 × 10³ N"
     },
     {
-      "explanation": "The total upward force from all four tires equals the weight of the car.",
-      "notations": "N F₍per tire₎ = W₍car₎ = m₍car₎ g"
+      "explanation": "Calculate the total upward force from all four tires.",
+      "notations": "F₍total₎ = N × F₍per tire₎ = 4 × 4.56 × 10³ N = 1.824 × 10⁴ N"
     },
     {
-      "explanation": "Substitute the values and solve for the mass of the car.",
-      "notations": "m₍car₎ = (N F₍per tire₎) / g = (4 × 4.56 × 10³ N) / (9.80 m/s²) = (1.824 × 10⁴ N) / (9.80 m/s²) ≈ 1.9 × 10³ kg"
+      "explanation": "Set the total upward force equal to the car's weight and solve for mass.",
+      "notations": "F₍total₎ = m₍car₎ g\nm₍car₎ = F₍total₎ / g = 1.824 × 10⁴ N / 9.80 m/s² = 1.9 × 10³ kg"
     }
-  ]
+  ],
+  "solution": "F = PA\nP₍g₎ = 2.40 × 10⁵ Pa, A₍tire₎ = 1.90 × 10⁻² m²\nF₍per tire₎ = (2.40 × 10⁵ Pa)(1.90 × 10⁻² m²) = 4.56 × 10³ N\nF₍total₎ = 4 × 4.56 × 10³ N = 1.824 × 10⁴ N\nF₍total₎ = m₍car₎ g\nm₍car₎ = 1.824 × 10⁴ N / 9.80 m/s² = 1.9 × 10³ kg"
 }

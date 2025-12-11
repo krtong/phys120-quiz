@@ -31,7 +31,7 @@
   ],
   "correctFormulas": [
     {
-      "name": "Torricelli's theorem (efflux velocity)",
+      "name": "Torricelli's theorem (efflux speed)",
       "formula": "v = √(2gh)"
     },
     {
@@ -45,24 +45,25 @@
   ],
   "steps": [
     {
-      "explanation": "We will use Torricelli's theorem to find the efflux velocity from the pressure head, then calculate the volume flow rate using Q = Av where A = πr².",
-      "notations": "v = √(2gh), Q = Av, A = πr²"
+      "explanation": "Start with the fundamental formulas needed to solve this problem",
+      "notations": "We will use Torricelli's theorem for efflux speed: v = √(2gh), the volume flow rate formula: Q = Av, and the area of a circle: A = πr²"
     },
     {
-      "explanation": "Define the given values from the problem.",
-      "notations": "d = 1.85 cm = 0.0185 m, r = d/2 = 0.00925 m, h = 12.0 m, g = 9.80 m/s²"
+      "explanation": "Define the variables with the values given in the problem",
+      "notations": "Given: d = 1.85 cm = 0.0185 m, r = d/2 = 0.00925 m, h = 12.0 m, g = 9.80 m/s²"
     },
     {
-      "explanation": "Calculate the efflux speed using Torricelli's theorem.",
-      "notations": "v = √(2gh) = √[2(9.80 m/s²)(12.0 m)] = √(235.2 m²/s²) ≈ 15.3 m/s"
+      "explanation": "Calculate the efflux speed using Torricelli's theorem",
+      "notations": "v = √(2gh) = √[2(9.80 m/s²)(12.0 m)] = √(235.2 m²/s²) = 15.3 m/s"
     },
     {
-      "explanation": "Calculate the cross-sectional area of the faucet.",
-      "notations": "A = πr² = π(0.00925 m)² ≈ 2.69 × 10⁻⁴ m²"
+      "explanation": "Calculate the cross-sectional area of the faucet",
+      "notations": "A = πr² = π(0.00925 m)² = π(8.556 × 10⁻⁵ m²) = 2.69 × 10⁻⁴ m²"
     },
     {
-      "explanation": "Calculate the volume flow rate by multiplying area and velocity.",
-      "notations": "Q = Av = (2.69 × 10⁻⁴ m²)(15.3 m/s) ≈ 4.1 × 10⁻³ m³/s"
+      "explanation": "Calculate the volume flow rate by multiplying area and speed",
+      "notations": "Q = Av = (2.69 × 10⁻⁴ m²)(15.3 m/s) = 4.1 × 10⁻³ m³/s"
     }
-  ]
+  ],
+  "solution": "v = √(2gh)\nv = √[2(9.80 m/s²)(12.0 m)] = √(235.2 m²/s²) = 15.3 m/s\nA = πr² = π(0.00925 m)² = 2.69 × 10⁻⁴ m²\nQ = Av = (2.69 × 10⁻⁴ m²)(15.3 m/s) = 4.1 × 10⁻³ m³/s"
 }

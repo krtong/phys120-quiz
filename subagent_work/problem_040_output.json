@@ -56,5 +56,6 @@
       "explanation": "The direction is counterclockwise if ℓ₂ > ℓ₁ (positive torque), and clockwise if ℓ₁ > ℓ₂ (negative torque).",
       "notations": "Direction: counterclockwise if ℓ₂ > ℓ₁; clockwise if ℓ₁ > ℓ₂"
     }
-  ]
+  ],
+  "solution": "τ = r F sin θ\nFor perpendicular forces (θ = 90°): τ = r F\nLeft block: τ₍left₎ = ℓ₂(mg) = +mgℓ₂ (counterclockwise)\nRight block: τ₍right₎ = ℓ₁(mg) = -mgℓ₁ (clockwise)\nτ_net = mgℓ₂ - mgℓ₁\nτ_net = mg(ℓ₂ - ℓ₁)\nDirection: counterclockwise if ℓ₂ > ℓ₁; clockwise if ℓ₁ > ℓ₂"
 }

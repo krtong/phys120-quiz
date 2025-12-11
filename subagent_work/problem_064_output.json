@@ -25,36 +25,29 @@
   ],
   "steps": [
     {
-      "explanation": "State the fundamental formula for the period of a simple pendulum",
+      "explanation": "We will use the small-angle pendulum period formula: T = 2π √(ℓ / g)",
       "notations": "T = 2π √(ℓ / g)"
     },
     {
-      "explanation": "Define the variables from the problem",
-      "notations": "Given: ℓ = 47 cm = 0.47 m, g = 9.80 m/s² (on Earth)"
+      "explanation": "Define variables from the problem. Given: ℓ = 47 cm = 0.47 m, g = 9.80 m/s² (on Earth)",
+      "notations": "ℓ = 0.47 m, g = 9.80 m/s²"
     },
     {
-      "explanation": "Part (a): Substitute the values into the formula for Earth",
+      "explanation": "Part (a): Substitute the values into the formula",
       "notations": "T = 2π √(0.47 m / 9.80 m/s²)"
     },
     {
-      "explanation": "Calculate the value inside the square root",
+      "explanation": "Evaluate the expression under the square root",
       "notations": "T = 2π √(0.04796 s²) = 2π (0.219 s)"
     },
     {
-      "explanation": "Complete the calculation",
+      "explanation": "Complete the calculation to get the period on Earth",
       "notations": "T ≈ 1.4 s"
     },
     {
-      "explanation": "Part (b): In a freely falling elevator, the effective gravitational acceleration in the elevator's reference frame becomes zero",
-      "notations": "g_effective = 0 in free fall"
-    },
-    {
-      "explanation": "Analyze what happens to the period formula when g → 0",
-      "notations": "T = 2π √(ℓ / 0) → undefined"
-    },
-    {
-      "explanation": "Physical interpretation: With no restoring force, the pendulum does not oscillate",
-      "notations": "No oscillation occurs; period is undefined in free fall"
+      "explanation": "Part (b): In a freely falling elevator, the effective gravitational acceleration in the elevator's reference frame is zero (g → 0). With no restoring force, the pendulum cannot oscillate, so the period is undefined.",
+      "notations": "g_effective = 0 → T = 2π √(ℓ / 0) → undefined (no oscillation in free fall)"
     }
-  ]
+  ],
+  "solution": "Part (a):\nT = 2π √(ℓ / g)\nGiven: ℓ = 0.47 m, g = 9.80 m/s²\nT = 2π √(0.47 m / 9.80 m/s²)\nT = 2π √(0.04796 s²)\nT = 2π (0.219 s)\nT ≈ 1.4 s\n\nPart (b):\nIn a freely falling elevator, g_effective = 0 in the elevator's frame.\nT = 2π √(ℓ / 0) → undefined\nWith no restoring force, the pendulum cannot oscillate; the period is undefined."
 }

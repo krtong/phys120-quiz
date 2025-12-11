@@ -68,5 +68,6 @@
       "explanation": "Calculate the final speed.",
       "notations": "v = √[2450 m²/s²] = 49.5 m/s ≈ 5.0 × 10¹ m/s"
     }
-  ]
+  ],
+  "solution": "KE₀ + PE₀ = KE + PE\nGiven: v₀ = 0 m/s, h = 125 m, g = 9.80 m/s²\n0 + mgh = ½mv² + 0\ngh = ½v²\nv² = 2gh\nv = √(2gh)\nv = √[2(9.80 m/s²)(125 m)]\nv = √[2450 m²/s²] = 49.5 m/s ≈ 5.0 × 10¹ m/s"
 }

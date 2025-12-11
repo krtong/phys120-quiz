@@ -96,5 +96,6 @@
       "explanation": "Calculate the average power delivered to the arrow",
       "notations": "P₍avg₎ = W/t = 80 J / 0.031 s ≈ 2581 W ≈ 2.6 kW"
     }
-  ]
+  ],
+  "solution": "Given: m = 60 g = 0.060 kg, F₍avg₎ = 100 N, d = 80 cm = 0.80 m, v₀ = 0\n\n(a) Finding the speed:\nUsing F = ma:\na = F₍avg₎/m = 100/0.060 = 1667 m/s²\n\nUsing v² = v₀² + 2ad:\nv² = 0 + 2(1667)(0.80) = 2667 m²/s²\nv = √(2667) ≈ 51.6 m/s ≈ 5.2 × 10¹ m/s\n\n(b) Finding the power:\nW = Fd = (100)(0.80) = 80 J\n\nUsing v = v₀ + at:\nt = v/a = 51.6/1667 ≈ 0.0310 s = 3.1 × 10⁻² s\n\nP₍avg₎ = W/t = 80/0.031 ≈ 2581 W ≈ 2.6 kW"
 }

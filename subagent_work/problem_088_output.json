@@ -76,5 +76,6 @@
       "explanation": "Substitute the value of μₖ to find the required mass ratio.",
       "notations": "m₍A₎ = m₍B₎ / 0.30 = 3.33 m₍B₎"
     }
-  ]
+  ],
+  "solution": "Part (a):\nFor threshold of motion (a = 0):\nf_s,max = μₛ N = μₛ m₍A₎ g\nT = m₍B₎ g\nAt threshold: μₛ m₍A₎ g = m₍B₎ g\nm₍A₎ = m₍B₎ / μₛ\nm₍A₎ = m₍B₎ / 0.40\nm₍A₎ = 2.5 m₍B₎\n\nPart (b):\nFor constant speed (a = 0):\nf_k = μₖ N = μₖ m₍A₎ g\nT = m₍B₎ g\nAt equilibrium: μₖ m₍A₎ g = m₍B₎ g\nm₍A₎ = m₍B₎ / μₖ\nm₍A₎ = m₍B₎ / 0.30\nm₍A₎ = 3.33 m₍B₎"
 }

@@ -32,7 +32,11 @@
   "correctFormulas": [
     {
       "name": "Conservation of energy",
-      "formula": "KE_initial + PE_initial = KE_final + PE_final"
+      "formula": "E_initial = E_final"
+    },
+    {
+      "name": "Gravitational potential energy",
+      "formula": "PE = mgh"
     },
     {
       "name": "Translational kinetic energy",
@@ -43,54 +47,43 @@
       "formula": "KE_rot = ½Iω²"
     },
     {
-      "name": "Gravitational potential energy",
-      "formula": "PE = mgh"
-    },
-    {
-      "name": "Rolling without slipping condition",
-      "formula": "v = ωr"
-    },
-    {
       "name": "Moment of inertia for solid sphere",
       "formula": "I = (2/5)mr²"
+    },
+    {
+      "name": "Rolling without slipping constraint",
+      "formula": "v = ωr"
     }
   ],
   "steps": [
     {
-      "explanation": "State the fundamental formulas to be used: conservation of energy with translational and rotational kinetic energy, and rolling without slipping.",
-      "notations": "KE_initial + PE_initial = KE_final + PE_final, where KE = ½mv² + ½Iω², PE = mgh, v = ωr, and I = (2/5)mr² for a solid sphere"
+      "explanation": "State the fundamental formulas to be used: conservation of energy with gravitational potential energy, translational kinetic energy, and rotational kinetic energy for a rolling sphere.",
+      "notations": "E_initial = E_final\nPE = mgh\nKE_trans = ½mv²\nKE_rot = ½Iω²\nI = (2/5)mr² (solid sphere)\nv = ωr (rolling without slipping)"
     },
     {
-      "explanation": "Define the initial and final states: initially the ball is at rest at height (R - r), finally it is at the bottom with speed v.",
-      "notations": "Initial: v_initial = 0, h_initial = R - r; Final: v_final = v, h_final = 0"
+      "explanation": "Define the initial and final positions. The ball starts from rest at the vertical edge of the track (height R relative to the center) and ends at the lowest point (height r from the bottom, since the ball's center is at height r).",
+      "notations": "Initial height: h_i = R (center of ball at track edge)\nFinal height: h_f = r (center of ball at lowest point)\nHeight difference: Δh = R - r\nInitial velocity: v_i = 0 (starts from rest)"
     },
     {
-      "explanation": "Apply conservation of energy: initial energy (purely gravitational potential) equals final energy (translational plus rotational kinetic).",
-      "notations": "mg(R - r) = ½mv² + ½Iω²"
+      "explanation": "Apply conservation of energy. Initial energy is purely gravitational potential energy. Final energy is the sum of gravitational potential energy, translational kinetic energy, and rotational kinetic energy.",
+      "notations": "mg(R) = mg(r) + ½mv² + ½Iω²\nmg(R - r) = ½mv² + ½Iω²"
     },
     {
-      "explanation": "Substitute the rolling without slipping condition ω = v/r into the rotational kinetic energy term.",
-      "notations": "mg(R - r) = ½mv² + ½I(v/r)²"
-    },
-    {
-      "explanation": "Substitute the moment of inertia for a solid sphere I = (2/5)mr².",
-      "notations": "mg(R - r) = ½mv² + ½(2/5)mr²(v/r)²"
+      "explanation": "Substitute the moment of inertia for a solid sphere and the rolling constraint.",
+      "notations": "I = (2/5)mr²\nω = v/r\nmg(R - r) = ½mv² + ½(2/5)mr²(v/r)²"
     },
     {
       "explanation": "Simplify the rotational kinetic energy term.",
-      "notations": "mg(R - r) = ½mv² + (1/5)mv²"
+      "notations": "½(2/5)mr²(v/r)² = ½(2/5)mv²\nmg(R - r) = ½mv² + (1/5)mv²"
     },
     {
       "explanation": "Combine the kinetic energy terms.",
-      "notations": "mg(R - r) = (7/10)mv²"
+      "notations": "mg(R - r) = ½mv² + (1/5)mv²\nmg(R - r) = (5/10)mv² + (2/10)mv²\nmg(R - r) = (7/10)mv²"
     },
     {
       "explanation": "Solve for v by canceling mass and rearranging.",
-      "notations": "v² = (10/7)g(R - r)"
-    },
-    {
-      "explanation": "Take the square root to find the final speed.",
-      "notations": "v = √[(10/7)g(R - r)]"
+      "notations": "g(R - r) = (7/10)v²\nv² = (10/7)g(R - r)\nv = √[(10/7)g(R - r)]"
     }
-  ]
+  ],
+  "solution": "E_initial = E_final\nmg(R) = mg(r) + ½mv² + ½Iω²\nmg(R - r) = ½mv² + ½Iω²\nI = (2/5)mr², ω = v/r\nmg(R - r) = ½mv² + ½(2/5)mr²(v/r)²\nmg(R - r) = ½mv² + (1/5)mv²\nmg(R - r) = (7/10)mv²\ng(R - r) = (7/10)v²\nv² = (10/7)g(R - r)\nv = √[(10/7)g(R - r)]"
 }

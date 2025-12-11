@@ -24,13 +24,13 @@
   "correctFormulas": [
     {
       "name": "Torque from a force",
-      "formula": "τ = r F sinφ"
+      "formula": "τ = rF sinφ"
     }
   ],
   "steps": [
     {
       "explanation": "We will use the torque formula for a force applied at an angle",
-      "notations": "τ = r F sinφ"
+      "notations": "τ = rF sinφ"
     },
     {
       "explanation": "Identify the variables from the problem",
@@ -42,11 +42,12 @@
     },
     {
       "explanation": "Substitute into the torque formula",
-      "notations": "τ = r F sinφ"
+      "notations": "τ = rF sinφ"
     },
     {
       "explanation": "To determine the direction, apply the right-hand rule: point fingers along r (from the screw to the point of application), curl them toward the perpendicular component F⊥. The thumb points in the direction of the torque vector. If the perpendicular force component tends to rotate the wrench counterclockwise when viewed from above, the torque is CCW; otherwise it is CW.",
       "notations": "Direction: Use right-hand rule or observe the sense of rotation from the perpendicular force component"
     }
-  ]
+  ],
+  "solution": "τ = rF sinφ\nGiven: force F at angle φ with respect to the handle, distance r from the screw\nF⊥ = F sinφ (perpendicular component of the force)\nτ = rF sinφ\nDirection: Apply right-hand rule to determine CCW or CW rotation based on the orientation of F sinφ in the diagram"
 }

@@ -33,36 +33,33 @@
   ],
   "steps": [
     {
-      "explanation": "We will use the conservation of linear momentum formula for an inelastic collision.",
+      "explanation": "We will use conservation of linear momentum for this perfectly inelastic collision",
       "notations": "m₁ v₁ᵢ + m₂ v₂ᵢ = (m₁ + m₂) v₍f₎"
     },
     {
-      "explanation": "Given values from the problem.",
-      "notations": "m₁ = 7700 kg = 7.70 × 10³ kg, v₁ᵢ = 14 m/s = 14.0 m/s, v₂ᵢ = 0 m/s (at rest), v₍f₎ = 5.0 m/s"
+      "explanation": "Define the known values from the problem",
+      "notations": "m₁ = 7700 kg = 7.70 × 10³ kg, v₁ᵢ = 14 m/s, v₂ᵢ = 0 m/s (at rest), v₍f₎ = 5.0 m/s, m₂ = ?"
     },
     {
-      "explanation": "Substitute the known quantities into the momentum equation; v₂ᵢ = 0.",
+      "explanation": "Substitute the known values into the momentum equation, noting that v₂ᵢ = 0",
       "notations": "(7.70 × 10³ kg)(14.0 m/s) + m₂(0) = (7.70 × 10³ kg + m₂)(5.0 m/s)"
     },
     {
-      "explanation": "Simplify the equation since v₂ᵢ = 0.",
-      "notations": "(7.70 × 10³ kg)(14.0 m/s) = (7.70 × 10³ kg + m₂)(5.0 m/s)"
-    },
-    {
-      "explanation": "Expand the right side of the equation.",
+      "explanation": "Simplify and expand the equation",
       "notations": "1.078 × 10⁵ kg·m/s = (7.70 × 10³ kg)(5.0 m/s) + m₂(5.0 m/s)"
     },
     {
-      "explanation": "Simplify the right side.",
+      "explanation": "Continue simplifying",
       "notations": "1.078 × 10⁵ kg·m/s = 3.85 × 10⁴ kg·m/s + m₂(5.0 m/s)"
     },
     {
-      "explanation": "Solve for m₂ by isolating it.",
+      "explanation": "Solve for m₂",
       "notations": "m₂(5.0 m/s) = 1.078 × 10⁵ kg·m/s − 3.85 × 10⁴ kg·m/s = 6.93 × 10⁴ kg·m/s"
     },
     {
-      "explanation": "Calculate the final answer for m₂.",
+      "explanation": "Calculate the final answer",
       "notations": "m₂ = (6.93 × 10⁴ kg·m/s) / (5.0 m/s) = 1.39 × 10⁴ kg"
     }
-  ]
+  ],
+  "solution": "m₁ v₁ᵢ + m₂ v₂ᵢ = (m₁ + m₂) v₍f₎\nGiven: m₁ = 7.70 × 10³ kg, v₁ᵢ = 14.0 m/s, v₂ᵢ = 0 m/s, v₍f₎ = 5.0 m/s\n(7.70 × 10³ kg)(14.0 m/s) + m₂(0) = (7.70 × 10³ kg + m₂)(5.0 m/s)\n1.078 × 10⁵ kg·m/s = (7.70 × 10³ kg)(5.0 m/s) + m₂(5.0 m/s)\n1.078 × 10⁵ kg·m/s = 3.85 × 10⁴ kg·m/s + m₂(5.0 m/s)\nm₂(5.0 m/s) = 6.93 × 10⁴ kg·m/s\nm₂ = 1.39 × 10⁴ kg"
 }

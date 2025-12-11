@@ -60,5 +60,6 @@
       "explanation": "State the final range of pipe lengths required.",
       "notations": "Range: 8.6 mm to 8.6 m"
     }
-  ]
+  ],
+  "solution": "f₁ = v / (2L)\nL = v / (2f₁)\nGiven: v = 343 m/s, f₍min₎ = 20 Hz, f₍max₎ = 20 kHz = 2.0 × 10⁴ Hz\n\nFor lowest frequency (longest pipe):\nL₍max₎ = 343 m/s / (2 × 20 Hz) = 343 / 40 = 8.6 m\n\nFor highest frequency (shortest pipe):\nL₍min₎ = 343 m/s / (2 × 2.0 × 10⁴ Hz) = 343 / (4.0 × 10⁴) = 8.6 × 10⁻³ m = 8.6 mm\n\nRange: 8.6 mm to 8.6 m"
 }

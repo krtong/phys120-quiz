@@ -52,5 +52,6 @@
       "explanation": "Calculate the final answer.",
       "notations": "x ≈ 0.29 m"
     }
-  ]
+  ],
+  "solution": "Uₛ = ½ k x²\nGiven: k = 820 N/m, Uₛ = 35.0 J\nRearrange: x = √(2Uₛ / k)\nx = √[2(35.0 J) / (820 N/m)]\nx = √[70.0 J / 820 N/m]\nx = √[70.0 N·m / 820 N/m]\nx = √[0.0854 m²]\nx ≈ 0.29 m"
 }

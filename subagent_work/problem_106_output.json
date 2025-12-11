@@ -88,5 +88,6 @@
       "explanation": "Final answer for the rotational inertia of the apparatus.",
       "notations": "I = r²(2mgh - mv²)/v²"
     }
-  ]
+  ],
+  "solution": "E_initial = E_final\nmgh = ½mv² + ½Iω²\nSubstitute ω = v/r:\nmgh = ½mv² + ½I(v/r)²\nmgh = ½mv² + ½Iv²/r²\nmgh - ½mv² = ½Iv²/r²\nMultiply both sides by 2r²/v²:\nI = (2r²/v²)(mgh - ½mv²)\nI = (2mr²/v²)(gh - ½v²)\nI = r²(2mgh - mv²)/v²"
 }

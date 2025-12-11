@@ -76,5 +76,6 @@
       "explanation": "Calculate the final answer.",
       "notations": "ρ₍rock₎ = 2.99 × 10³ kg/m³ ≈ 3.0 × 10³ kg/m³"
     }
-  ]
+  ],
+  "solution": "F_b = ρ_fluid V g\nρ = m / V\n(m − m₍app₎) g = F_b = ρ₍w₎ V g\nm − m₍app₎ = ρ₍w₎ V\nm − m₍app₎ = 9.28 kg − 6.18 kg = 3.10 kg\nV = (m − m₍app₎) / ρ₍w₎ = 3.10 kg / (1.00 × 10³ kg/m³) = 3.10 × 10⁻³ m³\nρ₍rock₎ = m / V = 9.28 kg / (3.10 × 10⁻³ m³) = 2.99 × 10³ kg/m³ ≈ 3.0 × 10³ kg/m³"
 }

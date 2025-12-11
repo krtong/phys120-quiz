@@ -45,40 +45,53 @@
   ],
   "steps": [
     {
-      "explanation": "State the fundamental formulas to be used: angular velocity from frequency (ω = 2πf) and linear speed from angular velocity (v = ωr).",
-      "notations": "ω = 2πf, v = ωr"
+      "explanation": "Part (a): We will use the angular velocity formula ω = 2πf to find the angular velocity of the platter.",
+      "notations": "ω = 2πf"
     },
     {
-      "explanation": "Define the given values from the problem.",
-      "notations": "f₍rpm₎ = 7200 rpm, r = 3.00 cm = 0.0300 m, ℓ₍bit₎ = 0.50 μm = 5.0 × 10⁻⁷ m"
+      "explanation": "Convert the given rotation rate from rpm to revolutions per second.",
+      "notations": "Given: f₍rpm₎ = 7200 rpm\nf = 7200 rev/min × (1 min / 60 s) = 120 rev/s"
     },
     {
-      "explanation": "Convert the rotation rate from revolutions per minute to revolutions per second.",
-      "notations": "f = 7200 rpm × (1 min / 60 s) = 120 rev/s"
-    },
-    {
-      "explanation": "Substitute the frequency into the angular velocity formula ω = 2πf.",
+      "explanation": "Substitute the frequency into the angular velocity formula.",
       "notations": "ω = 2π(120 rev/s) = 240π rad/s"
     },
     {
-      "explanation": "Calculate the numerical value of the angular velocity.",
+      "explanation": "Calculate the numerical value.",
       "notations": "ω = 240π rad/s ≈ 754 rad/s = 7.54 × 10² rad/s"
     },
     {
-      "explanation": "Substitute the angular velocity and radius into the linear speed formula v = ωr.",
+      "explanation": "Part (b): Use the linear speed formula v = ωr to find the tangential speed at the reading head location.",
+      "notations": "v = ωr"
+    },
+    {
+      "explanation": "Identify the given radius and convert to meters.",
+      "notations": "Given: r = 3.00 cm = 0.0300 m"
+    },
+    {
+      "explanation": "Substitute the angular velocity and radius into the formula.",
       "notations": "v = (240π rad/s)(0.0300 m) = 7.2π m/s"
     },
     {
-      "explanation": "Calculate the numerical value of the linear speed.",
+      "explanation": "Calculate the numerical value.",
       "notations": "v = 7.2π m/s ≈ 22.6 m/s = 2.26 × 10¹ m/s"
     },
     {
-      "explanation": "Calculate the bit rate by dividing the linear speed by the length per bit.",
-      "notations": "R₍bit₎ = v / ℓ₍bit₎ = 22.6 m/s / (5.0 × 10⁻⁷ m)"
+      "explanation": "Part (c): The bit rate is the linear speed divided by the length per bit: R₍bit₎ = v / ℓ₍bit₎.",
+      "notations": "R₍bit₎ = v / ℓ₍bit₎"
     },
     {
-      "explanation": "Compute the final bit rate.",
+      "explanation": "Identify the given bit length and convert to meters.",
+      "notations": "Given: ℓ₍bit₎ = 0.50 μm = 0.50 × 10⁻⁶ m = 5.0 × 10⁻⁷ m"
+    },
+    {
+      "explanation": "Substitute the linear speed and bit length.",
+      "notations": "R₍bit₎ = (22.6 m/s) / (5.0 × 10⁻⁷ m)"
+    },
+    {
+      "explanation": "Calculate the bit rate.",
       "notations": "R₍bit₎ = 4.52 × 10⁷ bits/s ≈ 4.5 × 10⁷ bits/s"
     }
-  ]
+  ],
+  "solution": "Part (a):\nω = 2πf\nf = 7200 rpm × (1 min / 60 s) = 120 rev/s\nω = 2π(120 rev/s) = 240π rad/s ≈ 754 rad/s\n\nPart (b):\nv = ωr\nr = 3.00 cm = 0.0300 m\nv = (240π rad/s)(0.0300 m) = 7.2π m/s ≈ 22.6 m/s\n\nPart (c):\nR₍bit₎ = v / ℓ₍bit₎\nℓ₍bit₎ = 0.50 μm = 5.0 × 10⁻⁷ m\nR₍bit₎ = (22.6 m/s) / (5.0 × 10⁻⁷ m) = 4.52 × 10⁷ bits/s ≈ 4.5 × 10⁷ bits/s"
 }

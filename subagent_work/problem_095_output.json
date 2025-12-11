@@ -41,6 +41,10 @@
     {
       "name": "Work-energy theorem",
       "formula": "W_net = ΔK"
+    },
+    {
+      "name": "Kinetic energy",
+      "formula": "K = ½mv²"
     }
   ],
   "steps": [
@@ -78,23 +82,24 @@
     },
     {
       "explanation": "Part (g): Apply the work-energy theorem to the system. Initially at rest, so K_i = 0. The net work is done only by gravity (tension forces cancel).",
-      "notations": "W_net = ΔK = K_f − 0, where W_net = (m₂ − m₁)gh"
+      "notations": "W_net = ΔK = K_f − K_i, where W_net = (m₂ − m₁)gh and K_i = 0"
     },
     {
       "explanation": "Part (g): The final kinetic energy is shared by both blocks moving at the same speed v.",
       "notations": "K_f = ½m₁v² + ½m₂v² = ½(m₁ + m₂)v²"
     },
     {
-      "explanation": "Part (g): Set the net work equal to the kinetic energy and solve for v.",
+      "explanation": "Part (g): Set the net work equal to the change in kinetic energy.",
       "notations": "(m₂ − m₁)gh = ½(m₁ + m₂)v²"
     },
     {
-      "explanation": "Part (g): Solve for v by isolating it.",
+      "explanation": "Part (g): Solve for v² by multiplying both sides by 2 and dividing by (m₁ + m₂).",
       "notations": "v² = 2gh(m₂ − m₁)/(m₁ + m₂)"
     },
     {
       "explanation": "Part (g): Take the square root to find the final speed.",
       "notations": "v = √[2gh(m₂ − m₁)/(m₁ + m₂)]"
     }
-  ]
+  ],
+  "solution": "W_net = ΔK\nW_net = K_f − K_i\n(m₂ − m₁)gh = K_f − 0\n(m₂ − m₁)gh = ½m₁v² + ½m₂v²\n(m₂ − m₁)gh = ½(m₁ + m₂)v²\nv² = 2gh(m₂ − m₁)/(m₁ + m₂)\nv = √[2gh(m₂ − m₁)/(m₁ + m₂)]"
 }

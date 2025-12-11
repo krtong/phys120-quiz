@@ -27,50 +27,59 @@
   ],
   "correctFormulas": [
     {
-      "name": "Buoyancy equilibrium for floating objects",
-      "formula": "ρ₍fluid₎ V₍sub₎ g = ρ₍object₎ V₍object₎ g"
+      "name": "Buoyant force",
+      "formula": "F_b = ρ_fluid V_displaced g"
+    },
+    {
+      "name": "Weight of object",
+      "formula": "W = ρ_object V_object g"
+    },
+    {
+      "name": "Floating equilibrium condition",
+      "formula": "F_b = W"
     },
     {
       "name": "Specific gravity definition",
-      "formula": "SG = ρ/ρ₍water₎"
+      "formula": "SG = ρ/ρ_water"
     }
   ],
   "steps": [
     {
-      "explanation": "State the fundamental formulas we will use: buoyancy equilibrium (weight equals buoyant force) and specific gravity definition.",
-      "notations": "For a floating object: ρ₍fluid₎ V₍sub₎ g = ρ₍object₎ V₍object₎ g, and SG = ρ/ρ₍water₎"
+      "explanation": "Start with the floating equilibrium condition where buoyant force equals weight.",
+      "notations": "F_b = W\nρ_sea V_sub g = ρ_ice V_ice g"
     },
     {
-      "explanation": "Define the given values from the problem.",
-      "notations": "Given: SG₍ice₎ = 0.917, SG₍sea₎ = 1.025"
+      "explanation": "Cancel g from both sides and express densities in terms of specific gravities.",
+      "notations": "ρ_sea V_sub = ρ_ice V_ice\nSince SG = ρ/ρ_water, we have ρ_sea = SG_sea · ρ_water and ρ_ice = SG_ice · ρ_water"
     },
     {
-      "explanation": "Apply buoyancy equilibrium to the floating iceberg: the weight of the iceberg equals the buoyant force from displaced seawater.",
-      "notations": "ρ₍sea₎ V₍sub₎ g = ρ₍ice₎ V₍ice₎ g"
+      "explanation": "Substitute specific gravities and cancel ρ_water from both sides.",
+      "notations": "SG_sea · ρ_water · V_sub = SG_ice · ρ_water · V_ice\nSG_sea · V_sub = SG_ice · V_ice"
     },
     {
-      "explanation": "Simplify by canceling g and solve for the ratio of submerged volume to total volume.",
-      "notations": "V₍sub₎/V₍ice₎ = ρ₍ice₎/ρ₍sea₎"
+      "explanation": "Define variables with given values from the problem.",
+      "notations": "Given: SG_ice = 0.917, SG_sea = 1.025"
     },
     {
-      "explanation": "Express densities in terms of specific gravities: ρ₍ice₎ = SG₍ice₎ × ρ₍water₎ and ρ₍sea₎ = SG₍sea₎ × ρ₍water₎",
-      "notations": "V₍sub₎/V₍ice₎ = (SG₍ice₎ × ρ₍water₎)/(SG₍sea₎ × ρ₍water₎) = SG₍ice₎/SG₍sea₎"
+      "explanation": "Solve for the ratio of submerged volume to total volume.",
+      "notations": "V_sub/V_ice = SG_ice/SG_sea"
     },
     {
-      "explanation": "Substitute the numerical values for the specific gravities.",
-      "notations": "V₍sub₎/V₍ice₎ = 0.917/1.025"
+      "explanation": "Substitute numerical values into the ratio.",
+      "notations": "V_sub/V_ice = 0.917/1.025"
     },
     {
-      "explanation": "Calculate the fraction submerged.",
-      "notations": "V₍sub₎/V₍ice₎ ≈ 0.895"
+      "explanation": "Calculate the submerged fraction.",
+      "notations": "V_sub/V_ice = 0.895"
     },
     {
-      "explanation": "Calculate the fraction above the surface.",
-      "notations": "V₍above₎/V₍ice₎ = 1 − V₍sub₎/V₍ice₎ = 1 − 0.895 = 0.105"
+      "explanation": "Calculate the fraction above water.",
+      "notations": "V_above/V_ice = 1 − V_sub/V_ice = 1 − 0.895 = 0.105"
     },
     {
       "explanation": "Convert to percentage.",
-      "notations": "Percentage above water = 0.105 × 100% = 10.5%"
+      "notations": "Percentage above = 0.105 × 100% = 10.5%"
     }
-  ]
+  ],
+  "solution": "F_b = W\nρ_sea V_sub g = ρ_ice V_ice g\nρ_sea V_sub = ρ_ice V_ice\nSG_sea · ρ_water · V_sub = SG_ice · ρ_water · V_ice\nSG_sea · V_sub = SG_ice · V_ice\nV_sub/V_ice = SG_ice/SG_sea\nV_sub/V_ice = 0.917/1.025 = 0.895\nV_above/V_ice = 1 − 0.895 = 0.105\nPercentage above = 10.5%"
 }

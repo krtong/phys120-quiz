@@ -27,18 +27,14 @@
   ],
   "correctFormulas": [
     {
-      "name": "Centripetal acceleration",
-      "formula": "a_c = v²/r"
-    },
-    {
-      "name": "Newton's second law",
-      "formula": "F = ma"
+      "name": "Centripetal force",
+      "formula": "F_c = mv²/r"
     }
   ],
   "steps": [
     {
-      "explanation": "We will use Newton's second law F = ma with centripetal acceleration a_c = v²/r for circular motion, along with force component analysis on the banked curve.",
-      "notations": "F = ma, a_c = v²/r"
+      "explanation": "We will use the centripetal force formula for circular motion, along with force component analysis on the banked curve.",
+      "notations": "F_c = mv²/r"
     },
     {
       "explanation": "For part (b), the given values are: r = 50 m, v₍design₎ = 50 km/h, and g = 9.80 m/s².",
@@ -46,31 +42,32 @@
     },
     {
       "explanation": "On a frictionless banked curve, the normal force N has two components: N cosθ balances the car's weight vertically, and N sinθ provides the centripetal force horizontally.",
-      "notations": "N cosθ = mg,  N sinθ = ma_c = m(v²/r)"
+      "notations": "N cosθ = mg,  N sinθ = mv²/r"
     },
     {
       "explanation": "Divide the horizontal force equation by the vertical force equation to eliminate N and m.",
-      "notations": "tanθ = (N sinθ) / (N cosθ) = [m(v²/r)] / (mg) = v² / (rg)"
+      "notations": "tanθ = (N sinθ) / (N cosθ) = (mv²/r) / (mg) = v² / (rg)"
     },
     {
-      "explanation": "This gives the general formula for the banking angle without friction: tanθ = v² / (rg).",
-      "notations": "tanθ = v² / (rg)"
+      "explanation": "This gives the general formula for the banking angle without friction (answer to part a).",
+      "notations": "θ = arctan(v²/(rg))"
     },
     {
       "explanation": "Convert the design speed from km/h to m/s for part (b).",
-      "notations": "v₍design₎ = 50 km/h × (1000 m / km) / (3600 s / h) = 13.9 m/s"
+      "notations": "v₍design₎ = 50 km/h × (1000 m/km) / (3600 s/h) = 13.9 m/s"
     },
     {
       "explanation": "Substitute the numerical values into the banking angle formula.",
-      "notations": "tanθ = (13.9 m/s)² / [(50.0 m)(9.80 m/s²)]"
+      "notations": "tanθ = (13.9 m/s)² / [(50 m)(9.80 m/s²)]"
     },
     {
       "explanation": "Calculate the value of tanθ.",
-      "notations": "tanθ = 193.21 / 490.0 ≈ 0.394"
+      "notations": "tanθ = 193.21 m²/s² / 490 m²/s² = 0.394"
     },
     {
       "explanation": "Take the inverse tangent to find the banking angle.",
       "notations": "θ = arctan(0.394) ≈ 21.5°"
     }
-  ]
+  ],
+  "solution": "F_c = mv²/r\nN cosθ = mg, N sinθ = mv²/r\ntanθ = (N sinθ)/(N cosθ) = (mv²/r)/(mg) = v²/(rg)\nθ = arctan(v²/(rg))\nFor part (b): v = 50 km/h = (50)(1000 m)/(3600 s) = 13.9 m/s\nr = 50 m, g = 9.80 m/s²\ntanθ = (13.9 m/s)²/[(50 m)(9.80 m/s²)] = 193.21/490 = 0.394\nθ = arctan(0.394) ≈ 21.5°"
 }

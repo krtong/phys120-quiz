@@ -60,5 +60,6 @@
       "explanation": "Calculate the beat frequency for the lower notes",
       "notations": "f₍beat,lower₎ = |3.75 Hz| = 3.75 Hz ≈ 3.8 Hz"
     }
-  ]
+  ],
+  "solution": "f₍beat₎ = |f₂ − f₁|\nFor original notes: f₁ = 262 Hz, f₂ = 277 Hz\nf₍beat₎ = |277 Hz − 262 Hz| = 15 Hz\n\nFor two octaves lower: f₁' = 262/4 = 65.5 Hz, f₂' = 277/4 = 69.25 Hz\nf₍beat,lower₎ = |69.25 Hz − 65.5 Hz| = 3.75 Hz ≈ 3.8 Hz"
 }

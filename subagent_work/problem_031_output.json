@@ -31,7 +31,7 @@
   ],
   "correctFormulas": [
     {
-      "name": "Gravitational work",
+      "name": "Work against gravity",
       "formula": "W = mgh"
     },
     {
@@ -68,5 +68,6 @@
       "explanation": "Calculate the time required.",
       "notations": "t = (5.3 × 10⁴)/(1750) s ≈ 30 s"
     }
-  ]
+  ],
+  "solution": "W = mgh\nP = W/t → t = W/P\nGiven: m = 335 kg, h = 16.0 m, g = 9.80 m/s², P = 1750 W\nW = (335 kg)(9.80 m/s²)(16.0 m) = 5.3 × 10⁴ J\nt = W/P = (5.3 × 10⁴ J)/(1750 W) = 30 s"
 }

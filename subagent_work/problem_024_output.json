@@ -33,7 +33,7 @@
       "notations": "A·B = AₓBₓ + AᵧBᵧ + A₍z₎B₍z₎"
     },
     {
-      "explanation": "Identify the components from the given vectors.",
+      "explanation": "Identify the components of each vector from the problem.",
       "notations": "A⃗ = 2.0x² î − 4.0x ĵ + 5.0 k̂, so Aₓ = 2.0x², Aᵧ = −4.0x, A₍z₎ = 5.0\nB⃗ = 11.0 î + 2.5x ĵ, so Bₓ = 11.0, Bᵧ = 2.5x, B₍z₎ = 0"
     },
     {
@@ -42,11 +42,12 @@
     },
     {
       "explanation": "Multiply each pair of components.",
-      "notations": "A·B = 22.0x² + (−10.0x²) + 0"
+      "notations": "A·B = 22.0x² − 10.0x² + 0"
     },
     {
-      "explanation": "Combine like terms to get the final result.",
-      "notations": "A·B = 22.0x² − 10.0x² = 12.0x²"
+      "explanation": "Combine like terms to simplify.",
+      "notations": "A·B = 12.0x²"
     }
-  ]
+  ],
+  "solution": "A·B = AₓBₓ + AᵧBᵧ + A₍z₎B₍z₎\nAₓ = 2.0x², Aᵧ = −4.0x, A₍z₎ = 5.0\nBₓ = 11.0, Bᵧ = 2.5x, B₍z₎ = 0\nA·B = (2.0x²)(11.0) + (−4.0x)(2.5x) + (5.0)(0)\nA·B = 22.0x² − 10.0x² + 0\nA·B = 12.0x²"
 }

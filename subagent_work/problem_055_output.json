@@ -96,5 +96,6 @@
       "explanation": "Both methods yield the same result.",
       "notations": "v ≈ 50 m/s"
     }
-  ]
+  ],
+  "solution": "Approach 1 (Energy Conservation):\nPE₁ + KE₁ = PE₂ + KE₂\nmgh + 0 = 0 + ½mv²\ngh = ½v²\nv = √(2gh)\nv = √(2 × 9.80 m/s² × 125 m)\nv = √(2450 m²/s²) ≈ 49.5 m/s ≈ 50 m/s\n\nApproach 2 (Newton's 2nd Law and Kinematics):\na = g sinθ = 9.80 m/s² × sin(13.0°) = 2.21 m/s²\nL = h / sinθ = 125 m / sin(13.0°) = 556 m\nv² = v₀² + 2aL\nv² = 0 + 2 × 2.21 m/s² × 556 m\nv² = 2458 m²/s²\nv = √(2458 m²/s²) ≈ 49.6 m/s ≈ 50 m/s"
 }

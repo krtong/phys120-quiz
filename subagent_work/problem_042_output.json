@@ -52,5 +52,6 @@
       "explanation": "Calculate the final answer.",
       "notations": "d = √[7.6 × 10⁻⁴⁶ / 5.3 × 10⁻²⁶] = √[1.434 × 10⁻²⁰] ≈ 1.2 × 10⁻¹⁰ m"
     }
-  ]
+  ],
+  "solution": "I = Σmr²\nFor two atoms each with mass M/2 at distance d/2 from axis:\nI = (M/2)(d/2)² + (M/2)(d/2)² = 2(M/2)(d/2)²\nI = 2(M/2)(d²/4) = (1/4)Md²\nGiven: M = 5.3×10⁻²⁶ kg, I = 1.9×10⁻⁴⁶ kg·m²\nSolve for d: d² = 4I/M\nd = √(4I/M)\nd = √[4(1.9×10⁻⁴⁶)/(5.3×10⁻²⁶)]\nd = √[7.6×10⁻⁴⁶/5.3×10⁻²⁶]\nd = √[1.434×10⁻²⁰]\nd ≈ 1.2×10⁻¹⁰ m"
 }

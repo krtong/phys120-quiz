@@ -40,28 +40,24 @@
     },
     {
       "name": "Conservation of energy",
-      "formula": "Q₍lost₎ = Q₍gained₎"
+      "formula": "Q₍released₎ = Q₍absorbed₎"
     }
   ],
   "steps": [
     {
-      "explanation": "We will use conservation of energy where heat lost by steam equals heat gained by ice. The steam condenses and cools (Q = mL + mcΔT), while ice melts and warms (Q = mL + mcΔT).",
-      "notations": "Q₍lost₎ = Q₍gained₎"
+      "explanation": "State the fundamental formulas to be used: heat for phase change, heat for temperature change, and conservation of energy.",
+      "notations": "Q = mL (phase change), Q = mcΔT (temperature change), Q₍released₎ = Q₍absorbed₎"
     },
     {
       "explanation": "Define the given values from the problem.",
-      "notations": "m₍ice₎ = 1.00 kg, T₍ice,initial₎ = 0°C, T₍steam,initial₎ = 100°C, T₍final₎ = 30°C, L₍F₎ = 3.33 × 10⁵ J/kg, L₍V₎ = 2.26 × 10⁶ J/kg, c₍water₎ = 4186 J/(kg·°C)"
+      "notations": "m₍ice₎ = 1.00 kg, T₍initial,ice₎ = 0°C, T₍initial,steam₎ = 100°C, T₍final₎ = 30°C, L₍F₎ = 3.33 × 10⁵ J/kg, L₍V₎ = 2.26 × 10⁶ J/kg, c₍water₎ = 4186 J/(kg·K)"
     },
     {
-      "explanation": "Set up the energy balance. Heat lost by steam condensing and cooling from 100°C to 30°C equals heat gained by ice melting and warming from 0°C to 30°C.",
-      "notations": "m₍steam₎[L₍V₎ + c₍water₎ΔT₍steam₎] = m₍ice₎[L₍F₎ + c₍water₎ΔT₍ice₎]"
+      "explanation": "Set up the energy balance: heat released by steam (condensing and cooling) equals heat absorbed by ice (melting and warming).",
+      "notations": "m₍steam₎[L₍V₎ + c₍water₎(100 − 30)] = m₍ice₎[L₍F₎ + c₍water₎(30 − 0)]"
     },
     {
-      "explanation": "Calculate the temperature changes.",
-      "notations": "ΔT₍steam₎ = 100°C - 30°C = 70°C, ΔT₍ice₎ = 30°C - 0°C = 30°C"
-    },
-    {
-      "explanation": "Substitute the temperature changes into the energy balance equation.",
+      "explanation": "Simplify the temperature changes.",
       "notations": "m₍steam₎[L₍V₎ + c₍water₎(70)] = m₍ice₎[L₍F₎ + c₍water₎(30)]"
     },
     {
@@ -70,15 +66,16 @@
     },
     {
       "explanation": "Substitute the numerical values.",
-      "notations": "m₍steam₎ = (1.00 kg)[3.33 × 10⁵ J/kg + 4186 J/(kg·°C) × 30°C] / [2.26 × 10⁶ J/kg + 4186 J/(kg·°C) × 70°C]"
+      "notations": "m₍steam₎ = (1.00 kg)[3.33 × 10⁵ J/kg + 4186 J/(kg·K) × 30 K] / [2.26 × 10⁶ J/kg + 4186 J/(kg·K) × 70 K]"
     },
     {
       "explanation": "Calculate the numerator and denominator.",
-      "notations": "m₍steam₎ = (1.00 kg)[3.33 × 10⁵ + 1.26 × 10⁵] J/kg / [2.26 × 10⁶ + 2.93 × 10⁵] J/kg = (1.00 kg)[4.59 × 10⁵] / [2.55 × 10⁶]"
+      "notations": "m₍steam₎ = (1.00 kg)[3.33 × 10⁵ + 1.26 × 10⁵] J/kg / [2.26 × 10⁶ + 2.93 × 10⁵] J/kg = (1.00 kg)(4.59 × 10⁵ J/kg) / (2.55 × 10⁶ J/kg)"
     },
     {
-      "explanation": "Simplify to get the final answer.",
-      "notations": "m₍steam₎ ≈ 0.18 kg"
+      "explanation": "Calculate the final answer.",
+      "notations": "m₍steam₎ = 0.18 kg"
     }
-  ]
+  ],
+  "solution": "Q = mL (phase change)\nQ = mcΔT (temperature change)\nQ₍released₎ = Q₍absorbed₎\n\nGiven: m₍ice₎ = 1.00 kg, T₍initial,ice₎ = 0°C, T₍initial,steam₎ = 100°C, T₍final₎ = 30°C\nL₍F₎ = 3.33 × 10⁵ J/kg, L₍V₎ = 2.26 × 10⁶ J/kg, c₍water₎ = 4186 J/(kg·K)\n\nEnergy balance:\nm₍steam₎[L₍V₎ + c₍water₎(100 − 30)] = m₍ice₎[L₍F₎ + c₍water₎(30 − 0)]\nm₍steam₎[L₍V₎ + c₍water₎(70)] = m₍ice₎[L₍F₎ + c₍water₎(30)]\n\nSolve for m₍steam₎:\nm₍steam₎ = m₍ice₎[L₍F₎ + c₍water₎(30)] / [L₍V₎ + c₍water₎(70)]\n\nSubstitute values:\nm₍steam₎ = (1.00)[3.33 × 10⁵ + 4186 × 30] / [2.26 × 10⁶ + 4186 × 70]\nm₍steam₎ = (1.00)[3.33 × 10⁵ + 1.26 × 10⁵] / [2.26 × 10⁶ + 2.93 × 10⁵]\nm₍steam₎ = 4.59 × 10⁵ / 2.55 × 10⁶\nm₍steam₎ = 0.18 kg"
 }

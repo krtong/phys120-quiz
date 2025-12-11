@@ -31,46 +31,51 @@
   ],
   "correctFormulas": [
     {
-      "name": "1D elastic collision (first mass)",
-      "formula": "v₁f = [(m₁ − m₂)/(m₁ + m₂)] v₁ᵢ + [2m₂/(m₁ + m₂)] v₂ᵢ"
+      "name": "Conservation of momentum",
+      "formula": "m₁v₁ᵢ + m₂v₂ᵢ = m₁v₁f + m₂v₂f"
     },
     {
-      "name": "1D elastic collision (second mass)",
-      "formula": "v₂f = [2m₁/(m₁ + m₂)] v₁ᵢ + [(m₂ − m₁)/(m₁ + m₂)] v₂ᵢ"
+      "name": "Conservation of kinetic energy (elastic collision)",
+      "formula": "½m₁v₁ᵢ² + ½m₂v₂ᵢ² = ½m₁v₁f² + ½m₂v₂f²"
     }
   ],
   "steps": [
     {
-      "explanation": "State the formulas to be used for a 1D elastic collision.",
-      "notations": "v₁f = [(m₁ − m₂)/(m₁ + m₂)] v₁ᵢ + [2m₂/(m₁ + m₂)] v₂ᵢ and v₂f = [2m₁/(m₁ + m₂)] v₁ᵢ + [(m₂ − m₁)/(m₁ + m₂)] v₂ᵢ"
+      "explanation": "We will use conservation of momentum and conservation of kinetic energy for an elastic collision.",
+      "notations": "m₁v₁ᵢ + m₂v₂ᵢ = m₁v₁f + m₂v₂f\n½m₁v₁ᵢ² + ½m₂v₂ᵢ² = ½m₁v₁f² + ½m₂v₂f²"
     },
     {
-      "explanation": "Define the variables with values given in the problem.",
+      "explanation": "Define variables from the problem.",
       "notations": "Given: m₁ = 0.440 kg, m₂ = 0.220 kg, v₁ᵢ = 3.80 m/s, v₂ᵢ = 0 m/s"
     },
     {
-      "explanation": "Since v₂ᵢ = 0, the formulas simplify by eliminating the terms containing v₂ᵢ.",
-      "notations": "v₁f = [(m₁ − m₂)/(m₁ + m₂)] v₁ᵢ and v₂f = [2m₁/(m₁ + m₂)] v₁ᵢ"
+      "explanation": "For elastic collisions, these conservation laws can be solved to yield the formulas for final velocities.",
+      "notations": "v₁f = [(m₁ − m₂)/(m₁ + m₂)] v₁ᵢ + [2m₂/(m₁ + m₂)] v₂ᵢ\nv₂f = [2m₁/(m₁ + m₂)] v₁ᵢ + [(m₂ − m₁)/(m₁ + m₂)] v₂ᵢ"
     },
     {
-      "explanation": "Substitute the numerical values into the formula for v₁f.",
-      "notations": "v₁f = [(0.440 kg − 0.220 kg)/(0.440 kg + 0.220 kg)] × 3.80 m/s = [0.220 kg / 0.660 kg] × 3.80 m/s"
+      "explanation": "Since v₂ᵢ = 0, simplify the expressions.",
+      "notations": "v₁f = [(m₁ − m₂)/(m₁ + m₂)] v₁ᵢ\nv₂f = [2m₁/(m₁ + m₂)] v₁ᵢ"
+    },
+    {
+      "explanation": "Substitute the numerical values for ball 1.",
+      "notations": "v₁f = [(0.440 − 0.220)/(0.440 + 0.220)] × 3.80"
     },
     {
       "explanation": "Calculate the final velocity of ball 1.",
-      "notations": "v₁f = (0.333) × 3.80 m/s = 1.27 m/s"
+      "notations": "v₁f = (0.220/0.660) × 3.80 = 0.333 × 3.80 = 1.27 m/s"
     },
     {
-      "explanation": "Substitute the numerical values into the formula for v₂f.",
-      "notations": "v₂f = [2 × 0.440 kg / (0.440 kg + 0.220 kg)] × 3.80 m/s = [0.880 kg / 0.660 kg] × 3.80 m/s"
+      "explanation": "Substitute the numerical values for ball 2.",
+      "notations": "v₂f = [2(0.440)/(0.440 + 0.220)] × 3.80"
     },
     {
       "explanation": "Calculate the final velocity of ball 2.",
-      "notations": "v₂f = (1.333) × 3.80 m/s = 5.07 m/s"
+      "notations": "v₂f = (0.880/0.660) × 3.80 = 1.333 × 3.80 = 5.07 m/s"
     },
     {
-      "explanation": "State the final answers with direction. Both velocities are positive, indicating motion in the +x (east) direction.",
-      "notations": "Ball 1: 1.3 m/s east; Ball 2: 5.1 m/s east"
+      "explanation": "Both velocities are positive, meaning both balls move in the +x (east) direction after collision.",
+      "notations": "Ball 1: 1.3 m/s east\nBall 2: 5.1 m/s east"
     }
-  ]
+  ],
+  "solution": "m₁v₁ᵢ + m₂v₂ᵢ = m₁v₁f + m₂v₂f\n½m₁v₁ᵢ² + ½m₂v₂ᵢ² = ½m₁v₁f² + ½m₂v₂f²\nGiven: m₁ = 0.440 kg, m₂ = 0.220 kg, v₁ᵢ = 3.80 m/s, v₂ᵢ = 0 m/s\nFor elastic collisions: v₁f = [(m₁ − m₂)/(m₁ + m₂)] v₁ᵢ, v₂f = [2m₁/(m₁ + m₂)] v₁ᵢ\nv₁f = [(0.440 − 0.220)/(0.440 + 0.220)] × 3.80\nv₁f = (0.220/0.660) × 3.80 = 1.27 m/s\nv₂f = [2(0.440)/(0.440 + 0.220)] × 3.80\nv₂f = (0.880/0.660) × 3.80 = 5.07 m/s\nBall 1: 1.3 m/s east, Ball 2: 5.1 m/s east"
 }

@@ -92,5 +92,6 @@
       "explanation": "State the final answer for each case.",
       "notations": "(a) Dry pavement: the car will follow the curve. (b) Icy pavement: the car will skid."
     }
-  ]
+  ],
+  "solution": "a_c = v² / r\na₍req₎ = (15.0 m/s)² / (50.0 m) = 225 m²/s² / 50.0 m = 4.50 m/s²\n\nFor circular motion on a flat road, friction provides centripetal force:\nF_friction = m a₍req₎\nF₍friction,max₎ = μₛ N = μₛ mg\n\nNo-skid condition:\nμₛ mg ≥ m a₍req₎\nμₛ ≥ a₍req₎ / g\n\nμ₍s,min₎ = 4.50 m/s² / 9.80 m/s² = 0.459\n\n(a) Dry pavement: μₛ = 0.60 > 0.459 → car follows the curve\n(b) Icy pavement: μₛ = 0.25 < 0.459 → car skids"
 }

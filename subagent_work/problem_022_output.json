@@ -52,5 +52,6 @@
       "explanation": "Calculate the final answer.",
       "notations": "W₍g₎ = 7,683.2 J ≈ 7.7 × 10³ J"
     }
-  ]
+  ],
+  "solution": "W = F Δr cosθ\nF₍g₎ = m g\nGiven: m = 280 kg, g = 9.80 m/s², Δy = 2.80 m, θ = 0°\nW₍g₎ = F₍g₎ Δy cos(0°) = (m g) Δy (1) = m g Δy\nW₍g₎ = (280 kg)(9.80 m/s²)(2.80 m)\nW₍g₎ = 7,683.2 J ≈ 7.7 × 10³ J"
 }

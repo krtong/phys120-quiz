@@ -24,29 +24,38 @@
   "correctFormulas": [
     {
       "name": "Kinetic energy",
-      "formula": "K = ½mv²"
+      "formula": "K = ½ m v²"
     }
   ],
   "steps": [
     {
-      "explanation": "State the fundamental formula to be used for kinetic energy.",
-      "notations": "K = ½mv²"
+      "explanation": "State the fundamental formula for kinetic energy",
+      "notations": "K = ½ m v²"
     },
     {
-      "explanation": "Define the variables with values given in the problem.",
-      "notations": "m = 56,000 kg = 5.60 × 10⁴ kg, v = 95 km/h = 95 × (1000 m)/(3600 s) = 26.4 m/s"
+      "explanation": "Define variables by values given in the problem",
+      "notations": "Given: m = 56,000 kg = 5.60 × 10⁴ kg, v = 95 km/h"
     },
     {
-      "explanation": "Substitute the numerical values into the kinetic energy formula for one car.",
+      "explanation": "Convert speed to SI units",
+      "notations": "v = 95 km/h × (1000 m/km) × (1 h/3600 s) = 26.4 m/s"
+    },
+    {
+      "explanation": "Substitute values into the kinetic energy formula for one car",
       "notations": "K₍each₎ = ½ (5.60 × 10⁴ kg)(26.4 m/s)²"
     },
     {
-      "explanation": "Calculate the kinetic energy of one car.",
-      "notations": "K₍each₎ = ½ (5.60 × 10⁴ kg)(696.96 m²/s²) = ½ (3.903 × 10⁷ kg·m²/s²) ≈ 2.0 × 10⁷ J"
+      "explanation": "Calculate the kinetic energy of one car",
+      "notations": "K₍each₎ = ½ (5.60 × 10⁴ kg)(696.96 m²/s²) = 1.95 × 10⁷ J ≈ 2.0 × 10⁷ J"
     },
     {
-      "explanation": "Calculate the total thermal energy produced. Since both cars had kinetic energy and came to rest, the total kinetic energy lost equals the thermal energy produced.",
-      "notations": "ΔEₜ = 2K₍each₎ = 2(2.0 × 10⁷ J) = 4.0 × 10⁷ J"
+      "explanation": "The total initial kinetic energy of both cars is converted to thermal energy when they come to rest",
+      "notations": "ΔEₜ = 2 K₍each₎"
+    },
+    {
+      "explanation": "Calculate the total thermal energy produced",
+      "notations": "ΔEₜ = 2 × (2.0 × 10⁷ J) = 4.0 × 10⁷ J"
     }
-  ]
+  ],
+  "solution": "K = ½ m v²\nGiven: m = 5.60 × 10⁴ kg, v = 95 km/h = 26.4 m/s\nK₍each₎ = ½ (5.60 × 10⁴ kg)(26.4 m/s)²\nK₍each₎ = ½ (5.60 × 10⁴ kg)(696.96 m²/s²)\nK₍each₎ = 1.95 × 10⁷ J ≈ 2.0 × 10⁷ J\nΔEₜ = 2 K₍each₎ = 2 × (2.0 × 10⁷ J) = 4.0 × 10⁷ J"
 }

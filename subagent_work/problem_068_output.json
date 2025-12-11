@@ -64,5 +64,6 @@
       "explanation": "Calculate the wavelength for 18 MHz.",
       "notations": "λ₃ = 1.906 × 10⁻⁵ m ≈ 1.9 × 10⁻⁵ m"
     }
-  ]
+  ],
+  "solution": "λ = v / f\n\nGiven: v = 343 m/s, f₁ = 20 Hz, f₂ = 20,000 Hz = 2.0 × 10⁴ Hz, f₃ = 18 MHz = 1.8 × 10⁷ Hz\n\n(a) For 20 Hz:\nλ₁ = 343 m/s / 20 Hz = 17.15 m ≈ 17 m\n\nFor 20,000 Hz:\nλ₂ = 343 m/s / (2.0 × 10⁴ Hz) = 1.715 × 10⁻² m ≈ 1.7 cm\n\n(b) For 18 MHz:\nλ₃ = 343 m/s / (1.8 × 10⁷ Hz) = 1.906 × 10⁻⁵ m ≈ 1.9 × 10⁻⁵ m"
 }

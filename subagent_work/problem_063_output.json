@@ -80,5 +80,6 @@
       "explanation": "Calculate the final velocity.",
       "notations": "v = 0.175 m × 57.0 s⁻¹ = 10.0 m/s"
     }
-  ]
+  ],
+  "solution": "F = kx\nk = F/x = 91.0 N / 0.175 m = 520 N/m\n\nEnergy conservation: ½kx² = ½mv²\nkx² = mv²\nv² = kx²/m\nv = x√(k/m)\nv = 0.175 m × √(520 N/m / 0.160 kg)\nv = 0.175 m × √(3250 s⁻²)\nv = 0.175 m × 57.0 s⁻¹\nv = 10.0 m/s"
 }

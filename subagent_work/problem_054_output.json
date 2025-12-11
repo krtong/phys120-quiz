@@ -33,7 +33,7 @@
   "correctFormulas": [
     {
       "name": "Conservation of momentum",
-      "formula": "p_initial = p_final"
+      "formula": "p = mv"
     },
     {
       "name": "Kinetic energy",
@@ -46,40 +46,37 @@
   ],
   "steps": [
     {
-      "explanation": "We will use conservation of momentum for the perfectly inelastic collision, and energy conservation for the pendulum swing.",
-      "notations": "p_initial = p_final and KE = PE"
+      "explanation": "We will use conservation of momentum for the perfectly inelastic collision, then conservation of energy for the swing. The relevant formulas are: p = mv, KE = ½mv², and PE = mgh.",
+      "notations": "p = mv, KE = ½mv², PE = mgh"
     },
     {
-      "explanation": "Define variables: projectile mass m with initial velocity v, pendulum bob mass M, rod length ℓ, combined mass velocity after impact v', and the height the pendulum must rise is 2ℓ (from bottom to top).",
-      "notations": "Given: masses m and M, length ℓ, initial velocity v, gravitational acceleration g"
+      "explanation": "Define the given variables: mass m impacts mass M with velocity v, pendulum rod has length ℓ, and we need the combined mass to swing to height 2ℓ (top of the arc).",
+      "notations": "Given: masses m and M, velocity v, pendulum length ℓ, height change h = 2ℓ"
     },
     {
-      "explanation": "Apply conservation of momentum to the collision. The initial momentum is mv (only the projectile is moving), and the final momentum is (M + m)v' (both masses move together).",
-      "notations": "m v = (M + m) v'"
+      "explanation": "Apply conservation of momentum to the collision. Initial momentum equals final momentum.",
+      "notations": "p_initial = p_final\nmv = (M + m)v'"
     },
     {
-      "explanation": "Solve for the velocity immediately after impact.",
-      "notations": "v' = (m/(M + m)) v"
+      "explanation": "Solve for the velocity v' immediately after impact.",
+      "notations": "v' = mv/(M + m)"
     },
     {
-      "explanation": "For the pendulum to swing over the top, the kinetic energy immediately after impact must be at least equal to the potential energy gained when rising from bottom to top (height change = 2ℓ).",
-      "notations": "½ (M + m) v'² ≥ (M + m) g (2ℓ)"
+      "explanation": "Apply conservation of energy to the swing. The kinetic energy right after impact must be at least equal to the potential energy needed to reach the top (height 2ℓ above the starting point).",
+      "notations": "KE_initial ≥ PE_final\n½(M + m)v'² ≥ (M + m)g(2ℓ)"
     },
     {
-      "explanation": "Simplify by canceling (M + m) from both sides.",
-      "notations": "½ v'² ≥ 2gℓ"
+      "explanation": "Cancel the common factor (M + m) and solve for v'.",
+      "notations": "½v'² ≥ g(2ℓ)\nv'² ≥ 4gℓ\nv' ≥ √(4gℓ) = 2√(gℓ)"
     },
     {
-      "explanation": "Solve for v'.",
-      "notations": "v'² ≥ 4gℓ ⇒ v' ≥ √(4gℓ) = 2√(gℓ)"
+      "explanation": "Substitute the expression for v' from the collision back into the inequality.",
+      "notations": "mv/(M + m) ≥ 2√(gℓ)"
     },
     {
-      "explanation": "Substitute the expression for v' in terms of v from the momentum equation.",
-      "notations": "(m/(M + m)) v ≥ 2√(gℓ)"
-    },
-    {
-      "explanation": "Solve for the minimum initial velocity v.",
+      "explanation": "Solve for the minimum incoming velocity v.",
       "notations": "v ≥ (M + m)/m × 2√(gℓ)"
     }
-  ]
+  ],
+  "solution": "p = mv, KE = ½mv², PE = mgh\n\nCollision (conservation of momentum):\nmv = (M + m)v'\nv' = mv/(M + m)\n\nSwing (conservation of energy):\n½(M + m)v'² ≥ (M + m)g(2ℓ)\n½v'² ≥ 2gℓ\nv'² ≥ 4gℓ\nv' ≥ 2√(gℓ)\n\nSubstitute v':\nmv/(M + m) ≥ 2√(gℓ)\nv ≥ (M + m)/m × 2√(gℓ)"
 }

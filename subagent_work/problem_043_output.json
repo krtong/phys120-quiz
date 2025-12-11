@@ -41,16 +41,16 @@
   ],
   "steps": [
     {
-      "explanation": "We will use the moment of inertia formula for point masses: I = Σ mᵢ rᵢ². For rotation about the y-axis, r is the perpendicular distance from the y-axis (which is x), and for rotation about the x-axis, r is the perpendicular distance from the x-axis (which is y).",
-      "notations": "I = Σ mᵢ rᵢ²"
+      "explanation": "We will use the moment of inertia formula for point masses: I = Σ mᵢ rᵢ². For rotation about the y-axis, r is the perpendicular distance from the y-axis (which is x). For rotation about the x-axis, r is the perpendicular distance from the x-axis (which is y).",
+      "notations": "I₍y₎ = Σ mᵢ xᵢ²\nI₍x₎ = Σ mᵢ yᵢ²"
     },
     {
-      "explanation": "Define the given values from the problem.",
-      "notations": "Given: m = 2.2 kg, M = 3.4 kg. From the figure: the masses are positioned at x = ±0.50 m and x = ±1.00 m from the y-axis, and all masses are at y = ±0.25 m from the x-axis."
+      "explanation": "Define variables by values given in the problem. From the figure, there are 4 point masses: two at x = 0.50 m (one with mass m, one with mass M), and two at x = 1.00 m (one with mass m, one with mass M). All four masses are at y = 0.25 m from the x-axis.",
+      "notations": "Given: m = 2.2 kg, M = 3.4 kg\nPositions: x₁ = 0.50 m, x₂ = 1.00 m, y = 0.25 m"
     },
     {
-      "explanation": "For part (a), calculate the moment of inertia about the y-axis. For the y-axis, the perpendicular distance is x, so we use I₍y₎ = Σ mᵢ xᵢ². The array has masses at two different x positions: x₁ = 0.50 m and x₂ = 1.00 m, each position having both an m and an M.",
-      "notations": "I₍y₎ = Σ mᵢ xᵢ² = m(0.50 m)² + M(0.50 m)² + m(1.00 m)² + M(1.00 m)²"
+      "explanation": "For part (a), calculate the moment of inertia about the y-axis using I₍y₎ = Σ mᵢ xᵢ². Each position has both an m and an M.",
+      "notations": "I₍y₎ = m(0.50 m)² + M(0.50 m)² + m(1.00 m)² + M(1.00 m)²"
     },
     {
       "explanation": "Factor out common terms to simplify.",
@@ -61,7 +61,7 @@
       "notations": "I₍y₎ = (2.2 kg + 3.4 kg)[(0.50 m)² + (1.00 m)²] = (5.6 kg)[(0.50 m)² + (1.00 m)²]"
     },
     {
-      "explanation": "Calculate the squared distances.",
+      "explanation": "Calculate the squared distances and sum them.",
       "notations": "I₍y₎ = (5.6 kg)[(0.25 m²) + (1.00 m²)] = (5.6 kg)(1.25 m²)"
     },
     {
@@ -69,12 +69,12 @@
       "notations": "I₍y₎ = 7.0 kg·m²"
     },
     {
-      "explanation": "For part (b), calculate the moment of inertia about the x-axis. For the x-axis, the perpendicular distance is y, so we use I₍x₎ = Σ mᵢ yᵢ². All four masses are at the same distance y = 0.25 m from the x-axis (two at +0.25 m and two at -0.25 m, but distance squared is the same).",
-      "notations": "I₍x₎ = Σ mᵢ yᵢ² = m(0.25 m)² + M(0.25 m)² + m(0.25 m)² + M(0.25 m)²"
+      "explanation": "For part (b), calculate the moment of inertia about the x-axis using I₍x₎ = Σ mᵢ yᵢ². All four masses are at the same distance y = 0.25 m from the x-axis.",
+      "notations": "I₍x₎ = m(0.25 m)² + M(0.25 m)² + m(0.25 m)² + M(0.25 m)²"
     },
     {
       "explanation": "Factor out the common distance term.",
-      "notations": "I₍x₎ = (2m + 2M)(0.25 m)²"
+      "notations": "I₍x₎ = (2m + 2M)(0.25 m)² = 2(m + M)(0.25 m)²"
     },
     {
       "explanation": "Substitute the numerical values for m and M.",
@@ -89,8 +89,9 @@
       "notations": "I₍x₎ = 0.70 kg·m²"
     },
     {
-      "explanation": "For part (c), compare the two moments of inertia. The larger moment of inertia indicates greater resistance to angular acceleration. Since I₍y₎ = 7.0 kg·m² is much larger than I₍x₎ = 0.70 kg·m², it would be harder to accelerate about the y-axis.",
-      "notations": "I₍y₎ = 7.0 kg·m² ≫ I₍x₎ = 0.70 kg·m². Harder to accelerate about the y-axis."
+      "explanation": "For part (c), compare the two moments of inertia. The larger moment of inertia indicates greater resistance to angular acceleration. Since I₍y₎ is much larger than I₍x₎, it would be harder to accelerate about the y-axis.",
+      "notations": "I₍y₎ = 7.0 kg·m² ≫ I₍x₎ = 0.70 kg·m²\nHarder to accelerate about the y-axis"
     }
-  ]
+  ],
+  "solution": "I = Σ mᵢ rᵢ²\n\nPart (a) - About y-axis:\nI₍y₎ = Σ mᵢ xᵢ²\nGiven: m = 2.2 kg, M = 3.4 kg, x₁ = 0.50 m, x₂ = 1.00 m\nI₍y₎ = m(0.50 m)² + M(0.50 m)² + m(1.00 m)² + M(1.00 m)²\nI₍y₎ = (m + M)[(0.50 m)² + (1.00 m)²]\nI₍y₎ = (2.2 kg + 3.4 kg)[(0.25 m²) + (1.00 m²)]\nI₍y₎ = (5.6 kg)(1.25 m²)\nI₍y₎ = 7.0 kg·m²\n\nPart (b) - About x-axis:\nI₍x₎ = Σ mᵢ yᵢ²\nAll masses at y = 0.25 m\nI₍x₎ = 2(m + M)(0.25 m)²\nI₍x₎ = 2(5.6 kg)(0.0625 m²)\nI₍x₎ = 0.70 kg·m²\n\nPart (c):\nSince I₍y₎ = 7.0 kg·m² ≫ I₍x₎ = 0.70 kg·m², it is harder to accelerate about the y-axis"
 }

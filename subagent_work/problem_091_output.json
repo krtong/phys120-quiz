@@ -29,15 +29,19 @@
   ],
   "steps": [
     {
-      "explanation": "Start with the fundamental work formula where F is the force, d is the displacement, and θ is the angle between the force and displacement vectors.",
+      "explanation": "We will use the fundamental work formula for a constant force.",
       "notations": "W = Fd cosθ"
     },
     {
-      "explanation": "Define the variables from the problem. The mass is m = 260 kg, the gravitational acceleration is g = 9.80 m/s², and the vertical displacement is Δy = 2.80 m. The gravitational force is F = mg acting downward.",
+      "explanation": "Define variables by values given in the problem.",
       "notations": "Given: m = 260 kg, g = 9.80 m/s², Δy = 2.80 m"
     },
     {
-      "explanation": "Since gravity acts downward and the pile driver falls downward, the force and displacement are in the same direction, so θ = 0° and cos(0°) = 1. The force is the gravitational force F = mg.",
+      "explanation": "Since gravity acts downward and the pile driver falls downward, the force and displacement are in the same direction, so θ = 0° and cos(0°) = 1. The gravitational force is F = mg and the displacement is d = Δy.",
+      "notations": "θ = 0°, cos(0°) = 1, F = mg, d = Δy"
+    },
+    {
+      "explanation": "Substitute into the fundamental formula.",
       "notations": "W₍g₎ = (mg)(Δy)cos(0°) = mgΔy"
     },
     {
@@ -45,8 +49,9 @@
       "notations": "W₍g₎ = (260 kg)(9.80 m/s²)(2.80 m)"
     },
     {
-      "explanation": "Calculate the final answer.",
-      "notations": "W₍g₎ = 7,144 J ≈ 7.1 × 10³ J"
+      "explanation": "Calculate the work done by gravity.",
+      "notations": "W₍g₎ = 7,134.4 J ≈ 7.1 × 10³ J"
     }
-  ]
+  ],
+  "solution": "W = Fd cosθ\nGiven: m = 260 kg, g = 9.80 m/s², Δy = 2.80 m\nθ = 0° (force and displacement in same direction), cos(0°) = 1\nF = mg, d = Δy\nW₍g₎ = mgΔy\nW₍g₎ = (260 kg)(9.80 m/s²)(2.80 m)\nW₍g₎ = 7,134.4 J ≈ 7.1 × 10³ J"
 }

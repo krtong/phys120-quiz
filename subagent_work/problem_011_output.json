@@ -72,5 +72,6 @@
       "explanation": "Calculate the final answer.",
       "notations": "SG = 0.855"
     }
-  ]
+  ],
+  "solution": "SG = ρ_f / ρ_w\nρ = m/V, so SG = (m_f/V) / (m_w/V) = m_f / m_w\nGiven: m₍b₎ = 35.00 g, m₍w,total₎ = 98.44 g, m₍f,total₎ = 89.22 g\nm₍w₎ = m₍w,total₎ − m₍b₎ = 98.44 g − 35.00 g = 63.44 g\nm₍f₎ = m₍f,total₎ − m₍b₎ = 89.22 g − 35.00 g = 54.22 g\nSG = m₍f₎ / m₍w₎ = 54.22 g / 63.44 g\nSG = 0.855"
 }

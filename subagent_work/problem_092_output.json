@@ -68,5 +68,6 @@
       "explanation": "Calculate the final answer.",
       "notations": "v = √(157.5/0.085) = √1852.94 ≈ 43 m/s"
     }
-  ]
+  ],
+  "solution": "W = Fd\nW = (105 N)(0.75 m) = 78.75 J\nW = ½mv²\nv = √(2W/m)\nv = √[2(78.75 J)/(0.085 kg)]\nv = √(157.5/0.085)\nv = √1852.94\nv ≈ 43 m/s"
 }

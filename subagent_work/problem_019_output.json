@@ -76,5 +76,6 @@
       "explanation": "Substitute t₁ back into h = ½gt₁² to find the height of the cliff.",
       "notations": "h = ½(9.80 m/s²)(2.60 s)² = ½(9.80)(6.76) ≈ 33.1 m ≈ 3.3 × 10¹ m"
     }
-  ]
+  ],
+  "solution": "h = ½gt₁²\nt₂ = h/v₍sound₎\nt₁ + t₂ = 2.7 s\nSubstitute t₂: t₁ + h/v₍sound₎ = 2.7 s\nSubstitute h = ½gt₁²: t₁ + (½gt₁²)/v₍sound₎ = 2.7 s\nSubstitute g = 9.80 m/s² and v₍sound₎ = 343 m/s:\nt₁ + (½·9.80·t₁²)/343 = 2.7\nt₁ + 0.01429t₁² = 2.7\n0.01429t₁² + t₁ - 2.7 = 0\nSolving the quadratic: t₁ ≈ 2.60 s\nh = ½gt₁² = ½(9.80)(2.60)²\nh = ½(9.80)(6.76)\nh ≈ 33.1 m ≈ 3.3 × 10¹ m"
 }

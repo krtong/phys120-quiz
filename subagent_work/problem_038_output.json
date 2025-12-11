@@ -108,5 +108,6 @@
       "explanation": "Add the two distances to find the total distance covered from the initial speed to rest.",
       "notations": "Δx₍total₎ = s₁ + s₂ = 188 m + 94 m = 282 m ≈ 2.8 × 10² m"
     }
-  ]
+  ],
+  "solution": "Part (a):\nGiven: v₀ = 95 km/h = 26.4 m/s, v₁ = 55 km/h = 15.3 m/s, d = 0.80 m → r = 0.40 m, revolutions = 75\nConvert linear to angular speeds: ω = v/r\nω₀ = 26.4/0.40 = 66.1 rad/s\nω₁ = 15.3/0.40 = 38.2 rad/s\nAngular displacement: θ₇₅ = 75 × 2π = 471.2 rad\nUsing ω₁² = ω₀² + 2αθ₇₅:\n(38.2)² = (66.1)² + 2α(471.2)\n1459 = 4369 + 942.4α\nα = (1459 - 4369)/942.4 = -2910/942.4 = -3.1 rad/s²\n\nPart (b):\nUsing ω = ω₀ + αt with ω = 0, ω₀ = ω₁ = 38.2 rad/s:\n0 = 38.2 + (-3.1)t\nt = 38.2/3.1 = 12.3 s\n\nPart (c):\nDistance during first 75 revolutions: s₁ = rθ₇₅ = 0.40 × 471.2 = 188 m\nFor stopping from 55 km/h, using ω² = ω₀² + 2αθ with ω = 0, ω₀ = 38.2 rad/s:\n0 = (38.2)² + 2(-3.1)θ₂\nθ₂ = 1459/6.2 = 235 rad\ns₂ = rθ₂ = 0.40 × 235 = 94 m\nTotal distance: Δx₍total₎ = 188 + 94 = 282 m ≈ 2.8 × 10² m"
 }

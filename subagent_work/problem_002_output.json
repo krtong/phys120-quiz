@@ -44,13 +44,13 @@
     },
     {
       "name": "Newton's second law for centripetal force",
-      "formula": "F₍c₎ = m a₍c₎"
+      "formula": "F₍c₎ = ma₍c₎"
     }
   ],
   "steps": [
     {
       "explanation": "Identify the fundamental formulas needed: We need to find the linear speed from rotational frequency, then centripetal acceleration, and finally the centripetal force using Newton's second law.",
-      "notations": "v = 2πrf, a₍c₎ = v² / r, F₍c₎ = m a₍c₎"
+      "notations": "v = 2πrf, a₍c₎ = v² / r, F₍c₎ = ma₍c₎"
     },
     {
       "explanation": "Define the variables with values given in the problem.",
@@ -80,5 +80,6 @@
       "explanation": "Calculate the final force.",
       "notations": "F₍c₎ ≈ 14.2 N ≈ 1.4 × 10¹ N"
     }
-  ]
+  ],
+  "solution": "v = 2πrf\nv = 2π(0.600 m)(2.00/s) = 7.54 m/s\na₍c₎ = v²/r\na₍c₎ = (7.54 m/s)² / (0.600 m) = 56.85 m²/s² / 0.600 m = 94.7 m/s²\nF₍c₎ = ma₍c₎\nF₍c₎ = (0.150 kg)(94.7 m/s²) = 14.2 N"
 }

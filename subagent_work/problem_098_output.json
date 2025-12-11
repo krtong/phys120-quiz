@@ -44,5 +44,6 @@
       "explanation": "(c) Conservation of momentum applies to isolated systems where the net external force is zero (or negligible), such as in collisions and explosions. Momentum conservation holds even when kinetic energy is not conserved (inelastic collisions).",
       "notations": "Use momentum conservation for: collisions, explosions, recoil problems when F_external = 0"
     }
-  ]
+  ],
+  "solution": "(a) Kinetic energy: K = ½ m v² (scalar, depends on v²)\nMomentum: p = m v (vector, depends linearly on v)\n\nSimilarities: Both depend on mass and velocity; both are zero when v = 0; both increase with speed; both describe motion of objects.\n\nDifferences: K is scalar with no direction, p is vector with direction; K scales with v², p scales linearly with v; K measures energy (units: J or kg·m²/s²), p measures quantity of motion (units: kg·m/s).\n\n(b) Conservation of energy applies when only conservative forces (gravity, spring forces) do work, or when nonconservative work is negligible. Use for: frictionless motion, gravitational potential energy problems, spring systems, elastic collisions.\n\n(c) Conservation of momentum applies to isolated systems with zero or negligible net external force (F_external = 0). Use for: all types of collisions (elastic and inelastic), explosions, recoil problems, interacting particles. Momentum is conserved even when kinetic energy is not (e.g., inelastic collisions)."
 }

@@ -40,7 +40,7 @@
     },
     {
       "name": "Weight at Earth's surface",
-      "formula": "F₍g₎ = m g₀"
+      "formula": "W = m g₀"
     }
   ],
   "steps": [
@@ -68,5 +68,6 @@
       "explanation": "Perform the calculation to find the gravitational force.",
       "notations": "F₍g₎ = (1.96 × 10⁴ N) / 4 = 4.9 × 10³ N directed toward Earth"
     }
-  ]
+  ],
+  "solution": "F₍g₎ = G m₍s₎ m₍E₎ / r²\nGiven: m₍s₎ = 2000 kg, m₍E₎ = 5.98×10²⁴ kg, R₍E₎ = 6.38 × 10⁶ m, g₀ = 9.80 m/s²\nr = 2R₍E₎ = 2(6.38 × 10⁶ m) = 1.28 × 10⁷ m\nAt r = 2R₍E₎, inverse-square law gives: F₍g₎ = (m₍s₎ g₀)(R₍E₎/r)² = (m₍s₎ g₀)/4\nF₍g₎ = (2.00 × 10³ kg)(9.80 m/s²) / 4\nF₍g₎ = (1.96 × 10⁴ N) / 4\nF₍g₎ = 4.9 × 10³ N"
 }

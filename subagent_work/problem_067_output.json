@@ -64,5 +64,6 @@
       "explanation": "Calculate the distance between adjacent nodes.",
       "notations": "Δx₍node₎ ≈ 0.102 m ≈ 0.10 m"
     }
-  ]
+  ],
+  "solution": "v = fλ\nλ = v / f\nGiven: v = 97 m/s, f = 475 Hz\nλ = 97 m/s / 475 Hz = 0.204 m\nΔx₍node₎ = λ / 2\nΔx₍node₎ = 0.204 m / 2 = 0.102 m ≈ 0.10 m"
 }

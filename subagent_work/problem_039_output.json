@@ -28,7 +28,7 @@
   "correctFormulas": [
     {
       "name": "Torque from perpendicular force",
-      "formula": "τ = r F"
+      "formula": "τ = rF"
     },
     {
       "name": "Net torque",
@@ -37,15 +37,15 @@
   ],
   "steps": [
     {
-      "explanation": "We will use the torque formula τ = r F for each force, and then sum all torques to find the net torque using τ₍net₎ = Στ. We assign counterclockwise torques as positive and clockwise torques as negative.",
-      "notations": "τ = r F, τ₍net₎ = Στ"
+      "explanation": "We will use the torque formula τ = rF for each force, and then sum all torques to find the net torque using τ₍net₎ = Στ. We assign counterclockwise torques as positive and clockwise torques as negative.",
+      "notations": "τ = rF, τ₍net₎ = Στ"
     },
     {
       "explanation": "Define the variables from the problem. From the figure: F₁ = 28 N at r₁ = 0.24 m (counterclockwise), F₂ = 18 N at r₂ = 0.24 m (clockwise), F₃ = 35 N at r₃ = 0.12 m (clockwise), and friction torque τ₍fric₎ = 0.60 N·m opposing the motion.",
       "notations": "F₁ = 28 N, r₁ = 0.24 m\nF₂ = 18 N, r₂ = 0.24 m\nF₃ = 35 N, r₃ = 0.12 m\nτ₍fric₎ = 0.60 N·m"
     },
     {
-      "explanation": "Calculate the torque from each applied force using τ = r F. Torque from F₁ is positive (counterclockwise), while torques from F₂ and F₃ are negative (clockwise).",
+      "explanation": "Calculate the torque from each applied force using τ = rF. Torque from F₁ is positive (counterclockwise), while torques from F₂ and F₃ are negative (clockwise).",
       "notations": "τ₁ = (0.24 m)(28 N) = +6.72 N·m\nτ₂ = −(0.24 m)(18 N) = −4.32 N·m\nτ₃ = −(0.12 m)(35 N) = −4.20 N·m"
     },
     {
@@ -60,5 +60,6 @@
       "explanation": "The negative sign indicates clockwise rotation. The magnitude of the net torque is 1.2 N·m clockwise.",
       "notations": "τ₍net₎ = 1.2 N·m (clockwise)"
     }
-  ]
+  ],
+  "solution": "τ = rF, τ₍net₎ = Στ\nGiven: F₁ = 28 N at r₁ = 0.24 m, F₂ = 18 N at r₂ = 0.24 m, F₃ = 35 N at r₃ = 0.12 m, τ₍fric₎ = 0.60 N·m\nAssign counterclockwise (+), clockwise (−)\nτ₁ = (0.24 m)(28 N) = +6.72 N·m\nτ₂ = −(0.24 m)(18 N) = −4.32 N·m\nτ₃ = −(0.12 m)(35 N) = −4.20 N·m\nΣτ₍applied₎ = 6.72 − 4.32 − 4.20 = −1.8 N·m\nτ₍net₎ = Στ₍applied₎ + τ₍fric₎ = −1.8 N·m + 0.60 N·m = −1.2 N·m\nτ₍net₎ = 1.2 N·m (clockwise)"
 }

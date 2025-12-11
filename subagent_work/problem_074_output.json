@@ -56,5 +56,6 @@
       "explanation": "Calculate the result",
       "notations": "v = √[1.2219 × 10⁻²⁰ J / (1.0 × 10⁻³ kg)] = √(1.2219 × 10⁻¹⁷ m²/s²) ≈ 3.5 × 10⁻⁹ m/s"
     }
-  ]
+  ],
+  "solution": "KE = ½mv² and KE_avg = (3/2)k_B T\nGiven: m = 1.0 g = 1.0 × 10⁻³ kg, T = 22°C = 295 K, k_B = 1.38 × 10⁻²³ J/K\n½mv² = (3/2)k_B T\nv = √(3k_B T / m)\nv = √[3(1.38 × 10⁻²³)(295) / (1.0 × 10⁻³)]\nv = √(1.2219 × 10⁻¹⁷) ≈ 3.5 × 10⁻⁹ m/s"
 }

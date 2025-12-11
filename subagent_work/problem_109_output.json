@@ -28,57 +28,62 @@
   "correctFormulas": [
     {
       "name": "Conservation of momentum",
-      "formula": "m₁v₁ᵢ + m₂v₂ᵢ = m₁v₁f + m₂v₂f"
+      "formula": "Σp_initial = Σp_final"
+    },
+    {
+      "name": "Momentum",
+      "formula": "p = mv"
+    },
+    {
+      "name": "Kinetic energy",
+      "formula": "KE = ½mv²"
     },
     {
       "name": "Conservation of kinetic energy (elastic collision)",
-      "formula": "½m₁v₁ᵢ² + ½m₂v₂ᵢ² = ½m₁v₁f² + ½m₂v₂f²"
+      "formula": "ΣKE_initial = ΣKE_final"
     },
     {
-      "name": "Relative velocity relation for elastic collisions",
-      "formula": "v₁ᵢ - v₂ᵢ = -(v₁f - v₂f)"
+      "name": "Relative velocity rule for elastic 1D collisions",
+      "formula": "v₁ − v₂ = −(v₁' − v₂')"
     }
   ],
   "steps": [
     {
-      "explanation": "Start with the fundamental formulas for elastic collisions. We will use conservation of momentum and the relative velocity relation for elastic collisions.",
-      "notations": "m₁v₁ᵢ + m₂v₂ᵢ = m₁v₁f + m₂v₂f  and  v₁ᵢ - v₂ᵢ = -(v₁f - v₂f)"
+      "explanation": "State the fundamental principles for elastic collisions: conservation of momentum and conservation of kinetic energy, plus the relative velocity rule.",
+      "notations": "Σp_initial = Σp_final\np = mv\nΣKE_initial = ΣKE_final\nKE = ½mv²\nv₍A₎ − v₍B₎ = −(v₍A₎' − v₍B₎')"
     },
     {
-      "explanation": "Define variables. In this problem, both balls have equal mass m, with ball A having initial velocity v₍A₎ (or v₁ᵢ) and ball B having initial velocity v₍B₎ (or v₂ᵢ). We need to find final velocities v₍A₎' (or v₁f) and v₍B₎' (or v₂f).",
-      "notations": "Given: m₁ = m₂ = m, v₁ᵢ = v₍A₎, v₂ᵢ = v₍B₎"
-    },
-    {
-      "explanation": "Substitute the equal masses into the momentum conservation equation.",
+      "explanation": "Apply momentum conservation to the two-ball system with equal masses.",
       "notations": "m v₍A₎ + m v₍B₎ = m v₍A₎' + m v₍B₎'"
     },
     {
-      "explanation": "Simplify by dividing out the common mass m.",
+      "explanation": "Divide through by the common mass m.",
       "notations": "v₍A₎ + v₍B₎ = v₍A₎' + v₍B₎'"
     },
     {
-      "explanation": "Apply the relative velocity relation for elastic collisions.",
-      "notations": "v₍A₎ - v₍B₎ = -(v₍A₎' - v₍B₎')"
+      "explanation": "Apply the relative velocity rule for elastic collisions.",
+      "notations": "v₍A₎ − v₍B₎ = −(v₍A₎' − v₍B₎')\nv₍A₎ − v₍B₎ = −v₍A₎' + v₍B₎'"
     },
     {
-      "explanation": "Solve the system of two equations. Adding the two equations eliminates v₍B₎'.",
-      "notations": "(v₍A₎ + v₍B₎) + (v₍A₎ - v₍B₎) = (v₍A₎' + v₍B₎') - (v₍A₎' - v₍B₎')  →  2v₍A₎ = 2v₍B₎'  →  v₍B₎' = v₍A₎"
+      "explanation": "Solve the system of two equations. Add the momentum equation and the relative velocity equation.",
+      "notations": "(v₍A₎ + v₍B₎) + (v₍A₎ − v₍B₎) = (v₍A₎' + v₍B₎') + (−v₍A₎' + v₍B₎')\n2v₍A₎ = 2v₍B₎'\nv₍B₎' = v₍A₎"
     },
     {
-      "explanation": "Substitute back to find v₍A₎'. Using v₍A₎ + v₍B₎ = v₍A₎' + v₍B₎' with v₍B₎' = v₍A₎.",
-      "notations": "v₍A₎ + v₍B₎ = v₍A₎' + v₍A₎  →  v₍A₎' = v₍B₎"
+      "explanation": "Substitute back into the momentum equation to find v₍A₎'.",
+      "notations": "v₍A₎ + v₍B₎ = v₍A₎' + v₍A₎\nv₍A₎' = v₍B₎"
     },
     {
-      "explanation": "General result for part (a): When two balls of equal mass collide elastically, they exchange velocities.",
-      "notations": "v₍A₎' = v₍B₎  and  v₍B₎' = v₍A₎"
+      "explanation": "Part (a): For general case, the balls exchange velocities.",
+      "notations": "v₍A₎' = v₍B₎\nv₍B₎' = v₍A₎"
     },
     {
-      "explanation": "Special case for part (b): If ball B is initially at rest (v₍B₎ = 0), then the velocities after collision are found by substituting v₍B₎ = 0 into the exchange result.",
-      "notations": "v₍B₎ = 0  →  v₍A₎' = 0  and  v₍B₎' = v₍A₎"
+      "explanation": "Part (b): Special case when ball B is initially at rest (v₍B₎ = 0).",
+      "notations": "v₍B₎ = 0\nv₍A₎' = v₍B₎ = 0\nv₍B₎' = v₍A₎"
     },
     {
-      "explanation": "Result for part (b): Ball A comes to rest and ball B moves forward with ball A's original velocity.",
-      "notations": "v₍A₎' = 0,  v₍B₎' = v₍A₎"
+      "explanation": "Part (b) result: Ball A stops completely and ball B moves with ball A's original velocity.",
+      "notations": "v₍A₎' = 0\nv₍B₎' = v₍A₎"
     }
-  ]
+  ],
+  "solution": "Σp_initial = Σp_final and p = mv\nm v₍A₎ + m v₍B₎ = m v₍A₎' + m v₍B₎'\nDividing by m: v₍A₎ + v₍B₎ = v₍A₎' + v₍B₎'\n\nFor elastic collisions: v₍A₎ − v₍B₎ = −(v₍A₎' − v₍B₎')\nRearranging: v₍A₎ − v₍B₎ = −v₍A₎' + v₍B₎'\n\nAdding the two equations:\n(v₍A₎ + v₍B₎) + (v₍A₎ − v₍B₎) = (v₍A₎' + v₍B₎') + (−v₍A₎' + v₍B₎')\n2v₍A₎ = 2v₍B₎'\nv₍B₎' = v₍A₎\n\nSubstituting back: v₍A₎ + v₍B₎ = v₍A₎' + v₍A₎\nv₍A₎' = v₍B₎\n\n(a) General result: v₍A₎' = v₍B₎, v₍B₎' = v₍A₎ (balls exchange velocities)\n\n(b) When v₍B₎ = 0: v₍A₎' = 0, v₍B₎' = v₍A₎ (ball A stops, ball B moves with A's original speed)"
 }

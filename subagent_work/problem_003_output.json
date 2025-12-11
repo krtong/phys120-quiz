@@ -88,5 +88,6 @@
       "explanation": "Complete the arithmetic to obtain the final answer.",
       "notations": "T₍bottom₎ = (0.150 kg)(43.03 m²/s²) / (1.10 m) + 1.47 N = 5.87 N + 1.47 N ≈ 7.3 N"
     }
-  ]
+  ],
+  "solution": "Part (a):\nF = ma and a₍c₎ = v² / r\nGiven: m = 0.150 kg, r = 1.10 m, g = 9.80 m/s²\nAt top: T₍top₎ + mg = m(v₍top₎² / r)\nFor minimum speed, T₍top₎ = 0:\nmg = m(v₍top₎² / r)\ng = v₍top₎² / r\nv₍top₎,min = √(gr)\nv₍top₎,min = √[(9.80 m/s²)(1.10 m)]\nv₍top₎,min = √(10.78 m²/s²) ≈ 3.28 m/s\n\nPart (b):\nv₍bottom₎ = 2 v₍top₎,min = 2(3.28 m/s) = 6.56 m/s\nAt bottom: T₍bottom₎ − mg = m(v₍bottom₎² / r)\nT₍bottom₎ = m(v₍bottom₎² / r) + mg\nT₍bottom₎ = (0.150 kg)(6.56 m/s)² / (1.10 m) + (0.150 kg)(9.80 m/s²)\nT₍bottom₎ = (0.150 kg)(43.03 m²/s²) / (1.10 m) + 1.47 N\nT₍bottom₎ = 5.87 N + 1.47 N ≈ 7.3 N"
 }

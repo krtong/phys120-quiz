@@ -100,5 +100,6 @@
       "explanation": "Sum the two contributions to get total kinetic energy",
       "notations": "K₍total₎ = K₍daily₎ + K₍yearly₎ ≈ 2.6 × 10²⁹ J + 2.7 × 10³³ J ≈ 2.7 × 10³³ J (orbital term dominates)"
     }
-  ]
+  ],
+  "solution": "Part (a) - Daily rotation:\nK₍daily₎ = ½Iω²\nI = (2/5)M₍E₎R₍E₎² = (2/5)(6.0 × 10²⁴ kg)(6.4 × 10⁶ m)² = 9.83 × 10³⁷ kg·m²\nω₍day₎ = 2π/T₍day₎ = 2π/86400 s = 7.27 × 10⁻⁵ rad/s\nK₍daily₎ = ½(9.83 × 10³⁷ kg·m²)(7.27 × 10⁻⁵ rad/s)²\nK₍daily₎ = 2.6 × 10²⁹ J\n\nPart (b) - Yearly revolution:\nK₍yearly₎ = ½M₍E₎v²\nv = ωR = ω₍year₎R₍orb₎\nω₍year₎ = 2π/T₍year₎ = 2π/(3.156 × 10⁷ s) = 1.99 × 10⁻⁷ rad/s\nv₍orb₎ = (1.99 × 10⁻⁷ rad/s)(1.5 × 10¹¹ m) = 2.99 × 10⁴ m/s\nK₍yearly₎ = ½(6.0 × 10²⁴ kg)(2.99 × 10⁴ m/s)²\nK₍yearly₎ = 2.7 × 10³³ J\n\nTotal:\nK₍total₎ = K₍daily₎ + K₍yearly₎ = 2.6 × 10²⁹ J + 2.7 × 10³³ J ≈ 2.7 × 10³³ J"
 }

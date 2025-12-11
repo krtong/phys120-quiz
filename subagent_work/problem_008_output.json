@@ -25,36 +25,37 @@
       "notations": "θ₍rad₎ = θ₍deg₎ × π / 180°"
     },
     {
-      "explanation": "Part (a): Given θ₍deg₎ = 60.0°",
+      "explanation": "Part (a): Given angle in degrees.",
       "notations": "θ₍deg,a₎ = 60.0°"
     },
     {
-      "explanation": "Substitute the value into the conversion formula.",
+      "explanation": "Part (a): Substitute the value into the conversion formula.",
       "notations": "θ₍rad,a₎ = 60.0° × π / 180°"
     },
     {
-      "explanation": "Simplify the fraction: 60/180 = 1/3",
-      "notations": "θ₍rad,a₎ = (1/3)π rad"
+      "explanation": "Part (a): Simplify the fraction.",
+      "notations": "θ₍rad,a₎ = 60/180 × π = 1/3 × π = π/3 rad"
     },
     {
-      "explanation": "Evaluate numerically.",
+      "explanation": "Part (a): Express as decimal.",
       "notations": "θ₍rad,a₎ = π/3 ≈ 1.05 rad"
     },
     {
-      "explanation": "Part (b): Given θ₍deg₎ = 445°",
+      "explanation": "Part (b): Given angle in degrees.",
       "notations": "θ₍deg,b₎ = 445°"
     },
     {
-      "explanation": "Substitute the value into the conversion formula.",
+      "explanation": "Part (b): Substitute the value into the conversion formula.",
       "notations": "θ₍rad,b₎ = 445° × π / 180°"
     },
     {
-      "explanation": "Simplify the fraction: 445/180 = 89/36",
-      "notations": "θ₍rad,b₎ = (89/36)π rad"
+      "explanation": "Part (b): Simplify the fraction.",
+      "notations": "θ₍rad,b₎ = 445/180 × π = 89/36 × π = 89π/36 rad"
     },
     {
-      "explanation": "Evaluate numerically.",
-      "notations": "θ₍rad,b₎ = (89/36)π ≈ 7.77 rad"
+      "explanation": "Part (b): Express as decimal.",
+      "notations": "θ₍rad,b₎ = 89π/36 ≈ 7.77 rad"
     }
-  ]
+  ],
+  "solution": "θ₍rad₎ = θ₍deg₎ × π / 180°\n\nPart (a):\nθ₍rad,a₎ = 60.0° × π / 180°\nθ₍rad,a₎ = 60/180 × π = 1/3 × π = π/3 rad\nθ₍rad,a₎ ≈ 1.05 rad\n\nPart (b):\nθ₍rad,b₎ = 445° × π / 180°\nθ₍rad,b₎ = 445/180 × π = 89/36 × π = 89π/36 rad\nθ₍rad,b₎ ≈ 7.77 rad"
 }

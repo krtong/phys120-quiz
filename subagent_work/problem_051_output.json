@@ -68,5 +68,6 @@
       "explanation": "Substitute the numerical value for ωᵢ.",
       "notations": "ω₍f₎ = (3/5)(3.3 rev/s) = 1.98 rev/s ≈ 2.0 rev/s"
     }
-  ]
+  ],
+  "solution": "L_initial = L_final\nI₍disk₎ωᵢ = (I₍disk₎ + I₍rod₎)ω₍f₎\nI₍disk₎ = ½MR²\nI₍rod₎ = (1/12)ML² = (1/12)M(2R)² = (1/3)MR²\nω₍f₎ = ωᵢ[I₍disk₎/(I₍disk₎ + I₍rod₎)]\nω₍f₎ = ωᵢ[(½MR²)/(½MR² + (1/3)MR²)]\nω₍f₎ = ωᵢ[(½)/(½ + 1/3)]\nω₍f₎ = ωᵢ[(3/6)/(5/6)]\nω₍f₎ = (3/5)ωᵢ\nω₍f₎ = (3/5)(3.3 rev/s) = 2.0 rev/s"
 }

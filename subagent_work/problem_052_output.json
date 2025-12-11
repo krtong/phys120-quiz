@@ -40,49 +40,46 @@
     },
     {
       "name": "Moment of inertia for point mass",
-      "formula": "I = mR²"
+      "formula": "I = mr²"
     },
     {
       "name": "Relationship between linear and angular velocity",
-      "formula": "v = ωR"
+      "formula": "v = ωr"
     }
   ],
   "steps": [
     {
-      "explanation": "State the fundamental formulas and approach. We will use conservation of angular momentum: L_initial = L_final. Since the system starts at rest, L_initial = 0. The final angular momentum has contributions from both the turntable and the person.",
-      "notations": "L_initial = L_final → 0 = L_turntable + L_person"
+      "explanation": "State the fundamental formulas we will use",
+      "notations": "We will use conservation of angular momentum: L_initial = L_final, where L = Iω for rotating objects. For the person, we treat them as a point mass: I = mr². The person's angular velocity relates to their linear speed: v = ωr."
     },
     {
-      "explanation": "Express the angular momenta using L = Iω. The turntable has L = I₍T₎ω₍T₎ and the person (treated as a point mass) has L = I₍P₎ω₍P₎ where I₍P₎ = mR².",
-      "notations": "0 = I₍T₎ω₍T₎ + mR²ω₍P₎"
+      "explanation": "Define variables with values given in the problem",
+      "notations": "Given: m = 65 kg, diameter = 5.5 m so R = 2.75 m, I₍T₎ = 1850 kg·m², v₍rel₎ = 4.0 m/s (person's speed relative to turntable)"
     },
     {
-      "explanation": "Define the given values from the problem.",
-      "notations": "m = 65 kg, diameter = 5.5 m so R = 2.75 m, I₍T₎ = 1850 kg·m², v₍rel₎ = 4.0 m/s"
+      "explanation": "Apply conservation of angular momentum to this system",
+      "notations": "Initially at rest: L_initial = 0. Final state: L_final = I₍T₎ω₍T₎ + I₍P₎ω₍P₎ where I₍P₎ = mR². Therefore: 0 = I₍T₎ω₍T₎ + mR²ω₍P₎"
     },
     {
-      "explanation": "Find the person's angular velocity relative to the ground. The person runs at v₍rel₎ relative to the turntable. Using v = ωR, the person's speed relative to ground is v₍ground₎ = v₍rel₎ + Rω₍T₎, so ω₍P₎ = v₍ground₎/R = (v₍rel₎ + Rω₍T₎)/R.",
-      "notations": "ω₍P₎ = (v₍rel₎ + Rω₍T₎)/R"
+      "explanation": "Express the person's angular velocity relative to the ground",
+      "notations": "The person runs at v₍rel₎ relative to the turntable. Relative to ground: v₍ground₎ = v₍rel₎ + Rω₍T₎. Thus: ω₍P₎ = v₍ground₎/R = (v₍rel₎ + Rω₍T₎)/R"
     },
     {
-      "explanation": "Substitute the expression for ω₍P₎ into the conservation equation.",
-      "notations": "0 = I₍T₎ω₍T₎ + mR²[(v₍rel₎ + Rω₍T₎)/R] → 0 = I₍T₎ω₍T₎ + mR(v₍rel₎ + Rω₍T₎)"
+      "explanation": "Substitute ω₍P₎ into the momentum equation and solve for ω₍T₎",
+      "notations": "0 = I₍T₎ω₍T₎ + mR²[(v₍rel₎ + Rω₍T₎)/R] → 0 = I₍T₎ω₍T₎ + mR(v₍rel₎ + Rω₍T₎) → 0 = I₍T₎ω₍T₎ + mRv₍rel₎ + mR²ω₍T₎ → ω₍T₎(I₍T₎ + mR²) = -mRv₍rel₎ → ω₍T₎ = -mRv₍rel₎/(I₍T₎ + mR²)"
     },
     {
-      "explanation": "Expand and solve for ω₍T₎.",
-      "notations": "0 = I₍T₎ω₍T₎ + mRv₍rel₎ + mR²ω₍T₎ → 0 = (I₍T₎ + mR²)ω₍T₎ + mRv₍rel₎ → ω₍T₎ = −(mRv₍rel₎)/(I₍T₎ + mR²)"
+      "explanation": "Substitute numerical values into the formula",
+      "notations": "ω₍T₎ = -[(65 kg)(2.75 m)(4.0 m/s)] / [1850 kg·m² + (65 kg)(2.75 m)²]"
     },
     {
-      "explanation": "Substitute the numerical values.",
-      "notations": "ω₍T₎ = −[(65 kg)(2.75 m)(4.0 m/s)] / [1850 kg·m² + (65 kg)(2.75 m)²]"
+      "explanation": "Calculate the denominator and numerator",
+      "notations": "Numerator: (65)(2.75)(4.0) = 715 kg·m²/s. Denominator: 1850 + 65(7.5625) = 1850 + 491.56 = 2341.56 kg·m²"
     },
     {
-      "explanation": "Calculate the result.",
-      "notations": "ω₍T₎ = −[715 kg·m²/s] / [1850 kg·m² + 491.4 kg·m²] = −715 / 2341.4 ≈ −0.31 rad/s"
-    },
-    {
-      "explanation": "Interpret the result. The negative sign indicates the turntable rotates in the opposite direction to the person's motion.",
-      "notations": "ω₍T₎ ≈ −0.31 rad/s (opposite the runner)"
+      "explanation": "Complete the calculation",
+      "notations": "ω₍T₎ = -715/2341.56 ≈ -0.31 rad/s. The negative sign indicates the turntable rotates in the opposite direction to the person."
     }
-  ]
+  ],
+  "solution": "L_initial = L_final\n0 = I₍T₎ω₍T₎ + mR²ω₍P₎\nω₍P₎ = (v₍rel₎ + Rω₍T₎)/R\n0 = I₍T₎ω₍T₎ + mR(v₍rel₎ + Rω₍T₎)\n0 = I₍T₎ω₍T₎ + mRv₍rel₎ + mR²ω₍T₎\nω₍T₎(I₍T₎ + mR²) = -mRv₍rel₎\nω₍T₎ = -mRv₍rel₎/(I₍T₎ + mR²)\nGiven: m = 65 kg, R = 2.75 m, I₍T₎ = 1850 kg·m², v₍rel₎ = 4.0 m/s\nω₍T₎ = -[(65)(2.75)(4.0)] / [1850 + (65)(2.75)²]\nω₍T₎ = -715 / [1850 + 491.56]\nω₍T₎ = -715 / 2341.56\nω₍T₎ ≈ -0.31 rad/s"
 }

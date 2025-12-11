@@ -33,28 +33,33 @@
   ],
   "steps": [
     {
-      "explanation": "Start with the ideal gas law in microscopic form",
+      "explanation": "We will use the ideal gas law in microscopic form to find the number of molecules.",
       "notations": "P V = N k₍B₎ T"
     },
     {
-      "explanation": "Define the variables from the problem",
+      "explanation": "Define the given values from the problem.",
       "notations": "P = 1.0 × 10⁻¹² N/m², T = 0°C = 273 K, V = 1 cm³ = 1.0 × 10⁻⁶ m³, k₍B₎ = 1.38 × 10⁻²³ J/K"
     },
     {
-      "explanation": "Solve for N by rearranging the ideal gas law",
+      "explanation": "Solve the ideal gas law for N, the number of molecules.",
       "notations": "N = P V / (k₍B₎ T)"
     },
     {
-      "explanation": "Substitute the numerical values into the formula",
-      "notations": "N = (1.0 × 10⁻¹² N/m²)(1.0 × 10⁻⁶ m³) / [(1.38 × 10⁻²³ J/K)(273 K)]"
+      "explanation": "Substitute the numerical values into the equation.",
+      "notations": "N = (1.0 × 10⁻¹²)(1.0 × 10⁻⁶) / [(1.38 × 10⁻²³)(273)]"
     },
     {
-      "explanation": "Calculate the numerator and denominator",
-      "notations": "N = (1.0 × 10⁻¹⁸ N·m) / (3.77 × 10⁻²¹ J)"
+      "explanation": "Calculate the denominator.",
+      "notations": "k₍B₎ T = (1.38 × 10⁻²³)(273) = 3.77 × 10⁻²¹ J"
     },
     {
-      "explanation": "Complete the calculation to find the number of molecules",
-      "notations": "N = (1.0 × 10⁻¹⁸) / (3.77 × 10⁻²¹) ≈ 2.65 × 10² ≈ 3.0 × 10² molecules/cm³"
+      "explanation": "Calculate the numerator and divide.",
+      "notations": "N = 1.0 × 10⁻¹⁸ / 3.77 × 10⁻²¹ ≈ 2.65 × 10² ≈ 3.0 × 10² molecules"
+    },
+    {
+      "explanation": "Therefore, there are approximately 300 molecules per cubic centimeter at this pressure.",
+      "notations": "N ≈ 300 molecules/cm³"
     }
-  ]
+  ],
+  "solution": "P V = N k₍B₎ T\nN = P V / (k₍B₎ T)\nGiven: P = 1.0 × 10⁻¹² N/m², V = 1.0 × 10⁻⁶ m³, T = 273 K, k₍B₎ = 1.38 × 10⁻²³ J/K\nN = (1.0 × 10⁻¹²)(1.0 × 10⁻⁶) / [(1.38 × 10⁻²³)(273)]\nN = 1.0 × 10⁻¹⁸ / (3.77 × 10⁻²¹)\nN ≈ 2.65 × 10² ≈ 3.0 × 10² molecules\nN ≈ 300 molecules/cm³"
 }

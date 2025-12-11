@@ -35,50 +35,47 @@
   ],
   "correctFormulas": [
     {
-      "name": "Heat transfer",
+      "name": "Heat energy",
       "formula": "Q = mcΔT"
     },
     {
-      "name": "Power",
+      "name": "Power-energy-time relation",
       "formula": "P = Q/t"
     }
   ],
   "steps": [
     {
-      "explanation": "We will use the heat transfer formula Q = mcΔT and the power formula P = Q/t.",
-      "notations": "Q = mcΔT and P = Q/t"
+      "explanation": "State the fundamental formulas to be used",
+      "notations": "We will use Q = mcΔT for heat energy and P = Q/t to relate power, energy, and time. Since we have two objects (aluminum and water) being heated, the total heat is Q₍total₎ = Q₍Al₎ + Q₍w₎ = m₍Al₎c₍Al₎ΔT + m₍w₎c₍w₎ΔT"
     },
     {
-      "explanation": "Define the given values from the problem.",
-      "notations": "m₍Al₎ = 280 g = 0.280 kg, c₍Al₎ = 900 J/(kg·°C), m₍w₎ = 0.75 L = 0.75 kg, c₍w₎ = 4186 J/(kg·°C), T₍initial₎ = 11°C, T₍final₎ = 100°C, P = 750 W"
+      "explanation": "Define variables with given values from the problem",
+      "notations": "Given: m₍Al₎ = 280 g = 0.280 kg, c₍Al₎ = 900 J/(kg·°C), m₍w₎ = 0.75 L = 0.75 kg, c₍w₎ = 4186 J/(kg·°C), T₍initial₎ = 11°C, T₍final₎ = 100°C (boiling), ΔT = 100°C - 11°C = 89°C, P = 750 W"
     },
     {
-      "explanation": "Calculate the temperature change.",
-      "notations": "ΔT = T₍final₎ - T₍initial₎ = 100°C - 11°C = 89°C"
+      "explanation": "Calculate the total heat energy required",
+      "notations": "Q₍total₎ = m₍Al₎c₍Al₎ΔT + m₍w₎c₍w₎ΔT = (m₍Al₎c₍Al₎ + m₍w₎c₍w₎)ΔT"
     },
     {
-      "explanation": "Calculate the total heat required by adding the heat needed for both the aluminum and the water. Since both materials undergo the same temperature change, we calculate Q for each separately and add them.",
-      "notations": "Q₍total₎ = Q₍Al₎ + Q₍w₎ = m₍Al₎c₍Al₎ΔT + m₍w₎c₍w₎ΔT = (m₍Al₎c₍Al₎ + m₍w₎c₍w₎)ΔT"
+      "explanation": "Substitute numerical values into the heat formula",
+      "notations": "Q₍total₎ = [(0.280 kg)(900 J/(kg·°C)) + (0.75 kg)(4186 J/(kg·°C))](89°C)"
     },
     {
-      "explanation": "Substitute the numerical values into the heat equation.",
-      "notations": "Q = [(0.280 kg)(900 J/(kg·°C)) + (0.75 kg)(4186 J/(kg·°C))] × 89°C"
+      "explanation": "Perform the calculation for total heat",
+      "notations": "Q₍total₎ = [252 J/°C + 3139.5 J/°C](89°C) = (3391.5 J/°C)(89°C) = 3.0 × 10⁵ J"
     },
     {
-      "explanation": "Calculate the total heat required.",
-      "notations": "Q = [252 J/°C + 3139.5 J/°C] × 89°C = (3391.5 J/°C) × 89°C ≈ 3.0 × 10⁵ J"
+      "explanation": "Use the power-time relation to find the time",
+      "notations": "From P = Q/t, we get t = Q/P"
     },
     {
-      "explanation": "Use the power formula P = Q/t, rearranged to solve for time: t = Q/P.",
-      "notations": "t = Q/P = (3.0 × 10⁵ J)/(750 W)"
+      "explanation": "Substitute values and calculate the time",
+      "notations": "t = (3.0 × 10⁵ J)/(750 W) = (3.0 × 10⁵ J)/(750 J/s) = 4.0 × 10² s"
     },
     {
-      "explanation": "Calculate the time in seconds.",
-      "notations": "t = 3.0 × 10⁵/750 = 4.0 × 10² s"
-    },
-    {
-      "explanation": "Convert the time to minutes.",
+      "explanation": "Convert to minutes for final answer",
       "notations": "t = 4.0 × 10² s × (1 min/60 s) ≈ 6.7 min"
     }
-  ]
+  ],
+  "solution": "Q = mcΔT\nP = Q/t\nQ₍total₎ = m₍Al₎c₍Al₎ΔT + m₍w₎c₍w₎ΔT = (m₍Al₎c₍Al₎ + m₍w₎c₍w₎)ΔT\nGiven: m₍Al₎ = 0.280 kg, c₍Al₎ = 900 J/(kg·°C), m₍w₎ = 0.75 kg, c₍w₎ = 4186 J/(kg·°C), ΔT = 89°C, P = 750 W\nQ₍total₎ = [(0.280)(900) + (0.75)(4186)](89)\nQ₍total₎ = [252 + 3139.5](89) = (3391.5)(89) = 3.0 × 10⁵ J\nt = Q/P = (3.0 × 10⁵ J)/(750 W) = 4.0 × 10² s ≈ 6.7 min"
 }

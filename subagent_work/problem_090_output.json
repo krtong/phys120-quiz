@@ -49,40 +49,37 @@
   ],
   "steps": [
     {
-      "explanation": "We will use the centripetal force formula F_c = m r ω² and the angular speed relation ω = 2πf.",
-      "notations": "F_c = m r ω²; ω = 2πf"
+      "explanation": "State the fundamental formulas to be used",
+      "notations": "We will use the centripetal force formula: F_c = m r ω² and the angular speed relation: ω = 2πf"
     },
     {
-      "explanation": "Given: Two masses m₍A₎ (inner) and m₍B₎ (outer) rotating at frequency f, at radii r₍A₎ and r₍B₎ respectively.",
-      "notations": "m₍A₎, m₍B₎, r₍A₎, r₍B₎, f"
+      "explanation": "Define variables by values given in the problem",
+      "notations": "Given: m₍A₎ (inner mass), m₍B₎ (outer mass), r₍A₎ (radius of inner mass), r₍B₎ (radius of outer mass), f (rotation frequency)"
     },
     {
-      "explanation": "Convert frequency to angular speed.",
+      "explanation": "Express angular speed in terms of frequency",
       "notations": "ω = 2πf"
     },
     {
-      "explanation": "For the outer mass m₍B₎: The only horizontal force is the tension T₍outer₎ pulling it inward. This tension must provide the centripetal force.",
-      "notations": "F_c = m₍B₎ r₍B₎ ω²"
+      "explanation": "Apply centripetal force formula to the outer mass m₍B₎",
+      "notations": "For mass m₍B₎ at radius r₍B₎: The only force providing centripetal acceleration is T₍outer₎, so T₍outer₎ = m₍B₎ r₍B₎ ω²"
     },
     {
-      "explanation": "Apply Newton's second law to the outer mass.",
-      "notations": "T₍outer₎ = m₍B₎ r₍B₎ ω²"
+      "explanation": "Apply Newton's second law to the inner mass m₍A₎",
+      "notations": "For mass m₍A₎ at radius r₍A₎: The net inward force is T₍inner₎ − T₍outer₎ (inner cord pulls inward, outer cord pulls outward), so T₍inner₎ − T₍outer₎ = m₍A₎ r₍A₎ ω²"
     },
     {
-      "explanation": "For the inner mass m₍A₎: Two tensions act on it - T₍inner₎ pulls inward (toward post) and T₍outer₎ pulls outward (from the outer cord). The net inward force must provide the centripetal force.",
-      "notations": "F_c = m₍A₎ r₍A₎ ω²"
+      "explanation": "Solve for T₍inner₎ by adding T₍outer₎ to both sides",
+      "notations": "T₍inner₎ = m₍A₎ r₍A₎ ω² + T₍outer₎"
     },
     {
-      "explanation": "Apply Newton's second law to the inner mass. The net inward force is T₍inner₎ − T₍outer₎.",
-      "notations": "T₍inner₎ − T₍outer₎ = m₍A₎ r₍A₎ ω²"
+      "explanation": "Substitute the expression for T₍outer₎ into the equation for T₍inner₎",
+      "notations": "T₍inner₎ = m₍A₎ r₍A₎ ω² + m₍B₎ r₍B₎ ω²"
     },
     {
-      "explanation": "Solve for T₍inner₎ by substituting the expression for T₍outer₎.",
-      "notations": "T₍inner₎ = m₍A₎ r₍A₎ ω² + T₍outer₎ = m₍A₎ r₍A₎ ω² + m₍B₎ r₍B₎ ω²"
-    },
-    {
-      "explanation": "Final expressions for the tensions in terms of the given variables.",
-      "notations": "T₍outer₎ = m₍B₎ r₍B₎ ω² = m₍B₎ r₍B₎ (2πf)²; T₍inner₎ = m₍A₎ r₍A₎ ω² + m₍B₎ r₍B₎ ω² = (m₍A₎ r₍A₎ + m₍B₎ r₍B₎)(2πf)²"
+      "explanation": "Express final answers in terms of frequency f",
+      "notations": "T₍outer₎ = m₍B₎ r₍B₎ (2πf)² = 4π²m₍B₎ r₍B₎ f²; T₍inner₎ = (m₍A₎ r₍A₎ + m₍B₎ r₍B₎)(2πf)² = 4π²(m₍A₎ r₍A₎ + m₍B₎ r₍B₎)f²"
     }
-  ]
+  ],
+  "solution": "F_c = m r ω²\nω = 2πf\n\nFor outer mass m₍B₎:\nT₍outer₎ = m₍B₎ r₍B₎ ω²\nT₍outer₎ = m₍B₎ r₍B₎ (2πf)²\nT₍outer₎ = 4π²m₍B₎ r₍B₎ f²\n\nFor inner mass m₍A₎:\nT₍inner₎ − T₍outer₎ = m₍A₎ r₍A₎ ω²\nT₍inner₎ = m₍A₎ r₍A₎ ω² + T₍outer₎\nT₍inner₎ = m₍A₎ r₍A₎ ω² + m₍B₎ r₍B₎ ω²\nT₍inner₎ = (m₍A₎ r₍A₎ + m₍B₎ r₍B₎)ω²\nT₍inner₎ = (m₍A₎ r₍A₎ + m₍B₎ r₍B₎)(2πf)²\nT₍inner₎ = 4π²(m₍A₎ r₍A₎ + m₍B₎ r₍B₎)f²"
 }

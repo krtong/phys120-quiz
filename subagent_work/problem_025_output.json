@@ -60,5 +60,6 @@
       "explanation": "Calculate the work required.",
       "notations": "W = −½ (9.11 × 10⁻³¹)(1.96 × 10¹²) J = −8.9 × 10⁻¹⁹ J"
     }
-  ]
+  ],
+  "solution": "W = ΔK = K₍f₎ − Kᵢ\nK = ½mv²\nGiven: m = 9.11 × 10⁻³¹ kg, vᵢ = 1.40 × 10⁶ m/s, v₍f₎ = 0 m/s\nW = ½m(v₍f₎)² − ½m(vᵢ)² = 0 − ½m(vᵢ)² = −½m(vᵢ)²\nW = −½ (9.11 × 10⁻³¹ kg)(1.40 × 10⁶ m/s)²\nW = −½ (9.11 × 10⁻³¹)(1.96 × 10¹²) kg·m²/s²\nW = −8.9 × 10⁻¹⁹ J"
 }

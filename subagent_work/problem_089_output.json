@@ -68,5 +68,6 @@
       "explanation": "Take the square root to obtain the final answer.",
       "notations": "v = √(Rg tanθ)"
     }
-  ]
+  ],
+  "solution": "ΣF = ma,   a_c = v²/R\nVertical: N cosθ = mg\nHorizontal: N sinθ = m(v²/R)\nDivide horizontal by vertical:\n(N sinθ)/(N cosθ) = [m(v²/R)]/(mg)\ntanθ = v²/(Rg)\nv² = Rg tanθ\nv = √(Rg tanθ)"
 }

@@ -37,28 +37,25 @@
   ],
   "steps": [
     {
-      "explanation": "We will use the work formula for a constant force in the direction of motion: W = Fd",
-      "notations": "W₍mech₎ = F d"
+      "explanation": "We will use the work formula for a constant force parallel to displacement",
+      "notations": "W = Fd"
     },
     {
-      "explanation": "Given values from the problem",
+      "explanation": "Define the given values from the problem",
       "notations": "L = 20 m, W = 10 m, b = 50 cm = 0.50 m, F = 15 N"
     },
     {
-      "explanation": "Calculate the total distance pushed. To mow the entire lawn area with a mower of width b, we need to make passes that cover the total area.",
-      "notations": "d = (L × W) / b"
-    },
-    {
-      "explanation": "Substitute the numerical values to find the distance",
-      "notations": "d = (20 m × 10 m) / 0.50 m = 200 m² / 0.50 m = 400 m"
+      "explanation": "Calculate the total distance traveled by finding how many passes are needed to cover the lawn area",
+      "notations": "d = (L × W) / b = (20 m × 10 m) / 0.50 m = 200 m² / 0.50 m = 400 m"
     },
     {
       "explanation": "Substitute the force and distance into the work formula",
-      "notations": "W₍mech₎ = F × d = 15 N × 400 m"
+      "notations": "W = (15 N)(400 m)"
     },
     {
-      "explanation": "Calculate the final result",
-      "notations": "W₍mech₎ = 6000 J = 6.0 × 10³ J"
+      "explanation": "Calculate the final answer",
+      "notations": "W = 6000 J = 6.0 × 10³ J"
     }
-  ]
+  ],
+  "solution": "W = Fd\nGiven: L = 20 m, W = 10 m, b = 0.50 m, F = 15 N\nd = (L × W) / b = (20 m × 10 m) / 0.50 m = 400 m\nW = (15 N)(400 m)\nW = 6000 J = 6.0 × 10³ J"
 }

@@ -48,5 +48,6 @@
       "explanation": "Multiply by 2/5 to get the final answer",
       "notations": "I = (2/5)(4.535 kg·m²) = 1.8 kg·m²"
     }
-  ]
+  ],
+  "solution": "I = (2/5) M R²\nGiven: M = 10.8 kg, R = 0.648 m\nI = (2/5)(10.8 kg)(0.648 m)²\nI = (2/5)(10.8 kg)(0.4199 m²)\nI = (2/5)(4.535 kg·m²)\nI = 1.8 kg·m²"
 }

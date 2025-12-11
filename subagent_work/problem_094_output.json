@@ -27,14 +27,14 @@
   ],
   "correctFormulas": [
     {
-      "name": "Work by gravity",
-      "formula": "W = m g Δy"
+      "name": "Work by a force",
+      "formula": "W = Fd cosθ"
     }
   ],
   "steps": [
     {
       "explanation": "State the fundamental formula that will be used",
-      "notations": "We will use the work done by gravity formula: W = m g Δy, where Δy is positive for upward displacement and negative for downward displacement"
+      "notations": "We will use the work formula: W = Fd cosθ, where F is the force magnitude, d is the displacement magnitude, and θ is the angle between force and displacement vectors"
     },
     {
       "explanation": "Define the variables and values given in the problem",
@@ -42,19 +42,20 @@
     },
     {
       "explanation": "Determine the displacement of block B",
-      "notations": "Since block A descends by distance L and the blocks are connected by an inextensible cord over a pulley, block B must rise by the same distance L. Therefore, Δy₍B₎ = +L (upward)"
+      "notations": "Since block A descends by distance L and the blocks are connected by an inextensible cord over a pulley, block B must rise by the same distance L. Therefore, d = L (upward)"
     },
     {
-      "explanation": "Apply the sign convention for work done by gravity",
-      "notations": "Gravity acts downward on block B, but block B moves upward. Since force and displacement are in opposite directions, the work done by gravity is negative"
+      "explanation": "Identify the gravitational force on block B and the angle",
+      "notations": "The gravitational force on block B is F_g = m₍B₎g pointing downward. The displacement is upward. Therefore, θ = 180° and cosθ = cos(180°) = -1"
     },
     {
       "explanation": "Substitute the values into the work formula",
-      "notations": "W₍g,B₎ = m₍B₎ g Δy₍B₎ = m₍B₎ g (L) with gravity pointing down and displacement up"
+      "notations": "W₍g,B₎ = F_g × d × cosθ = m₍B₎g × L × (-1)"
     },
     {
-      "explanation": "Calculate the final answer accounting for the direction",
-      "notations": "W₍g,B₎ = -m₍B₎ g L"
+      "explanation": "Simplify to obtain the final answer",
+      "notations": "W₍g,B₎ = -m₍B₎gL"
     }
-  ]
+  ],
+  "solution": "W = Fd cosθ\nF_g = m₍B₎g (downward), d = L (upward)\nθ = 180°, cosθ = -1\nW₍g,B₎ = m₍B₎g × L × (-1)\nW₍g,B₎ = -m₍B₎gL"
 }

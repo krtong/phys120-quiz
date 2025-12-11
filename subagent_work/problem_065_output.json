@@ -27,42 +27,39 @@
       "formula": "I ∝ 1/r²"
     },
     {
-      "name": "Intensity-amplitude relationship",
+      "name": "Intensity-amplitude relation",
       "formula": "I ∝ A²"
     }
   ],
   "steps": [
     {
-      "explanation": "State the fundamental formulas that will be used",
-      "notations": "We will use the inverse-square law for intensity: I ∝ 1/r², which means I₁/I₂ = (r₂/r₁)². We will also use the intensity-amplitude relationship: I ∝ A², which gives A ∝ √I."
+      "explanation": "We will use the inverse-square law for intensity: I ∝ 1/r². For two different distances, this gives us I₁/I₂ = (r₂/r₁)². We will also use the intensity-amplitude relation: I ∝ A².",
+      "notations": "I ∝ 1/r² ⇒ I₁/I₂ = (r₂/r₁)²\nI ∝ A² ⇒ A ∝ √I"
     },
     {
-      "explanation": "Define variables with values given in the problem",
-      "notations": "Given: r₁ = 15 km (distance to point 1), r₂ = 45 km (distance to point 2)"
+      "explanation": "Define the variables from the problem: r₁ = 15 km (closer point) and r₂ = 45 km (farther point).",
+      "notations": "r₁ = 15 km, r₂ = 45 km"
     },
     {
-      "explanation": "Part (a): Apply the inverse-square law to find the intensity ratio",
-      "notations": "For spherical waves, I ∝ 1/r², so: I₂/I₁ = (r₁/r₂)²"
+      "explanation": "Part (a): Substitute the distances into the intensity ratio formula to find I₂/I₁.",
+      "notations": "I₂/I₁ = (r₁/r₂)² = (15 km/45 km)²"
     },
     {
-      "explanation": "Substitute the numerical values for the intensity ratio",
-      "notations": "I₂/I₁ = (15 km / 45 km)² = (1/3)²"
+      "explanation": "Calculate the intensity ratio.",
+      "notations": "I₂/I₁ = (1/3)² = 1/9 ≈ 0.11"
     },
     {
-      "explanation": "Calculate the intensity ratio",
-      "notations": "I₂/I₁ = 1/9 ≈ 0.11"
+      "explanation": "Part (b): For the amplitude ratio, use the relation I ∝ A², which means A ∝ √I, so A₁/A₂ = √(I₁/I₂).",
+      "notations": "A₂/A₁ = √(I₂/I₁)"
     },
     {
-      "explanation": "Part (b): Use the intensity-amplitude relationship to find amplitude ratio",
-      "notations": "Since I ∝ A², we have A ∝ √I, therefore: A₂/A₁ = √(I₂/I₁)"
+      "explanation": "Substitute the intensity ratio to find the amplitude ratio.",
+      "notations": "A₂/A₁ = √(1/9)"
     },
     {
-      "explanation": "Substitute the intensity ratio to find amplitude ratio",
-      "notations": "A₂/A₁ = √(1/9) = 1/3"
-    },
-    {
-      "explanation": "Calculate the amplitude ratio",
+      "explanation": "Calculate the amplitude ratio.",
       "notations": "A₂/A₁ = 1/3 ≈ 0.33"
     }
-  ]
+  ],
+  "solution": "Part (a) - Intensity ratio:\nI ∝ 1/r² ⇒ I₁/I₂ = (r₂/r₁)²\nGiven: r₁ = 15 km, r₂ = 45 km\nI₂/I₁ = (r₁/r₂)² = (15 km/45 km)² = (1/3)² = 1/9 ≈ 0.11\n\nPart (b) - Amplitude ratio:\nI ∝ A² ⇒ A ∝ √I\nA₂/A₁ = √(I₂/I₁) = √(1/9) = 1/3 ≈ 0.33"
 }

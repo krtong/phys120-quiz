@@ -96,5 +96,6 @@
       "explanation": "The block's speed can be found from V = (m/M) u.",
       "notations": "V = (m/M) √[2 g R M/(M + m)] = √[2 g R m/(M + m)]"
     }
-  ]
+  ],
+  "solution": "Part (a):\nΣp_horizontal = 0 (no external horizontal forces)\nM · x + m · (x + R) = 0\nMx + mx + mR = 0\n(M + m)x = −mR\nx = −mR/(M + m)\nBlock displacement: x = −mR/(M + m) (leftward)\n\nPart (b):\nΣp_initial = Σp_final\n0 = M(−V) + mu\nMV = mu\nV = (m/M)u\n\nKE_initial + PE_initial = KE_final + PE_final\n0 + mgR = ½MV² + ½mu² + 0\nmgR = ½M(m/M)²u² + ½mu²\nmgR = ½(m²/M)u² + ½mu²\nmgR = ½u²(m²/M + m)\nmgR = ½u² · m(m + M)/M\n2gRM = u²m(m + M)\nu² = 2gRM/(m + M)\nu = √[2gRM/(M + m)]\n\nBlock speed: V = (m/M)u = √[2gRm/(M + m)]"
 }

@@ -29,8 +29,8 @@
       "notations": "v = f λ"
     },
     {
-      "explanation": "Define variables from the problem",
-      "notations": "Given: f = 282 Hz, v = 343 m/s"
+      "explanation": "Define variables by values given in the problem",
+      "notations": "Given: f = 282 Hz = 282 /s, v = 343 m/s"
     },
     {
       "explanation": "Solve the wave relation for λ, the distance between successive compressions",
@@ -38,11 +38,12 @@
     },
     {
       "explanation": "Substitute the numerical values into the formula",
-      "notations": "λ = 343 m/s / 282 Hz"
+      "notations": "λ = 343 m/s / 282 /s"
     },
     {
-      "explanation": "Calculate the result",
-      "notations": "λ = 343 m/s / 282 /s ≈ 1.22 m"
+      "explanation": "Calculate the final answer",
+      "notations": "λ ≈ 1.22 m"
     }
-  ]
+  ],
+  "solution": "v = f λ\nλ = v / f\nλ = 343 m/s / 282 /s\nλ ≈ 1.22 m"
 }

@@ -72,5 +72,6 @@
       "explanation": "Substitute the value of Δm and solve for m.",
       "notations": "0.91 = 0.780 / m  ⟹  m = 0.780 / 0.91 ≈ 0.86 kg"
     }
-  ]
+  ],
+  "solution": "f = (1 / 2π) √(k / m)\nf₁ = (1 / 2π) √(k / m) and f₂ = (1 / 2π) √(k / (m + Δm))\nf₁ / f₂ = √((m + Δm) / m)\n(f₁ / f₂)² = (m + Δm) / m\n(0.83 / 0.60)² = (m + 0.780) / m\n1.91 = (m + 0.780) / m\n1.91 = 1 + 0.780 / m\n0.91 = 0.780 / m\nm = 0.780 / 0.91\nm ≈ 0.86 kg"
 }

@@ -72,5 +72,6 @@
       "explanation": "Substitute the net torque expression to get the final answer.",
       "notations": "α = (R₁ F₁ sinθ₁ ± R₂ F₂ sinθ₂) / I, with sign indicating direction (positive for CCW, negative for CW)"
     }
-  ]
+  ],
+  "solution": "τ = rF sinθ\nτ_net = Iα\n\nτ₁ = R₁ F₁ sinθ₁\nτ₂ = R₂ F₂ sinθ₂\n\nτ_net = R₁ F₁ sinθ₁ ± R₂ F₂ sinθ₂ (sign depends on rotation direction)\n\nα = τ_net / I\nα = (R₁ F₁ sinθ₁ ± R₂ F₂ sinθ₂) / I\n\nDirection: CCW if α > 0, CW if α < 0"
 }

@@ -84,5 +84,6 @@
       "explanation": "The magnitude of the braking torque is 2.5 N·m (negative sign indicates it opposes rotation)",
       "notations": "|τ| = 2.5 N·m"
     }
-  ]
+  ],
+  "solution": "Part (a):\nI = ½MR²\nL = Iω\n\nGiven: M = 2.8 kg, R = 0.28 m, ω = 1300 rpm\n\nω = 1300 rpm × (2π/60) = 136 rad/s\n\nI = ½(2.8 kg)(0.28 m)² = ½(2.8)(0.0784) kg·m² = 0.1098 kg·m²\n\nL = Iω = (0.1098 kg·m²)(136 rad/s) ≈ 15 kg·m²/s\n\nPart (b):\nτ = ΔL/Δt\n\nGiven: Δt = 6.0 s, ΔL = 0 - 15 = -15 kg·m²/s\n\nτ = (-15 kg·m²/s)/(6.0 s) = -2.5 N·m\n\n|τ| = 2.5 N·m"
 }

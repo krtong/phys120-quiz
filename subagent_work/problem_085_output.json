@@ -68,5 +68,6 @@
       "explanation": "Convert to SI units (watts) for reference",
       "notations": "Q̇ ≈ 350 Btu/h × (0.293 W·h/Btu) ≈ 1.0 × 10² W"
     }
-  ]
+  ],
+  "solution": "Q̇ = A ΔT / R\nR₍total₎ = R₍brick₎ + R₍insul₎ = 0.69 + 19 = 19.69\nQ̇ = (195 ft²)(35 F°) / (19.69)\nQ̇ = 6825 ft²·F° / 19.69\nQ̇ ≈ 347 Btu/h ≈ 3.5 × 10² Btu/h\nQ̇ ≈ 350 Btu/h × (0.293 W·h/Btu) ≈ 1.0 × 10² W"
 }

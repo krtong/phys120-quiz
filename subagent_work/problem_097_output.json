@@ -88,5 +88,6 @@
       "explanation": "(e) Factor out common terms and solve for v.",
       "notations": "½mv² = mgL(sinθ - μ₍k₎ cosθ) ⇒ v² = 2gL(sinθ - μ₍k₎ cosθ) ⇒ v = √[2gL(sinθ - μ₍k₎ cosθ)]"
     }
-  ]
+  ],
+  "solution": "Given: mass m, angle θ, length L, coefficient μ₍k₎, starts from rest (v₀ = 0)\n\n(b) Normal force:\nN - mg cosθ = 0\nN = mg cosθ\n\n(c) Kinetic friction:\nf_k = μ₍k₎ N\nf_k = μ₍k₎(mg cosθ)\nf_k = μ₍k₎ mg cosθ\n\n(d) Work by friction:\nW_f = f_k L cos(180°)\nW_f = -f_k L\nW_f = -μ₍k₎ mg cosθ L\n\n(e) Speed at bottom using work-energy theorem:\nW_net = ΔKE\nW_g + W_f = ½mv² - 0\nmgL sinθ - μ₍k₎ mg cosθ L = ½mv²\nmgL(sinθ - μ₍k₎ cosθ) = ½mv²\nv² = 2gL(sinθ - μ₍k₎ cosθ)\nv = √[2gL(sinθ - μ₍k₎ cosθ)]"
 }

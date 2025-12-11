@@ -64,5 +64,6 @@
       "explanation": "Calculate the final cost and compare to actual food costs.",
       "notations": "Cost = $0.29 per day. This is far below real food costs, so you cannot feed yourself on this amount."
     }
-  ]
+  ],
+  "solution": "(a) 1 Cal = 4.186 × 10³ J\nE = 2500 Cal × 4.186 × 10³ J/Cal\nE = 10,465,000 J\nE ≈ 1.0 × 10⁷ J\n\n(b) 1 kWh = 860 Cal\nE = 2500 Cal ÷ 860 Cal/kWh\nE = 2.907 kWh\nE ≈ 2.9 kWh\n\n(c) Cost = 2.9 kWh × $0.10/kWh\nCost = $0.29 per day\nThis is far below real food costs, so you cannot feed yourself on this amount."
 }

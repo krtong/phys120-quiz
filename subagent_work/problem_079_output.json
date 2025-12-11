@@ -35,14 +35,14 @@
       "formula": "Q = m c ΔT"
     },
     {
-      "name": "Power definition",
-      "formula": "P = Q / t"
+      "name": "Energy–power relation",
+      "formula": "t = Q / P"
     }
   ],
   "steps": [
     {
       "explanation": "State the formulas to use for part (a) and part (b).",
-      "notations": "Part (a): Q = m c ΔT (sensible heat)\nPart (b): P = Q / t, which gives t = Q / P"
+      "notations": "Part (a): Q = m c ΔT (sensible heat)\nPart (b): t = Q / P (energy-power relation)"
     },
     {
       "explanation": "Define the variables with values given in the problem.",
@@ -57,12 +57,13 @@
       "notations": "Q = (1.0)(4186)(80) J = 334,880 J ≈ 3.35 × 10⁵ J"
     },
     {
-      "explanation": "Substitute the values into the rearranged power formula to find time.",
+      "explanation": "Substitute the values into the energy-power relation to find time.",
       "notations": "t = Q / P = (3.35 × 10⁵ J) / (60 W)"
     },
     {
       "explanation": "Calculate the time the lightbulb could run.",
       "notations": "t = 3.35 × 10⁵ / 60 s ≈ 5583 s ≈ 5.6 × 10³ s ≈ 93 min"
     }
-  ]
+  ],
+  "solution": "Q = m c ΔT\nm = 1.0 kg, c = 4186 J/(kg·°C), ΔT = 80°C\nQ = (1.0)(4186)(80) = 334,880 J ≈ 3.35 × 10⁵ J\n\nt = Q / P\nP = 60 W\nt = (3.35 × 10⁵ J) / (60 W) = 5583 s ≈ 5.6 × 10³ s ≈ 93 min"
 }

@@ -31,7 +31,7 @@
   ],
   "correctFormulas": [
     {
-      "name": "Torque",
+      "name": "Torque definition",
       "formula": "τ = rF sinθ"
     },
     {
@@ -51,8 +51,12 @@
       "formula": "v = rω"
     },
     {
+      "name": "Gravitational potential energy",
+      "formula": "U = mgh"
+    },
+    {
       "name": "Conservation of energy",
-      "formula": "E_initial + W = E_final"
+      "formula": "E_initial = E_final"
     }
   ],
   "steps": [
@@ -61,11 +65,11 @@
       "notations": "τ = rF sinθ"
     },
     {
-      "explanation": "Substitute the values for this problem: r = L, F = mg, θ = θ₀",
+      "explanation": "(a) Substitute the values for this problem: r = L, F = mg, θ = θ₀",
       "notations": "τ = L · (mg) · sinθ₀"
     },
     {
-      "explanation": "Simplify to get the torque magnitude",
+      "explanation": "(a) Simplify to get the torque magnitude",
       "notations": "τ = mgL sinθ₀"
     },
     {
@@ -73,44 +77,45 @@
       "notations": "K_rot = ½Iω² and I = mr²"
     },
     {
-      "explanation": "For the sphere at distance L from the hinge, substitute r = L",
+      "explanation": "(b) For the sphere at distance L from the hinge, substitute r = L",
       "notations": "I = mL²"
     },
     {
-      "explanation": "Use the relationship between linear speed and angular velocity: v = rω, so ω = v/r",
+      "explanation": "(b) Use the relationship between linear speed and angular velocity: v = rω, so ω = v/r",
       "notations": "ω = v/L"
     },
     {
-      "explanation": "Substitute I = mL² and ω = v/L into the rotational kinetic energy formula",
+      "explanation": "(b) Substitute I = mL² and ω = v/L into the rotational kinetic energy formula",
       "notations": "K_rot = ½(mL²)(v/L)²"
     },
     {
-      "explanation": "Simplify the expression",
+      "explanation": "(b) Simplify the expression",
       "notations": "K_rot = ½(mL²)(v²/L²) = ½mv²"
     },
     {
-      "explanation": "Compare with translational kinetic energy K_trans = ½mv²",
+      "explanation": "(b) Compare with translational kinetic energy K_trans = ½mv²",
       "notations": "K_rot = ½mv² = K_trans"
     },
     {
       "explanation": "(c) Use conservation of energy. The sphere starts at rest and falls through a vertical height. The height change is Δh = L - L cosθ₀ = L(1 - cosθ₀).",
-      "notations": "E_initial = E_final → PE_initial = KE_final"
+      "notations": "E_initial = E_final → U_initial + K_initial = U_final + K_final"
     },
     {
-      "explanation": "The initial potential energy (taking bottom as reference) equals the final kinetic energy",
-      "notations": "mgΔh = ½mv²"
+      "explanation": "(c) The initial potential energy (taking bottom as reference) equals the final kinetic energy",
+      "notations": "mgΔh = ½mv² where Δh = L(1 - cosθ₀)"
     },
     {
-      "explanation": "Substitute Δh = L(1 - cosθ₀)",
+      "explanation": "(c) Substitute Δh = L(1 - cosθ₀)",
       "notations": "mgL(1 - cosθ₀) = ½mv²"
     },
     {
-      "explanation": "Solve for v by canceling m from both sides and multiplying both sides by 2",
+      "explanation": "(c) Solve for v by canceling m from both sides and multiplying both sides by 2",
       "notations": "2gL(1 - cosθ₀) = v²"
     },
     {
-      "explanation": "Take the square root to find the speed",
+      "explanation": "(c) Take the square root to find the speed",
       "notations": "v = √[2gL(1 - cosθ₀)]"
     }
-  ]
+  ],
+  "solution": "(a) τ = rF sinθ\nτ = L · (mg) · sinθ₀\nτ = mgL sinθ₀\n\n(b) K_rot = ½Iω²\nI = mr² → I = mL²\nv = rω → ω = v/L\nK_rot = ½(mL²)(v/L)²\nK_rot = ½(mL²)(v²/L²)\nK_rot = ½mv²\nK_trans = ½mv²\nTherefore, K_rot = K_trans\n\n(c) E_initial = E_final\nU_initial + K_initial = U_final + K_final\nmgL(1 - cosθ₀) + 0 = 0 + ½mv²\nmgL(1 - cosθ₀) = ½mv²\n2gL(1 - cosθ₀) = v²\nv = √[2gL(1 - cosθ₀)]"
 }

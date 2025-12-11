@@ -68,5 +68,6 @@
       "explanation": "Compare the buoyant force and weight to determine if the diver will sink or float.",
       "notations": "Since W > B (713.4 N > 698.9 N), the diver will sink."
     }
-  ]
+  ],
+  "solution": "Part (a): Finding the buoyant force\nB = ρ g V\nV = 69.6 L = 6.96 × 10⁻² m³\nρ₍sea₎ = 1.025 × 10³ kg/m³\ng = 9.80 m/s²\nB = (1.025 × 10³ kg/m³)(9.80 m/s²)(6.96 × 10⁻² m³)\nB = 698.9 N ≈ 7.0 × 10² N\n\nPart (b): Determining if the diver will sink or float\nW = m g\nm = 72.8 kg\nW = (72.8 kg)(9.80 m/s²)\nW = 713.4 N ≈ 7.13 × 10² N\nSince W > B (713.4 N > 698.9 N), the diver will sink"
 }

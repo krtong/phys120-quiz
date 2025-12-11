@@ -64,5 +64,6 @@
       "explanation": "Express the final answer in scientific notation.",
       "notations": "f₂ ≈ 4.3 × 10⁴ Hz"
     }
-  ]
+  ],
+  "solution": "f' = f₀(v − v_o)/v (observer moving away)\nf' = f₀ v/(v + v_s) (source moving away)\nGiven: f₀ = 50.0 kHz, u = 27.5 m/s, v₍air₎ = 343 m/s\nf₁ = f₀(v₍air₎ − u)/v₍air₎ = 50.0 kHz × (343 − 27.5)/343\nf₁ = 50.0 kHz × 315.5/343 ≈ 45.99 kHz\nf₂ = f₁ × v₍air₎/(v₍air₎ + u) = 45.99 kHz × 343/(343 + 27.5)\nf₂ = 45.99 kHz × 343/370.5 ≈ 42.6 kHz\nOr combined: f₂ = f₀(v₍air₎ − u)/(v₍air₎ + u) = 50.0 kHz × 315.5/370.5 ≈ 42.6 kHz\nf₂ ≈ 4.3 × 10⁴ Hz"
 }

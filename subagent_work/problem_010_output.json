@@ -47,66 +47,63 @@
   ],
   "correctFormulas": [
     {
-      "name": "Angular acceleration",
+      "name": "Convert rpm to rad/s",
+      "formula": "ω = f₍rpm₎ × (2π / 60)"
+    },
+    {
+      "name": "Angular acceleration definition",
       "formula": "α = (ω₍f₎ − ωᵢ) / Δt"
     },
     {
-      "name": "Angular velocity under constant angular acceleration",
-      "formula": "ω(t) = ωᵢ + αt"
+      "name": "Angular velocity with constant acceleration",
+      "formula": "ω(t) = ωᵢ + α t"
     },
     {
       "name": "Tangential acceleration",
-      "formula": "a₍t₎ = αr"
+      "formula": "a₍t₎ = α r"
     },
     {
       "name": "Radial (centripetal) acceleration",
-      "formula": "a₍r₎ = ω²r"
+      "formula": "a₍r₎ = ω² r"
     }
   ],
   "steps": [
     {
-      "explanation": "State the fundamental formulas we will use: the definition of angular acceleration, the kinematic equation for angular velocity, and the relationships between angular and linear quantities.",
-      "notations": "α = (ω₍f₎ − ωᵢ) / Δt;  ω(t) = ωᵢ + αt;  a₍t₎ = αr;  a₍r₎ = ω²r"
+      "explanation": "Start with the formulas and variables. We will use: (1) conversion from rpm to rad/s, (2) angular acceleration definition α = (ω₍f₎ − ωᵢ) / Δt, (3) angular velocity equation ω(t) = ωᵢ + α t, (4) tangential acceleration a₍t₎ = α r, and (5) radial acceleration a₍r₎ = ω² r.",
+      "notations": "ω = f₍rpm₎ × (2π / 60);  α = (ω₍f₎ − ωᵢ) / Δt;  ω(t) = ωᵢ + α t;  a₍t₎ = α r;  a₍r₎ = ω² r"
     },
     {
-      "explanation": "Define the given variables from the problem statement.",
-      "notations": "d = 61 cm = 0.61 m;  r = d/2 = 0.305 m;  Initial speed = 120 rpm;  Final speed = 280 rpm;  Δt = 4.0 s;  t₁ = 2.0 s"
+      "explanation": "Define variables from the problem: diameter d = 61 cm = 0.61 m, radius r = 0.305 m, initial rotation rate 120 rpm, final rotation rate 280 rpm, time interval Δt = 4.0 s, and the time for part (b) t₁ = 2.0 s.",
+      "notations": "d = 0.61 m;  r = 0.305 m;  f₍rpm,i₎ = 120 rpm;  f₍rpm,f₎ = 280 rpm;  Δt = 4.0 s;  t₁ = 2.0 s"
     },
     {
-      "explanation": "Convert the initial and final rotation rates from rpm to rad/s using the conversion factor (2π rad/rev)(1 min/60 s).",
-      "notations": "ωᵢ = (120 rpm) × (2π/60) = 4π rad/s ≈ 12.57 rad/s;  ω₍f₎ = (280 rpm) × (2π/60) = (28π/3) rad/s ≈ 29.32 rad/s"
+      "explanation": "Convert the initial and final rotation rates from rpm to rad/s.",
+      "notations": "ωᵢ = (120)(2π/60) = 4π rad/s;  ω₍f₎ = (280)(2π/60) = (28/3)π rad/s"
     },
     {
-      "explanation": "Part (a): Substitute the values into the angular acceleration formula.",
-      "notations": "α = [ω₍f₎ − ωᵢ] / Δt = [(28π/3) − 4π] / 4.0"
+      "explanation": "Part (a): Calculate the angular acceleration using the angular acceleration formula.",
+      "notations": "α = [ω₍f₎ − ωᵢ] / Δt = [(28/3)π − 4π] / 4.0 = [(28π − 12π)/3] / 4.0 = (16π/3) / 4.0 = (4π/3) rad/s²"
     },
     {
-      "explanation": "Simplify and calculate the angular acceleration.",
-      "notations": "α = [(28π/3) − (12π/3)] / 4.0 = (16π/3) / 4.0 = (4π/3) rad/s² ≈ 4.19 rad/s²"
+      "explanation": "Evaluate the numerical value of angular acceleration.",
+      "notations": "α = (4π/3) rad/s² ≈ 4.19 rad/s²"
     },
     {
-      "explanation": "Part (b): Find the angular speed at t₁ = 2.0 s by substituting into the kinematic equation.",
-      "notations": "ω(t₁) = ωᵢ + αt₁ = 4π + (4π/3)(2.0)"
+      "explanation": "Part (b): Find the angular speed at t₁ = 2.0 s using the kinematic equation.",
+      "notations": "ω(t₁) = ωᵢ + α t₁ = 4π + (4π/3)(2.0) = 4π + (8π/3) = (12π + 8π)/3 = (20π/3) rad/s"
     },
     {
-      "explanation": "Calculate the angular speed at t₁ = 2.0 s.",
-      "notations": "ω(t₁) = 4π + (8π/3) = (12π/3) + (8π/3) = (20π/3) rad/s ≈ 20.94 rad/s"
+      "explanation": "Evaluate the numerical value of angular speed at t₁.",
+      "notations": "ω(t₁) = (20π/3) rad/s ≈ 20.9 rad/s"
     },
     {
-      "explanation": "Calculate the tangential acceleration using the angular acceleration and radius.",
-      "notations": "a₍t₎ = αr = (4π/3)(0.305)"
+      "explanation": "Calculate the tangential acceleration at t₁. For uniform angular acceleration, a₍t₎ is constant.",
+      "notations": "a₍t₎ = α r = (4π/3)(0.305) = (4π × 0.305)/3 ≈ 1.28 m/s²"
     },
     {
-      "explanation": "Evaluate the tangential acceleration.",
-      "notations": "a₍t₎ ≈ 1.28 m/s²"
-    },
-    {
-      "explanation": "Calculate the radial acceleration using the instantaneous angular speed at t₁ = 2.0 s.",
-      "notations": "a₍r₎ = ω(t₁)²r = [(20π/3)]²(0.305)"
-    },
-    {
-      "explanation": "Evaluate the radial acceleration.",
-      "notations": "a₍r₎ = [(20π/3)²](0.305) ≈ (437.6)(0.305) ≈ 133 m/s² (or 1.34 × 10² m/s²)"
+      "explanation": "Calculate the radial acceleration at t₁ using the instantaneous angular speed.",
+      "notations": "a₍r₎ = ω(t₁)² r = [(20π/3)]² (0.305) = (400π²/9)(0.305) ≈ 1.34 × 10² m/s²"
     }
-  ]
+  ],
+  "solution": "Part (a):\nωᵢ = (120 rpm)(2π/60) = 4π rad/s\nω₍f₎ = (280 rpm)(2π/60) = (28π/3) rad/s\nα = (ω₍f₎ − ωᵢ) / Δt = [(28π/3) − 4π] / 4.0 s\nα = [(28π − 12π)/3] / 4.0 s = (16π/3) / 4.0 s = (4π/3) rad/s²\nα ≈ 4.19 rad/s²\n\nPart (b):\nr = d/2 = 0.61 m / 2 = 0.305 m\nω(t₁) = ωᵢ + α t₁ = 4π + (4π/3)(2.0) = 4π + 8π/3 = 20π/3 rad/s ≈ 20.9 rad/s\na₍t₎ = α r = (4π/3)(0.305 m) ≈ 1.28 m/s²\na₍r₎ = ω(t₁)² r = (20π/3)²(0.305 m) = (400π²/9)(0.305 m) ≈ 134 m/s²"
 }

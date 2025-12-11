@@ -84,5 +84,6 @@
       "explanation": "Rearrange F = mg to solve for mass: m = F/g.",
       "notations": "m₍max₎ = F₍max₎ / g = (8.8 × 10⁴ N) / (9.80 m/s²) ≈ 9.0 × 10³ kg"
     }
-  ]
+  ],
+  "solution": "P = F/A, F = mg, A = πr²\nGiven: P = 17.0 atm, d = 25.5 cm = 0.255 m, r = 0.1275 m, g = 9.80 m/s²\nP₍SI₎ = 17.0 atm × 1.013 × 10⁵ Pa/atm = 1.72 × 10⁶ Pa\nA = π(0.1275 m)² = 5.11 × 10⁻² m²\nF₍max₎ = PA = (1.72 × 10⁶ Pa)(5.11 × 10⁻² m²) = 8.8 × 10⁴ N\nm₍max₎ = F/g = (8.8 × 10⁴ N)/(9.80 m/s²) = 9.0 × 10³ kg"
 }

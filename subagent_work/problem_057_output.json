@@ -29,24 +29,20 @@
   ],
   "steps": [
     {
-      "explanation": "We will use the hydrostatic pressure formula to find the pressure at points a and b in each column.",
+      "explanation": "We will use the hydrostatic pressure formula for both columns. Since points a and b are at the same horizontal level in the connected fluid, they must have equal pressures.",
       "notations": "P = P₀ + ρgh"
     },
     {
-      "explanation": "Define the variables from the problem: water density, height of oil column, and height of water column.",
-      "notations": "ρ₍w₎ = 1.00 × 10³ kg/m³, h₍oil₎ = 0.272 m, h₍water₎ = 0.1858 m"
+      "explanation": "Define the variables from the problem: ρ₍w₎ = 1.00 × 10³ kg/m³ (density of water), h₍water₎ = 0.1858 m (height of water column), h₍oil₎ = 0.272 m (height of oil column).",
+      "notations": "ρ₍w₎ = 1.00 × 10³ kg/m³, h₍water₎ = 0.1858 m, h₍oil₎ = 0.272 m"
     },
     {
-      "explanation": "At equilibrium, the pressure at point a (at the interface on the water side) equals the pressure at point b (at the same horizontal level on the oil side). Apply the hydrostatic pressure formula to both sides.",
-      "notations": "P_a = P₀ + ρ₍w₎ g h₍water₎ and P_b = P₀ + ρ₍oil₎ g h₍oil₎"
+      "explanation": "Apply the hydrostatic pressure formula to both sides of the U-tube. The pressure at point a (in oil column) equals the pressure at point b (in water column).",
+      "notations": "P₀ + ρ₍oil₎ g h₍oil₎ = P₀ + ρ₍w₎ g h₍water₎"
     },
     {
-      "explanation": "Since pressures at equal depths in connected fluids are equal, set the two expressions equal.",
-      "notations": "P₀ + ρ₍w₎ g h₍water₎ = P₀ + ρ₍oil₎ g h₍oil₎"
-    },
-    {
-      "explanation": "Cancel P₀ and g from both sides to simplify.",
-      "notations": "ρ₍w₎ h₍water₎ = ρ₍oil₎ h₍oil₎"
+      "explanation": "Simplify by canceling P₀ and g from both sides of the equation.",
+      "notations": "ρ₍oil₎ h₍oil₎ = ρ₍w₎ h₍water₎"
     },
     {
       "explanation": "Solve for the oil density by isolating ρ₍oil₎.",
@@ -54,11 +50,12 @@
     },
     {
       "explanation": "Substitute the numerical values into the equation.",
-      "notations": "ρ₍oil₎ = (1.00 × 10³ kg/m³) × (0.1858 m / 0.272 m)"
+      "notations": "ρ₍oil₎ = (1.00 × 10³ kg/m³)(0.1858 m / 0.272 m)"
     },
     {
-      "explanation": "Calculate the final answer.",
-      "notations": "ρ₍oil₎ = (1.00 × 10³) × (0.683) ≈ 6.8 × 10² kg/m³"
+      "explanation": "Calculate the final result.",
+      "notations": "ρ₍oil₎ = (1.00 × 10³ kg/m³)(0.683) ≈ 6.8 × 10² kg/m³"
     }
-  ]
+  ],
+  "solution": "P = P₀ + ρgh\nFor equilibrium at the same horizontal level: P₀ + ρ₍oil₎ g h₍oil₎ = P₀ + ρ₍w₎ g h₍water₎\nSimplifying: ρ₍oil₎ h₍oil₎ = ρ₍w₎ h₍water₎\nSolving for oil density: ρ₍oil₎ = ρ₍w₎ (h₍water₎ / h₍oil₎)\nSubstituting values: ρ₍oil₎ = (1.00 × 10³ kg/m³)(0.1858 m / 0.272 m)\nρ₍oil₎ = (1.00 × 10³ kg/m³)(0.683)\nρ₍oil₎ ≈ 6.8 × 10² kg/m³"
 }

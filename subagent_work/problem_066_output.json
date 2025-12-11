@@ -52,5 +52,6 @@
       "explanation": "Calculate the fifth harmonic (fourth overtone) using n = 5.",
       "notations": "f₅ = 5 f₁ = 5(60 Hz) = 300 Hz (fourth overtone, fifth harmonic)"
     }
-  ]
+  ],
+  "solution": "fₙ = n f₁\nGiven: f₄ = 240 Hz (four loops, n = 4)\nf₄ = 4f₁\n240 Hz = 4f₁\nf₁ = 60 Hz\n\nOther resonant frequencies:\nf₁ = 1(60 Hz) = 60 Hz (fundamental / first harmonic)\nf₂ = 2(60 Hz) = 120 Hz (first overtone / second harmonic)\nf₃ = 3(60 Hz) = 180 Hz (second overtone / third harmonic)\nf₅ = 5(60 Hz) = 300 Hz (fourth overtone / fifth harmonic)"
 }

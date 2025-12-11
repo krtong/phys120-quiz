@@ -68,5 +68,6 @@
       "explanation": "Calculate v² and then take the square root.",
       "notations": "v² = 1852.94 m²/s², v = √(1852.94 m²/s²) ≈ 43 m/s"
     }
-  ]
+  ],
+  "solution": "W = Fd cosθ\nW = (105 N)(0.75 m)(1) = 78.75 J\nW = ΔKE = ½mv² - 0\n78.75 J = ½(0.085 kg)v²\nv² = 2(78.75 J)/(0.085 kg) = 157.5/0.085 m²/s²\nv² = 1852.94 m²/s²\nv = √(1852.94 m²/s²) ≈ 43 m/s"
 }

@@ -29,24 +29,25 @@
   ],
   "steps": [
     {
-      "explanation": "State the fundamental formula to use",
-      "notations": "We will use the hydrostatic pressure formula: ΔP = ρ g Δh"
+      "explanation": "Start with the hydrostatic pressure formula",
+      "notations": "ΔP = ρ g Δh"
     },
     {
       "explanation": "Define variables by values given in the problem",
-      "notations": "Given: Δh = 44.0 m, ρ = 1.00 × 10³ kg/m³ (density of water), g = 9.80 m/s²"
+      "notations": "Given: Δh = 44.0 m, ρ = 1.00 × 10³ kg/m³ (water), g = 9.80 m/s²"
     },
     {
       "explanation": "Substitute the numerical values into the formula",
       "notations": "ΔP = (1.00 × 10³ kg/m³)(9.80 m/s²)(44.0 m)"
     },
     {
-      "explanation": "Calculate the result",
-      "notations": "ΔP = 4.312 × 10⁵ kg/(m·s²) = 4.3 × 10⁵ Pa"
+      "explanation": "Calculate the gauge pressure",
+      "notations": "ΔP = 431,200 Pa ≈ 4.3 × 10⁵ Pa"
     },
     {
-      "explanation": "Convert to atmospheres for interpretation (1 atm ≈ 1.01 × 10⁵ Pa)",
-      "notations": "ΔP ≈ 4.3 × 10⁵ Pa ÷ 1.01 × 10⁵ Pa/atm ≈ 4.3 atm"
+      "explanation": "Interpret this as the minimum gauge pressure at the base; it corresponds to roughly 4.3 atm",
+      "notations": "ΔP ≈ 4.3 × 10⁵ Pa ≈ 4.3 atm"
     }
-  ]
+  ],
+  "solution": "ΔP = ρ g Δh\nGiven: Δh = 44.0 m, ρ = 1.00 × 10³ kg/m³, g = 9.80 m/s²\nΔP = (1.00 × 10³ kg/m³)(9.80 m/s²)(44.0 m)\nΔP = 431,200 Pa ≈ 4.3 × 10⁵ Pa ≈ 4.3 atm"
 }

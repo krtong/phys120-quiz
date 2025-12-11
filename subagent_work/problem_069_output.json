@@ -19,7 +19,7 @@
   ],
   "correctFormulas": [
     {
-      "name": "Inverse-square intensity ratio",
+      "name": "Inverse-square law for intensity",
       "formula": "I₁/I₂ = (r₂/r₁)²"
     },
     {
@@ -56,5 +56,6 @@
       "explanation": "Calculate the final answer for the sound level difference.",
       "notations": "Δβ = 10 × 0.699 ≈ 7 dB (person underneath hears approximately 7 dB louder)"
     }
-  ]
+  ],
+  "solution": "I₁/I₂ = (r₂/r₁)²\nΔβ = 10 log₁₀(I₁/I₂)\nr₁ = 100 m\nr₂ = √(100² + 200²) = √(10000 + 40000) = √50000 = 100√5 m\nI₁/I₂ = (100√5/100)² = (√5)² = 5\nΔβ = 10 log₁₀(5)\nΔβ = 10 × 0.699 ≈ 7 dB"
 }

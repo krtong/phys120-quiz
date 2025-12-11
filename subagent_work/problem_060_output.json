@@ -27,7 +27,7 @@
   ],
   "correctFormulas": [
     {
-      "name": "Buoyant force",
+      "name": "Buoyant force (Archimedes' principle)",
       "formula": "F_b = ρ_fluid V g"
     },
     {
@@ -37,40 +37,45 @@
     {
       "name": "Specific gravity definition",
       "formula": "SG = ρ/ρ_water"
+    },
+    {
+      "name": "Apparent weight in fluid",
+      "formula": "m_apparent g = m g − F_b"
     }
   ],
   "steps": [
     {
-      "explanation": "State the fundamental formulas. The buoyant force on a submerged object is F_b = ρ_fluid V g. The density of an object is ρ = m/V. The specific gravity is SG = ρ/ρ_water.",
-      "notations": "F_b = ρ_fluid V g, ρ = m/V, SG = ρ/ρ_water"
+      "explanation": "Start with the fundamental formulas. The buoyant force on a submerged object is F_b = ρ_fluid V g. The density of an object is ρ = m/V. The specific gravity is SG = ρ/ρ_water. The apparent weight relates to buoyancy via m_apparent g = m g − F_b.",
+      "notations": "F_b = ρ_fluid V g, ρ = m/V, SG = ρ/ρ_water, m_apparent g = m g − F_b"
     },
     {
       "explanation": "Define the given values from the problem.",
-      "notations": "m₍wood₎ = 0.48 kg, m₍apparent₎ = 0.047 kg, SG₍alcohol₎ = 0.79"
+      "notations": "Given: m₍wood₎ = 0.48 kg, m₍apparent₎ = 0.047 kg, SG₍alcohol₎ = 0.79"
     },
     {
-      "explanation": "The apparent mass reduction equals the buoyant force divided by g. When the wood is fully submerged in alcohol, the buoyant force is F_b = ρ₍alcohol₎ V₍wood₎ g. The apparent mass is the actual mass minus the buoyant force divided by g.",
-      "notations": "m₍wood₎ − m₍apparent₎ = ρ₍alcohol₎ V₍wood₎"
+      "explanation": "The apparent mass reduction equals the buoyant force divided by g. When the wood is fully submerged in alcohol, dividing both sides by g gives the mass difference.",
+      "notations": "m₍wood₎ − m₍apparent₎ = F_b/g = ρ₍alcohol₎ V₍wood₎"
     },
     {
       "explanation": "Express the volume of wood in terms of its mass and density using V = m/ρ.",
-      "notations": "V₍wood₎ = m₍wood₎ / ρ₍wood₎"
+      "notations": "V₍wood₎ = m₍wood₎/ρ₍wood₎"
     },
     {
       "explanation": "Substitute the expression for volume into the buoyancy equation and solve for ρ₍wood₎.",
-      "notations": "m₍wood₎ − m₍apparent₎ = ρ₍alcohol₎ m₍wood₎ / ρ₍wood₎ ⟹ ρ₍wood₎ = ρ₍alcohol₎ m₍wood₎ / (m₍wood₎ − m₍apparent₎)"
+      "notations": "m₍wood₎ − m₍apparent₎ = ρ₍alcohol₎ m₍wood₎/ρ₍wood₎ ⟹ ρ₍wood₎ = ρ₍alcohol₎ m₍wood₎/(m₍wood₎ − m₍apparent₎)"
     },
     {
       "explanation": "Use the specific gravity relation to express ρ₍alcohol₎ = SG₍alcohol₎ × ρ_water, and find SG₍wood₎ = ρ₍wood₎/ρ_water.",
-      "notations": "SG₍wood₎ = ρ₍wood₎/ρ_water = (ρ₍alcohol₎/ρ_water) × m₍wood₎ / (m₍wood₎ − m₍apparent₎) = SG₍alcohol₎ × m₍wood₎ / (m₍wood₎ − m₍apparent₎)"
+      "notations": "SG₍wood₎ = ρ₍wood₎/ρ_water = (ρ₍alcohol₎/ρ_water) × m₍wood₎/(m₍wood₎ − m₍apparent₎) = SG₍alcohol₎ × m₍wood₎/(m₍wood₎ − m₍apparent₎)"
     },
     {
       "explanation": "Substitute the numerical values into the formula.",
-      "notations": "SG₍wood₎ = 0.79 × 0.48 / (0.48 − 0.047)"
+      "notations": "SG₍wood₎ = 0.79 × 0.48/(0.48 − 0.047) = 0.79 × 0.48/0.433"
     },
     {
       "explanation": "Calculate the final answer.",
-      "notations": "SG₍wood₎ = 0.79 × 0.48 / 0.433 = 0.3792 / 0.433 ≈ 0.88"
+      "notations": "SG₍wood₎ = 0.3792/0.433 ≈ 0.88"
     }
-  ]
+  ],
+  "solution": "F_b = ρ_fluid V g, m_apparent g = m g − F_b\nGiven: m₍wood₎ = 0.48 kg, m₍apparent₎ = 0.047 kg, SG₍alcohol₎ = 0.79\nm₍wood₎ − m₍apparent₎ = F_b/g = ρ₍alcohol₎ V₍wood₎\nV₍wood₎ = m₍wood₎/ρ₍wood₎\nm₍wood₎ − m₍apparent₎ = ρ₍alcohol₎ m₍wood₎/ρ₍wood₎\nρ₍wood₎ = ρ₍alcohol₎ m₍wood₎/(m₍wood₎ − m₍apparent₎)\nSG₍wood₎ = ρ₍wood₎/ρ_water = SG₍alcohol₎ × m₍wood₎/(m₍wood₎ − m₍apparent₎)\nSG₍wood₎ = 0.79 × 0.48/(0.48 − 0.047) = 0.79 × 0.48/0.433\nSG₍wood₎ = 0.3792/0.433 ≈ 0.88"
 }

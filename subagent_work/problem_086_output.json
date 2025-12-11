@@ -40,41 +40,38 @@
     },
     {
       "name": "Fourier's law of heat conduction",
-      "formula": "Q/t = kA(ΔT)/ℓ"
+      "formula": "Q/t = kAΔT/ℓ"
     }
   ],
   "steps": [
     {
-      "explanation": "We will use two fundamental formulas: Q = mL for the heat needed to melt the ice, and Fourier's law Q/t = kA(ΔT)/ℓ for heat conduction through the walls.",
-      "notations": "Q = mL and Q/t = kA(ΔT)/ℓ"
+      "explanation": "We will use the heat for phase change formula and Fourier's law of heat conduction. The heat conducted through the walls must equal the heat needed to melt the ice.",
+      "notations": "Q = mL and Q/t = kAΔT/ℓ"
     },
     {
       "explanation": "Define the given values from the problem.",
-      "notations": "m₍ice₎ = 8.2 kg, L₍F₎ = 3.33 × 10⁵ J/kg, k = 2k₍air₎ = 2(0.023 W/(m·K)) = 0.046 W/(m·K), ℓ = 1.5 cm = 0.015 m, ΔT = 34°C − 0°C = 34 K, chest dimensions: 25 cm × 35 cm × 55 cm = 0.25 m × 0.35 m × 0.55 m"
+      "notations": "m₍ice₎ = 8.2 kg, L₍F₎ = 3.33 × 10⁵ J/kg, k = 2k₍air₎ = 2(0.023 W/(m·K)) = 0.046 W/(m·K), ΔT = 34°C − 0°C = 34 K, ℓ = 1.5 cm = 0.015 m, dimensions: 0.25 m × 0.35 m × 0.55 m"
     },
     {
-      "explanation": "Calculate the total surface area of the chest.",
-      "notations": "A = 2[(0.25)(0.35) + (0.25)(0.55) + (0.35)(0.55)] = 2[0.0875 + 0.1375 + 0.1925] = 2(0.4175) = 0.835 m²"
+      "explanation": "Calculate the surface area of the ice chest.",
+      "notations": "A = 2(0.25 × 0.35 + 0.25 × 0.55 + 0.35 × 0.55) = 2(0.0875 + 0.1375 + 0.1925) = 2(0.4175) = 0.835 m²"
     },
     {
-      "explanation": "Calculate the total heat needed to melt the ice using Q = mL.",
+      "explanation": "Calculate the heat needed to melt the ice.",
       "notations": "Q = m₍ice₎ L₍F₎ = (8.2 kg)(3.33 × 10⁵ J/kg) = 2.7306 × 10⁶ J"
     },
     {
-      "explanation": "Rearrange Fourier's law to solve for time t.",
-      "notations": "Q/t = kA(ΔT)/ℓ → t = Qℓ / [kA(ΔT)]"
+      "explanation": "Set the heat conducted equal to the heat needed, and solve for time t.",
+      "notations": "Q = kAΔT t/ℓ, so t = Qℓ/(kAΔT)"
     },
     {
-      "explanation": "Substitute all numerical values into the equation for time.",
+      "explanation": "Substitute the numerical values into the equation for time.",
       "notations": "t = (2.7306 × 10⁶ J)(0.015 m) / [(0.046 W/(m·K))(0.835 m²)(34 K)]"
     },
     {
       "explanation": "Calculate the melting time.",
-      "notations": "t = (4.0959 × 10⁴ J·m) / (1.306 W·m²) = (4.0959 × 10⁴) / (1.306) s ≈ 3.14 × 10⁴ s"
-    },
-    {
-      "explanation": "Convert the time to hours.",
-      "notations": "t ≈ 3.14 × 10⁴ s × (1 h / 3600 s) ≈ 8.7 h"
+      "notations": "t = (4.0959 × 10⁴ J·m) / (1.306 W·m²) = 3.14 × 10⁴ s ≈ 8.7 h"
     }
-  ]
+  ],
+  "solution": "Q = mL\nQ/t = kAΔT/ℓ\nGiven: m₍ice₎ = 8.2 kg, L₍F₎ = 3.33 × 10⁵ J/kg, k = 2(0.023) = 0.046 W/(m·K), ΔT = 34 K, ℓ = 0.015 m\nA = 2(0.25 × 0.35 + 0.25 × 0.55 + 0.35 × 0.55) = 0.835 m²\nQ = (8.2)(3.33 × 10⁵) = 2.73 × 10⁶ J\nt = Qℓ/(kAΔT)\nt = (2.73 × 10⁶)(0.015) / [(0.046)(0.835)(34)]\nt = 4.10 × 10⁴ / 1.31 = 3.1 × 10⁴ s ≈ 8.7 h"
 }

@@ -35,8 +35,8 @@
   ],
   "correctFormulas": [
     {
-      "name": "Conservation of momentum",
-      "formula": "p_i = p_f"
+      "name": "Momentum",
+      "formula": "p = mv"
     },
     {
       "name": "Kinetic energy",
@@ -47,62 +47,55 @@
       "formula": "PE_spring = ½kx²"
     },
     {
-      "name": "Conservation of energy",
-      "formula": "E_i = E_f"
+      "name": "Elastic collision final velocities (1D)",
+      "formula": "v₁f = (m₁ − m₂)/(m₁ + m₂) v₁i,  v₂f = 2m₁/(m₁ + m₂) v₁i"
     }
   ],
   "steps": [
     {
-      "explanation": "(a) We will use conservation of momentum and conservation of energy. At maximum compression, both blocks move together with a common velocity v_c.",
-      "notations": "Given: m₁ with initial speed v₀, m₂ initially at rest, spring constant k"
+      "explanation": "Part (a): We will use conservation of momentum and conservation of energy. At maximum compression, both blocks move with the same velocity.",
+      "notations": "Using: p = mv, KE = ½mv², PE_spring = ½kx²"
     },
     {
-      "explanation": "Apply conservation of momentum to find the common velocity at maximum compression.",
-      "notations": "p_i = p_f → m₁ v₀ + m₂(0) = (m₁ + m₂) v_c → v_c = m₁ v₀ / (m₁ + m₂)"
+      "explanation": "Define the given variables from the problem",
+      "notations": "Given: m₁ (incident block mass), m₂ (block with spring, initially at rest), k (spring constant), v₀ (initial speed of m₁)"
     },
     {
-      "explanation": "Apply conservation of energy. The initial kinetic energy equals the final kinetic energy plus the spring potential energy at maximum compression.",
-      "notations": "E_i = E_f → ½ m₁ v₀² = ½ (m₁ + m₂) v_c² + ½ k x₍max₎²"
+      "explanation": "Apply conservation of momentum to find the common velocity v_c at maximum compression",
+      "notations": "p_initial = p_final\nm₁v₀ + m₂(0) = (m₁ + m₂)v_c"
     },
     {
-      "explanation": "Rearrange to solve for the spring energy.",
-      "notations": "½ k x₍max₎² = ½ m₁ v₀² − ½ (m₁ + m₂) v_c²"
+      "explanation": "Solve for v_c",
+      "notations": "v_c = m₁v₀/(m₁ + m₂)"
     },
     {
-      "explanation": "Substitute the expression for v_c into the energy equation.",
-      "notations": "½ k x₍max₎² = ½ m₁ v₀² − ½ (m₁ + m₂) [m₁ v₀ / (m₁ + m₂)]²"
+      "explanation": "Apply conservation of energy: initial kinetic energy equals final kinetic energy plus spring potential energy at maximum compression",
+      "notations": "½m₁v₀² = ½(m₁ + m₂)v_c² + ½kx₍max₎²"
     },
     {
-      "explanation": "Simplify the expression.",
-      "notations": "½ k x₍max₎² = ½ m₁ v₀² − ½ m₁² v₀² / (m₁ + m₂) = ½ m₁ v₀² [1 − m₁/(m₁ + m₂)]"
+      "explanation": "Substitute v_c into the energy equation",
+      "notations": "½m₁v₀² = ½(m₁ + m₂)[m₁v₀/(m₁ + m₂)]² + ½kx₍max₎²\n½m₁v₀² = ½m₁²v₀²/(m₁ + m₂) + ½kx₍max₎²"
     },
     {
-      "explanation": "Further simplification.",
-      "notations": "½ k x₍max₎² = ½ m₁ v₀² [m₂/(m₁ + m₂)] = ½ m₁ m₂ v₀² / (m₁ + m₂)"
+      "explanation": "Rearrange and simplify to solve for x₍max₎",
+      "notations": "½kx₍max₎² = ½m₁v₀² − ½m₁²v₀²/(m₁ + m₂)\n½kx₍max₎² = ½m₁v₀²[1 − m₁/(m₁ + m₂)]\n½kx₍max₎² = ½m₁v₀²[m₂/(m₁ + m₂)]\n½kx₍max₎² = ½m₁m₂v₀²/(m₁ + m₂)"
     },
     {
-      "explanation": "Solve for x₍max₎.",
-      "notations": "x₍max₎ = v₀ √[m₁ m₂ / ((m₁ + m₂) k)]"
+      "explanation": "Take the square root to find x₍max₎",
+      "notations": "x₍max₎ = v₀√[m₁m₂/((m₁ + m₂)k)]"
     },
     {
-      "explanation": "(b) Since the spring is ideal and there is no friction, the collision is elastic. We apply conservation of momentum and conservation of kinetic energy.",
-      "notations": "Momentum: m₁ v₀ = m₁ v₁f + m₂ v₂f; Energy: ½ m₁ v₀² = ½ m₁ v₁f² + ½ m₂ v₂f²"
+      "explanation": "Part (b): Since the collision is elastic (spring stores and releases energy with no loss), use the standard elastic collision formulas for the final velocities",
+      "notations": "v₁f = (m₁ − m₂)/(m₁ + m₂) v₀\nv₂f = 2m₁/(m₁ + m₂) v₀"
     },
     {
-      "explanation": "For an elastic collision in 1D where m₂ is initially at rest, the standard solution gives the final velocities.",
-      "notations": "v₁f = [(m₁ − m₂)/(m₁ + m₂)] v₀"
+      "explanation": "Determine the condition for m₁ to move backwards (v₁f < 0)",
+      "notations": "v₁f < 0 when (m₁ − m₂)/(m₁ + m₂) < 0\nSince (m₁ + m₂) > 0, this requires m₁ − m₂ < 0"
     },
     {
-      "explanation": "And for the second block.",
-      "notations": "v₂f = [2 m₁/(m₁ + m₂)] v₀"
-    },
-    {
-      "explanation": "For m₁ to move backwards after collision, v₁f must be negative.",
-      "notations": "v₁f < 0 → (m₁ − m₂)/(m₁ + m₂) < 0 → m₁ − m₂ < 0 → m₂ > m₁"
-    },
-    {
-      "explanation": "The condition for m₁ to move backwards is that m₂ must be greater than m₁.",
+      "explanation": "State the final condition",
       "notations": "Condition: m₂ > m₁"
     }
-  ]
+  ],
+  "solution": "Part (a):\np = mv gives: m₁v₀ = (m₁ + m₂)v_c\nv_c = m₁v₀/(m₁ + m₂)\n\nKE = ½mv² and PE_spring = ½kx² give:\n½m₁v₀² = ½(m₁ + m₂)v_c² + ½kx₍max₎²\n½kx₍max₎² = ½m₁v₀² − ½(m₁ + m₂)[m₁v₀/(m₁ + m₂)]²\n½kx₍max₎² = ½m₁v₀² − ½m₁²v₀²/(m₁ + m₂)\n½kx₍max₎² = ½m₁v₀²[1 − m₁/(m₁ + m₂)]\n½kx₍max₎² = ½m₁v₀²[m₂/(m₁ + m₂)]\n½kx₍max₎² = ½m₁m₂v₀²/(m₁ + m₂)\nx₍max₎ = v₀√[m₁m₂/((m₁ + m₂)k)]\n\nPart (b):\nElastic collision formulas: v₁f = (m₁ − m₂)/(m₁ + m₂) v₁i,  v₂f = 2m₁/(m₁ + m₂) v₁i\nv₁f = (m₁ − m₂)/(m₁ + m₂) v₀\nv₂f = 2m₁/(m₁ + m₂) v₀\n\nFor m₁ to move backwards: v₁f < 0\n(m₁ − m₂)/(m₁ + m₂) < 0\nm₁ − m₂ < 0\nCondition: m₂ > m₁"
 }
