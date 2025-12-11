@@ -312,10 +312,15 @@ const ALL_NOTATIONS = ["a₍c₎ = v² / r = 4π²rf²", "T = 1 / f = 1 / (2.00 
         }
 
         function getChapterOrder(chapter) {
-            // Extract number from chapter string for sorting
-            const match = chapter.match(/(\d+)/);
-            if (!match) return 999;
-            return parseInt(match[1]);
+            // Sort by: Chapters (by number), then Quizzes, Worksheets, Midterm last
+            const num = chapter.match(/(\d+)/);
+            const n = num ? parseInt(num[1]) : 99;
+
+            if (chapter.startsWith('Chapter')) return n;           // 5-14
+            if (chapter.startsWith('Quiz')) return 100 + n;        // 105-110
+            if (chapter.startsWith('Worksheet')) return 200 + n;   // 208-210
+            if (chapter.startsWith('Midterm')) return 300;         // 300
+            return 400;  // anything else
         }
 
         function initQuiz() {
