@@ -303,11 +303,18 @@ const ALL_NOTATIONS = ["a₍c₎ = v² / r = 4π²rf²", "T = 1 / f = 1 / (2.00 
                 const li = document.createElement('li');
                 li.className = 'problem-item';
                 if (problemStatus[p.problem] === 'passed') li.classList.add('completed');
-                if (problemStatus[p.problem] === 'failed') li.classList.add('failed');
+                else if (problemStatus[p.problem] === 'failed') li.classList.add('failed');
                 if (currentItem && p.problem === currentItem.problem) li.classList.add('current');
 
+                // Show phase progress indicator
+                const progress = problemProgress[p.problem];
+                let phaseIndicator = '';
+                if (progress && progress.phasesPassed > 0 && problemStatus[p.problem] !== 'passed') {
+                    phaseIndicator = ' <span style="color:#00d4ff;font-size:0.8em">(' + progress.phasesPassed + '/3)</span>';
+                }
+
                 li.innerHTML = `
-                    <div class="problem-item-number">Problem ${i + 1}</div>
+                    <div class="problem-item-number">Problem ${i + 1}${phaseIndicator}</div>
                     <div class="problem-item-text">${p.problem.substring(0, 80)}${p.problem.length > 80 ? '...' : ''}</div>
                 `;
                 li.onclick = () => jumpToProblem(i);
@@ -317,32 +324,14 @@ const ALL_NOTATIONS = ["a₍c₎ = v² / r = 4π²rf²", "T = 1 / f = 1 / (2.00 
 
         function jumpToProblem(index) {
             closeSidebar();
-            currentIndex = index;
-            currentItem = allProblems[index];
-
-            // Reset phase state
-            phase = 1;
-            phasesPassed = 0;
-            lives = 3;
-            updateLives();
-            document.getElementById('completedPhasesContainer').innerHTML = '';
-
+            
             // Hide study guide if showing
             document.getElementById('studyGuide').style.display = 'none';
             document.getElementById('quiz').style.display = 'block';
-
-            document.getElementById('problemSource').textContent = currentItem.source;
-            document.getElementById('problemChapter').textContent = currentItem.chapter;
-            document.getElementById('problemText').textContent = currentItem.problem;
-
-            document.getElementById('phase1').style.display = 'block';
-            document.getElementById('phase2').style.display = 'none';
-            document.getElementById('phase3').style.display = 'none';
             document.getElementById('nextBtn').className = 'next-btn';
-
-            updateDots();
-            updateNavButtons();
-            setupFormulasPhase();
+            
+            // Use goToProblem to restore saved progress for this problem
+            goToProblem(allProblems[index]);
         }
 
         function updateNavButtons() {
@@ -528,16 +517,27 @@ const ALL_NOTATIONS = ["a₍c₎ = v² / r = 4π²rf²", "T = 1 / f = 1 / (2.00 
             return 400;  // anything else
         }
 
+        // Per-problem progress tracking
+        let problemProgress = {}; // { problemText: { phase: 1, phasesPassed: 0, varAnswers: [], stepAnswers: [] } }
+        let lastProblem = null;
+
         function saveProgress() {
+            // Save current problem's progress
+            if (currentItem) {
+                problemProgress[currentItem.problem] = {
+                    phase: phase,
+                    phasesPassed: phasesPassed,
+                    varAnswers: varAnswers || [],
+                    stepAnswers: stepAnswers || []
+                };
+                lastProblem = currentItem.problem;
+            }
+
             const data = {
                 problemStatus: problemStatus,
-                correct: correct,
-                // Save current problem state
-                currentProblem: currentItem ? currentItem.problem : null,
-                currentPhase: phase,
-                phasesPassed: phasesPassed,
-                varAnswers: varAnswers,
-                stepAnswers: stepAnswers
+                problemProgress: problemProgress,
+                lastProblem: lastProblem,
+                correct: correct
             };
             localStorage.setItem('problemQuizProgress', JSON.stringify(data));
         }
@@ -547,15 +547,34 @@ const ALL_NOTATIONS = ["a₍c₎ = v² / r = 4π²rf²", "T = 1 / f = 1 / (2.00 
             if (saved) {
                 const data = JSON.parse(saved);
                 problemStatus = data.problemStatus || {};
+                problemProgress = data.problemProgress || {};
+                lastProblem = data.lastProblem || null;
                 correct = data.correct || 0;
-                return data; // Return full data for restoring state
+                return data;
             }
             return null;
+        }
+
+        function loadProblemProgress(problem) {
+            const progress = problemProgress[problem.problem];
+            if (progress) {
+                phase = progress.phase || 1;
+                phasesPassed = progress.phasesPassed || 0;
+                varAnswers = progress.varAnswers || [];
+                stepAnswers = progress.stepAnswers || [];
+            } else {
+                phase = 1;
+                phasesPassed = 0;
+                varAnswers = [];
+                stepAnswers = [];
+            }
         }
 
         function clearProgress() {
             localStorage.removeItem('problemQuizProgress');
             problemStatus = {};
+            problemProgress = {};
+            lastProblem = null;
             correct = 0;
             initQuiz();
         }
@@ -574,6 +593,7 @@ const ALL_NOTATIONS = ["a₍c₎ = v² / r = 4π²rf²", "T = 1 / f = 1 / (2.00 
             } else {
                 remaining = shuffleArray([...allProblems]);
                 problemStatus = {};
+                problemProgress = {};
                 correct = 0;
             }
 
@@ -584,45 +604,59 @@ const ALL_NOTATIONS = ["a₍c₎ = v² / r = 4π²rf²", "T = 1 / f = 1 / (2.00 
             document.getElementById('quiz').style.display = 'block';
             document.getElementById('complete').style.display = 'none';
 
-            // Restore in-progress problem if exists
-            if (savedData && savedData.currentProblem && savedData.phasesPassed > 0) {
-                const savedProblem = allProblems.find(p => p.problem === savedData.currentProblem);
+            // Restore last problem if exists
+            if (lastProblem) {
+                const savedProblem = allProblems.find(p => p.problem === lastProblem);
                 if (savedProblem && problemStatus[savedProblem.problem] !== 'passed') {
-                    currentItem = savedProblem;
-                    currentIndex = allProblems.findIndex(p => p.problem === currentItem.problem);
-                    phasesPassed = savedData.phasesPassed || 0;
-                    varAnswers = savedData.varAnswers || [];
-                    stepAnswers = savedData.stepAnswers || [];
-                    
-                    // Show the problem and go to saved phase
-                    document.getElementById('problemSource').textContent = currentItem.source;
-                    document.getElementById('problemChapter').textContent = currentItem.chapter;
-                    document.getElementById('problemText').textContent = currentItem.problem;
-                    document.getElementById('completedPhasesContainer').innerHTML = '';
-                    
-                    phase = savedData.currentPhase || 1;
-                    lives = 3;
-                    updateLives();
-                    
-                    // Show appropriate phase
-                    document.getElementById('phase1').style.display = 'none';
-                    document.getElementById('phase2').style.display = 'none';
-                    document.getElementById('phase3').style.display = 'none';
-                    document.getElementById('phase' + phase).style.display = 'block';
-                    
-                    if (phase === 1) setupFormulasPhase();
-                    else if (phase === 2) setupVariablesPhase();
-                    else if (phase === 3) setupStepsPhase();
-                    
-                    updateDots();
-                    updateNavButtons();
-                    updateCompletedPhases();
-                    updateProblemList();
+                    goToProblem(savedProblem);
                     return;
                 }
             }
             
             showQuestion();
+        }
+
+        // Go to a specific problem and restore its progress
+        function goToProblem(problem) {
+            currentItem = problem;
+            currentIndex = allProblems.findIndex(p => p.problem === currentItem.problem);
+            
+            // Load this problem's saved progress
+            loadProblemProgress(problem);
+            
+            lives = 3;
+            updateLives();
+            
+            // Show the problem
+            document.getElementById('problemSource').textContent = currentItem.source;
+            document.getElementById('problemChapter').textContent = currentItem.chapter;
+            document.getElementById('problemText').textContent = currentItem.problem;
+            document.getElementById('completedPhasesContainer').innerHTML = '';
+            
+            // Show appropriate phase
+            document.getElementById('phase1').style.display = 'none';
+            document.getElementById('phase2').style.display = 'none';
+            document.getElementById('phase3').style.display = 'none';
+            document.getElementById('phase' + phase).style.display = 'block';
+            
+            // Setup the phase - show completed view if already passed, otherwise fresh
+            if (phase <= phasesPassed) {
+                // Already completed this phase, show read-only
+                if (phase === 1) showCompletedFormulas();
+                else if (phase === 2) showCompletedVariables();
+                else if (phase === 3) showCompletedSteps();
+            } else {
+                // Not yet completed, setup fresh
+                if (phase === 1) setupFormulasPhase();
+                else if (phase === 2) setupVariablesPhase();
+                else if (phase === 3) setupStepsPhase();
+            }
+            
+            updateDots();
+            updateNavButtons();
+            updateCompletedPhases();
+            updateProblemList();
+            saveProgress();
         }
 
         function updateDots() {
@@ -634,29 +668,11 @@ const ALL_NOTATIONS = ["a₍c₎ = v² / r = 4π²rf²", "T = 1 / f = 1 / (2.00 
         function showQuestion() {
             if (remaining.length === 0) { showComplete(); return; }
 
-            phase = 1;
-            phasesPassed = 0;
-            lives = 3;
-            updateLives();
-            document.getElementById('completedPhasesContainer').innerHTML = '';
-
             const idx = Math.floor(Math.random() * remaining.length);
-            currentItem = remaining[idx];
-            // Find the index in allProblems for navigation
-            currentIndex = allProblems.findIndex(p => p.problem === currentItem.problem);
-
-            document.getElementById('problemSource').textContent = currentItem.source;
-            document.getElementById('problemChapter').textContent = currentItem.chapter;
-            document.getElementById('problemText').textContent = currentItem.problem;
-
-            document.getElementById('phase1').style.display = 'block';
-            document.getElementById('phase2').style.display = 'none';
-            document.getElementById('phase3').style.display = 'none';
-            document.getElementById('nextBtn').className = 'next-btn';
-
-            updateDots();
-            updateNavButtons();
-            setupFormulasPhase();
+            const nextProblem = remaining[idx];
+            
+            // Use goToProblem which handles loading saved progress
+            goToProblem(nextProblem);
         }
 
         function setupFormulasPhase() {
