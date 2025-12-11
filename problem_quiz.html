@@ -316,7 +316,7 @@ const ALL_NOTATIONS = ["a₍c₎ = v² / r = 4π²rf²", "T = 1 / f = 1 / (2.00 
 
                 li.innerHTML = `
                     <div class="problem-item-number">Problem ${i + 1}${phaseIndicator}</div>
-                    <div class="problem-item-text">${p.problem.substring(0, 80)}${p.problem.length > 80 ? '...' : ''}</div>
+                    <div class="problem-item-text">${p.problem}</div>
                 `;
                 li.onclick = () => jumpToProblem(i);
                 list.appendChild(li);
@@ -977,8 +977,7 @@ const ALL_NOTATIONS = ["a₍c₎ = v² / r = 4π²rf²", "T = 1 / f = 1 / (2.00 
             html += '<div class="step-prompt">What is the notation for this step?</div>';
             html += '<div class="choice-buttons" id="stepChoices">';
             choices.forEach((choice, i) => {
-                const shortChoice = choice.length > 80 ? choice.substring(0, 77) + '...' : choice;
-                html += '<button class="choice-btn step-choice" data-value="' + choice.replace(/"/g, '&quot;') + '" data-correct="' + correctNotation.replace(/"/g, '&quot;') + '" onclick="toggleStepChoice(this)">' + shortChoice + '</button>';
+                html += '<button class="choice-btn step-choice" data-value="' + choice.replace(/"/g, '&quot;') + '" data-correct="' + correctNotation.replace(/"/g, '&quot;') + '" onclick="toggleStepChoice(this)">' + choice + '</button>';
             });
             html += '</div>';
             html += '<button class="lock-btn" id="lockStepAnswer" onclick="lockStepAnswer()" style="margin-top: 15px;">Lock In Answer</button>';
