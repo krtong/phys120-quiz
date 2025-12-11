@@ -311,8 +311,17 @@ const ALL_NOTATIONS = ["a₍c₎ = v² / r = 4π²rf²", "T = 1 / f = 1 / (2.00 
             });
         }
 
+        function getChapterOrder(chapter) {
+            // Extract number from chapter string for sorting
+            const match = chapter.match(/(\d+)/);
+            if (!match) return 999;
+            return parseInt(match[1]);
+        }
+
         function initQuiz() {
             allProblems = PROBLEMS.filter(p => p.variables.length >= 2 && p.steps.length > 0);
+            // Sort by chapter number
+            allProblems.sort((a, b) => getChapterOrder(a.chapter) - getChapterOrder(b.chapter));
             remaining = shuffleArray([...allProblems]);
             problemStatus = {};  // Reset status
             total = allProblems.length;
