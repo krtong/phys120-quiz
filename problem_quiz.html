@@ -386,9 +386,13 @@ const ALL_NOTATIONS = ["a₍c₎ = v² / r = 4π²rf²", "T = 1 / f = 1 / (2.00 
                 html = '<strong>Correct steps:</strong><br><br>' + steps;
             }
 
+            // Hide any existing Next button
+            const existingNextBtn = document.querySelector('.next-var-btn, .next-step-btn');
+            if (existingNextBtn) existingNextBtn.style.display = 'none';
+
             html += '<br><br><div class="options-row">' +
                 '<button class="option-btn" onclick="retryPhase()">Try Again</button>' +
-                (phaseNum < 3 ? '<button class="option-btn" onclick="goToPhase(' + (phaseNum + 1) + ')">Next Phase</button>' : '') +
+                (phaseNum < 3 ? '<button class="option-btn" onclick="goToPhase(' + (phaseNum + 1) + ')">Next</button>' : '') +
                 '<button class="option-btn" onclick="nextQuestion()">New Problem</button></div>';
 
             feedback.innerHTML = html;
@@ -605,7 +609,7 @@ const ALL_NOTATIONS = ["a₍c₎ = v² / r = 4π²rf²", "T = 1 / f = 1 / (2.00 
                     const correctFormulasStr = currentItem.correctFormulas.map(f => f.name + ': ' + f.formula).join('<br>• ');
                     feedback.innerHTML = '✗ Out of lives!<br><br><div class="options-row">' +
                         '<button class="option-btn" onclick="retryPhase()">Try Again</button>' +
-                        '<button class="option-btn" onclick="goToPhase2()">Next Phase</button>' +
+                        '<button class="option-btn" onclick="goToPhase2()">Next</button>' +
                         '<button class="option-btn" onclick="nextQuestion()">New Problem</button>' +
                         '<button class="option-btn" onclick="showPhaseAnswer(1)">See Answer</button></div>';
                     feedback.className = 'feedback show wrong';
@@ -707,10 +711,14 @@ const ALL_NOTATIONS = ["a₍c₎ = v² / r = 4π²rf²", "T = 1 / f = 1 / (2.00 
                     buttons.forEach(b => {
                         if (b.dataset.value === correct) b.classList.add('correct');
                     });
+                    // Hide the Next button
+                    const nextBtn = document.querySelector('.next-var-btn');
+                    if (nextBtn) nextBtn.style.display = 'none';
+
                     const feedback = document.getElementById('varFeedback');
                     feedback.innerHTML = '✗ Out of lives!<br><br><div class="options-row">' +
                         '<button class="option-btn" onclick="retryPhase()">Try Again</button>' +
-                        '<button class="option-btn" onclick="goToPhase3()">Next Phase</button>' +
+                        '<button class="option-btn" onclick="goToPhase3()">Next</button>' +
                         '<button class="option-btn" onclick="nextQuestion()">New Problem</button>' +
                         '<button class="option-btn" onclick="showPhaseAnswer(2)">See Answer</button></div>';
                     feedback.className = 'feedback show wrong';
@@ -831,6 +839,10 @@ const ALL_NOTATIONS = ["a₍c₎ = v² / r = 4π²rf²", "T = 1 / f = 1 / (2.00 
                     buttons.forEach(b => {
                         if (b.dataset.value === correct) b.classList.add('correct');
                     });
+                    // Hide the Next button
+                    const nextBtn = document.querySelector('.next-step-btn');
+                    if (nextBtn) nextBtn.style.display = 'none';
+
                     const feedback = document.getElementById('stepsFeedback');
                     feedback.innerHTML = '✗ Out of lives!<br><br><div class="options-row">' +
                         '<button class="option-btn" onclick="retryPhase()">Try Again</button>' +
