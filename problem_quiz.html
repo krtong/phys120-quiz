@@ -376,17 +376,30 @@ const ALL_NOTATIONS = ["a₍c₎ = v² / r = 4π²rf²", "T = 1 / f = 1 / (2.00 
             'worksheet 10': 'sources/WS10_Rotational_Dynamics.pdf'
         };
 
+        function normalizeKey(str) {
+            return str.toLowerCase()
+                .replace(/\.pdf$|\.docx$/g, '')
+                .replace(/[-_]/g, ' ')
+                .replace(/\\s+/g, ' ')
+                .trim();
+        }
+
         function getSourceOriginalPath(srcString) {
-            const key = getSourceKey(srcString).toLowerCase();
+            const keyRaw = getSourceKey(srcString);
+            const key = normalizeKey(keyRaw);
+
+            // Direct override
             if (SOURCE_PATH_OVERRIDES[key]) return SOURCE_PATH_OVERRIDES[key];
+
+            // Normalize candidates and match flexibly
             const candidates = [
                 ...SOURCE_FILES,
                 `sources/${getSourceKey(srcString)}.pdf`,
                 `sources/${getSourceKey(srcString)}.docx`
             ];
             for (const c of candidates) {
-                const name = c.split('/').pop().toLowerCase();
-                const stem = name.replace(/\.(pdf|docx)$/,'');
+                const name = c.split('/').pop();
+                const stem = normalizeKey(name);
                 if (stem === key || stem.includes(key) || key.includes(stem)) {
                     return c;
                 }
@@ -544,25 +557,22 @@ const ALL_NOTATIONS = ["a₍c₎ = v² / r = 4π²rf²", "T = 1 / f = 1 / (2.00 
             const list = document.getElementById('sourceList');
             list.innerHTML = '';
 
-            // Build a unique, sorted list of sources
-            const sources = Array.from(new Set(allProblems.map(p => p.source))).sort();
+            // Build a unique, sorted list of actual source files (not per-problem)
+            const sources = Array.from(new Set(SOURCE_FILES)).sort((a, b) => a.localeCompare(b));
 
-            sources.forEach(src => {
-                const li = document.createElement('li');
-                li.className = 'problem-item';
-                const key = getSourceKey(src);
+            sources.forEach(srcPath => {
+                const fileLabel = srcPath.split('/').pop();
+                const key = getSourceKey(fileLabel);
                 const hasImages = SOURCE_IMAGE_MANIFEST[key] ||
                     Object.keys(SOURCE_IMAGE_MANIFEST).some(k => k.includes(key) || key.includes(k));
-                const originalPath = getSourceOriginalPath(src);
 
-                let inner = `<div class="problem-item-text">${src}</div>`;
+                const li = document.createElement('li');
+                li.className = 'problem-item';
+
+                let inner = `<div class="problem-item-text">${fileLabel}</div>`;
                 inner += '<div style="margin-top:6px; display:flex; gap:8px; flex-wrap:wrap;">';
-                inner += `<button class="option-btn" style="padding:6px 10px" onclick="openSourceViewer('${src.replace(/'/g, "\\'")}')" ${hasImages ? '' : 'disabled'}>View pages</button>`;
-                if (originalPath) {
-                    inner += `<a class="option-btn" style="padding:6px 10px; text-decoration:none;" href="${originalPath}" target="_blank">Open file</a>`;
-                } else {
-                    inner += `<span style="color:#777;font-size:0.85em">File not found</span>`;
-                }
+                inner += `<button class="option-btn" style="padding:6px 10px" onclick="openSourceViewer('${fileLabel.replace(/'/g, "\\'")}')" ${hasImages ? '' : 'disabled'}>View pages</button>`;
+                inner += `<a class="option-btn" style="padding:6px 10px; text-decoration:none;" href="${srcPath}" target="_blank">Open file</a>`;
                 inner += '</div>';
 
                 li.innerHTML = inner;
@@ -877,9 +887,11 @@ const ALL_NOTATIONS = ["a₍c₎ = v² / r = 4π²rf²", "T = 1 / f = 1 / (2.00 
             lives = 3;
             updateLives();
             
-            // Show the problem
-            if (currentItem.sourceFile) {
-                document.getElementById('problemSource').innerHTML = currentItem.source + ' <a href="' + currentItem.sourceFile + '" target="_blank" style="color: #00d4ff; text-decoration: none;">[View Source]</a>';
+            // Show the problem with source link (fallback to overrides if sourceFile missing)
+            const originalPath = currentItem.sourceFile || getSourceOriginalPath(currentItem.source);
+            if (originalPath) {
+                document.getElementById('problemSource').innerHTML = currentItem.source +
+                    ' <a href="' + originalPath + '" target="_blank" style="color: #00d4ff; text-decoration: none;">[View Source]</a>';
             } else {
                 document.getElementById('problemSource').textContent = currentItem.source;
             }
