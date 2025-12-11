@@ -79,7 +79,23 @@
         .next-btn { display: none; width: 100%; padding: 15px; margin-top: 15px; background: #00d4ff; color: #1a1a2e; border: none; border-radius: 10px; font-size: 1.1em; cursor: pointer; font-weight: bold; }
         .next-btn:hover { background: #00b8e6; }
         .next-btn.show { display: block; }
-        
+
+        /* Study Guide Styles */
+        #studyGuide { background: #16213e; border-radius: 15px; padding: 30px; }
+        .study-header { font-size: 1.8em; color: #ff9f43; text-align: center; margin-bottom: 10px; }
+        .study-subtitle { color: #888; text-align: center; margin-bottom: 25px; }
+        .study-section { margin-bottom: 25px; }
+        .study-section-title { color: #00d4ff; font-size: 1.2em; margin-bottom: 12px; border-bottom: 1px solid #333; padding-bottom: 8px; }
+        .study-problem { background: #0d1b2a; padding: 15px; border-radius: 10px; margin-bottom: 20px; line-height: 1.6; }
+        .study-formula { background: #0d1b2a; padding: 12px 15px; border-radius: 8px; margin-bottom: 8px; font-family: 'STIX Two Math', 'Cambria Math', 'Latin Modern Math', serif; }
+        .study-variable { display: flex; justify-content: space-between; background: #0d1b2a; padding: 10px 15px; border-radius: 8px; margin-bottom: 6px; }
+        .study-variable-symbol { color: #ff9f43; font-family: 'STIX Two Math', 'Cambria Math', serif; }
+        .study-variable-meaning { color: #aaa; }
+        .study-step { background: #0d1b2a; padding: 12px 15px; border-radius: 8px; margin-bottom: 8px; }
+        .study-step-number { color: #ff9f43; font-weight: bold; }
+        .study-step-notation { font-family: 'STIX Two Math', 'Cambria Math', serif; color: #00d4ff; }
+        .study-step-explanation { color: #aaa; margin-top: 5px; font-size: 0.95em; }
+
         .complete { text-align: center; padding: 40px; }
         .complete h2 { color: #00ff88; font-size: 2em; }
         .restart-btn { padding: 15px 40px; background: #ff9f43; color: #1a1a2e; border: none; border-radius: 10px; font-size: 1.1em; cursor: pointer; font-weight: bold; margin-top: 20px; }
@@ -139,7 +155,15 @@
         
         <button class="next-btn" id="nextBtn" onclick="nextQuestion()">Next Problem</button>
     </div>
-    
+
+    <!-- Study Guide (shown when out of lives) -->
+    <div id="studyGuide" style="display: none;">
+        <div class="study-header">📚 Study Guide</div>
+        <div class="study-subtitle">Review this problem - it will come back later!</div>
+        <div id="studyContent"></div>
+        <button class="next-btn show" onclick="nextQuestion()" style="display: block;">Got It - Next Problem</button>
+    </div>
+
     <div id="complete" class="complete" style="display: none;">
         <h2>Congratulations!</h2>
         <p>You mastered all the physics problems!</p>
@@ -313,12 +337,7 @@ const ALL_NOTATIONS = ["a₍c₎ = v² / r = 4π²rf²", "T = 1 / f = 1 / (2.00 
                     feedback.textContent = '✗ Not quite right. ' + lives + ' ' + (lives === 1 ? 'life' : 'lives') + ' remaining. Try again!';
                     feedback.className = 'feedback show wrong';
                 } else {
-                    options.forEach(opt => opt.classList.add('disabled'));
-                    document.getElementById('lockFormulas').style.display = 'none';
-                    const correctFormulasStr = currentItem.correctFormulas.map(f => f.name + ': ' + f.formula).join('<br>• ');
-                    feedback.innerHTML = '✗ Out of lives!<br><br><strong>Correct formulas:</strong><br>• ' + correctFormulasStr;
-                    feedback.className = 'feedback show wrong';
-                    document.getElementById('nextBtn').className = 'next-btn show';
+                    showStudyGuide();
                 }
             }
         }
@@ -404,14 +423,7 @@ const ALL_NOTATIONS = ["a₍c₎ = v² / r = 4π²rf²", "T = 1 / f = 1 / (2.00 
                     feedback.textContent = '✗ Some are wrong. ' + lives + ' ' + (lives === 1 ? 'life' : 'lives') + ' remaining. Try again!';
                     feedback.className = 'feedback show wrong';
                 } else {
-                    rows.forEach(row => {
-                        row.querySelector('.var-dropdown').disabled = true;
-                    });
-                    document.getElementById('lockVars').style.display = 'none';
-                    const correctVars = currentItem.variables.map(v => v.symbol + ' = ' + v.meaning).join('<br>• ');
-                    feedback.innerHTML = '✗ Out of lives!<br><br><strong>Correct variables:</strong><br>• ' + correctVars;
-                    feedback.className = 'feedback show wrong';
-                    document.getElementById('nextBtn').className = 'next-btn show';
+                    showStudyGuide();
                 }
             }
         }
@@ -497,19 +509,66 @@ const ALL_NOTATIONS = ["a₍c₎ = v² / r = 4π²rf²", "T = 1 / f = 1 / (2.00 
                     feedback.textContent = '✗ Some are wrong. ' + lives + ' ' + (lives === 1 ? 'life' : 'lives') + ' remaining. Try again!';
                     feedback.className = 'feedback show wrong';
                 } else {
-                    rows.forEach(row => {
-                        row.querySelector('.step-dropdown').disabled = true;
-                    });
-                    document.getElementById('lockSteps').style.display = 'none';
-                    const correctStepsStr = currentItem.steps.map(s => '<strong>' + s.explanation + '</strong><br>→ ' + s.notations).join('<br><br>');
-                    feedback.innerHTML = '✗ Out of lives!<br><br><strong>Correct steps:</strong><br><br>' + correctStepsStr;
-                    feedback.className = 'feedback show wrong';
-                    document.getElementById('nextBtn').className = 'next-btn show';
+                    showStudyGuide();
                 }
             }
         }
 
-        function nextQuestion() { showQuestion(); }
+        function showStudyGuide() {
+            // Hide the quiz, show the study guide
+            document.getElementById('quiz').style.display = 'none';
+            document.getElementById('studyGuide').style.display = 'block';
+
+            let html = '';
+
+            // Problem section
+            html += '<div class="study-section">';
+            html += '<div class="study-section-title">Problem</div>';
+            html += '<div class="study-problem">' + currentItem.problem + '</div>';
+            html += '</div>';
+
+            // Formulas section
+            html += '<div class="study-section">';
+            html += '<div class="study-section-title">Formulas</div>';
+            currentItem.correctFormulas.forEach(f => {
+                html += '<div class="study-formula">';
+                html += '<strong>' + f.name + '</strong>: ' + f.formula;
+                html += '</div>';
+            });
+            html += '</div>';
+
+            // Variables section
+            html += '<div class="study-section">';
+            html += '<div class="study-section-title">Variables</div>';
+            currentItem.variables.forEach(v => {
+                html += '<div class="study-variable">';
+                html += '<span class="study-variable-symbol">' + v.symbol + '</span>';
+                html += '<span class="study-variable-meaning">' + v.meaning + '</span>';
+                html += '</div>';
+            });
+            html += '</div>';
+
+            // Steps section
+            html += '<div class="study-section">';
+            html += '<div class="study-section-title">Solution Steps</div>';
+            currentItem.steps.forEach((s, i) => {
+                html += '<div class="study-step">';
+                html += '<span class="study-step-number">Step ' + (i + 1) + ':</span> ';
+                html += '<span class="study-step-notation">' + s.notations + '</span>';
+                html += '<div class="study-step-explanation">' + s.explanation + '</div>';
+                html += '</div>';
+            });
+            html += '</div>';
+
+            document.getElementById('studyContent').innerHTML = html;
+        }
+
+        function nextQuestion() {
+            // Hide study guide if shown, show quiz
+            document.getElementById('studyGuide').style.display = 'none';
+            document.getElementById('quiz').style.display = 'block';
+            showQuestion();
+        }
 
         function showComplete() {
             document.getElementById('quiz').style.display = 'none';
