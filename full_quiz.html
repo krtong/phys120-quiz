@@ -66,9 +66,9 @@
         .lock-btn:hover { background: #e67e22; }
         .lock-btn:disabled { background: #444; cursor: not-allowed; color: #888; }
         
-        .feedback { text-align: center; font-size: 1.2em; padding: 15px; margin-top: 15px; border-radius: 10px; display: none; }
+        .feedback { text-align: left; font-size: 1em; padding: 20px; margin-top: 15px; border-radius: 10px; display: none; line-height: 1.6; max-height: 400px; overflow-y: auto; }
         .feedback.show { display: block; }
-        .feedback.correct { background: #0a3d2a; color: #00ff88; }
+        .feedback.correct { background: #0a3d2a; color: #00ff88; text-align: center; font-size: 1.2em; }
         .feedback.wrong { background: #3d0a0a; color: #ff4757; }
         
         .next-btn { display: none; width: 100%; padding: 15px; margin-top: 15px; background: #00d4ff; color: #1a1a2e; border: none; border-radius: 10px; font-size: 1.1em; cursor: pointer; font-weight: bold; }
@@ -278,7 +278,8 @@ const ALL_SYMBOLS = ["m", "r", "f", "T", "v", "a₍c₎", "→F₍c₎", "g", "v
                     setupSymbolMatchPhase();
                 }, 1200);
             } else {
-                feedback.textContent = '✗ Incorrect variable selection. Try again next time.';
+                const correctVars = currentItem.variables.map(v => v.meaning).join('<br>• ');
+                feedback.innerHTML = '✗ Incorrect.<br><br><strong>Correct variables:</strong><br>• ' + correctVars;
                 feedback.className = 'feedback show wrong';
                 document.getElementById('nextBtn').className = 'next-btn show';
             }
@@ -342,7 +343,8 @@ const ALL_SYMBOLS = ["m", "r", "f", "T", "v", "a₍c₎", "→F₍c₎", "g", "v
                     setupFormulasPhase();
                 }, 1200);
             } else {
-                feedback.textContent = '✗ Some symbols incorrect. Try again next time.';
+                const correctMatches = currentItem.variables.map(v => v.symbol + ' = ' + v.meaning).join('<br>• ');
+                feedback.innerHTML = '✗ Incorrect.<br><br><strong>Correct symbols:</strong><br>• ' + correctMatches;
                 feedback.className = 'feedback show wrong';
                 document.getElementById('nextBtn').className = 'next-btn show';
             }
@@ -411,7 +413,8 @@ const ALL_SYMBOLS = ["m", "r", "f", "T", "v", "a₍c₎", "→F₍c₎", "g", "v
                     setupStepsPhase();
                 }, 1200);
             } else {
-                feedback.textContent = '✗ Formula selection incorrect. Try again next time.';
+                const correctFormulasStr = currentItem.correctFormulas.map(f => f.name + ': ' + f.formula).join('<br>• ');
+                feedback.innerHTML = '✗ Incorrect.<br><br><strong>Correct formulas:</strong><br>• ' + correctFormulasStr;
                 feedback.className = 'feedback show wrong';
                 document.getElementById('nextBtn').className = 'next-btn show';
             }
@@ -474,10 +477,11 @@ const ALL_SYMBOLS = ["m", "r", "f", "T", "v", "a₍c₎", "→F₍c₎", "g", "v
                 document.getElementById('score').textContent = correct;
                 document.getElementById('progressFill').style.width = (correct / total) * 100 + '%';
             } else {
-                feedback.textContent = '✗ Some steps incorrect. Try again next time.';
+                const correctStepsStr = currentItem.steps.map(s => '<strong>' + s.notations + '</strong><br>' + s.explanation).join('<br><br>');
+                feedback.innerHTML = '✗ Incorrect.<br><br><strong>Correct steps:</strong><br><br>' + correctStepsStr;
                 feedback.className = 'feedback show wrong';
             }
-            
+
             document.getElementById('nextBtn').className = 'next-btn show';
         }
 
