@@ -100,6 +100,7 @@
         .complete h2 { color: #00ff88; font-size: 2em; }
         .restart-btn { padding: 15px 40px; background: #ff9f43; color: #1a1a2e; border: none; border-radius: 10px; font-size: 1.1em; cursor: pointer; font-weight: bold; margin-top: 20px; }
         .stats { margin-top: 20px; color: #888; }
+        .continue-btn { padding: 12px 25px; background: #ff9f43; color: #1a1a2e; border: none; border-radius: 8px; font-size: 1em; cursor: pointer; font-weight: bold; margin-top: 10px; }
 
         /* Hamburger Menu */
         .header-row { display: flex; align-items: center; justify-content: center; position: relative; margin-bottom: 10px; padding: 0 50px; }
@@ -473,19 +474,19 @@ const ALL_NOTATIONS = ["a₍c₎ = v² / r = 4π²rf²", "T = 1 / f = 1 / (2.00 
                     });
 
                     const correctFormulasStr = currentItem.correctFormulas.map(f => f.name + ': ' + f.formula).join('<br>• ');
-                    feedback.innerHTML = '✗ Out of lives! Here are the correct formulas:<br>• ' + correctFormulasStr;
+                    feedback.innerHTML = '✗ Out of lives! Here are the correct formulas:<br>• ' + correctFormulasStr + '<br><br><button class="continue-btn" onclick="goToPhase2()">Continue →</button>';
                     feedback.className = 'feedback show wrong';
-
-                    setTimeout(() => {
-                        document.getElementById('phase1').style.display = 'none';
-                        document.getElementById('phase2').style.display = 'block';
-                        phase = 2;
-                        phasesPassed = 1;
-                        updateDots();
-                        setupVariablesPhase();
-                    }, 2500);
                 }
             }
+        }
+
+        function goToPhase2() {
+            document.getElementById('phase1').style.display = 'none';
+            document.getElementById('phase2').style.display = 'block';
+            phase = 2;
+            phasesPassed = 1;
+            updateDots();
+            setupVariablesPhase();
         }
 
         function setupVariablesPhase() {
@@ -580,25 +581,25 @@ const ALL_NOTATIONS = ["a₍c₎ = v² / r = 4π²rf²", "T = 1 / f = 1 / (2.00 
                     document.getElementById('lockVars').style.display = 'none';
 
                     const correctVars = currentItem.variables.map(v => v.symbol + ' = ' + v.meaning).join('<br>• ');
-                    feedback.innerHTML = '✗ Out of lives! Here are the correct variables:<br>• ' + correctVars;
+                    feedback.innerHTML = '✗ Out of lives! Here are the correct variables:<br>• ' + correctVars + '<br><br><button class="continue-btn" onclick="goToPhase3()">Continue →</button>';
                     feedback.className = 'feedback show wrong';
-
-                    setTimeout(() => {
-                        document.getElementById('phase2').style.display = 'none';
-                        document.getElementById('phase3').style.display = 'block';
-                        phase = 3;
-                        phasesPassed = 2;
-                        updateDots();
-                        setupStepsPhase();
-                    }, 2500);
                 }
             }
+        }
+
+        function goToPhase3() {
+            document.getElementById('phase2').style.display = 'none';
+            document.getElementById('phase3').style.display = 'block';
+            phase = 3;
+            phasesPassed = 2;
+            updateDots();
+            setupStepsPhase();
         }
 
         function setupStepsPhase() {
             lives = 3;
             updateLives();
-            
+
             const container = document.getElementById('stepsContainer');
             container.innerHTML = '';
             
@@ -688,14 +689,11 @@ const ALL_NOTATIONS = ["a₍c₎ = v² / r = 4π²rf²", "T = 1 / f = 1 / (2.00 
                     document.getElementById('lockSteps').style.display = 'none';
 
                     const correctStepsStr = currentItem.steps.map((s, i) => '<strong>Step ' + (i+1) + ':</strong> ' + s.explanation + '<br>→ ' + s.notations).join('<br><br>');
-                    feedback.innerHTML = '✗ Out of lives! Here are the correct steps:<br><br>' + correctStepsStr;
+                    feedback.innerHTML = '✗ Out of lives! Here are the correct steps:<br><br>' + correctStepsStr + '<br><br><button class="continue-btn" onclick="showStudyGuide()">View Study Guide →</button>';
                     feedback.className = 'feedback show wrong';
 
-                    // Mark as failed and show study guide after a moment
+                    // Mark as failed
                     problemStatus[currentItem.problem] = 'failed';
-                    setTimeout(() => {
-                        showStudyGuide();
-                    }, 2500);
                 }
             }
         }
