@@ -334,6 +334,12 @@ const ALL_NOTATIONS = ["a₍c₎ = v² / r = 4π²rf²", "T = 1 / f = 1 / (2.00 
 
         // List of original source files available to link (relative to quiz/)
         const SOURCE_FILES = [
+            // Prefer original DOCX when available, otherwise PDF
+            'sources/MT2 FA25 solution.docx',
+            'sources/Quiz 7 FA25 Solution.docx',
+            'sources/Quiz 8 solution FA25.docx',
+            'sources/Quiz 9 FA25 solution.docx',
+            'sources/Quiz10 FA25 solution.docx',
             'sources/PS Chap10.pdf',
             'sources/PS Chap11 and 12.pdf',
             'sources/PS Chap13 FA25.pdf',
@@ -344,11 +350,6 @@ const ALL_NOTATIONS = ["a₍c₎ = v² / r = 4π²rf²", "T = 1 / f = 1 / (2.00 
             'sources/PS_Chap8.pdf',
             'sources/Quiz5_FA25_solution.pdf',
             'sources/Quiz6_FA25.pdf',
-            'sources/Quiz 7 FA25 Solution.pdf',
-            'sources/Quiz 8 solution FA25.pdf',
-            'sources/Quiz 9 FA25 solution.pdf',
-            'sources/Quiz10 FA25 solution.pdf',
-            'sources/MT2 FA25 solution.pdf',
             'sources/WS_Work_and_Energy_I.pdf',
             'sources/WS09_Momentum_and_CM.pdf',
             'sources/WS10_Rotational_Dynamics.pdf'
@@ -366,11 +367,11 @@ const ALL_NOTATIONS = ["a₍c₎ = v² / r = 4π²rf²", "T = 1 / f = 1 / (2.00 
             'ps chap5_ii': 'sources/PS_Chap5_II.pdf',
             'quiz 5': 'sources/Quiz5_FA25_solution.pdf',
             'quiz 6': 'sources/Quiz6_FA25.pdf',
-            'quiz 7': 'sources/Quiz 7 FA25 Solution.pdf',
-            'quiz 8': 'sources/Quiz 8 solution FA25.pdf',
-            'quiz 9': 'sources/Quiz 9 FA25 solution.pdf',
-            'quiz 10': 'sources/Quiz10 FA25 solution.pdf',
-            'midterm 2': 'sources/MT2 FA25 solution.pdf',
+            'quiz 7': 'sources/Quiz 7 FA25 Solution.docx',
+            'quiz 8': 'sources/Quiz 8 solution FA25.docx',
+            'quiz 9': 'sources/Quiz 9 FA25 solution.docx',
+            'quiz 10': 'sources/Quiz10 FA25 solution.docx',
+            'midterm 2': 'sources/MT2 FA25 solution.docx',
             'worksheet 08': 'sources/WS_Work_and_Energy_I.pdf',
             'worksheet 09': 'sources/WS09_Momentum_and_CM.pdf',
             'worksheet 10': 'sources/WS10_Rotational_Dynamics.pdf'
@@ -562,7 +563,7 @@ const ALL_NOTATIONS = ["a₍c₎ = v² / r = 4π²rf²", "T = 1 / f = 1 / (2.00 
 
             sources.forEach(srcPath => {
                 const fileLabel = srcPath.split('/').pop();
-                const key = getSourceKey(fileLabel);
+            const key = getSourceKey(fileLabel);
                 const hasImages = SOURCE_IMAGE_MANIFEST[key] ||
                     Object.keys(SOURCE_IMAGE_MANIFEST).some(k => k.includes(key) || key.includes(k));
 
