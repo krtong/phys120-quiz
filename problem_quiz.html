@@ -24,7 +24,7 @@
         .problem-chapter { font-size: 0.85em; color: #ff9f43; margin-bottom: 10px; }
         
         .phase-indicator { display: flex; justify-content: center; gap: 10px; margin-bottom: 20px; }
-        .phase-dot { width: 12px; height: 12px; border-radius: 50%; background: #333; }
+        .phase-dot { width: 12px; height: 12px; min-width: 12px; min-height: 12px; max-width: 12px; max-height: 12px; border-radius: 50%; background: #333; flex-shrink: 0; }
         .phase-dot.active { background: #ff9f43; }
         .phase-dot.complete { background: #00ff88; }
         
