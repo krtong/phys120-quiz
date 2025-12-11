@@ -156,7 +156,7 @@
         <button class="next-btn" id="nextBtn" onclick="nextQuestion()">Next Problem</button>
     </div>
 
-    <!-- Study Guide (shown when out of lives) -->
+    <!-- Study Guide (shown at end of problem) -->
     <div id="studyGuide" style="display: none;">
         <div class="study-header">📚 Study Guide</div>
         <div class="study-subtitle">Review this problem - it will come back later!</div>
@@ -337,7 +337,29 @@ const ALL_NOTATIONS = ["a₍c₎ = v² / r = 4π²rf²", "T = 1 / f = 1 / (2.00 
                     feedback.textContent = '✗ Not quite right. ' + lives + ' ' + (lives === 1 ? 'life' : 'lives') + ' remaining. Try again!';
                     feedback.className = 'feedback show wrong';
                 } else {
-                    showStudyGuide();
+                    // Show correct answers, then move to next phase
+                    options.forEach(opt => opt.classList.add('disabled'));
+                    document.getElementById('lockFormulas').style.display = 'none';
+
+                    // Mark correct formulas
+                    options.forEach(opt => {
+                        if (currentItem.correctFormulas.some(f => f.formula === opt.dataset.formula)) {
+                            opt.classList.add('correct');
+                        }
+                    });
+
+                    const correctFormulasStr = currentItem.correctFormulas.map(f => f.name + ': ' + f.formula).join('<br>• ');
+                    feedback.innerHTML = '✗ Out of lives! Here are the correct formulas:<br>• ' + correctFormulasStr;
+                    feedback.className = 'feedback show wrong';
+
+                    setTimeout(() => {
+                        document.getElementById('phase1').style.display = 'none';
+                        document.getElementById('phase2').style.display = 'block';
+                        phase = 2;
+                        phasesPassed = 1;
+                        updateDots();
+                        setupVariablesPhase();
+                    }, 2500);
                 }
             }
         }
@@ -423,7 +445,28 @@ const ALL_NOTATIONS = ["a₍c₎ = v² / r = 4π²rf²", "T = 1 / f = 1 / (2.00 
                     feedback.textContent = '✗ Some are wrong. ' + lives + ' ' + (lives === 1 ? 'life' : 'lives') + ' remaining. Try again!';
                     feedback.className = 'feedback show wrong';
                 } else {
-                    showStudyGuide();
+                    // Show correct answers, then move to next phase
+                    rows.forEach(row => {
+                        const dropdown = row.querySelector('.var-dropdown');
+                        dropdown.disabled = true;
+                        dropdown.value = dropdown.dataset.correct;
+                        row.classList.remove('wrong');
+                        row.classList.add('correct');
+                    });
+                    document.getElementById('lockVars').style.display = 'none';
+
+                    const correctVars = currentItem.variables.map(v => v.symbol + ' = ' + v.meaning).join('<br>• ');
+                    feedback.innerHTML = '✗ Out of lives! Here are the correct variables:<br>• ' + correctVars;
+                    feedback.className = 'feedback show wrong';
+
+                    setTimeout(() => {
+                        document.getElementById('phase2').style.display = 'none';
+                        document.getElementById('phase3').style.display = 'block';
+                        phase = 3;
+                        phasesPassed = 2;
+                        updateDots();
+                        setupStepsPhase();
+                    }, 2500);
                 }
             }
         }
@@ -509,7 +552,24 @@ const ALL_NOTATIONS = ["a₍c₎ = v² / r = 4π²rf²", "T = 1 / f = 1 / (2.00 
                     feedback.textContent = '✗ Some are wrong. ' + lives + ' ' + (lives === 1 ? 'life' : 'lives') + ' remaining. Try again!';
                     feedback.className = 'feedback show wrong';
                 } else {
-                    showStudyGuide();
+                    // Show correct answers, then show study guide
+                    rows.forEach(row => {
+                        const dropdown = row.querySelector('.step-dropdown');
+                        dropdown.disabled = true;
+                        dropdown.value = dropdown.dataset.correct;
+                        row.classList.remove('wrong');
+                        row.classList.add('correct');
+                    });
+                    document.getElementById('lockSteps').style.display = 'none';
+
+                    const correctStepsStr = currentItem.steps.map((s, i) => '<strong>Step ' + (i+1) + ':</strong> ' + s.explanation + '<br>→ ' + s.notations).join('<br><br>');
+                    feedback.innerHTML = '✗ Out of lives! Here are the correct steps:<br><br>' + correctStepsStr;
+                    feedback.className = 'feedback show wrong';
+
+                    // Show study guide after a moment
+                    setTimeout(() => {
+                        showStudyGuide();
+                    }, 2500);
                 }
             }
         }
