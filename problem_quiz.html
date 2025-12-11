@@ -151,6 +151,22 @@
         .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 999; display: none; }
         .overlay.show { display: block; }
         /* Out of lives options */
+        .choice-btn.selected { border-color: #00d4ff; background: #1a3a5c; }
+
+        /* Completed phases summary */
+        .completed-phases { margin-top: 30px; border-top: 1px solid #333; padding-top: 20px; }
+        .completed-phase { background: #0d1b2a; border-radius: 10px; padding: 15px; margin-bottom: 15px; border-left: 3px solid #00ff88; }
+        .completed-phase.failed { border-left-color: #ff4757; }
+        .completed-phase-title { color: #00ff88; font-weight: bold; margin-bottom: 10px; font-size: 0.95em; }
+        .completed-phase.failed .completed-phase-title { color: #ff4757; }
+        .completed-phase-content { font-size: 0.9em; color: #aaa; }
+        .completed-phase-item { margin-bottom: 6px; padding: 6px 10px; background: #16213e; border-radius: 6px; }
+        .completed-phase-item .symbol { color: #ff9f43; font-family: 'STIX Two Math', 'Cambria Math', serif; }
+        .completed-phase-item .meaning { color: #888; }
+        .completed-phase-item .formula-name { color: #888; font-size: 0.85em; }
+        .completed-phase-item .formula-eq { font-family: 'STIX Two Math', 'Cambria Math', serif; color: #ccc; }
+
+
         .options-row { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
         .option-btn { padding: 10px 15px; background: #16213e; border: 1px solid #444; border-radius: 8px; color: #ccc; cursor: pointer; font-size: 0.9em; transition: all 0.2s; }
         .option-btn:hover { border-color: #ff9f43; color: #ff9f43; }
@@ -229,6 +245,9 @@
         </div>
         
         <button class="next-btn" id="nextBtn" onclick="nextQuestion()">Next Problem</button>
+
+        <!-- Completed Phases Summary -->
+        <div id="completedPhasesContainer"></div>
     </div>
 
     <!-- Study Guide (shown at end of problem) -->
@@ -306,6 +325,7 @@ const ALL_NOTATIONS = ["a₍c₎ = v² / r = 4π²rf²", "T = 1 / f = 1 / (2.00 
             phasesPassed = 0;
             lives = 3;
             updateLives();
+            document.getElementById('completedPhasesContainer').innerHTML = '';
 
             // Hide study guide if showing
             document.getElementById('studyGuide').style.display = 'none';
@@ -490,6 +510,7 @@ const ALL_NOTATIONS = ["a₍c₎ = v² / r = 4π²rf²", "T = 1 / f = 1 / (2.00 
             phasesPassed = 0;
             lives = 3;
             updateLives();
+            document.getElementById('completedPhasesContainer').innerHTML = '';
 
             const idx = Math.floor(Math.random() * remaining.length);
             currentItem = remaining[idx];
@@ -623,6 +644,7 @@ const ALL_NOTATIONS = ["a₍c₎ = v² / r = 4π²rf²", "T = 1 / f = 1 / (2.00 
             phase = 2;
             phasesPassed = 1;
             updateDots();
+            updateCompletedPhases();
             setupVariablesPhase();
         }
 
@@ -654,13 +676,62 @@ const ALL_NOTATIONS = ["a₍c₎ = v² / r = 4π²rf²", "T = 1 / f = 1 / (2.00 
             html += '<div class="var-progress">Variable ' + (currentVarIndex + 1) + ' of ' + currentItem.variables.length + '</div>';
             html += '<div class="var-symbol-large">' + v.symbol + '</div>';
             html += '<div class="var-prompt">What does this symbol represent?</div>';
-            html += '<div class="choice-buttons">';
+            html += '<div class="choice-buttons" id="varChoices">';
             choices.forEach((choice, i) => {
-                html += '<button class="choice-btn" data-value="' + choice.replace(/"/g, '&quot;') + '" onclick="selectVarChoice(this, \'' + correctMeaning.replace(/'/g, "\\'").replace(/"/g, '&quot;') + '\')">' + choice + '</button>';
+                html += '<button class="choice-btn" data-value="' + choice.replace(/"/g, '&quot;') + '" data-correct="' + correctMeaning.replace(/"/g, '&quot;') + '" onclick="toggleVarChoice(this)">' + choice + '</button>';
             });
-            html += '</div></div>';
+            html += '</div>';
+            html += '<button class="lock-btn" id="lockVarAnswer" onclick="lockVarAnswer()" style="margin-top: 15px;">Lock In Answer</button>';
+            html += '</div>';
 
             container.innerHTML = html;
+        }
+
+        function toggleVarChoice(btn) {
+            // Deselect all other buttons
+            document.querySelectorAll('#varChoices .choice-btn').forEach(b => b.classList.remove('selected'));
+            // Select this button
+            btn.classList.add('selected');
+        }
+
+        function lockVarAnswer() {
+            const selected = document.querySelector('#varChoices .choice-btn.selected');
+            if (!selected) return; // Nothing selected
+
+            const buttons = document.querySelectorAll('#varChoices .choice-btn');
+            const correct = selected.dataset.correct;
+            const selectedValue = selected.dataset.value;
+
+            buttons.forEach(b => b.disabled = true);
+            document.getElementById('lockVarAnswer').style.display = 'none';
+
+            if (selectedValue === correct) {
+                selected.classList.add('correct');
+                varAnswers[currentVarIndex] = true;
+                showVarNextButton();
+            } else {
+                selected.classList.add('wrong');
+                varAnswers[currentVarIndex] = false;
+                lives--;
+                updateLives();
+
+                if (lives > 0) {
+                    showVarNextButton();
+                } else {
+                    // Out of lives - show correct answer
+                    buttons.forEach(b => {
+                        if (b.dataset.value === correct) b.classList.add('correct');
+                    });
+
+                    const feedback = document.getElementById('varFeedback');
+                    feedback.innerHTML = '✗ Out of lives!<br><br><div class="options-row">' +
+                        '<button class="option-btn" onclick="retryPhase()">Try Again</button>' +
+                        '<button class="option-btn" onclick="goToPhase3()">Next Phase</button>' +
+                        '<button class="option-btn" onclick="nextQuestion()">New Problem</button>' +
+                        '<button class="option-btn" onclick="showPhaseAnswer(2)">See Answer</button></div>';
+                    feedback.className = 'feedback show wrong';
+                }
+            }
         }
 
         function showVarNextButton() {
@@ -684,45 +755,6 @@ const ALL_NOTATIONS = ["a₍c₎ = v² / r = 4π²rf²", "T = 1 / f = 1 / (2.00 
                 showCurrentVariable();
             } else {
                 checkVariablesComplete();
-            }
-        }
-
-        function selectVarChoice(btn, correct) {
-            const buttons = document.querySelectorAll('.choice-btn');
-            const selected = btn.dataset.value;
-
-            buttons.forEach(b => b.disabled = true);
-
-            if (selected === correct) {
-                btn.classList.add('correct');
-                varAnswers[currentVarIndex] = true;
-                showVarNextButton();
-            } else {
-                btn.classList.add('wrong');
-                varAnswers[currentVarIndex] = false;
-                lives--;
-                updateLives();
-
-                if (lives > 0) {
-                    // Don't show correct answer, just let them continue
-                    showVarNextButton();
-                } else {
-                    // Out of lives - NOW show the correct answer
-                    buttons.forEach(b => {
-                        if (b.dataset.value === correct) b.classList.add('correct');
-                    });
-                    // Hide the Next button
-                    const nextBtn = document.querySelector('.next-var-btn');
-                    if (nextBtn) nextBtn.style.display = 'none';
-
-                    const feedback = document.getElementById('varFeedback');
-                    feedback.innerHTML = '✗ Out of lives!<br><br><div class="options-row">' +
-                        '<button class="option-btn" onclick="retryPhase()">Try Again</button>' +
-                        '<button class="option-btn" onclick="goToPhase3()">Next</button>' +
-                        '<button class="option-btn" onclick="nextQuestion()">New Problem</button>' +
-                        '<button class="option-btn" onclick="showPhaseAnswer(2)">See Answer</button></div>';
-                    feedback.className = 'feedback show wrong';
-                }
             }
         }
 
@@ -750,6 +782,7 @@ const ALL_NOTATIONS = ["a₍c₎ = v² / r = 4π²rf²", "T = 1 / f = 1 / (2.00 
             phase = 3;
             phasesPassed = 2;
             updateDots();
+            updateCompletedPhases();
             setupStepsPhase();
         }
 
@@ -781,14 +814,62 @@ const ALL_NOTATIONS = ["a₍c₎ = v² / r = 4π²rf²", "T = 1 / f = 1 / (2.00 
             html += '<div class="step-progress">Step ' + (currentStepIndex + 1) + ' of ' + currentItem.steps.length + '</div>';
             html += '<div class="step-explanation-large">' + step.explanation + '</div>';
             html += '<div class="step-prompt">What is the notation for this step?</div>';
-            html += '<div class="choice-buttons">';
+            html += '<div class="choice-buttons" id="stepChoices">';
             choices.forEach((choice, i) => {
                 const shortChoice = choice.length > 80 ? choice.substring(0, 77) + '...' : choice;
-                html += '<button class="choice-btn step-choice" data-value="' + choice.replace(/"/g, '&quot;') + '" onclick="selectStepChoice(this, \'' + correctNotation.replace(/'/g, "\\'").replace(/"/g, '&quot;') + '\')">' + shortChoice + '</button>';
+                html += '<button class="choice-btn step-choice" data-value="' + choice.replace(/"/g, '&quot;') + '" data-correct="' + correctNotation.replace(/"/g, '&quot;') + '" onclick="toggleStepChoice(this)">' + shortChoice + '</button>';
             });
-            html += '</div></div>';
+            html += '</div>';
+            html += '<button class="lock-btn" id="lockStepAnswer" onclick="lockStepAnswer()" style="margin-top: 15px;">Lock In Answer</button>';
+            html += '</div>';
 
             container.innerHTML = html;
+        }
+
+        function toggleStepChoice(btn) {
+            // Deselect all other buttons
+            document.querySelectorAll('#stepChoices .choice-btn').forEach(b => b.classList.remove('selected'));
+            // Select this button
+            btn.classList.add('selected');
+        }
+
+        function lockStepAnswer() {
+            const selected = document.querySelector('#stepChoices .choice-btn.selected');
+            if (!selected) return; // Nothing selected
+
+            const buttons = document.querySelectorAll('#stepChoices .choice-btn');
+            const correct = selected.dataset.correct;
+            const selectedValue = selected.dataset.value;
+
+            buttons.forEach(b => b.disabled = true);
+            document.getElementById('lockStepAnswer').style.display = 'none';
+
+            if (selectedValue === correct) {
+                selected.classList.add('correct');
+                stepAnswers[currentStepIndex] = true;
+                showStepNextButton();
+            } else {
+                selected.classList.add('wrong');
+                stepAnswers[currentStepIndex] = false;
+                lives--;
+                updateLives();
+
+                if (lives > 0) {
+                    showStepNextButton();
+                } else {
+                    // Out of lives - show correct answer
+                    buttons.forEach(b => {
+                        if (b.dataset.value === correct) b.classList.add('correct');
+                    });
+
+                    const feedback = document.getElementById('stepsFeedback');
+                    feedback.innerHTML = '✗ Out of lives!<br><br><div class="options-row">' +
+                        '<button class="option-btn" onclick="retryPhase()">Try Again</button>' +
+                        '<button class="option-btn" onclick="nextQuestion()">New Problem</button>' +
+                        '<button class="option-btn" onclick="showPhaseAnswer(3)">See Answer</button></div>';
+                    feedback.className = 'feedback show wrong';
+                }
+            }
         }
 
         function showStepNextButton() {
@@ -815,44 +896,6 @@ const ALL_NOTATIONS = ["a₍c₎ = v² / r = 4π²rf²", "T = 1 / f = 1 / (2.00 
             }
         }
 
-        function selectStepChoice(btn, correct) {
-            const buttons = document.querySelectorAll('.step-choice');
-            const selected = btn.dataset.value;
-
-            buttons.forEach(b => b.disabled = true);
-
-            if (selected === correct) {
-                btn.classList.add('correct');
-                stepAnswers[currentStepIndex] = true;
-                showStepNextButton();
-            } else {
-                btn.classList.add('wrong');
-                stepAnswers[currentStepIndex] = false;
-                lives--;
-                updateLives();
-
-                if (lives > 0) {
-                    // Don't show correct answer, just let them continue
-                    showStepNextButton();
-                } else {
-                    // Out of lives - NOW show the correct answer
-                    buttons.forEach(b => {
-                        if (b.dataset.value === correct) b.classList.add('correct');
-                    });
-                    // Hide the Next button
-                    const nextBtn = document.querySelector('.next-step-btn');
-                    if (nextBtn) nextBtn.style.display = 'none';
-
-                    const feedback = document.getElementById('stepsFeedback');
-                    feedback.innerHTML = '✗ Out of lives!<br><br><div class="options-row">' +
-                        '<button class="option-btn" onclick="retryPhase()">Try Again</button>' +
-                        '<button class="option-btn" onclick="nextQuestion()">New Problem</button>' +
-                        '<button class="option-btn" onclick="showPhaseAnswer(3)">See Answer</button></div>';
-                    feedback.className = 'feedback show wrong';
-                }
-            }
-        }
-
         function checkStepsComplete() {
             const allCorrect = stepAnswers.every(a => a === true);
             const feedback = document.getElementById('stepsFeedback');
@@ -862,6 +905,7 @@ const ALL_NOTATIONS = ["a₍c₎ = v² / r = 4π²rf²", "T = 1 / f = 1 / (2.00 
                 feedback.className = 'feedback show correct';
                 phasesPassed = 3;
                 updateDots();
+                updateCompletedPhases();
                 remaining = remaining.filter(item => item.problem !== currentItem.problem);
                 problemStatus[currentItem.problem] = 'passed';
                 correct++;
@@ -937,6 +981,58 @@ const ALL_NOTATIONS = ["a₍c₎ = v² / r = 4π²rf²", "T = 1 / f = 1 / (2.00 
             document.getElementById('quiz').style.display = 'none';
             document.getElementById('complete').style.display = 'block';
             document.getElementById('stats').textContent = 'Problems mastered: ' + correct + ' / ' + total;
+        }
+
+
+        // Update completed phases summary at bottom
+        function updateCompletedPhases() {
+            const container = document.getElementById('completedPhasesContainer');
+            let html = '<div class="completed-phases">';
+            
+            // Phase 1: Formulas (show if completed)
+            if (phasesPassed >= 1 || phase > 1) {
+                const formulasPassed = phasesPassed >= 1;
+                html += '<div class="completed-phase' + (formulasPassed ? '' : ' failed') + '">';
+                html += '<div class="completed-phase-title">Phase 1: Formulas ' + (formulasPassed ? '✓' : '✗') + '</div>';
+                html += '<div class="completed-phase-content">';
+                currentItem.correctFormulas.forEach(f => {
+                    html += '<div class="completed-phase-item"><span class="formula-name">' + f.name + ':</span> <span class="formula-eq">' + f.formula + '</span></div>';
+                });
+                html += '</div></div>';
+            }
+            
+            // Phase 2: Variables (show if completed)
+            if (phasesPassed >= 2 || phase > 2) {
+                const varsPassed = varAnswers && varAnswers.every(a => a === true);
+                html += '<div class="completed-phase' + (varsPassed ? '' : ' failed') + '">';
+                html += '<div class="completed-phase-title">Phase 2: Variables ' + (varsPassed ? '✓' : '✗') + '</div>';
+                html += '<div class="completed-phase-content">';
+                currentItem.variables.forEach(v => {
+                    html += '<div class="completed-phase-item"><span class="symbol">' + v.symbol + '</span> = <span class="meaning">' + v.meaning + '</span></div>';
+                });
+                html += '</div></div>';
+            }
+            
+            // Phase 3: Steps (show if completed)
+            if (phasesPassed >= 3) {
+                const stepsPassed = stepAnswers && stepAnswers.every(a => a === true);
+                html += '<div class="completed-phase' + (stepsPassed ? '' : ' failed') + '">';
+                html += '<div class="completed-phase-title">Phase 3: Steps ' + (stepsPassed ? '✓' : '✗') + '</div>';
+                html += '<div class="completed-phase-content">';
+                currentItem.steps.forEach((s, i) => {
+                    html += '<div class="completed-phase-item"><strong>Step ' + (i+1) + ':</strong> ' + s.notations + '</div>';
+                });
+                html += '</div></div>';
+            }
+            
+            html += '</div>';
+            
+            // Only show if at least one phase completed
+            if (phasesPassed >= 1 || phase > 1) {
+                container.innerHTML = html;
+            } else {
+                container.innerHTML = '';
+            }
         }
 
         function restart() { initQuiz(); }
