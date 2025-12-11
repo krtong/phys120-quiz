@@ -115,6 +115,13 @@
         .choice-btn.wrong { border-color: #ff4757; background: rgba(255, 71, 87, 0.15); color: #ff4757; }
         .choice-btn:disabled { cursor: default; opacity: 0.7; }
 
+        /* Navigation buttons */
+        .nav-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
+        .nav-btn { padding: 8px 16px; background: #0d1b2a; border: 1px solid #333; border-radius: 8px; color: #888; font-size: 0.9em; cursor: pointer; transition: all 0.2s; }
+        .nav-btn:hover { border-color: #ff9f43; color: #ff9f43; }
+        .nav-btn:disabled { opacity: 0.3; cursor: default; }
+        .nav-btn:disabled:hover { border-color: #333; color: #888; }
+
         /* Hamburger Menu */
         .header-row { display: flex; align-items: center; justify-content: center; position: relative; margin-bottom: 10px; padding: 0 50px; }
         .header-row h1 { margin: 0; font-size: 1.5em; }
@@ -174,10 +181,14 @@
             <div id="problemText"></div>
         </div>
         
-        <div class="phase-indicator">
-            <div class="phase-dot" id="dot1"></div>
-            <div class="phase-dot" id="dot2"></div>
-            <div class="phase-dot" id="dot3"></div>
+        <div class="nav-row">
+            <button class="nav-btn" id="prevBtn" onclick="prevProblem()">← Back</button>
+            <div class="phase-indicator">
+                <div class="phase-dot" id="dot1"></div>
+                <div class="phase-dot" id="dot2"></div>
+                <div class="phase-dot" id="dot3"></div>
+            </div>
+            <button class="nav-btn" id="skipBtn" onclick="skipProblem()">Skip →</button>
         </div>
         
         <div class="lives" id="lives">
@@ -306,7 +317,25 @@ const ALL_NOTATIONS = ["a₍c₎ = v² / r = 4π²rf²", "T = 1 / f = 1 / (2.00 
             document.getElementById('nextBtn').className = 'next-btn';
 
             updateDots();
+            updateNavButtons();
             setupFormulasPhase();
+        }
+
+        function updateNavButtons() {
+            document.getElementById('prevBtn').disabled = (currentIndex <= 0);
+            document.getElementById('skipBtn').disabled = (currentIndex >= allProblems.length - 1);
+        }
+
+        function prevProblem() {
+            if (currentIndex > 0) {
+                jumpToProblem(currentIndex - 1);
+            }
+        }
+
+        function skipProblem() {
+            if (currentIndex < allProblems.length - 1) {
+                jumpToProblem(currentIndex + 1);
+            }
         }
 
         function shuffleArray(array) {
@@ -361,25 +390,28 @@ const ALL_NOTATIONS = ["a₍c₎ = v² / r = 4π²rf²", "T = 1 / f = 1 / (2.00 
 
         function showQuestion() {
             if (remaining.length === 0) { showComplete(); return; }
-            
+
             phase = 1;
             phasesPassed = 0;
             lives = 3;
             updateLives();
-            
+
             const idx = Math.floor(Math.random() * remaining.length);
             currentItem = remaining[idx];
-            
+            // Find the index in allProblems for navigation
+            currentIndex = allProblems.findIndex(p => p.problem === currentItem.problem);
+
             document.getElementById('problemSource').textContent = currentItem.source;
             document.getElementById('problemChapter').textContent = currentItem.chapter;
             document.getElementById('problemText').textContent = currentItem.problem;
-            
+
             document.getElementById('phase1').style.display = 'block';
             document.getElementById('phase2').style.display = 'none';
             document.getElementById('phase3').style.display = 'none';
             document.getElementById('nextBtn').className = 'next-btn';
-            
+
             updateDots();
+            updateNavButtons();
             setupFormulasPhase();
         }
 
