@@ -96,8 +96,8 @@
         .study-step-notation { font-family: 'STIX Two Math', 'Cambria Math', serif; color: #00d4ff; }
         .study-step-explanation { color: #aaa; margin-top: 5px; font-size: 0.95em; }
 
-        .complete { text-align: center; padding: 40px; }
-        .complete h2 { color: #00ff88; font-size: 2em; }
+        #complete { text-align: center; padding: 40px; }
+        #complete h2 { color: #00ff88; font-size: 2em; }
         .restart-btn { padding: 15px 40px; background: #ff9f43; color: #1a1a2e; border: none; border-radius: 10px; font-size: 1.1em; cursor: pointer; font-weight: bold; margin-top: 20px; }
         .stats { margin-top: 20px; color: #888; }
         .continue-btn { padding: 12px 25px; background: #ff9f43; color: #1a1a2e; border: none; border-radius: 8px; font-size: 1em; cursor: pointer; font-weight: bold; margin-top: 10px; }
@@ -258,7 +258,7 @@
         <button class="next-btn show" onclick="nextQuestion()" style="display: block;">Got It - Next Problem</button>
     </div>
 
-    <div id="complete" class="complete" style="display: none;">
+    <div id="complete" style="display: none;">
         <h2>Congratulations!</h2>
         <p>You mastered all the physics problems!</p>
         <div class="stats" id="stats"></div>
