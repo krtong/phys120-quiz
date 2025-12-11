@@ -150,6 +150,8 @@
         .problem-item.failed .problem-item-number::after { content: ' ✗'; color: #ff4757; }
         .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 999; display: none; }
         .overlay.show { display: block; }
+        .reset-btn { width: 100%; padding: 10px; margin-bottom: 15px; background: #ff4757; color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 0.9em; }
+        .reset-btn:hover { background: #ff6b7a; }
     </style>
 </head>
 <body>
@@ -160,6 +162,7 @@
             <span class="sidebar-title">All Problems</span>
             <button class="close-btn" onclick="closeSidebar()">&times;</button>
         </div>
+        <button class="reset-btn" onclick="if(confirm('Reset all progress?')) clearProgress()">Reset Progress</button>
         <ul class="problem-list" id="problemList"></ul>
     </div>
 
@@ -182,13 +185,13 @@
         </div>
         
         <div class="nav-row">
-            <button class="nav-btn" id="prevBtn" onclick="prevProblem()">← Back</button>
+            <button class="nav-btn" id="prevPhaseBtn" onclick="prevPhase()">← Back</button>
             <div class="phase-indicator">
                 <div class="phase-dot" id="dot1"></div>
                 <div class="phase-dot" id="dot2"></div>
                 <div class="phase-dot" id="dot3"></div>
             </div>
-            <button class="nav-btn" id="skipBtn" onclick="skipProblem()">Skip →</button>
+            <button class="nav-btn" id="nextPhaseBtn" onclick="nextPhase()">Next →</button>
         </div>
         
         <div class="lives" id="lives">
@@ -322,20 +325,43 @@ const ALL_NOTATIONS = ["a₍c₎ = v² / r = 4π²rf²", "T = 1 / f = 1 / (2.00 
         }
 
         function updateNavButtons() {
-            document.getElementById('prevBtn').disabled = (currentIndex <= 0);
-            document.getElementById('skipBtn').disabled = (currentIndex >= allProblems.length - 1);
+            document.getElementById('prevPhaseBtn').disabled = (phase <= 1);
+            document.getElementById('nextPhaseBtn').disabled = (phase >= 3);
         }
 
-        function prevProblem() {
-            if (currentIndex > 0) {
-                jumpToProblem(currentIndex - 1);
+        function prevPhase() {
+            if (phase > 1) {
+                goToPhase(phase - 1);
             }
         }
 
-        function skipProblem() {
-            if (currentIndex < allProblems.length - 1) {
-                jumpToProblem(currentIndex + 1);
+        function nextPhase() {
+            if (phase < 3) {
+                goToPhase(phase + 1);
             }
+        }
+
+        function goToPhase(targetPhase) {
+            // Hide all phases
+            document.getElementById('phase1').style.display = 'none';
+            document.getElementById('phase2').style.display = 'none';
+            document.getElementById('phase3').style.display = 'none';
+
+            // Show target phase
+            document.getElementById('phase' + targetPhase).style.display = 'block';
+            phase = targetPhase;
+
+            // Reset lives for this phase
+            lives = 3;
+            updateLives();
+
+            // Setup the phase
+            if (targetPhase === 1) setupFormulasPhase();
+            else if (targetPhase === 2) setupVariablesPhase();
+            else if (targetPhase === 3) setupStepsPhase();
+
+            updateDots();
+            updateNavButtons();
         }
 
         function shuffleArray(array) {
@@ -366,17 +392,52 @@ const ALL_NOTATIONS = ["a₍c₎ = v² / r = 4π²rf²", "T = 1 / f = 1 / (2.00 
             return 400;  // anything else
         }
 
+        function saveProgress() {
+            const data = {
+                problemStatus: problemStatus,
+                correct: correct
+            };
+            localStorage.setItem('problemQuizProgress', JSON.stringify(data));
+        }
+
+        function loadProgress() {
+            const saved = localStorage.getItem('problemQuizProgress');
+            if (saved) {
+                const data = JSON.parse(saved);
+                problemStatus = data.problemStatus || {};
+                correct = data.correct || 0;
+                return true;
+            }
+            return false;
+        }
+
+        function clearProgress() {
+            localStorage.removeItem('problemQuizProgress');
+            problemStatus = {};
+            correct = 0;
+            initQuiz();
+        }
+
         function initQuiz() {
             allProblems = PROBLEMS.filter(p => p.variables.length >= 2 && p.steps.length > 0);
             // Sort by chapter number
             allProblems.sort((a, b) => getChapterOrder(a.chapter) - getChapterOrder(b.chapter));
-            remaining = shuffleArray([...allProblems]);
-            problemStatus = {};  // Reset status
+
+            // Load saved progress
+            if (loadProgress()) {
+                // Filter out completed problems from remaining
+                remaining = allProblems.filter(p => problemStatus[p.problem] !== 'passed');
+                remaining = shuffleArray(remaining);
+            } else {
+                remaining = shuffleArray([...allProblems]);
+                problemStatus = {};
+                correct = 0;
+            }
+
             total = allProblems.length;
-            correct = 0;
             document.getElementById('total').textContent = total;
             document.getElementById('score').textContent = correct;
-            document.getElementById('progressFill').style.width = '0%';
+            document.getElementById('progressFill').style.width = (correct / total) * 100 + '%';
             document.getElementById('quiz').style.display = 'block';
             document.getElementById('complete').style.display = 'none';
             showQuestion();
@@ -720,6 +781,7 @@ const ALL_NOTATIONS = ["a₍c₎ = v² / r = 4π²rf²", "T = 1 / f = 1 / (2.00 
                     feedback.innerHTML = '✗ Out of lives! Here are the correct steps:<br><br>' + correctStepsStr + '<br><br><button class="continue-btn" onclick="showStudyGuide()">View Study Guide →</button>';
                     feedback.className = 'feedback show wrong';
                     problemStatus[currentItem.problem] = 'failed';
+                    saveProgress();
                 }
             }
         }
@@ -738,11 +800,13 @@ const ALL_NOTATIONS = ["a₍c₎ = v² / r = 4π²rf²", "T = 1 / f = 1 / (2.00 
                 correct++;
                 document.getElementById('score').textContent = correct;
                 document.getElementById('progressFill').style.width = (correct / total) * 100 + '%';
+                saveProgress();
             } else {
                 const correctStepsStr = currentItem.steps.map((s, i) => '<strong>Step ' + (i+1) + ':</strong> ' + s.explanation + '<br>→ ' + s.notations).join('<br><br>');
                 feedback.innerHTML = 'Some steps were wrong. Here are the correct answers:<br><br>' + correctStepsStr + '<br><br><button class="continue-btn" onclick="showStudyGuide()">View Study Guide →</button>';
                 feedback.className = 'feedback show wrong';
                 problemStatus[currentItem.problem] = 'failed';
+                saveProgress();
             }
         }
 
