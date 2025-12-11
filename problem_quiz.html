@@ -102,6 +102,19 @@
         .stats { margin-top: 20px; color: #888; }
         .continue-btn { padding: 12px 25px; background: #ff9f43; color: #1a1a2e; border: none; border-radius: 8px; font-size: 1em; cursor: pointer; font-weight: bold; margin-top: 10px; }
 
+        /* Multiple choice buttons */
+        .var-question, .step-question { text-align: center; }
+        .var-progress, .step-progress { color: #888; font-size: 0.9em; margin-bottom: 15px; }
+        .var-symbol-large { font-size: 2.5em; color: #ff9f43; margin: 20px 0; font-family: 'STIX Two Math', 'Cambria Math', serif; }
+        .var-prompt, .step-prompt { color: #aaa; margin-bottom: 20px; }
+        .step-explanation-large { font-size: 1.1em; color: #ccc; margin: 20px 0; padding: 15px; background: #0d1b2a; border-radius: 10px; line-height: 1.5; }
+        .choice-buttons { display: flex; flex-direction: column; gap: 10px; }
+        .choice-btn { padding: 15px 20px; background: #16213e; border: 2px solid #333; border-radius: 10px; color: #ccc; font-size: 1em; cursor: pointer; text-align: left; transition: all 0.2s; font-family: 'STIX Two Math', 'Cambria Math', -apple-system, sans-serif; }
+        .choice-btn:hover:not(:disabled) { border-color: #ff9f43; background: #1a3a5c; }
+        .choice-btn.correct { border-color: #00ff88; background: rgba(0, 255, 136, 0.15); color: #00ff88; }
+        .choice-btn.wrong { border-color: #ff4757; background: rgba(255, 71, 87, 0.15); color: #ff4757; }
+        .choice-btn:disabled { cursor: default; opacity: 0.7; }
+
         /* Hamburger Menu */
         .header-row { display: flex; align-items: center; justify-content: center; position: relative; margin-bottom: 10px; padding: 0 50px; }
         .header-row h1 { margin: 0; font-size: 1.5em; }
@@ -434,17 +447,10 @@ const ALL_NOTATIONS = ["a₍c₎ = v² / r = 4π²rf²", "T = 1 / f = 1 / (2.00 
             if (allCorrect && selectedAny) {
                 options.forEach(opt => opt.classList.add('disabled'));
                 document.getElementById('lockFormulas').style.display = 'none';
-                feedback.textContent = '✓ All formulas correct! Moving to variables...';
+                feedback.innerHTML = '✓ All formulas correct!<br><br><button class="continue-btn" onclick="goToPhase2()">Continue →</button>';
                 feedback.className = 'feedback show correct';
                 phasesPassed = 1;
                 updateDots();
-                setTimeout(() => {
-                    document.getElementById('phase1').style.display = 'none';
-                    document.getElementById('phase2').style.display = 'block';
-                    phase = 2;
-                    updateDots();
-                    setupVariablesPhase();
-                }, 1200);
             } else {
                 lives--;
                 updateLives();
@@ -489,101 +495,106 @@ const ALL_NOTATIONS = ["a₍c₎ = v² / r = 4π²rf²", "T = 1 / f = 1 / (2.00 
             setupVariablesPhase();
         }
 
+        let currentVarIndex = 0;
+        let varAnswers = [];
+
         function setupVariablesPhase() {
             lives = 3;
             updateLives();
-            
-            const container = document.getElementById('variablesContainer');
-            container.innerHTML = '';
-            
-            const correctMeanings = currentItem.variables.map(v => v.meaning);
-            const otherMeanings = ALL_MEANINGS.filter(m => !correctMeanings.includes(m));
-            const distractors = shuffleArray(otherMeanings).slice(0, Math.min(3, otherMeanings.length));
-            const allOptions = shuffleArray([...correctMeanings, ...distractors]);
-            
-            currentItem.variables.forEach((v, idx) => {
-                const row = document.createElement('div');
-                row.className = 'var-row';
-                row.dataset.idx = idx;
-                
-                let optionsHtml = '<option value="">-- Select meaning --</option>';
-                allOptions.forEach(opt => {
-                    optionsHtml += '<option value="' + opt.replace(/"/g, '&quot;') + '">' + opt + '</option>';
-                });
-                
-                row.innerHTML = '<div class="var-symbol">' + v.symbol + '</div>' +
-                    '<select class="var-dropdown" data-correct="' + v.meaning.replace(/"/g, '&quot;') + '">' + optionsHtml + '</select>';
-                container.appendChild(row);
-            });
-            
-            document.getElementById('lockVars').disabled = false;
-            document.getElementById('lockVars').style.display = 'block';
+            currentVarIndex = 0;
+            varAnswers = new Array(currentItem.variables.length).fill(null);
+
+            document.getElementById('lockVars').style.display = 'none';
             document.getElementById('varFeedback').className = 'feedback';
+            showCurrentVariable();
         }
 
-        function lockVariables() {
-            const rows = document.querySelectorAll('.var-row');
-            let allCorrect = true;
-            
-            rows.forEach(row => {
-                const dropdown = row.querySelector('.var-dropdown');
-                const selected = dropdown.value;
-                const correctVal = dropdown.dataset.correct;
-                
-                if (selected === correctVal) {
-                    row.classList.add('correct');
-                    row.classList.add('locked');
-                    dropdown.disabled = true;
-                } else {
-                    row.classList.add('wrong');
-                    allCorrect = false;
-                }
+        function showCurrentVariable() {
+            const container = document.getElementById('variablesContainer');
+            const v = currentItem.variables[currentVarIndex];
+
+            // Get 3 wrong answers + 1 correct
+            const correctMeaning = v.meaning;
+            const otherMeanings = ALL_MEANINGS.filter(m => m !== correctMeaning);
+            const distractors = shuffleArray(otherMeanings).slice(0, 3);
+            const choices = shuffleArray([correctMeaning, ...distractors]);
+
+            let html = '<div class="var-question">';
+            html += '<div class="var-progress">Variable ' + (currentVarIndex + 1) + ' of ' + currentItem.variables.length + '</div>';
+            html += '<div class="var-symbol-large">' + v.symbol + '</div>';
+            html += '<div class="var-prompt">What does this symbol represent?</div>';
+            html += '<div class="choice-buttons">';
+            choices.forEach((choice, i) => {
+                html += '<button class="choice-btn" data-value="' + choice.replace(/"/g, '&quot;') + '" onclick="selectVarChoice(this, \'' + correctMeaning.replace(/'/g, "\\'").replace(/"/g, '&quot;') + '\')">' + choice + '</button>';
             });
-            
-            const feedback = document.getElementById('varFeedback');
-            
-            if (allCorrect) {
-                document.getElementById('lockVars').style.display = 'none';
-                feedback.textContent = '✓ All variables correct! Moving to solution steps...';
-                feedback.className = 'feedback show correct';
-                phasesPassed = 2;
-                updateDots();
+            html += '</div></div>';
+
+            container.innerHTML = html;
+        }
+
+        function selectVarChoice(btn, correct) {
+            const buttons = document.querySelectorAll('.choice-btn');
+            const selected = btn.dataset.value;
+
+            buttons.forEach(b => b.disabled = true);
+
+            if (selected === correct) {
+                btn.classList.add('correct');
+                varAnswers[currentVarIndex] = true;
+
                 setTimeout(() => {
-                    document.getElementById('phase2').style.display = 'none';
-                    document.getElementById('phase3').style.display = 'block';
-                    phase = 3;
-                    updateDots();
-                    setupStepsPhase();
-                }, 1200);
+                    if (currentVarIndex < currentItem.variables.length - 1) {
+                        currentVarIndex++;
+                        showCurrentVariable();
+                    } else {
+                        // All done - check results
+                        checkVariablesComplete();
+                    }
+                }, 600);
             } else {
+                btn.classList.add('wrong');
+                // Show correct answer
+                buttons.forEach(b => {
+                    if (b.dataset.value === correct) b.classList.add('correct');
+                });
+                varAnswers[currentVarIndex] = false;
                 lives--;
                 updateLives();
-                
-                // Reset wrong selections
-                rows.forEach(row => {
-                    if (row.classList.contains('wrong')) {
-                        row.classList.remove('wrong');
-                    }
-                });
-                
-                if (lives > 0) {
-                    feedback.textContent = '✗ Some are wrong. ' + lives + ' ' + (lives === 1 ? 'life' : 'lives') + ' remaining. Try again!';
-                    feedback.className = 'feedback show wrong';
-                } else {
-                    // Show correct answers, then move to next phase
-                    rows.forEach(row => {
-                        const dropdown = row.querySelector('.var-dropdown');
-                        dropdown.disabled = true;
-                        dropdown.value = dropdown.dataset.correct;
-                        row.classList.remove('wrong');
-                        row.classList.add('correct');
-                    });
-                    document.getElementById('lockVars').style.display = 'none';
 
+                if (lives > 0) {
+                    setTimeout(() => {
+                        if (currentVarIndex < currentItem.variables.length - 1) {
+                            currentVarIndex++;
+                            showCurrentVariable();
+                        } else {
+                            checkVariablesComplete();
+                        }
+                    }, 1200);
+                } else {
+                    // Out of lives
+                    const feedback = document.getElementById('varFeedback');
                     const correctVars = currentItem.variables.map(v => v.symbol + ' = ' + v.meaning).join('<br>• ');
                     feedback.innerHTML = '✗ Out of lives! Here are the correct variables:<br>• ' + correctVars + '<br><br><button class="continue-btn" onclick="goToPhase3()">Continue →</button>';
                     feedback.className = 'feedback show wrong';
                 }
+            }
+        }
+
+        function checkVariablesComplete() {
+            const allCorrect = varAnswers.every(a => a === true);
+            const feedback = document.getElementById('varFeedback');
+
+            if (allCorrect) {
+                feedback.innerHTML = '✓ All variables correct!<br><br><button class="continue-btn" onclick="goToPhase3()">Continue →</button>';
+                feedback.className = 'feedback show correct';
+                phasesPassed = 2;
+                updateDots();
+            } else {
+                const correctVars = currentItem.variables.map(v => v.symbol + ' = ' + v.meaning).join('<br>• ');
+                feedback.innerHTML = 'Some variables were wrong. Here are the correct answers:<br>• ' + correctVars + '<br><br><button class="continue-btn" onclick="goToPhase3()">Continue →</button>';
+                feedback.className = 'feedback show wrong';
+                phasesPassed = 2;
+                updateDots();
             }
         }
 
@@ -596,64 +607,97 @@ const ALL_NOTATIONS = ["a₍c₎ = v² / r = 4π²rf²", "T = 1 / f = 1 / (2.00 
             setupStepsPhase();
         }
 
+        let currentStepIndex = 0;
+        let stepAnswers = [];
+
         function setupStepsPhase() {
             lives = 3;
             updateLives();
+            currentStepIndex = 0;
+            stepAnswers = new Array(currentItem.steps.length).fill(null);
 
-            const container = document.getElementById('stepsContainer');
-            container.innerHTML = '';
-            
-            // Get notations for this problem and add distractors
-            const correctNotations = currentItem.steps.map(s => s.notations);
-            const otherNotations = ALL_NOTATIONS.filter(n => !correctNotations.includes(n));
-            const distractors = shuffleArray(otherNotations).slice(0, Math.min(2, otherNotations.length));
-            const allNotationOptions = shuffleArray([...correctNotations, ...distractors]);
-            
-            currentItem.steps.forEach((step, idx) => {
-                const row = document.createElement('div');
-                row.className = 'step-row';
-                row.dataset.idx = idx;
-                
-                let optionsHtml = '<option value="">-- Select notation --</option>';
-                allNotationOptions.forEach(opt => {
-                    const shortOpt = opt.length > 60 ? opt.substring(0, 57) + '...' : opt;
-                    optionsHtml += '<option value="' + opt.replace(/"/g, '&quot;') + '">' + shortOpt + '</option>';
-                });
-                
-                row.innerHTML = '<div class="step-explanation">' + step.explanation + '</div>' +
-                    '<select class="step-dropdown" data-correct="' + step.notations.replace(/"/g, '&quot;') + '">' + optionsHtml + '</select>';
-                container.appendChild(row);
-            });
-            
-            document.getElementById('lockSteps').disabled = false;
-            document.getElementById('lockSteps').style.display = 'block';
+            document.getElementById('lockSteps').style.display = 'none';
             document.getElementById('stepsFeedback').className = 'feedback';
+            showCurrentStep();
         }
 
-        function lockSteps() {
-            const rows = document.querySelectorAll('.step-row');
-            let allCorrect = true;
-            
-            rows.forEach(row => {
-                const dropdown = row.querySelector('.step-dropdown');
-                const selected = dropdown.value;
-                const correctVal = dropdown.dataset.correct;
-                
-                if (selected === correctVal) {
-                    row.classList.add('correct');
-                    row.classList.add('locked');
-                    dropdown.disabled = true;
-                } else {
-                    row.classList.add('wrong');
-                    allCorrect = false;
-                }
+        function showCurrentStep() {
+            const container = document.getElementById('stepsContainer');
+            const step = currentItem.steps[currentStepIndex];
+
+            // Get 3 wrong answers + 1 correct
+            const correctNotation = step.notations;
+            const otherNotations = ALL_NOTATIONS.filter(n => n !== correctNotation);
+            const distractors = shuffleArray(otherNotations).slice(0, 3);
+            const choices = shuffleArray([correctNotation, ...distractors]);
+
+            let html = '<div class="step-question">';
+            html += '<div class="step-progress">Step ' + (currentStepIndex + 1) + ' of ' + currentItem.steps.length + '</div>';
+            html += '<div class="step-explanation-large">' + step.explanation + '</div>';
+            html += '<div class="step-prompt">What is the notation for this step?</div>';
+            html += '<div class="choice-buttons">';
+            choices.forEach((choice, i) => {
+                const shortChoice = choice.length > 80 ? choice.substring(0, 77) + '...' : choice;
+                html += '<button class="choice-btn step-choice" data-value="' + choice.replace(/"/g, '&quot;') + '" onclick="selectStepChoice(this, \'' + correctNotation.replace(/'/g, "\\'").replace(/"/g, '&quot;') + '\')">' + shortChoice + '</button>';
             });
-            
+            html += '</div></div>';
+
+            container.innerHTML = html;
+        }
+
+        function selectStepChoice(btn, correct) {
+            const buttons = document.querySelectorAll('.step-choice');
+            const selected = btn.dataset.value;
+
+            buttons.forEach(b => b.disabled = true);
+
+            if (selected === correct) {
+                btn.classList.add('correct');
+                stepAnswers[currentStepIndex] = true;
+
+                setTimeout(() => {
+                    if (currentStepIndex < currentItem.steps.length - 1) {
+                        currentStepIndex++;
+                        showCurrentStep();
+                    } else {
+                        checkStepsComplete();
+                    }
+                }, 600);
+            } else {
+                btn.classList.add('wrong');
+                buttons.forEach(b => {
+                    if (b.dataset.value === correct) b.classList.add('correct');
+                });
+                stepAnswers[currentStepIndex] = false;
+                lives--;
+                updateLives();
+
+                if (lives > 0) {
+                    setTimeout(() => {
+                        if (currentStepIndex < currentItem.steps.length - 1) {
+                            currentStepIndex++;
+                            showCurrentStep();
+                        } else {
+                            checkStepsComplete();
+                        }
+                    }, 1200);
+                } else {
+                    // Out of lives
+                    const feedback = document.getElementById('stepsFeedback');
+                    const correctStepsStr = currentItem.steps.map((s, i) => '<strong>Step ' + (i+1) + ':</strong> ' + s.explanation + '<br>→ ' + s.notations).join('<br><br>');
+                    feedback.innerHTML = '✗ Out of lives! Here are the correct steps:<br><br>' + correctStepsStr + '<br><br><button class="continue-btn" onclick="showStudyGuide()">View Study Guide →</button>';
+                    feedback.className = 'feedback show wrong';
+                    problemStatus[currentItem.problem] = 'failed';
+                }
+            }
+        }
+
+        function checkStepsComplete() {
+            const allCorrect = stepAnswers.every(a => a === true);
             const feedback = document.getElementById('stepsFeedback');
-            
+
             if (allCorrect) {
-                document.getElementById('lockSteps').style.display = 'none';
-                feedback.textContent = '✓ Perfect! All steps matched correctly!';
+                feedback.innerHTML = '✓ Perfect! All steps correct!<br><br><button class="continue-btn" onclick="nextQuestion()">Next Problem →</button>';
                 feedback.className = 'feedback show correct';
                 phasesPassed = 3;
                 updateDots();
@@ -662,39 +706,11 @@ const ALL_NOTATIONS = ["a₍c₎ = v² / r = 4π²rf²", "T = 1 / f = 1 / (2.00 
                 correct++;
                 document.getElementById('score').textContent = correct;
                 document.getElementById('progressFill').style.width = (correct / total) * 100 + '%';
-                document.getElementById('nextBtn').className = 'next-btn show';
             } else {
-                lives--;
-                updateLives();
-                
-                // Reset wrong selections
-                rows.forEach(row => {
-                    if (row.classList.contains('wrong')) {
-                        row.classList.remove('wrong');
-                    }
-                });
-                
-                if (lives > 0) {
-                    feedback.textContent = '✗ Some are wrong. ' + lives + ' ' + (lives === 1 ? 'life' : 'lives') + ' remaining. Try again!';
-                    feedback.className = 'feedback show wrong';
-                } else {
-                    // Show correct answers, then show study guide
-                    rows.forEach(row => {
-                        const dropdown = row.querySelector('.step-dropdown');
-                        dropdown.disabled = true;
-                        dropdown.value = dropdown.dataset.correct;
-                        row.classList.remove('wrong');
-                        row.classList.add('correct');
-                    });
-                    document.getElementById('lockSteps').style.display = 'none';
-
-                    const correctStepsStr = currentItem.steps.map((s, i) => '<strong>Step ' + (i+1) + ':</strong> ' + s.explanation + '<br>→ ' + s.notations).join('<br><br>');
-                    feedback.innerHTML = '✗ Out of lives! Here are the correct steps:<br><br>' + correctStepsStr + '<br><br><button class="continue-btn" onclick="showStudyGuide()">View Study Guide →</button>';
-                    feedback.className = 'feedback show wrong';
-
-                    // Mark as failed
-                    problemStatus[currentItem.problem] = 'failed';
-                }
+                const correctStepsStr = currentItem.steps.map((s, i) => '<strong>Step ' + (i+1) + ':</strong> ' + s.explanation + '<br>→ ' + s.notations).join('<br><br>');
+                feedback.innerHTML = 'Some steps were wrong. Here are the correct answers:<br><br>' + correctStepsStr + '<br><br><button class="continue-btn" onclick="showStudyGuide()">View Study Guide →</button>';
+                feedback.className = 'feedback show wrong';
+                problemStatus[currentItem.problem] = 'failed';
             }
         }
 
