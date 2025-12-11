@@ -148,6 +148,13 @@
         .problem-item.completed .problem-item-number::after { content: ' ✓'; color: #00ff88; }
         .problem-item.failed { border-left-color: #ff4757; }
         .problem-item.failed .problem-item-number::after { content: ' ✗'; color: #ff4757; }
+        .source-header { padding: 10px 15px; margin-top: 12px; margin-bottom: 4px; background: #16213e; border-radius: 8px; cursor: pointer; font-weight: bold; color: #ff9f43; font-size: 0.9em; display: flex; align-items: center; }
+        .source-header::before { content: '▼'; margin-right: 8px; font-size: 0.7em; transition: transform 0.2s; }
+        .source-header.collapsed::before { transform: rotate(-90deg); }
+        .source-header:hover { background: #1a3a5c; }
+        .source-header-text { flex: 1; }
+        .source-problems { overflow: hidden; transition: max-height 0.3s ease; }
+        .source-header.collapsed + .source-problems { max-height: 0 !important; overflow: hidden; }
         .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 999; display: none; }
         .overlay.show { display: block; }
         /* Out of lives options */
@@ -535,26 +542,58 @@ const ALL_NOTATIONS = ["a₍c₎ = v² / r = 4π²rf²", "T = 1 / f = 1 / (2.00 
         function updateProblemList() {
             const list = document.getElementById('problemList');
             list.innerHTML = '';
+
+            // Group problems by source
+            const problemsBySource = {};
             allProblems.forEach((p, i) => {
-                const li = document.createElement('li');
-                li.className = 'problem-item';
-                if (problemStatus[p.problem] === 'passed') li.classList.add('completed');
-                else if (problemStatus[p.problem] === 'failed') li.classList.add('failed');
-                if (currentItem && p.problem === currentItem.problem) li.classList.add('current');
-
-                // Show phase progress indicator
-                const progress = problemProgress[p.problem];
-                let phaseIndicator = '';
-                if (progress && progress.phasesPassed > 0 && problemStatus[p.problem] !== 'passed') {
-                    phaseIndicator = ' <span style="color:#00d4ff;font-size:0.8em">(' + progress.phasesPassed + '/3)</span>';
+                const sourceKey = getSourceKey(p.source);
+                if (!problemsBySource[sourceKey]) {
+                    problemsBySource[sourceKey] = [];
                 }
+                problemsBySource[sourceKey].push({ problem: p, index: i });
+            });
 
-                li.innerHTML = `
-                    <div class="problem-item-number">Problem ${i + 1}${phaseIndicator}</div>
-                    <div class="problem-item-text">${p.problem}</div>
-                `;
-                li.onclick = () => jumpToProblem(i);
-                list.appendChild(li);
+            // Sort source keys
+            const sortedSources = Object.keys(problemsBySource).sort((a, b) => a.localeCompare(b));
+
+            sortedSources.forEach(sourceKey => {
+                // Create source header
+                const header = document.createElement('li');
+                header.className = 'source-header';
+                header.innerHTML = `<div class="source-header-text">${sourceKey}</div>`;
+                header.onclick = () => header.classList.toggle('collapsed');
+                list.appendChild(header);
+
+                // Create container for problems under this source
+                const container = document.createElement('div');
+                container.className = 'source-problems';
+
+                problemsBySource[sourceKey].forEach(({ problem: p, index: i }) => {
+                    const li = document.createElement('li');
+                    li.className = 'problem-item';
+                    if (problemStatus[p.problem] === 'passed') li.classList.add('completed');
+                    else if (problemStatus[p.problem] === 'failed') li.classList.add('failed');
+                    if (currentItem && p.problem === currentItem.problem) li.classList.add('current');
+
+                    // Show phase progress indicator
+                    const progress = problemProgress[p.problem];
+                    let phaseIndicator = '';
+                    if (progress && progress.phasesPassed > 0 && problemStatus[p.problem] !== 'passed') {
+                        phaseIndicator = ' <span style="color:#00d4ff;font-size:0.8em">(' + progress.phasesPassed + '/3)</span>';
+                    }
+
+                    // Extract problem number from source (e.g., "Problem 1" from "PS_Chap5_II.pdf - Problem 1")
+                    const problemNum = p.source.split(' - ')[1] || `Problem ${i + 1}`;
+
+                    li.innerHTML = `
+                        <div class="problem-item-number">${problemNum}${phaseIndicator}</div>
+                        <div class="problem-item-text">${p.problem}</div>
+                    `;
+                    li.onclick = (e) => { e.stopPropagation(); jumpToProblem(i); };
+                    container.appendChild(li);
+                });
+
+                list.appendChild(container);
             });
         }
 
