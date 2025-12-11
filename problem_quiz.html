@@ -170,6 +170,23 @@
         .options-row { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
         .option-btn { padding: 10px 15px; background: #16213e; border: 1px solid #444; border-radius: 8px; color: #ccc; cursor: pointer; font-size: 0.9em; transition: all 0.2s; }
         .option-btn:hover { border-color: #ff9f43; color: #ff9f43; }
+
+        /* Sidebar switches */
+        .sidebar-switch { display: flex; gap: 10px; margin-bottom: 12px; }
+        .switch-btn { flex: 1; padding: 8px; background: #0f1729; border: 1px solid #333; color: #ccc; border-radius: 6px; cursor: pointer; font-size: 0.9em; transition: all 0.2s; }
+        .switch-btn.active { background: #ff9f43; color: #0f1729; border-color: #ff9f43; font-weight: 600; }
+
+        /* Source viewer modal */
+        .source-modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.65); z-index: 1100; display: none; align-items: center; justify-content: center; }
+        .source-modal { width: 90%; max-width: 900px; max-height: 90vh; background: #0f1729; border: 1px solid #333; border-radius: 10px; padding: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.45); display: flex; flex-direction: column; }
+        .source-modal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+        .source-modal-title { color: #ff9f43; font-size: 1.05em; font-weight: 600; }
+        .source-modal-body { flex: 1; display: flex; flex-direction: column; gap: 10px; }
+        .source-page-frame { flex: 1; overflow: auto; background: #0b1120; border: 1px solid #222; border-radius: 8px; display: flex; justify-content: center; align-items: center; }
+        .source-page-frame img { max-width: 100%; height: auto; display: block; }
+        .source-nav { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+        .source-nav button { padding: 8px 12px; background: #16213e; border: 1px solid #333; border-radius: 8px; color: #ccc; cursor: pointer; }
+        .source-nav button:disabled { opacity: 0.4; cursor: not-allowed; }
     </style>
 </head>
 <body>
@@ -177,10 +194,35 @@
     <div class="overlay" id="overlay" onclick="closeSidebar()"></div>
     <div class="sidebar" id="sidebar">
         <div class="sidebar-header">
-            <span class="sidebar-title">All Problems</span>
+            <span class="sidebar-title" id="sidebarTitle">All Problems</span>
             <button class="close-btn" onclick="closeSidebar()">&times;</button>
         </div>
+        <div class="sidebar-switch">
+            <button class="switch-btn active" id="switchProblems" onclick="showSidebarProblems()">Problems</button>
+            <button class="switch-btn" id="switchSources" onclick="showSidebarSources()">Sources</button>
+        </div>
         <ul class="problem-list" id="problemList"></ul>
+        <ul class="problem-list" id="sourceList" style="display:none"></ul>
+    </div>
+
+    <!-- Source viewer modal -->
+    <div class="source-modal-overlay" id="sourceModal">
+        <div class="source-modal">
+            <div class="source-modal-header">
+                <div class="source-modal-title" id="sourceModalTitle">Source</div>
+                <button class="close-btn" onclick="closeSourceModal()">&times;</button>
+            </div>
+            <div class="source-modal-body">
+                <div class="source-page-frame" id="sourcePageFrame">
+                    <div style="color:#ccc;">Loading…</div>
+                </div>
+                <div class="source-nav">
+                    <button id="sourcePrevBtn" onclick="prevSourcePage()">← Prev</button>
+                    <div style="color:#ccc;" id="sourcePageIndicator">Page 0 / 0</div>
+                    <button id="sourceNextBtn" onclick="nextSourcePage()">Next →</button>
+                </div>
+            </div>
+        </div>
     </div>
 
     <div class="header-row">
@@ -200,6 +242,7 @@
             <div class="problem-chapter" id="problemChapter"></div>
             <div id="problemText"></div>
             <div id="problemImage" style="text-align: center; margin-top: 15px;"></div>
+            <div style="margin-top:10px;"><button class="nav-btn" id="viewSourceBtn" onclick="viewCurrentSource()">View Source Pages</button></div>
         </div>
         
         <div class="nav-row">
@@ -283,12 +326,23 @@ const ALL_NOTATIONS = ["a₍c₎ = v² / r = 4π²rf²", "T = 1 / f = 1 / (2.00 
         let phase = 1;
         let phasesPassed = 0;
         let lives = 3;
+        let SOURCE_IMAGE_MANIFEST = {};
+        let currentSourcePages = [];
+        let currentSourcePageIndex = 0;
+        let currentSourceName = '';
+
+        // Load source image manifest (generated in quiz/source_images/manifest.json)
+        fetch('source_images/manifest.json')
+            .then(r => r.ok ? r.json() : {})
+            .then(data => { SOURCE_IMAGE_MANIFEST = data || {}; })
+            .catch(() => { SOURCE_IMAGE_MANIFEST = {}; });
 
         function toggleSidebar() {
             document.getElementById('sidebar').classList.toggle('open');
             document.getElementById('overlay').classList.toggle('show');
             document.getElementById('hamburger').classList.toggle('open');
             updateProblemList();
+            updateSourceList();
         }
 
         function closeSidebar() {
@@ -296,6 +350,68 @@ const ALL_NOTATIONS = ["a₍c₎ = v² / r = 4π²rf²", "T = 1 / f = 1 / (2.00 
             document.getElementById('overlay').classList.remove('show');
             document.getElementById('hamburger').classList.remove('open');
         }
+
+        function showSidebarProblems() {
+            document.getElementById('problemList').style.display = 'block';
+            document.getElementById('sourceList').style.display = 'none';
+            document.getElementById('switchProblems').classList.add('active');
+            document.getElementById('switchSources').classList.remove('active');
+            document.getElementById('sidebarTitle').textContent = 'All Problems';
+        }
+
+        function showSidebarSources() {
+            document.getElementById('problemList').style.display = 'none';
+            document.getElementById('sourceList').style.display = 'block';
+            document.getElementById('switchProblems').classList.remove('active');
+            document.getElementById('switchSources').classList.add('active');
+            document.getElementById('sidebarTitle').textContent = 'All Sources';
+        }
+
+        function getSourceKey(srcString) {
+            // Use the part before the first dash, or whole string, strip extension for folder name
+            let key = srcString.split(' - ')[0].trim();
+            if (key.toLowerCase().endsWith('.pdf')) key = key.slice(0, -4);
+            return key;
+        }
+
+        function openSourceViewer(srcString) {
+            const key = getSourceKey(srcString);
+            const pages = SOURCE_IMAGE_MANIFEST[key] || [];
+            currentSourceName = srcString;
+            currentSourcePages = pages;
+            currentSourcePageIndex = 0;
+
+            document.getElementById('sourceModalTitle').textContent = srcString;
+            document.getElementById('sourceModal').style.display = 'flex';
+            document.getElementById('overlay').classList.add('show');
+
+            if (pages.length === 0) {
+                document.getElementById('sourcePageFrame').innerHTML = '<div style=\"color:#ccc;padding:20px;text-align:center\">Images not available for this source yet. Generate JPEGs in <code>quiz/source_images/' + key + '/</code> then reload.</div>';
+                document.getElementById('sourcePageIndicator').textContent = 'Page 0 / 0';
+                document.getElementById('sourcePrevBtn').disabled = true;
+                document.getElementById('sourceNextBtn').disabled = true;
+            } else {
+                showSourcePage(0);
+            }
+        }
+
+        function closeSourceModal() {
+            document.getElementById('sourceModal').style.display = 'none';
+            document.getElementById('overlay').classList.remove('show');
+        }
+
+        function showSourcePage(index) {
+            if (!currentSourcePages.length) return;
+            currentSourcePageIndex = Math.max(0, Math.min(index, currentSourcePages.length - 1));
+            const imgPath = currentSourcePages[currentSourcePageIndex];
+            document.getElementById('sourcePageFrame').innerHTML = '<img src=\"' + imgPath + '\" alt=\"Source page\">';
+            document.getElementById('sourcePageIndicator').textContent = 'Page ' + (currentSourcePageIndex + 1) + ' / ' + currentSourcePages.length;
+            document.getElementById('sourcePrevBtn').disabled = currentSourcePageIndex === 0;
+            document.getElementById('sourceNextBtn').disabled = currentSourcePageIndex === currentSourcePages.length - 1;
+        }
+
+        function prevSourcePage() { showSourcePage(currentSourcePageIndex - 1); }
+        function nextSourcePage() { showSourcePage(currentSourcePageIndex + 1); }
 
         function updateProblemList() {
             const list = document.getElementById('problemList');
@@ -319,6 +435,22 @@ const ALL_NOTATIONS = ["a₍c₎ = v² / r = 4π²rf²", "T = 1 / f = 1 / (2.00 
                     <div class="problem-item-text">${p.problem}</div>
                 `;
                 li.onclick = () => jumpToProblem(i);
+                list.appendChild(li);
+            });
+        }
+
+        function updateSourceList() {
+            const list = document.getElementById('sourceList');
+            list.innerHTML = '';
+
+            // Build a unique, sorted list of sources
+            const sources = Array.from(new Set(allProblems.map(p => p.source))).sort();
+
+            sources.forEach(src => {
+                const li = document.createElement('li');
+                li.className = 'problem-item';
+                li.innerHTML = `<div class="problem-item-text">${src}</div>`;
+                li.onclick = () => openSourceViewer(src);
                 list.appendChild(li);
             });
         }
@@ -584,6 +716,8 @@ const ALL_NOTATIONS = ["a₍c₎ = v² / r = 4π²rf²", "T = 1 / f = 1 / (2.00 
             allProblems = PROBLEMS.filter(p => p.variables.length >= 2 && p.steps.length > 0);
             // Sort by chapter number
             allProblems.sort((a, b) => getChapterOrder(a.chapter) - getChapterOrder(b.chapter));
+            updateProblemList();
+            updateSourceList();
 
             // Load saved progress
             const savedData = loadProgress();
@@ -669,6 +803,12 @@ const ALL_NOTATIONS = ["a₍c₎ = v² / r = 4π²rf²", "T = 1 / f = 1 / (2.00 
             updateCompletedPhases();
             updateProblemList();
             saveProgress();
+
+            // Enable/disable source view button based on manifest availability
+            const key = getSourceKey(currentItem.source);
+            const btn = document.getElementById('viewSourceBtn');
+            const hasImages = SOURCE_IMAGE_MANIFEST[key] && SOURCE_IMAGE_MANIFEST[key].length > 0;
+            btn.disabled = !hasImages;
         }
 
         function updateDots() {
@@ -962,6 +1102,10 @@ const ALL_NOTATIONS = ["a₍c₎ = v² / r = 4π²rf²", "T = 1 / f = 1 / (2.00 
         }
 
         function showCurrentStep() {
+            // Each step starts with a fresh set of lives
+            lives = 3;
+            updateLives();
+
             const container = document.getElementById('stepsContainer');
             const step = currentItem.steps[currentStepIndex];
 
@@ -1010,12 +1154,19 @@ const ALL_NOTATIONS = ["a₍c₎ = v² / r = 4π²rf²", "T = 1 / f = 1 / (2.00 
                 showStepNextButton();
             } else {
                 selected.classList.add('wrong');
-                stepAnswers[currentStepIndex] = false;
                 lives--;
                 updateLives();
 
                 if (lives > 0) {
-                    showStepNextButton();
+                    // Allow another attempt on the same step
+                    const feedback = document.getElementById('stepsFeedback');
+                    feedback.textContent = '✗ Not quite right. ' + lives + ' ' + (lives === 1 ? 'life' : 'lives') + ' left for this step. Try again!';
+                    feedback.className = 'feedback show wrong';
+
+                    // Re-enable choices and hide feedback button until a new lock
+                    buttons.forEach(b => b.disabled = false);
+                    document.getElementById('lockStepAnswer').style.display = 'block';
+                    document.querySelectorAll('#stepChoices .choice-btn').forEach(b => b.classList.remove('selected'));
                 } else {
                     // Out of lives - show correct answer
                     buttons.forEach(b => {
@@ -1023,13 +1174,32 @@ const ALL_NOTATIONS = ["a₍c₎ = v² / r = 4π²rf²", "T = 1 / f = 1 / (2.00 
                     });
 
                     const feedback = document.getElementById('stepsFeedback');
-                    feedback.innerHTML = '✗ Out of lives!<br><br><div class="options-row">' +
-                        '<button class="option-btn" onclick="retryPhase()">Try Again</button>' +
-                        '<button class="option-btn" onclick="nextQuestion()">New Problem</button>' +
-                        '<button class="option-btn" onclick="showPhaseAnswer(3)">See Answer</button></div>';
+                    feedback.innerHTML = '✗ Out of lives for this step.<br><br><div class="options-row">' +
+                        '<button class="option-btn" onclick="showStepAnswer()">Show Answer</button>' +
+                        '<button class="option-btn" onclick="goToPhase(3)">Restart Phase 3</button>' +
+                        '<button class="option-btn" onclick="nextQuestion()">New Problem</button></div>';
                     feedback.className = 'feedback show wrong';
                 }
             }
+        }
+
+        // Reveal correct notation for current step and allow moving on
+        function showStepAnswer() {
+            const buttons = document.querySelectorAll('#stepChoices .choice-btn');
+            const correctNotation = currentItem.steps[currentStepIndex].notations;
+
+            buttons.forEach(b => {
+                if (b.dataset.value === correctNotation) b.classList.add('correct');
+                b.disabled = true;
+            });
+
+            document.getElementById('lockStepAnswer').style.display = 'none';
+
+            const feedback = document.getElementById('stepsFeedback');
+            feedback.innerHTML = '<span style="color:#00ff88">Correct notation:</span><br>' + correctNotation;
+            feedback.className = 'feedback show correct';
+
+            showStepNextButton();
         }
 
         function showStepNextButton() {
@@ -1038,7 +1208,7 @@ const ALL_NOTATIONS = ["a₍c₎ = v² / r = 4π²rf²", "T = 1 / f = 1 / (2.00 
             if (!existingBtn) {
                 const btn = document.createElement('button');
                 btn.className = 'continue-btn next-step-btn';
-                btn.textContent = 'Next →';
+                btn.textContent = (currentStepIndex < currentItem.steps.length - 1) ? 'Next →' : 'Finish Phase';
                 btn.onclick = nextStep;
                 btn.style.marginTop = '15px';
                 btn.style.display = 'block';
@@ -1054,6 +1224,11 @@ const ALL_NOTATIONS = ["a₍c₎ = v² / r = 4π²rf²", "T = 1 / f = 1 / (2.00 
             } else {
                 checkStepsComplete();
             }
+        }
+
+        function viewCurrentSource() {
+            if (!currentItem) return;
+            openSourceViewer(currentItem.source);
         }
 
         function checkStepsComplete() {
@@ -1074,7 +1249,11 @@ const ALL_NOTATIONS = ["a₍c₎ = v² / r = 4π²rf²", "T = 1 / f = 1 / (2.00 
                 saveProgress();
             } else {
                 const correctStepsStr = currentItem.steps.map((s, i) => '<strong>Step ' + (i+1) + ':</strong> ' + s.explanation + '<br>→ ' + s.notations).join('<br><br>');
-                feedback.innerHTML = 'Some steps were wrong. Here are the correct answers:<br><br>' + correctStepsStr + '<br><br><button class="continue-btn" onclick="showStudyGuide()">View Study Guide →</button>';
+                feedback.innerHTML = 'Some steps were wrong.<br><br><div class="options-row">' +
+                    '<button class="option-btn" onclick="goToPhase(3)">Retry Phase 3</button>' +
+                    '<button class="option-btn" onclick="showPhaseAnswer(3)">Show Answers</button>' +
+                    '<button class="option-btn" onclick="showStudyGuide()">View Study Guide</button></div>' +
+                    '<br><div style="text-align:left">' + correctStepsStr + '</div>';
                 feedback.className = 'feedback show wrong';
                 problemStatus[currentItem.problem] = 'failed';
                 saveProgress();

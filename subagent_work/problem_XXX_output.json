@@ -1,0 +1,87 @@
+{
+  "problem": "The Moon's nearly circular orbit around the Earth has a radius of about 384,000 km and a period T of 27.3 days. Determine the acceleration of the Moon toward the Earth.",
+  "source": "PS_Chap5_II.pdf - Problem 2",
+  "from": "PS_Chap5_II.pdf",
+  "chapter": "Chapter 5: Circular Motion & Gravitation",
+  "variables": {
+    "r": {
+      "base_name": "distance",
+      "base_descriptive_name": "orbital radius of the Moon",
+      "label_name": "orbital",
+      "label_descriptive_name": "orbital distance",
+      "scalar_or_vector": "scalar",
+      "value": "3.84 × 10^8 m"
+    },
+    "T": {
+      "base_name": "period",
+      "base_descriptive_name": "orbital period",
+      "label_name": "",
+      "label_descriptive_name": "",
+      "scalar_or_vector": "scalar",
+      "value": "2.36 × 10^6 s"
+    },
+    "π": {
+      "base_name": "pi",
+      "base_descriptive_name": "mathematical constant pi",
+      "label_name": "",
+      "label_descriptive_name": "",
+      "scalar_or_vector": "scalar",
+      "value": "3.14159"
+    },
+    "a₍c₎": {
+      "base_name": "acceleration",
+      "base_descriptive_name": "acceleration, centripetal toward Earth",
+      "label_name": "centripetal",
+      "label_descriptive_name": "centripetal component",
+      "scalar_or_vector": "scalar",
+      "value": "unsolved"
+    }
+  },
+  "formulas": [
+    {
+      "name": "Linear speed in circular motion",
+      "formula": "v = 2πr / T"
+    },
+    {
+      "name": "Centripetal acceleration",
+      "formula": "a₍c₎ = v^2 / r"
+    },
+    {
+      "name": "Centripetal acceleration (combined form)",
+      "formula": "a₍c₎ = 4π^2 r / T^2"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Linear speed in circular motion",
+      "formula": "v = 2πr / T"
+    },
+    {
+      "name": "Centripetal acceleration",
+      "formula": "a₍c₎ = v² / r"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "Convert the orbital radius from kilometers to meters to work in SI units.",
+      "notations": "r = 384000 km = 3.84 × 10⁸ m"
+    },
+    {
+      "explanation": "Convert the orbital period from days to seconds for consistent units.",
+      "notations": "T = 27.3 days × 24 × 3600 s = 2.36 × 10⁶ s"
+    },
+    {
+      "explanation": "Express centripetal acceleration directly in terms of radius and period.",
+      "notations": "a₍c₎ = 4π² r / T²"
+    },
+    {
+      "explanation": "Substitute the numerical values into the centripetal acceleration formula.",
+      "notations": "a₍c₎ = 4π² (3.84 × 10⁸ m) / (2.36 × 10⁶ s)²"
+    },
+    {
+      "explanation": "Evaluate the expression to obtain the Moon's centripetal acceleration toward Earth.",
+      "notations": "a₍c₎ ≈ 2.7 × 10⁻³ m·s⁻²"
+    }
+  ],
+  "solution": "r = 384000 km = 3.84 × 10⁸ m\nT = 27.3 days × 24 × 3600 s = 2.36 × 10⁶ s\nv = 2πr / T = 2π(3.84 × 10⁸ m) / (2.36 × 10⁶ s)\na₍c₎ = v² / r\na₍c₎ = [2π(3.84 × 10⁸) / (2.36 × 10⁶)]² / (3.84 × 10⁸)\na₍c₎ = 4π² r / T²\na₍c₎ = 4π² (3.84 × 10⁸ m) / (2.36 × 10⁶ s)²\na₍c₎ ≈ 2.7 × 10⁻³ m·s⁻²"
+}

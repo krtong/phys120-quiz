@@ -26,62 +26,87 @@ If multiple formulas are needed to solve the problem (like F=ma AND a unit conve
 
 ## What STEPS should contain:
 
-The steps show the FULL problem-solving process in this order:
+Each step has TWO fields:
+- **explanation**: Written text describing what we're doing and why (full sentences OK)
+- **notations**: PURE MATHEMATICAL NOTATION ONLY (no sentences, minimal words)
 
-### Step 1: Start with the formulas and variables
-- State which fundamental formula(s) will be used
-- Example: "We will use the centripetal acceleration formula: a_c = v²/r"
+### CRITICAL: Notation vs Explanation
 
-### Step 2: Define variables by values given in the problem
-- Assign the numerical values from the problem to the variables
-- Example: "Given: m = 150 g = 0.150 kg, r = 0.600 m, f = 2.00 rev/s"
-- If a problem provides a mass and a unit value, write "m = 10 kg"
+The "notations" field should contain ONLY mathematical expressions, symbols, and equations. NO full sentences.
 
-### Step 3: Substitute scalars (numbers) for the variables
-- First substitute the numerical values into the formula
-- Example: "Substituting: a_c = v²/r where we need v first"
+**BAD notations (DO NOT DO THIS):**
+- "We will use the work formula: W = Fd cosθ, where F is the force magnitude..."
+- "Since block A descends by distance L and the blocks are connected..."
+- "The gravitational force on block B is F_g = m₍B₎g pointing downward"
+- "Initial energy: PE_initial = m₍B₎gh (taking ground as reference)"
+- "Numerator: 2(6.0 kg)(9.8 m/s²)(2.5 m) = 294 kg·m²/s²"
 
-### Step 4: If a variable equals another variable or expression, show that substitution
-- Sometimes m = another variable or multiple variables like (m + M)
-- Example: "Total mass m_total = m + M = 0.150 kg + 2.00 kg = 2.15 kg"
+**GOOD notations (DO THIS):**
+- "W = Fd cosθ"
+- "d = L"
+- "F_g = m₍B₎g, θ = 180°"
+- "PE_initial = m₍B₎gh"
+- "2(6.0)(9.8)(2.5) = 294"
 
-### Step 5: Substitute symbols for numbers in the fundamental formula
-- Show the formula with all numbers plugged in
-- Example: "a_c = (7.54 m/s)² / (0.600 m)"
+**Acceptable short labels in notations:**
+- "Given: m = 5 kg, v = 10 m/s"
+- "F_net = ma => a = F/m"
+- Multiple equations: "v = 2πrf, a_c = v²/r, F = ma"
 
-### Step 6: Show the algebraic steps for solving
-- Show the arithmetic/algebra to get the final answer
-- Example: "a_c = 56.85 m²/s² / 0.600 m = 94.7 m/s²"
+**Move these to explanation field instead:**
+- "We will use..."
+- "Since..."
+- "The force is... pointing downward"
+- "Therefore..."
+- "where X is the..."
+- Any full sentence
 
-If multiple formulas are needed, show the steps of using each one in sequence.
+### Step Structure:
+
+**Step 1: State the formulas**
+- Explanation: "We use the work formula and kinetic energy formula"
+- Notations: "W = Fd cosθ, KE = ½mv²"
+
+**Step 2: Define given values**
+- Explanation: "Define the known values from the problem"
+- Notations: "Given: m = 5 kg, F = 20 N, d = 3 m, θ = 0°"
+
+**Step 3-N: Show the work**
+- Explanation: "Substitute values into the work formula"
+- Notations: "W = (20 N)(3 m)(cos 0°) = (20)(3)(1) = 60 J"
 
 ## What SOLUTION should contain:
 
-The solution field is a SINGLE TEXT STRING that shows the complete mathematical derivation from start to finish. It should:
+The solution field is a SINGLE TEXT STRING of PURE MATH showing the complete derivation. NO written explanations - just equations flowing logically.
 
-1. Start with the fundamental formula(s)
-2. Show substitution of given values/symbols
-3. Show each algebraic manipulation step
-4. End with the final numerical answer
+**GOOD solution:**
+```
+W = Fd cosθ
+F_g = m₍B₎g, d = L, θ = 180°
+W = m₍B₎g · L · cos(180°)
+W = m₍B₎g · L · (-1)
+W = -m₍B₎gL
+```
 
-Format it as a clean mathematical flow, using line breaks (\n) to separate steps. Example:
+**BAD solution (don't do this):**
+```
+We will use the work formula: W = Fd cosθ
+The gravitational force on block B is F_g = m₍B₎g pointing downward
+Since the displacement is upward, θ = 180°
+Therefore W = -m₍B₎gL
+```
 
-"a_c = v²/r\nv = 2πrf = 2π(0.600 m)(2.00/s) = 7.54 m/s\na_c = (7.54 m/s)² / (0.600 m)\na_c = 56.85 m²/s² / 0.600 m\na_c = 94.7 m/s²"
-
-The solution should read like showing your work on an exam - each line follows logically from the previous.
+Format using \n for line breaks. Each line should be an equation or mathematical step.
 
 ## Your Task:
 
 1. Read the input problem JSON file at: /Users/kevintong/Documents/phys120/quiz/subagent_work/problem_XXX_input.json
 2. Identify which formulas in correctFormulas are truly FUNDAMENTAL (memorizable physics principles from concepts)
 3. Any formula that is problem-specific should be REMOVED from correctFormulas and converted into STEPS
-4. Rewrite the steps array to follow the order above:
-   - Start with formulas and variables
-   - Define variables by values from the problem
-   - Substitute scalars for numbers
-   - Substitute symbols for numbers in fundamental formula
-   - Show algebraic steps for solving
-5. Add a "solution" field with the complete mathematical derivation as a single text string
+4. Rewrite the steps array:
+   - Put written descriptions in "explanation"
+   - Put ONLY math/symbols in "notations"
+5. Add a "solution" field with PURE MATH derivation (no sentences)
 6. Output the corrected JSON
 
 ## Output Format:
@@ -105,11 +130,11 @@ The JSON structure:
   ],
   "steps": [
     {
-      "explanation": "What this step does",
-      "notations": "The mathematical notation showing the work"
+      "explanation": "Written description of what this step does (sentences OK here)",
+      "notations": "Pure math only: F = ma, a = 5 m/s²"
     }
   ],
-  "solution": "Formula line 1\nSubstitution line 2\nSimplification line 3\nFinal answer line 4"
+  "solution": "Formula\nSubstitution\nSimplification\nAnswer"
 }
 ```
 
@@ -117,3 +142,4 @@ IMPORTANT:
 - Make sure you preserve all fields from the original (problem, source, sourceFile, chapter, image if exists, variables). Only modify correctFormulas and steps, and ADD the solution field.
 - Use \n for line breaks in the solution string (not actual newlines)
 - Use proper Unicode characters for superscripts (² not ^2), subscripts, Greek letters, etc.
+- NOTATIONS = MATH ONLY. EXPLANATION = WORDS.
