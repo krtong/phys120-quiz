@@ -531,7 +531,13 @@ const ALL_NOTATIONS = ["a₍c₎ = v² / r = 4π²rf²", "T = 1 / f = 1 / (2.00 
         function saveProgress() {
             const data = {
                 problemStatus: problemStatus,
-                correct: correct
+                correct: correct,
+                // Save current problem state
+                currentProblem: currentItem ? currentItem.problem : null,
+                currentPhase: phase,
+                phasesPassed: phasesPassed,
+                varAnswers: varAnswers,
+                stepAnswers: stepAnswers
             };
             localStorage.setItem('problemQuizProgress', JSON.stringify(data));
         }
@@ -542,9 +548,9 @@ const ALL_NOTATIONS = ["a₍c₎ = v² / r = 4π²rf²", "T = 1 / f = 1 / (2.00 
                 const data = JSON.parse(saved);
                 problemStatus = data.problemStatus || {};
                 correct = data.correct || 0;
-                return true;
+                return data; // Return full data for restoring state
             }
-            return false;
+            return null;
         }
 
         function clearProgress() {
@@ -560,7 +566,8 @@ const ALL_NOTATIONS = ["a₍c₎ = v² / r = 4π²rf²", "T = 1 / f = 1 / (2.00 
             allProblems.sort((a, b) => getChapterOrder(a.chapter) - getChapterOrder(b.chapter));
 
             // Load saved progress
-            if (loadProgress()) {
+            const savedData = loadProgress();
+            if (savedData) {
                 // Filter out completed problems from remaining
                 remaining = allProblems.filter(p => problemStatus[p.problem] !== 'passed');
                 remaining = shuffleArray(remaining);
@@ -576,6 +583,45 @@ const ALL_NOTATIONS = ["a₍c₎ = v² / r = 4π²rf²", "T = 1 / f = 1 / (2.00 
             document.getElementById('progressFill').style.width = (correct / total) * 100 + '%';
             document.getElementById('quiz').style.display = 'block';
             document.getElementById('complete').style.display = 'none';
+
+            // Restore in-progress problem if exists
+            if (savedData && savedData.currentProblem && savedData.phasesPassed > 0) {
+                const savedProblem = allProblems.find(p => p.problem === savedData.currentProblem);
+                if (savedProblem && problemStatus[savedProblem.problem] !== 'passed') {
+                    currentItem = savedProblem;
+                    currentIndex = allProblems.findIndex(p => p.problem === currentItem.problem);
+                    phasesPassed = savedData.phasesPassed || 0;
+                    varAnswers = savedData.varAnswers || [];
+                    stepAnswers = savedData.stepAnswers || [];
+                    
+                    // Show the problem and go to saved phase
+                    document.getElementById('problemSource').textContent = currentItem.source;
+                    document.getElementById('problemChapter').textContent = currentItem.chapter;
+                    document.getElementById('problemText').textContent = currentItem.problem;
+                    document.getElementById('completedPhasesContainer').innerHTML = '';
+                    
+                    phase = savedData.currentPhase || 1;
+                    lives = 3;
+                    updateLives();
+                    
+                    // Show appropriate phase
+                    document.getElementById('phase1').style.display = 'none';
+                    document.getElementById('phase2').style.display = 'none';
+                    document.getElementById('phase3').style.display = 'none';
+                    document.getElementById('phase' + phase).style.display = 'block';
+                    
+                    if (phase === 1) setupFormulasPhase();
+                    else if (phase === 2) setupVariablesPhase();
+                    else if (phase === 3) setupStepsPhase();
+                    
+                    updateDots();
+                    updateNavButtons();
+                    updateCompletedPhases();
+                    updateProblemList();
+                    return;
+                }
+            }
+            
             showQuestion();
         }
 
@@ -681,6 +727,7 @@ const ALL_NOTATIONS = ["a₍c₎ = v² / r = 4π²rf²", "T = 1 / f = 1 / (2.00 
                 feedback.className = 'feedback show correct';
                 phasesPassed = 1;
                 updateDots();
+                saveProgress();
             } else {
                 lives--;
                 updateLives();
@@ -727,6 +774,7 @@ const ALL_NOTATIONS = ["a₍c₎ = v² / r = 4π²rf²", "T = 1 / f = 1 / (2.00 
             phasesPassed = 1;
             updateDots();
             updateCompletedPhases();
+            saveProgress();
             setupVariablesPhase();
         }
 
@@ -849,12 +897,14 @@ const ALL_NOTATIONS = ["a₍c₎ = v² / r = 4π²rf²", "T = 1 / f = 1 / (2.00 
                 feedback.className = 'feedback show correct';
                 phasesPassed = 2;
                 updateDots();
+                saveProgress();
             } else {
                 const correctVars = currentItem.variables.map(v => v.symbol + ' = ' + v.meaning).join('<br>• ');
                 feedback.innerHTML = 'Some variables were wrong. Here are the correct answers:<br>• ' + correctVars + '<br><br><button class="continue-btn" onclick="goToPhase3()">Continue →</button>';
                 feedback.className = 'feedback show wrong';
                 phasesPassed = 2;
                 updateDots();
+                saveProgress();
             }
         }
 
@@ -865,6 +915,7 @@ const ALL_NOTATIONS = ["a₍c₎ = v² / r = 4π²rf²", "T = 1 / f = 1 / (2.00 
             phasesPassed = 2;
             updateDots();
             updateCompletedPhases();
+            saveProgress();
             setupStepsPhase();
         }
 
