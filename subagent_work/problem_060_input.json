@@ -1,0 +1,48 @@
+{
+  "problem": "A 0.48-kg piece of wood floats in water but is found to sink in alcohol SG=0.79, in which it has an apparent mass of 0.047 kg. What is the SG of the wood?",
+  "source": "PS Chap10.pdf - Problem 6",
+  "sourceFile": "sources/PS Chap10.pdf",
+  "chapter": "Chapter 10: Fluids",
+  "variables": [
+    {
+      "symbol": "m₍wood₎",
+      "meaning": "mass of wood sample"
+    },
+    {
+      "symbol": "m₍apparent₎",
+      "meaning": "apparent mass when submerged in alcohol"
+    },
+    {
+      "symbol": "ρ₍alcohol₎",
+      "meaning": "density of alcohol (SG₍alc₎ × ρ_water)"
+    },
+    {
+      "symbol": "ρ₍wood₎",
+      "meaning": "density of wood"
+    },
+    {
+      "symbol": "SG₍wood₎",
+      "meaning": "ρ₍wood₎ / ρ_water"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Buoyant force equals weight of displaced fluid",
+      "formula": "m₍wood₎ − m₍apparent₎ = ρ₍alcohol₎ V₍wood₎"
+    },
+    {
+      "name": "Relate volume to wood density",
+      "formula": "V₍wood₎ = m₍wood₎ / ρ₍wood₎"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "Combine the relations to solve for ρ₍wood₎.",
+      "notations": "m₍wood₎ − m₍apparent₎ = ρ₍alcohol₎ m₍wood₎ / ρ₍wood₎ ⟹ ρ₍wood₎ = ρ₍alcohol₎ m₍wood₎ / (m₍wood₎ − m₍apparent₎)"
+    },
+    {
+      "explanation": "Compute SG using the known numbers.",
+      "notations": "SG₍wood₎ = ρ₍wood₎/ρ_water = SG₍alc₎ × m₍wood₎ / (m₍wood₎ − m₍apparent₎) = 0.79 × 0.48 / (0.48 − 0.047) ≈ 0.88"
+    }
+  ]
+}

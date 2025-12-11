@@ -1,0 +1,52 @@
+{
+  "problem": "A 0.72-m-diameter solid sphere can be rotated about an axis through its center by a torque of 10.8 m·N which accelerates it uniformly from rest through a total of 160 revolutions in 15.0 s. What is the mass of the sphere?",
+  "source": "PS_Chap8.pdf - Problem 10",
+  "sourceFile": "sources/PS_Chap8.pdf",
+  "chapter": "Chapter 8: Rotational Motion",
+  "variables": [
+    {
+      "symbol": "d",
+      "meaning": "distance"
+    },
+    {
+      "symbol": "τ",
+      "meaning": "torque"
+    },
+    {
+      "symbol": "θ",
+      "meaning": "angle"
+    },
+    {
+      "symbol": "t",
+      "meaning": "time"
+    },
+    {
+      "symbol": "α",
+      "meaning": "angular acceleration (rad/s²)"
+    },
+    {
+      "symbol": "M",
+      "meaning": "sphere mass (kg)"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Angular displacement under constant acceleration",
+      "formula": "θ = ½ α t² (with ω₀ = 0)"
+    },
+    {
+      "name": "Torque and inertia",
+      "formula": "τ = I α = (2/5) M r² α"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "Compute α from θ = ½ α t².",
+      "notations": "α = 2θ / t² = 2(320π) / (15.0)² rad/s²"
+    },
+    {
+      "explanation": "Use τ = (2/5) M r² α to solve for M.",
+      "notations": "M = 5τ / (2 r² α) = [5(10.8)(15.0)²] / [4(0.36)²(320π)] ≈ 2.3 × 10¹ kg"
+    }
+  ]
+}

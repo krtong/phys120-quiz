@@ -1,0 +1,36 @@
+{
+  "problem": "What is the period of a simple pendulum 47 cm long (a) on the Earth, and (b) when it is in a freely falling elevator?",
+  "source": "PS Chap11 and 12.pdf - Problem 4",
+  "sourceFile": "sources/PS Chap11 and 12.pdf",
+  "chapter": "Chapters 11–12: Oscillations & Waves",
+  "variables": [
+    {
+      "symbol": "ℓ",
+      "meaning": "pendulum length"
+    },
+    {
+      "symbol": "g",
+      "meaning": "gravitational acceleration near Earth"
+    },
+    {
+      "symbol": "T",
+      "meaning": "pendulum period (s)"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Small-angle pendulum period",
+      "formula": "T = 2π √(ℓ / g)"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "Compute the period under normal gravity.",
+      "notations": "T = 2π √(0.47 / 9.80) ≈ 1.4 s"
+    },
+    {
+      "explanation": "In a freely falling elevator g → 0 in the elevator frame, so there is no restoring force and no oscillation (period undefined).",
+      "notations": "T → undefined in free fall"
+    }
+  ]
+}

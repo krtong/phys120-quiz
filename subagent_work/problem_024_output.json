@@ -1,0 +1,52 @@
+{
+  "problem": "What is the dot product of A⃗ = 2.0x² î - 4.0x ĵ + 5.0k̂ and B⃗ = 11.0 î + 2.5x ĵ?",
+  "source": "PS Chap6.pdf - Problem 3",
+  "sourceFile": "sources/PS Chap6.pdf",
+  "chapter": "Chapter 6: Work & Energy",
+  "variables": [
+    {
+      "symbol": "A⃗",
+      "meaning": "vector A = 2.0x² î − 4.0x ĵ + 5.0 k̂"
+    },
+    {
+      "symbol": "B⃗",
+      "meaning": "vector B = 11.0 î + 2.5x ĵ + 0 k̂"
+    },
+    {
+      "symbol": "x",
+      "meaning": "scalar parameter x"
+    },
+    {
+      "symbol": "A·B",
+      "meaning": "dot product value"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Dot product in component form",
+      "formula": "A·B = AₓBₓ + AᵧBᵧ + A₍z₎B₍z₎"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "We will use the dot product formula in component form.",
+      "notations": "A·B = AₓBₓ + AᵧBᵧ + A₍z₎B₍z₎"
+    },
+    {
+      "explanation": "Identify the components from the given vectors.",
+      "notations": "A⃗ = 2.0x² î − 4.0x ĵ + 5.0 k̂, so Aₓ = 2.0x², Aᵧ = −4.0x, A₍z₎ = 5.0\nB⃗ = 11.0 î + 2.5x ĵ, so Bₓ = 11.0, Bᵧ = 2.5x, B₍z₎ = 0"
+    },
+    {
+      "explanation": "Substitute the component values into the dot product formula.",
+      "notations": "A·B = (2.0x²)(11.0) + (−4.0x)(2.5x) + (5.0)(0)"
+    },
+    {
+      "explanation": "Multiply each pair of components.",
+      "notations": "A·B = 22.0x² + (−10.0x²) + 0"
+    },
+    {
+      "explanation": "Combine like terms to get the final result.",
+      "notations": "A·B = 22.0x² − 10.0x² = 12.0x²"
+    }
+  ]
+}

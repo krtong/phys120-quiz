@@ -1,0 +1,64 @@
+{
+  "problem": "Estimate the work you do to mow a lawn 10 m by 20 m with a 50-cm wide mower. Assume you push with a force of about 15 N.",
+  "source": "PS Chap6.pdf - Problem 2",
+  "sourceFile": "sources/PS Chap6.pdf",
+  "chapter": "Chapter 6: Work & Energy",
+  "variables": [
+    {
+      "symbol": "L",
+      "meaning": "length"
+    },
+    {
+      "symbol": "W",
+      "meaning": "width of lawn"
+    },
+    {
+      "symbol": "b",
+      "meaning": "mower swath width"
+    },
+    {
+      "symbol": "F",
+      "meaning": "push force magnitude"
+    },
+    {
+      "symbol": "d",
+      "meaning": "total pushing distance (m)"
+    },
+    {
+      "symbol": "W₍mech₎",
+      "meaning": "mechanical work done (J)"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Work by constant force",
+      "formula": "W = Fd"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "We will use the work formula for a constant force in the direction of motion: W = Fd",
+      "notations": "W₍mech₎ = F d"
+    },
+    {
+      "explanation": "Given values from the problem",
+      "notations": "L = 20 m, W = 10 m, b = 50 cm = 0.50 m, F = 15 N"
+    },
+    {
+      "explanation": "Calculate the total distance pushed. To mow the entire lawn area with a mower of width b, we need to make passes that cover the total area.",
+      "notations": "d = (L × W) / b"
+    },
+    {
+      "explanation": "Substitute the numerical values to find the distance",
+      "notations": "d = (20 m × 10 m) / 0.50 m = 200 m² / 0.50 m = 400 m"
+    },
+    {
+      "explanation": "Substitute the force and distance into the work formula",
+      "notations": "W₍mech₎ = F × d = 15 N × 400 m"
+    },
+    {
+      "explanation": "Calculate the final result",
+      "notations": "W₍mech₎ = 6000 J = 6.0 × 10³ J"
+    }
+  ]
+}

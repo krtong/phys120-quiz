@@ -1,0 +1,40 @@
+{
+  "problem": "As shown in the right figure, one applies a force F with an angle φ with respect to the handle of the wrench at a point with a distance r away from the screw. Find the torque τ applied by the force. Does it make the screw rotate counterclockwise (CCW) or clockwise (CW)?",
+  "source": "Worksheet 10 - Problem 1",
+  "sourceFile": "sources/WS10_Rotational_Dynamics.pdf",
+  "chapter": "Worksheet 10",
+  "variables": [
+    {
+      "symbol": "F",
+      "meaning": "applied force magnitude"
+    },
+    {
+      "symbol": "r",
+      "meaning": "lever arm (distance from screw)"
+    },
+    {
+      "symbol": "φ",
+      "meaning": "angle between the force and the wrench handle"
+    },
+    {
+      "symbol": "τ",
+      "meaning": "torque magnitude"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Torque from a force",
+      "formula": "τ = r F sinφ"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "Take the component of the force perpendicular to the wrench (F⊥ = F sinφ) and multiply by the lever arm.",
+      "notations": "τ = r F sinφ"
+    },
+    {
+      "explanation": "Direction (CCW or CW) follows the right-hand rule; if the perpendicular component tends to rotate the handle upward, the torque is CCW, otherwise CW.",
+      "notations": "Sign determined by sense of rotation in the diagram"
+    }
+  ]
+}

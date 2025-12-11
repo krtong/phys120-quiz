@@ -1,0 +1,88 @@
+{
+  "problem": "The maximum gauge pressure in a hydraulic lift is 17.0 atm. What is the largest-size vehicle (kg) it can lift if the diameter of the output line is 25.5 cm?",
+  "source": "Quiz 9 - Problem 2",
+  "sourceFile": "sources/Quiz 9 FA25 solution.docx",
+  "chapter": "Quiz 9: Fluids",
+  "variables": [
+    {
+      "symbol": "P₍max₎",
+      "meaning": "gauge pressure limit"
+    },
+    {
+      "symbol": "P₍SI₎",
+      "meaning": "pressure converted to pascals"
+    },
+    {
+      "symbol": "d",
+      "meaning": "output-line diameter"
+    },
+    {
+      "symbol": "r",
+      "meaning": "output piston radius"
+    },
+    {
+      "symbol": "A",
+      "meaning": "output piston area"
+    },
+    {
+      "symbol": "→F₍max₎",
+      "meaning": "force, maximum lift"
+    },
+    {
+      "symbol": "m₍max₎",
+      "meaning": "mass, largest vehicle supported"
+    },
+    {
+      "symbol": "g",
+      "meaning": "gravitational acceleration near Earth"
+    },
+    {
+      "symbol": "P₍atm₎",
+      "meaning": "pressure conversion factor, 1 atm in pascals"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Pressure definition",
+      "formula": "P = F/A"
+    },
+    {
+      "name": "Gravitational force",
+      "formula": "F = mg"
+    },
+    {
+      "name": "Area of circle",
+      "formula": "A = πr²"
+    },
+    {
+      "name": "Atmospheric pressure conversion",
+      "formula": "1 atm = 1.013 × 10⁵ Pa"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "State the fundamental formulas to be used: pressure definition P = F/A (rearranged as F = PA), gravitational force F = mg, and area of circle A = πr².",
+      "notations": "P = F/A  →  F = PA\nF = mg\nA = πr²"
+    },
+    {
+      "explanation": "Define the variables with values given in the problem.",
+      "notations": "Given: P₍max₎ = 17.0 atm, d = 25.5 cm = 0.255 m, r = d/2 = 0.1275 m, g = 9.80 m/s²\nConversion factor: 1 atm = 1.013 × 10⁵ Pa"
+    },
+    {
+      "explanation": "Convert the gauge pressure from atmospheres to pascals.",
+      "notations": "P₍SI₎ = 17.0 atm × 1.013 × 10⁵ Pa/atm = 1.72 × 10⁶ Pa"
+    },
+    {
+      "explanation": "Calculate the piston area using A = πr².",
+      "notations": "A = π(0.1275 m)² = π(0.01626 m²) ≈ 5.11 × 10⁻² m²"
+    },
+    {
+      "explanation": "Use F = PA to find the maximum upward force the hydraulic lift can exert.",
+      "notations": "F₍max₎ = P₍SI₎ × A = (1.72 × 10⁶ Pa)(5.11 × 10⁻² m²) ≈ 8.8 × 10⁴ N"
+    },
+    {
+      "explanation": "Rearrange F = mg to solve for mass: m = F/g.",
+      "notations": "m₍max₎ = F₍max₎ / g = (8.8 × 10⁴ N) / (9.80 m/s²) ≈ 9.0 × 10³ kg"
+    }
+  ]
+}

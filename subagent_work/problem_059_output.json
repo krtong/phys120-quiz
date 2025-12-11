@@ -1,0 +1,76 @@
+{
+  "problem": "The specific gravity of ice is 0.917, whereas that of seawater is 1.025. What percent of an iceberg is above the surface of the water?",
+  "source": "PS Chap10.pdf - Problem 5",
+  "sourceFile": "sources/PS Chap10.pdf",
+  "chapter": "Chapter 10: Fluids",
+  "variables": [
+    {
+      "symbol": "SG₍ice₎",
+      "meaning": "specific gravity of ice relative to water"
+    },
+    {
+      "symbol": "SG₍sea₎",
+      "meaning": "specific gravity of seawater relative to water"
+    },
+    {
+      "symbol": "V₍ice₎",
+      "meaning": "total iceberg volume"
+    },
+    {
+      "symbol": "V₍sub₎",
+      "meaning": "submerged volume"
+    },
+    {
+      "symbol": "V₍above₎",
+      "meaning": "volume above water (V₍ice₎ − V₍sub₎)"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Buoyancy equilibrium for floating objects",
+      "formula": "ρ₍fluid₎ V₍sub₎ g = ρ₍object₎ V₍object₎ g"
+    },
+    {
+      "name": "Specific gravity definition",
+      "formula": "SG = ρ/ρ₍water₎"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "State the fundamental formulas we will use: buoyancy equilibrium (weight equals buoyant force) and specific gravity definition.",
+      "notations": "For a floating object: ρ₍fluid₎ V₍sub₎ g = ρ₍object₎ V₍object₎ g, and SG = ρ/ρ₍water₎"
+    },
+    {
+      "explanation": "Define the given values from the problem.",
+      "notations": "Given: SG₍ice₎ = 0.917, SG₍sea₎ = 1.025"
+    },
+    {
+      "explanation": "Apply buoyancy equilibrium to the floating iceberg: the weight of the iceberg equals the buoyant force from displaced seawater.",
+      "notations": "ρ₍sea₎ V₍sub₎ g = ρ₍ice₎ V₍ice₎ g"
+    },
+    {
+      "explanation": "Simplify by canceling g and solve for the ratio of submerged volume to total volume.",
+      "notations": "V₍sub₎/V₍ice₎ = ρ₍ice₎/ρ₍sea₎"
+    },
+    {
+      "explanation": "Express densities in terms of specific gravities: ρ₍ice₎ = SG₍ice₎ × ρ₍water₎ and ρ₍sea₎ = SG₍sea₎ × ρ₍water₎",
+      "notations": "V₍sub₎/V₍ice₎ = (SG₍ice₎ × ρ₍water₎)/(SG₍sea₎ × ρ₍water₎) = SG₍ice₎/SG₍sea₎"
+    },
+    {
+      "explanation": "Substitute the numerical values for the specific gravities.",
+      "notations": "V₍sub₎/V₍ice₎ = 0.917/1.025"
+    },
+    {
+      "explanation": "Calculate the fraction submerged.",
+      "notations": "V₍sub₎/V₍ice₎ ≈ 0.895"
+    },
+    {
+      "explanation": "Calculate the fraction above the surface.",
+      "notations": "V₍above₎/V₍ice₎ = 1 − V₍sub₎/V₍ice₎ = 1 − 0.895 = 0.105"
+    },
+    {
+      "explanation": "Convert to percentage.",
+      "notations": "Percentage above water = 0.105 × 100% = 10.5%"
+    }
+  ]
+}

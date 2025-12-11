@@ -1,0 +1,48 @@
+{
+  "problem": "Calculate the net torque about the axle of the wheel shown in the figure. Assume that a friction torque of 0.60 m·N opposes the motion.",
+  "source": "PS_Chap8.pdf - Problem 5",
+  "sourceFile": "sources/PS_Chap8.pdf",
+  "chapter": "Chapter 8: Rotational Motion",
+  "variables": [
+    {
+      "symbol": "→F₁",
+      "meaning": "force of 1"
+    },
+    {
+      "symbol": "→F₂",
+      "meaning": "force of 2"
+    },
+    {
+      "symbol": "→F₃",
+      "meaning": "force of 3"
+    },
+    {
+      "symbol": "τ₍fric₎",
+      "meaning": "torque of friction"
+    },
+    {
+      "symbol": "τ₍net₎",
+      "meaning": "torque of net"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Torque from perpendicular force",
+      "formula": "τ = r F (sign from rotation sense)"
+    },
+    {
+      "name": "Net torque (algebraic sum)",
+      "formula": "τ₍net₎ = Στ₍applied₎ + τ₍fric₎"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "Assign counterclockwise torques as positive; evaluate each applied force’s moment.",
+      "notations": "τ₍applied₎ = (28)(0.24) − (18)(0.24) − (35)(0.12) = −1.8 N·m"
+    },
+    {
+      "explanation": "Add the friction torque (opposite the motion, i.e., positive) to obtain the net torque.",
+      "notations": "τ₍net₎ = −1.8 N·m + 0.60 N·m = −1.2 N·m → 1.2 N·m clockwise"
+    }
+  ]
+}

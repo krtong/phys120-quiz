@@ -1,0 +1,40 @@
+{
+  "problem": "A novice skier, starting from rest, slides down a frictionless 13.0° incline whose vertical height is 125 m. How fast is she going when she reaches the bottom?",
+  "source": "PS Chap6.pdf - Problem 8",
+  "sourceFile": "sources/PS Chap6.pdf",
+  "chapter": "Chapter 6: Work & Energy",
+  "variables": [
+    {
+      "symbol": "h",
+      "meaning": "vertical drop of slope"
+    },
+    {
+      "symbol": "v₀",
+      "meaning": "initial speed at top"
+    },
+    {
+      "symbol": "v",
+      "meaning": "speed at bottom of slope"
+    },
+    {
+      "symbol": "g",
+      "meaning": "gravitational acceleration near Earth"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Energy conservation (no friction)",
+      "formula": "m g h = ½ m v²"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "Set the loss in potential energy equal to the gain in kinetic energy.",
+      "notations": "mgh = ½ m v²"
+    },
+    {
+      "explanation": "Solve for v using the given vertical drop.",
+      "notations": "v = √(2gh) = √[2(9.80)(125)] ≈ 5.0 × 10¹ m/s"
+    }
+  ]
+}

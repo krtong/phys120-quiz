@@ -1,0 +1,56 @@
+{
+  "problem": "A bat at rest sends out ultrasonic sound waves at 50.0 kHz and receives them returned from an object moving directly away from it at 27.5 m/s. What is the received sound frequency?",
+  "source": "Quiz 10 - Problem 5",
+  "sourceFile": "sources/Quiz10 FA25 solution.docx",
+  "chapter": "Quiz 10: Oscillations & Waves",
+  "variables": [
+    {
+      "symbol": "f₀",
+      "meaning": "frequency of emitted ultrasonic pulse"
+    },
+    {
+      "symbol": "v₍air₎",
+      "meaning": "speed of sound in air"
+    },
+    {
+      "symbol": "u",
+      "meaning": "speed of target moving away"
+    },
+    {
+      "symbol": "f₁",
+      "meaning": "frequency incident on the moving object"
+    },
+    {
+      "symbol": "f₂",
+      "meaning": "frequency received back at the bat"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Doppler shift for moving observer",
+      "formula": "f₁ = f₀ (v₍air₎ − u) / v₍air₎"
+    },
+    {
+      "name": "Doppler shift for moving source (reflection)",
+      "formula": "f₂ = f₁ v₍air₎ / (v₍air₎ + u)"
+    },
+    {
+      "name": "Combined reflection shift",
+      "formula": "f₂ = f₀ (v₍air₎ − u) / (v₍air₎ + u)"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "Treat the moving object first as an observer receding from the bat, lowering the frequency it “hears.”",
+      "notations": "f₁ = 50.0 kHz × (343 − 27.5)/343"
+    },
+    {
+      "explanation": "The object reflects that frequency back while receding, causing a second Doppler shift.",
+      "notations": "f₂ = f₁ × 343/(343 + 27.5) = f₀ (343 − 27.5)/(343 + 27.5)"
+    },
+    {
+      "explanation": "Insert numbers to get the received frequency.",
+      "notations": "f₂ = 50.0 kHz × 315.5/370.5 ≈ 4.3 × 10⁴ Hz"
+    }
+  ]
+}

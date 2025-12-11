@@ -1,0 +1,57 @@
+{
+  "problem": "A pendulum consists of a mass M hanging at the bottom end of a massless rod of length ℓ, which has a frictionless pivot at its top end. A mass m, moving as shown in the figure with velocity v, impacts M and becomes embedded. What is the smallest value of v sufficient to cause the pendulum (with embedded mass m) to swing clear over the top of its arc?",
+  "source": "Midterm 2 - Problem 3",
+  "sourceFile": "sources/MT2 FA25 solution.docx",
+  "image": "images/midterm2-problem3.png",
+  "chapter": "Midterm 2 Review",
+  "variables": [
+    {
+      "symbol": "M",
+      "meaning": "pendulum bob mass"
+    },
+    {
+      "symbol": "m",
+      "meaning": "projectile mass"
+    },
+    {
+      "symbol": "ℓ",
+      "meaning": "pendulum length"
+    },
+    {
+      "symbol": "→v",
+      "meaning": "projectile speed before impact"
+    },
+    {
+      "symbol": "v'",
+      "meaning": "speed of combined mass immediately after impact"
+    },
+    {
+      "symbol": "g",
+      "meaning": "gravitational acceleration"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Momentum conservation (perfectly inelastic impact)",
+      "formula": "m v = (M + m) v'"
+    },
+    {
+      "name": "Energy needed to rise from bottom to top",
+      "formula": "½ (M + m) v'^2 ≥ (M + m) g (2ℓ)"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "After impact, the embedded masses behave as a single pendulum bob of mass (M + m).",
+      "notations": "v' = (m/(M + m)) v"
+    },
+    {
+      "explanation": "To reach the top, the bob must gain potential energy (M + m) g (2ℓ).",
+      "notations": "½ (M + m) v'^2 ≥ (M + m) g (2ℓ) ⇒ v' ≥ √(4 g ℓ)"
+    },
+    {
+      "explanation": "Translate the requirement back to the incoming bullet speed.",
+      "notations": "v ≥ (M + m)/m × √(4 g ℓ)"
+    }
+  ]
+}

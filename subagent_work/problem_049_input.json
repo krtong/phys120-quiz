@@ -1,0 +1,56 @@
+{
+  "problem": "(a) What is the angular momentum of a 2.8-kg uniform cylindrical grinding wheel of radius 28 cm when rotating at 1300 rpm? (b) How much torque is required to stop it in 6.0 s?",
+  "source": "PS_Chap8.pdf - Problem 15",
+  "sourceFile": "sources/PS_Chap8.pdf",
+  "chapter": "Chapter 8: Rotational Motion",
+  "variables": [
+    {
+      "symbol": "M",
+      "meaning": "mass of grinding wheel"
+    },
+    {
+      "symbol": "R",
+      "meaning": "radius of wheel"
+    },
+    {
+      "symbol": "ω",
+      "meaning": "angular speed of wheel"
+    },
+    {
+      "symbol": "I",
+      "meaning": "rotational inertia of uniform cylinder (½ M R²)"
+    },
+    {
+      "symbol": "L",
+      "meaning": "angular momentum → magnitude (kg·m²·/s)"
+    },
+    {
+      "symbol": "Δt",
+      "meaning": "time interval for braking"
+    },
+    {
+      "symbol": "τ",
+      "meaning": "net braking torque → magnitude (N·m)"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Angular momentum",
+      "formula": "L = I ω"
+    },
+    {
+      "name": "Torque from angular impulse",
+      "formula": "τ = ΔL / Δt"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "Compute I = ½ M R² and multiply by ω.",
+      "notations": "L = ½ (2.8)(0.28)² × 136 ≈ 15 kg·m²·/s"
+    },
+    {
+      "explanation": "To stop in 6.0 s, apply τ = −L/Δt.",
+      "notations": "τ = −15 / 6.0 ≈ −2.5 N·m (opposes rotation)"
+    }
+  ]
+}

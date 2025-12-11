@@ -1,0 +1,52 @@
+{
+  "problem": "Suppose a 65-kg person stands at the edge of a 5.5-m diameter merry-go-round turntable that is mounted on frictionless bearings and has a moment of inertia of 1850 kg·m². The turntable is at rest initially, but when the person begins running at a speed of 4.0 m/s (with respect to the turntable) around its edge, the turntable begins to rotate in the opposite direction. Calculate the angular velocity of the turntable.",
+  "source": "PS_Chap8.pdf - Problem 18",
+  "sourceFile": "sources/PS_Chap8.pdf",
+  "chapter": "Chapter 8: Rotational Motion",
+  "variables": [
+    {
+      "symbol": "m",
+      "meaning": "mass of runner"
+    },
+    {
+      "symbol": "R",
+      "meaning": "turntable radius"
+    },
+    {
+      "symbol": "I₍T₎",
+      "meaning": "moment of inertia of turntable"
+    },
+    {
+      "symbol": "v₍rel₎",
+      "meaning": "velocity of relative"
+    },
+    {
+      "symbol": "ω₍T₎",
+      "meaning": "angular velocity of turntable"
+    },
+    {
+      "symbol": "ω₍P₎",
+      "meaning": "angular velocity of person"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Conservation of angular momentum",
+      "formula": "0 = I₍T₎ ω₍T₎ + m R² ω₍P₎"
+    },
+    {
+      "name": "Relative-to-ground angular speed",
+      "formula": "ω₍P₎ = (v₍rel₎ + R ω₍T₎)/R"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "Substitute ω₍P₎ into momentum balance and solve for ω₍T₎.",
+      "notations": "0 = I₍T₎ ω₍T₎ + m R (v₍rel₎ + R ω₍T₎) → ω₍T₎ = − (m R v₍rel₎)/(I₍T₎ + m R²)"
+    },
+    {
+      "explanation": "Insert numbers.",
+      "notations": "ω₍T₎ = −[(65)(2.75)(4.0)] / [1850 + 65(2.75)²] ≈ −0.31 rad/s (opposite the runner)"
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "problem": "A pulley of mass m₁ and radius R is fixed on the ceiling. The rotational inertial of the pulley is given by I = ½m₁R². A block of mass m₂ is hang by a rope (assuming mass is negligible) that wraps around the pulley. Assume the rope does not slip on the pulley. (a) Find the constraint relation between the angular acceleration of the pulley and the vertical acceleration of the block. (b) Find the tension of the rope. (c) Find the acceleration of the block. (d) When the block falls a distance Δy, what is the angular speed of the pulley?",
+  "source": "Worksheet 10 - Problem 4",
+  "sourceFile": "sources/WS10_Rotational_Dynamics.pdf",
+  "chapter": "Worksheet 10",
+  "variables": [
+    {
+      "symbol": "m₁",
+      "meaning": "pulley mass"
+    },
+    {
+      "symbol": "m₂",
+      "meaning": "block mass"
+    },
+    {
+      "symbol": "R",
+      "meaning": "pulley radius"
+    },
+    {
+      "symbol": "I",
+      "meaning": "moment of inertia (½ m₁ R²)"
+    },
+    {
+      "symbol": "a",
+      "meaning": "downward acceleration of block"
+    },
+    {
+      "symbol": "α",
+      "meaning": "angular acceleration of pulley"
+    },
+    {
+      "symbol": "T",
+      "meaning": "rope tension"
+    },
+    {
+      "symbol": "Δy",
+      "meaning": "distance block falls"
+    },
+    {
+      "symbol": "ω",
+      "meaning": "angular speed after falling Δy"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "No-slip constraint",
+      "formula": "a = R α"
+    },
+    {
+      "name": "Block’s equation",
+      "formula": "m₂ g − T = m₂ a"
+    },
+    {
+      "name": "Pulley torque equation",
+      "formula": "T R = I α"
+    },
+    {
+      "name": "Kinematics for angular speed",
+      "formula": "ω = √(2 a Δy)/R"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "(a) The tangential acceleration of the rim equals the block’s linear acceleration, so α = a/R.",
+      "notations": "a = R α"
+    },
+    {
+      "explanation": "(b) Combine the torque relation with the constraint: T R = (½ m₁ R²)(a/R) ⇒ T = ½ m₁ a.",
+      "notations": "T = ½ m₁ a"
+    },
+    {
+      "explanation": "(c) Substitute T into the block’s force balance to solve for a.",
+      "notations": "m₂ g − ½ m₁ a = m₂ a ⇒ a = m₂ g /(m₂ + ½ m₁)"
+    },
+    {
+      "explanation": "(d) Use v² = 2 a Δy for the block, then relate ω = v/R.",
+      "notations": "ω = √(2 a Δy)/R"
+    }
+  ]
+}

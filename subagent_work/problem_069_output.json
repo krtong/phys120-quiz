@@ -1,0 +1,60 @@
+{
+  "problem": "A fireworks shell explodes 100 m above the ground, creating colorful sparks. How much greater is the sound level of the explosion for a person at a point directly below the explosion than for a person a horizontal distance of 200 m away?",
+  "source": "PS Chap11 and 12.pdf - Problem 12",
+  "sourceFile": "sources/PS Chap11 and 12.pdf",
+  "chapter": "Chapters 11–12: Oscillations & Waves",
+  "variables": [
+    {
+      "symbol": "r₁",
+      "meaning": "distance from explosion (vertical)"
+    },
+    {
+      "symbol": "r₂",
+      "meaning": "distance from explosion (slant)"
+    },
+    {
+      "symbol": "Δβ",
+      "meaning": "difference in sound level"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Inverse-square intensity ratio",
+      "formula": "I₁/I₂ = (r₂/r₁)²"
+    },
+    {
+      "name": "Decibel difference",
+      "formula": "Δβ = 10 log₁₀(I₁/I₂)"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "State the formulas we will use: the inverse-square law for sound intensity and the decibel difference formula.",
+      "notations": "I₁/I₂ = (r₂/r₁)² and Δβ = 10 log₁₀(I₁/I₂)"
+    },
+    {
+      "explanation": "Define the variables from the problem: the person directly below is at vertical distance r₁ = 100 m, and the person at horizontal distance 200 m away needs their slant distance calculated.",
+      "notations": "Given: vertical height = 100 m, horizontal distance = 200 m. For person directly below: r₁ = 100 m. For person at horizontal distance 200 m: r₂ = √(100² + 200²)"
+    },
+    {
+      "explanation": "Calculate the slant distance r₂ using the Pythagorean theorem.",
+      "notations": "r₂ = √(100² + 200²) = √(10000 + 40000) = √50000 = 100√5 m"
+    },
+    {
+      "explanation": "Substitute the distances into the intensity ratio formula.",
+      "notations": "I₁/I₂ = (r₂/r₁)² = (100√5/100)² = (√5)²"
+    },
+    {
+      "explanation": "Calculate the intensity ratio.",
+      "notations": "I₁/I₂ = 5"
+    },
+    {
+      "explanation": "Substitute the intensity ratio into the decibel difference formula.",
+      "notations": "Δβ = 10 log₁₀(5)"
+    },
+    {
+      "explanation": "Calculate the final answer for the sound level difference.",
+      "notations": "Δβ = 10 × 0.699 ≈ 7 dB (person underneath hears approximately 7 dB louder)"
+    }
+  ]
+}

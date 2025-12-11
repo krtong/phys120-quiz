@@ -1,0 +1,64 @@
+{
+  "problem": "Water and then oil (which don't mix) are poured into a U-shaped tube, open at both ends. They come to equilibrium as shown in the figure. What is the density of the oil? [Hint: Pressures at points a and b are equal. Why?]",
+  "source": "PS Chap10.pdf - Problem 3",
+  "sourceFile": "sources/PS Chap10.pdf",
+  "chapter": "Chapter 10: Fluids",
+  "variables": [
+    {
+      "symbol": "ρ₍w₎",
+      "meaning": "density of water"
+    },
+    {
+      "symbol": "h₍oil₎",
+      "meaning": "height of oil column above interface"
+    },
+    {
+      "symbol": "h₍water₎",
+      "meaning": "height of displaced water column"
+    },
+    {
+      "symbol": "ρ₍oil₎",
+      "meaning": "unknown oil density (kg/m³)"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Hydrostatic pressure",
+      "formula": "P = P₀ + ρgh"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "We will use the hydrostatic pressure formula to find the pressure at points a and b in each column.",
+      "notations": "P = P₀ + ρgh"
+    },
+    {
+      "explanation": "Define the variables from the problem: water density, height of oil column, and height of water column.",
+      "notations": "ρ₍w₎ = 1.00 × 10³ kg/m³, h₍oil₎ = 0.272 m, h₍water₎ = 0.1858 m"
+    },
+    {
+      "explanation": "At equilibrium, the pressure at point a (at the interface on the water side) equals the pressure at point b (at the same horizontal level on the oil side). Apply the hydrostatic pressure formula to both sides.",
+      "notations": "P_a = P₀ + ρ₍w₎ g h₍water₎ and P_b = P₀ + ρ₍oil₎ g h₍oil₎"
+    },
+    {
+      "explanation": "Since pressures at equal depths in connected fluids are equal, set the two expressions equal.",
+      "notations": "P₀ + ρ₍w₎ g h₍water₎ = P₀ + ρ₍oil₎ g h₍oil₎"
+    },
+    {
+      "explanation": "Cancel P₀ and g from both sides to simplify.",
+      "notations": "ρ₍w₎ h₍water₎ = ρ₍oil₎ h₍oil₎"
+    },
+    {
+      "explanation": "Solve for the oil density by isolating ρ₍oil₎.",
+      "notations": "ρ₍oil₎ = ρ₍w₎ (h₍water₎ / h₍oil₎)"
+    },
+    {
+      "explanation": "Substitute the numerical values into the equation.",
+      "notations": "ρ₍oil₎ = (1.00 × 10³ kg/m³) × (0.1858 m / 0.272 m)"
+    },
+    {
+      "explanation": "Calculate the final answer.",
+      "notations": "ρ₍oil₎ = (1.00 × 10³) × (0.683) ≈ 6.8 × 10² kg/m³"
+    }
+  ]
+}

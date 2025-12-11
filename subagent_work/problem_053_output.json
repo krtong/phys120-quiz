@@ -1,0 +1,100 @@
+{
+  "problem": "A 60 g arrow is fired from a bow whose string exerts an average force of 100N on the arrow over a distance of 80cm. (a) What is the speed of the arrow as it leaves the bow? (b) What is the power given to the arrow?",
+  "source": "Midterm 2 - Problem 2",
+  "sourceFile": "sources/MT2 FA25 solution.docx",
+  "chapter": "Midterm 2 Review",
+  "variables": [
+    {
+      "symbol": "m",
+      "meaning": "mass of arrow"
+    },
+    {
+      "symbol": "→F₍avg₎",
+      "meaning": "force of average string force"
+    },
+    {
+      "symbol": "d",
+      "meaning": "distance over which string force acts"
+    },
+    {
+      "symbol": "a",
+      "meaning": "acceleration (m/s²)"
+    },
+    {
+      "symbol": "v",
+      "meaning": "exit speed (m/s)"
+    },
+    {
+      "symbol": "t",
+      "meaning": "acceleration time (s)"
+    },
+    {
+      "symbol": "W",
+      "meaning": "work on arrow (J)"
+    },
+    {
+      "symbol": "P₍avg₎",
+      "meaning": "pressure of average value delivered to arrow"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Newton's second law",
+      "formula": "F = ma"
+    },
+    {
+      "name": "Work done by constant force",
+      "formula": "W = Fd"
+    },
+    {
+      "name": "Kinetic energy",
+      "formula": "KE = ½mv²"
+    },
+    {
+      "name": "Kinematic equation for velocity",
+      "formula": "v² = v₀² + 2ad"
+    },
+    {
+      "name": "Velocity from acceleration",
+      "formula": "v = v₀ + at"
+    },
+    {
+      "name": "Average power",
+      "formula": "P = W/t"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "State the fundamental formulas needed for this problem",
+      "notations": "We will use F = ma, W = Fd, KE = ½mv², v² = v₀² + 2ad, v = v₀ + at, and P = W/t"
+    },
+    {
+      "explanation": "Define the variables with values given in the problem",
+      "notations": "Given: m = 60 g = 0.060 kg, F₍avg₎ = 100 N, d = 80 cm = 0.80 m, v₀ = 0"
+    },
+    {
+      "explanation": "Calculate acceleration using Newton's second law",
+      "notations": "a = F₍avg₎/m = 100 N / 0.060 kg = 1667 m/s² ≈ 1.67 × 10³ m/s²"
+    },
+    {
+      "explanation": "Calculate final speed using the kinematic equation",
+      "notations": "v² = v₀² + 2ad = 0 + 2(1667 m/s²)(0.80 m) = 2667 m²/s²"
+    },
+    {
+      "explanation": "Solve for the final speed",
+      "notations": "v = √(2667 m²/s²) ≈ 51.6 m/s ≈ 5.2 × 10¹ m/s"
+    },
+    {
+      "explanation": "Calculate work done on the arrow",
+      "notations": "W = F₍avg₎d = (100 N)(0.80 m) = 80 J"
+    },
+    {
+      "explanation": "Calculate the time interval using v = v₀ + at",
+      "notations": "t = (v - v₀)/a = (51.6 m/s - 0)/(1667 m/s²) = 0.0310 s ≈ 3.1 × 10⁻² s"
+    },
+    {
+      "explanation": "Calculate the average power delivered to the arrow",
+      "notations": "P₍avg₎ = W/t = 80 J / 0.031 s ≈ 2581 W ≈ 2.6 kW"
+    }
+  ]
+}

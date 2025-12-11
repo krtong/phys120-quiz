@@ -1,0 +1,76 @@
+{
+  "problem": "A ball of mass 0.440 kg moving east (+x direction) with a speed of 3.80 m/s collides head-on with a 0.220-kg ball at rest. If the collision is perfectly elastic, what will be the speed and direction of each ball after the collision?",
+  "source": "Quiz 7 - Problem 4",
+  "sourceFile": "sources/Quiz 7 FA25 Solution.docx",
+  "chapter": "Quiz 7: Momentum & Collisions",
+  "variables": [
+    {
+      "symbol": "m₁",
+      "meaning": "mass of ball 1"
+    },
+    {
+      "symbol": "m₂",
+      "meaning": "mass of ball 2"
+    },
+    {
+      "symbol": "v₁ᵢ",
+      "meaning": "initial velocity of ball 1"
+    },
+    {
+      "symbol": "v₂ᵢ",
+      "meaning": "initial velocity of ball 2"
+    },
+    {
+      "symbol": "v₁f",
+      "meaning": "final velocity of ball 1"
+    },
+    {
+      "symbol": "v₂f",
+      "meaning": "final velocity of ball 2"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "1D elastic collision (first mass)",
+      "formula": "v₁f = [(m₁ − m₂)/(m₁ + m₂)] v₁ᵢ + [2m₂/(m₁ + m₂)] v₂ᵢ"
+    },
+    {
+      "name": "1D elastic collision (second mass)",
+      "formula": "v₂f = [2m₁/(m₁ + m₂)] v₁ᵢ + [(m₂ − m₁)/(m₁ + m₂)] v₂ᵢ"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "State the formulas to be used for a 1D elastic collision.",
+      "notations": "v₁f = [(m₁ − m₂)/(m₁ + m₂)] v₁ᵢ + [2m₂/(m₁ + m₂)] v₂ᵢ and v₂f = [2m₁/(m₁ + m₂)] v₁ᵢ + [(m₂ − m₁)/(m₁ + m₂)] v₂ᵢ"
+    },
+    {
+      "explanation": "Define the variables with values given in the problem.",
+      "notations": "Given: m₁ = 0.440 kg, m₂ = 0.220 kg, v₁ᵢ = 3.80 m/s, v₂ᵢ = 0 m/s"
+    },
+    {
+      "explanation": "Since v₂ᵢ = 0, the formulas simplify by eliminating the terms containing v₂ᵢ.",
+      "notations": "v₁f = [(m₁ − m₂)/(m₁ + m₂)] v₁ᵢ and v₂f = [2m₁/(m₁ + m₂)] v₁ᵢ"
+    },
+    {
+      "explanation": "Substitute the numerical values into the formula for v₁f.",
+      "notations": "v₁f = [(0.440 kg − 0.220 kg)/(0.440 kg + 0.220 kg)] × 3.80 m/s = [0.220 kg / 0.660 kg] × 3.80 m/s"
+    },
+    {
+      "explanation": "Calculate the final velocity of ball 1.",
+      "notations": "v₁f = (0.333) × 3.80 m/s = 1.27 m/s"
+    },
+    {
+      "explanation": "Substitute the numerical values into the formula for v₂f.",
+      "notations": "v₂f = [2 × 0.440 kg / (0.440 kg + 0.220 kg)] × 3.80 m/s = [0.880 kg / 0.660 kg] × 3.80 m/s"
+    },
+    {
+      "explanation": "Calculate the final velocity of ball 2.",
+      "notations": "v₂f = (1.333) × 3.80 m/s = 5.07 m/s"
+    },
+    {
+      "explanation": "State the final answers with direction. Both velocities are positive, indicating motion in the +x (east) direction.",
+      "notations": "Ball 1: 1.3 m/s east; Ball 2: 5.1 m/s east"
+    }
+  ]
+}

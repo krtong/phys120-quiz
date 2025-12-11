@@ -1,0 +1,76 @@
+{
+  "problem": "A bottle has a mass of 35.00 g when empty and 98.44 g when filled with water. When filled with another fluid, the mass is 89.22 g. What is the specific gravity of this other fluid?",
+  "source": "Quiz 9 - Problem 1",
+  "sourceFile": "sources/Quiz 9 FA25 solution.docx",
+  "chapter": "Quiz 9: Fluids",
+  "variables": [
+    {
+      "symbol": "m₍b₎",
+      "meaning": "mass, empty bottle"
+    },
+    {
+      "symbol": "m₍w,total₎",
+      "meaning": "mass, bottle plus water"
+    },
+    {
+      "symbol": "m₍f,total₎",
+      "meaning": "mass, bottle plus unknown fluid"
+    },
+    {
+      "symbol": "m₍w₎",
+      "meaning": "mass, water alone"
+    },
+    {
+      "symbol": "m₍f₎",
+      "meaning": "mass, unknown fluid alone"
+    },
+    {
+      "symbol": "ρ₍w₎",
+      "meaning": "density, water reference"
+    },
+    {
+      "symbol": "SG",
+      "meaning": "specific gravity of unknown fluid"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Density",
+      "formula": "ρ = m/V"
+    },
+    {
+      "name": "Specific gravity",
+      "formula": "SG = ρ_fluid / ρ_water"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "State the fundamental formulas. We will use the density formula ρ = m/V and the specific gravity definition SG = ρ_fluid / ρ_water.",
+      "notations": "ρ = m/V and SG = ρ_f / ρ_w"
+    },
+    {
+      "explanation": "Define the given values from the problem.",
+      "notations": "m₍b₎ = 35.00 g, m₍w,total₎ = 98.44 g, m₍f,total₎ = 89.22 g"
+    },
+    {
+      "explanation": "Calculate the mass of water alone by subtracting the empty bottle mass.",
+      "notations": "m₍w₎ = m₍w,total₎ − m₍b₎ = 98.44 g − 35.00 g = 63.44 g"
+    },
+    {
+      "explanation": "Calculate the mass of the unknown fluid alone by subtracting the empty bottle mass.",
+      "notations": "m₍f₎ = m₍f,total₎ − m₍b₎ = 89.22 g − 35.00 g = 54.22 g"
+    },
+    {
+      "explanation": "Since both liquids occupy the same volume V in the bottle, substitute into the specific gravity formula. Using ρ_f = m_f/V and ρ_w = m_w/V, we get SG = (m_f/V) / (m_w/V) = m_f / m_w.",
+      "notations": "SG = ρ_f / ρ_w = (m_f/V) / (m_w/V) = m_f / m_w"
+    },
+    {
+      "explanation": "Substitute the numerical values into the formula.",
+      "notations": "SG = 54.22 g / 63.44 g"
+    },
+    {
+      "explanation": "Calculate the final answer.",
+      "notations": "SG = 0.855"
+    }
+  ]
+}

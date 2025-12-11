@@ -1,0 +1,48 @@
+{
+  "problem": "An 85-g arrow is fired from a bow whose string exerts an average force of 105 N on the arrow over a distance of 75 cm. What is the speed of the arrow as it leaves the bow?",
+  "source": "PS Chap6.pdf - Problem 5",
+  "sourceFile": "sources/PS Chap6.pdf",
+  "chapter": "Chapter 6: Work & Energy",
+  "variables": [
+    {
+      "symbol": "m",
+      "meaning": "mass of the arrow"
+    },
+    {
+      "symbol": "F₍avg₎",
+      "meaning": "average force from the bowstring"
+    },
+    {
+      "symbol": "d",
+      "meaning": "draw distance over which force acts"
+    },
+    {
+      "symbol": "W",
+      "meaning": "work done by the string (J)"
+    },
+    {
+      "symbol": "v",
+      "meaning": "launch speed (m/s)"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Work from constant average force",
+      "formula": "W = F₍avg₎ d"
+    },
+    {
+      "name": "Work–kinetic energy theorem",
+      "formula": "W = ½ m v²"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "Compute the work done as the string pushes the arrow over 0.750 m.",
+      "notations": "W = 105 N × 0.750 m = 78.8 J"
+    },
+    {
+      "explanation": "Set the work equal to the arrow’s kinetic energy and solve for v.",
+      "notations": "78.8 J = ½ (0.0850 kg) v²  ⟹  v = √[2W/m] ≈ 4.3 × 10¹ m/s"
+    }
+  ]
+}

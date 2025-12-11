@@ -1,0 +1,76 @@
+{
+  "problem": "A mass m at the end of a spring oscillates with a frequency of 0.83 Hz. When an additional 780-g mass is added to m, the frequency is 0.60 Hz. What is the value of m?",
+  "source": "Quiz 10 - Problem 1",
+  "sourceFile": "sources/Quiz10 FA25 solution.docx",
+  "chapter": "Quiz 10: Oscillations & Waves",
+  "variables": [
+    {
+      "symbol": "f₁",
+      "meaning": "oscillation frequency, initial value"
+    },
+    {
+      "symbol": "f₂",
+      "meaning": "oscillation frequency, with added mass"
+    },
+    {
+      "symbol": "m",
+      "meaning": "mass to be determined"
+    },
+    {
+      "symbol": "Δm",
+      "meaning": "added mass"
+    },
+    {
+      "symbol": "k",
+      "meaning": "spring constant"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Mass-spring frequency",
+      "formula": "f = (1 / 2π) √(k / m)"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "We will use the mass-spring frequency formula for both the initial mass and the mass with added weight.",
+      "notations": "f = (1 / 2π) √(k / m)"
+    },
+    {
+      "explanation": "Define variables by values given in the problem.",
+      "notations": "f₁ = 0.83 Hz, f₂ = 0.60 Hz, Δm = 780 g = 0.780 kg, m = unknown"
+    },
+    {
+      "explanation": "Write the frequency expression for the initial mass m.",
+      "notations": "f₁ = (1 / 2π) √(k / m)"
+    },
+    {
+      "explanation": "Write the frequency expression for the mass with added weight.",
+      "notations": "f₂ = (1 / 2π) √(k / (m + Δm))"
+    },
+    {
+      "explanation": "Take the ratio of the two frequency equations to eliminate k and 2π.",
+      "notations": "f₁ / f₂ = √(k / m) / √(k / (m + Δm)) = √((m + Δm) / m)"
+    },
+    {
+      "explanation": "Square both sides to eliminate the square root.",
+      "notations": "(f₁ / f₂)² = (m + Δm) / m"
+    },
+    {
+      "explanation": "Substitute the numerical values for the frequencies.",
+      "notations": "(0.83 / 0.60)² = (m + Δm) / m"
+    },
+    {
+      "explanation": "Calculate the left side and expand the right side.",
+      "notations": "1.91 = (m + Δm) / m = 1 + Δm / m"
+    },
+    {
+      "explanation": "Isolate the term containing m.",
+      "notations": "1.91 - 1 = Δm / m  ⟹  0.91 = Δm / m"
+    },
+    {
+      "explanation": "Substitute the value of Δm and solve for m.",
+      "notations": "0.91 = 0.780 / m  ⟹  m = 0.780 / 0.91 ≈ 0.86 kg"
+    }
+  ]
+}

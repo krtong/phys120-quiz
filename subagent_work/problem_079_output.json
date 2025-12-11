@@ -1,0 +1,68 @@
+{
+  "problem": "(a) How much energy is required to bring a 1.0-L pot of water at 20°C to 100°C? (b) For how long could this amount of energy run a 60-W lightbulb?",
+  "source": "PS Chap14 FA25.pdf - Problem 2",
+  "sourceFile": "sources/PS Chap14 FA25.pdf",
+  "chapter": "Chapter 14: Heat",
+  "variables": [
+    {
+      "symbol": "m",
+      "meaning": "mass"
+    },
+    {
+      "symbol": "c",
+      "meaning": "specific heat of water"
+    },
+    {
+      "symbol": "ΔT",
+      "meaning": "temperature change (20°C → 100°C)"
+    },
+    {
+      "symbol": "Q",
+      "meaning": "heat added (J)"
+    },
+    {
+      "symbol": "P",
+      "meaning": "power draw of lightbulb"
+    },
+    {
+      "symbol": "t",
+      "meaning": "time"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Sensible heat",
+      "formula": "Q = m c ΔT"
+    },
+    {
+      "name": "Power definition",
+      "formula": "P = Q / t"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "State the formulas to use for part (a) and part (b).",
+      "notations": "Part (a): Q = m c ΔT (sensible heat)\nPart (b): P = Q / t, which gives t = Q / P"
+    },
+    {
+      "explanation": "Define the variables with values given in the problem.",
+      "notations": "Volume = 1.0 L (water has density 1.0 kg/L, so m = 1.0 kg)\nc = 4186 J/(kg·°C) (specific heat of water)\nΔT = 100°C - 20°C = 80°C\nP = 60 W"
+    },
+    {
+      "explanation": "Substitute the numerical values into the sensible heat formula.",
+      "notations": "Q = m c ΔT = (1.0 kg)(4186 J/(kg·°C))(80°C)"
+    },
+    {
+      "explanation": "Calculate the heat energy required.",
+      "notations": "Q = (1.0)(4186)(80) J = 334,880 J ≈ 3.35 × 10⁵ J"
+    },
+    {
+      "explanation": "Substitute the values into the rearranged power formula to find time.",
+      "notations": "t = Q / P = (3.35 × 10⁵ J) / (60 W)"
+    },
+    {
+      "explanation": "Calculate the time the lightbulb could run.",
+      "notations": "t = 3.35 × 10⁵ / 60 s ≈ 5583 s ≈ 5.6 × 10³ s ≈ 93 min"
+    }
+  ]
+}

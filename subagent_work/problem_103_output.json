@@ -1,0 +1,76 @@
+{
+  "problem": "Consider an object with an co-axial structure, where the inner axis has a radius R₁ and the outer radius is R₂. Suppose a force F₁ is applied to the inner axis at a point shown in the figure and has a direction with an angle θ₁ with respect to the horizontal line; another force F₂ is applied on the outer radius at a point and direction shown in the figure, which has an angle θ₂ with respect to the horizontal line. The object is fixed so that it cannot move translationally, but is allowed to rotate about its central axis that is perpendicular to the radii. Suppose the object has a rotational inertia I with respect to the central axis, find the angular acceleration of the object. Specify both the magnitude and direction (CCW or CW).",
+  "source": "Worksheet 10 - Problem 2",
+  "sourceFile": "sources/WS10_Rotational_Dynamics.pdf",
+  "chapter": "Worksheet 10",
+  "variables": [
+    {
+      "symbol": "R₁",
+      "meaning": "inner-radius lever arm"
+    },
+    {
+      "symbol": "R₂",
+      "meaning": "outer-radius lever arm"
+    },
+    {
+      "symbol": "F₁",
+      "meaning": "force magnitude applied at R₁"
+    },
+    {
+      "symbol": "F₂",
+      "meaning": "force magnitude applied at R₂"
+    },
+    {
+      "symbol": "θ₁",
+      "meaning": "angle between F₁ and tangent"
+    },
+    {
+      "symbol": "θ₂",
+      "meaning": "angle between F₂ and tangent"
+    },
+    {
+      "symbol": "I",
+      "meaning": "rotational inertia about axis"
+    },
+    {
+      "symbol": "α",
+      "meaning": "angular acceleration"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Torque",
+      "formula": "τ = rF sinθ"
+    },
+    {
+      "name": "Newton's second law for rotation",
+      "formula": "τ_net = Iα"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "State the fundamental formulas that will be used: torque formula and Newton's second law for rotation.",
+      "notations": "τ = rF sinθ and τ_net = Iα"
+    },
+    {
+      "explanation": "Define the variables given in the problem.",
+      "notations": "Given: R₁ (inner radius), R₂ (outer radius), F₁ (force at R₁), F₂ (force at R₂), θ₁ (angle for F₁), θ₂ (angle for F₂), I (rotational inertia)"
+    },
+    {
+      "explanation": "Calculate the torque from each force using τ = rF sinθ.",
+      "notations": "τ₁ = R₁ F₁ sinθ₁ and τ₂ = R₂ F₂ sinθ₂"
+    },
+    {
+      "explanation": "Determine the net torque by summing the individual torques with appropriate signs based on rotation direction (CCW positive, CW negative).",
+      "notations": "τ_net = τ₁ ± τ₂ = R₁ F₁ sinθ₁ ± R₂ F₂ sinθ₂ (sign depends on whether forces cause CCW or CW rotation)"
+    },
+    {
+      "explanation": "Apply Newton's second law for rotation to solve for angular acceleration.",
+      "notations": "τ_net = Iα, so α = τ_net / I"
+    },
+    {
+      "explanation": "Substitute the net torque expression to get the final answer.",
+      "notations": "α = (R₁ F₁ sinθ₁ ± R₂ F₂ sinθ₂) / I, with sign indicating direction (positive for CCW, negative for CW)"
+    }
+  ]
+}

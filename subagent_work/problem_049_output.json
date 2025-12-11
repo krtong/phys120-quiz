@@ -1,0 +1,88 @@
+{
+  "problem": "(a) What is the angular momentum of a 2.8-kg uniform cylindrical grinding wheel of radius 28 cm when rotating at 1300 rpm? (b) How much torque is required to stop it in 6.0 s?",
+  "source": "PS_Chap8.pdf - Problem 15",
+  "sourceFile": "sources/PS_Chap8.pdf",
+  "chapter": "Chapter 8: Rotational Motion",
+  "variables": [
+    {
+      "symbol": "M",
+      "meaning": "mass of grinding wheel"
+    },
+    {
+      "symbol": "R",
+      "meaning": "radius of wheel"
+    },
+    {
+      "symbol": "ω",
+      "meaning": "angular speed of wheel"
+    },
+    {
+      "symbol": "I",
+      "meaning": "rotational inertia of uniform cylinder (½ M R²)"
+    },
+    {
+      "symbol": "L",
+      "meaning": "angular momentum → magnitude (kg·m²·/s)"
+    },
+    {
+      "symbol": "Δt",
+      "meaning": "time interval for braking"
+    },
+    {
+      "symbol": "τ",
+      "meaning": "net braking torque → magnitude (N·m)"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Moment of inertia for uniform cylinder",
+      "formula": "I = ½MR²"
+    },
+    {
+      "name": "Angular momentum",
+      "formula": "L = Iω"
+    },
+    {
+      "name": "Torque from angular impulse",
+      "formula": "τ = ΔL/Δt"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "For part (a), we will use the angular momentum formula L = Iω and the moment of inertia for a uniform cylinder I = ½MR²",
+      "notations": "L = Iω and I = ½MR²"
+    },
+    {
+      "explanation": "Define the given variables for part (a)",
+      "notations": "M = 2.8 kg, R = 28 cm = 0.28 m, ω = 1300 rpm"
+    },
+    {
+      "explanation": "Convert angular speed from rpm to rad/s",
+      "notations": "ω = 1300 rev/min × (2π rad/rev) × (1 min/60 s) = 1300 × 2π/60 ≈ 136 rad/s"
+    },
+    {
+      "explanation": "Calculate the moment of inertia using I = ½MR²",
+      "notations": "I = ½(2.8 kg)(0.28 m)² = ½(2.8)(0.0784) = 0.1098 kg·m²"
+    },
+    {
+      "explanation": "Substitute into the angular momentum formula L = Iω",
+      "notations": "L = (0.1098 kg·m²)(136 rad/s) ≈ 15 kg·m²/s"
+    },
+    {
+      "explanation": "For part (b), we will use the torque formula τ = ΔL/Δt to find the braking torque",
+      "notations": "τ = ΔL/Δt"
+    },
+    {
+      "explanation": "Define the given variables for part (b)",
+      "notations": "ΔL = L_final - L_initial = 0 - 15 = -15 kg·m²/s, Δt = 6.0 s"
+    },
+    {
+      "explanation": "Substitute into the torque formula",
+      "notations": "τ = ΔL/Δt = (-15 kg·m²/s)/(6.0 s) = -2.5 N·m"
+    },
+    {
+      "explanation": "The magnitude of the braking torque is 2.5 N·m (negative sign indicates it opposes rotation)",
+      "notations": "|τ| = 2.5 N·m"
+    }
+  ]
+}

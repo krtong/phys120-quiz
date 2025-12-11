@@ -1,0 +1,44 @@
+{
+  "problem": "What is the beat frequency if middle C (262 Hz) and C# (277 Hz) are played together? What if each is played two octaves lower (each frequency reduced by a factor of 4)?",
+  "source": "PS Chap11 and 12.pdf - Problem 14",
+  "sourceFile": "sources/PS Chap11 and 12.pdf",
+  "chapter": "Chapters 11–12: Oscillations & Waves",
+  "variables": [
+    {
+      "symbol": "f₁",
+      "meaning": "frequency (1)"
+    },
+    {
+      "symbol": "f₂",
+      "meaning": "frequency (2)"
+    },
+    {
+      "symbol": "f₁'",
+      "meaning": "frequency (1')"
+    },
+    {
+      "symbol": "f₂'",
+      "meaning": "frequency (2')"
+    },
+    {
+      "symbol": "f₍beat₎",
+      "meaning": "|f₂ − f₁|"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Beat frequency",
+      "formula": "f₍beat₎ = |f₂ − f₁|"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "Original notes: take the absolute difference.",
+      "notations": "f₍beat₎ = |277 − 262| = 15 Hz"
+    },
+    {
+      "explanation": "Two octaves lower divides both fundamentals by 4, so the difference also divides by 4.",
+      "notations": "f₍beat,lower₎ = 15 / 4 = 3.75 Hz ≈ 3.8 Hz"
+    }
+  ]
+}

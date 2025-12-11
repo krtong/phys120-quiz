@@ -1,0 +1,36 @@
+{
+  "problem": "A spring has a spring constant k of 820 N/m. How much must this spring be compressed to store 35.0 J of potential energy?",
+  "source": "PS Chap6.pdf - Problem 6",
+  "sourceFile": "sources/PS Chap6.pdf",
+  "chapter": "Chapter 6: Work & Energy",
+  "variables": [
+    {
+      "symbol": "k",
+      "meaning": "spring constant"
+    },
+    {
+      "symbol": "Uₛ",
+      "meaning": "stored spring potential energy"
+    },
+    {
+      "symbol": "x",
+      "meaning": "compression distance (m)"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Elastic potential energy",
+      "formula": "Uₛ = ½ k x²"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "Solve the spring-energy relation for the compression x.",
+      "notations": "x = √(2Uₛ / k)"
+    },
+    {
+      "explanation": "Insert the numerical values.",
+      "notations": "x = √[2(35.0 J) / 820 N/m] ≈ 0.29 m"
+    }
+  ]
+}

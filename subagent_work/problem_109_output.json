@@ -1,0 +1,84 @@
+{
+  "problem": "Equal masses. Billiard ball A of mass m moving with speed v₍A₎ collides head-on with ball B of equal mass. What are the speeds of the two balls after the collision, assuming it is elastic? Assume (a) both balls are moving initially (v₍A₎ and v₍B₎), (b) ball B is initially at rest (v₍B₎ = 0).",
+  "source": "PS Chap7 - Example 7-7",
+  "sourceFile": "sources/PS Chap7 and solution.pdf",
+  "chapter": "Chapter 7: Momentum & Collisions",
+  "variables": [
+    {
+      "symbol": "m",
+      "meaning": "mass of each ball (identical)"
+    },
+    {
+      "symbol": "→v₍A₎",
+      "meaning": "initial velocity of ball A"
+    },
+    {
+      "symbol": "→v₍B₎",
+      "meaning": "initial velocity of ball B"
+    },
+    {
+      "symbol": "→v₍A₎'",
+      "meaning": "final velocity of ball A"
+    },
+    {
+      "symbol": "→v₍B₎'",
+      "meaning": "final velocity of ball B"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Conservation of momentum",
+      "formula": "m₁v₁ᵢ + m₂v₂ᵢ = m₁v₁f + m₂v₂f"
+    },
+    {
+      "name": "Conservation of kinetic energy (elastic collision)",
+      "formula": "½m₁v₁ᵢ² + ½m₂v₂ᵢ² = ½m₁v₁f² + ½m₂v₂f²"
+    },
+    {
+      "name": "Relative velocity relation for elastic collisions",
+      "formula": "v₁ᵢ - v₂ᵢ = -(v₁f - v₂f)"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "Start with the fundamental formulas for elastic collisions. We will use conservation of momentum and the relative velocity relation for elastic collisions.",
+      "notations": "m₁v₁ᵢ + m₂v₂ᵢ = m₁v₁f + m₂v₂f  and  v₁ᵢ - v₂ᵢ = -(v₁f - v₂f)"
+    },
+    {
+      "explanation": "Define variables. In this problem, both balls have equal mass m, with ball A having initial velocity v₍A₎ (or v₁ᵢ) and ball B having initial velocity v₍B₎ (or v₂ᵢ). We need to find final velocities v₍A₎' (or v₁f) and v₍B₎' (or v₂f).",
+      "notations": "Given: m₁ = m₂ = m, v₁ᵢ = v₍A₎, v₂ᵢ = v₍B₎"
+    },
+    {
+      "explanation": "Substitute the equal masses into the momentum conservation equation.",
+      "notations": "m v₍A₎ + m v₍B₎ = m v₍A₎' + m v₍B₎'"
+    },
+    {
+      "explanation": "Simplify by dividing out the common mass m.",
+      "notations": "v₍A₎ + v₍B₎ = v₍A₎' + v₍B₎'"
+    },
+    {
+      "explanation": "Apply the relative velocity relation for elastic collisions.",
+      "notations": "v₍A₎ - v₍B₎ = -(v₍A₎' - v₍B₎')"
+    },
+    {
+      "explanation": "Solve the system of two equations. Adding the two equations eliminates v₍B₎'.",
+      "notations": "(v₍A₎ + v₍B₎) + (v₍A₎ - v₍B₎) = (v₍A₎' + v₍B₎') - (v₍A₎' - v₍B₎')  →  2v₍A₎ = 2v₍B₎'  →  v₍B₎' = v₍A₎"
+    },
+    {
+      "explanation": "Substitute back to find v₍A₎'. Using v₍A₎ + v₍B₎ = v₍A₎' + v₍B₎' with v₍B₎' = v₍A₎.",
+      "notations": "v₍A₎ + v₍B₎ = v₍A₎' + v₍A₎  →  v₍A₎' = v₍B₎"
+    },
+    {
+      "explanation": "General result for part (a): When two balls of equal mass collide elastically, they exchange velocities.",
+      "notations": "v₍A₎' = v₍B₎  and  v₍B₎' = v₍A₎"
+    },
+    {
+      "explanation": "Special case for part (b): If ball B is initially at rest (v₍B₎ = 0), then the velocities after collision are found by substituting v₍B₎ = 0 into the exchange result.",
+      "notations": "v₍B₎ = 0  →  v₍A₎' = 0  and  v₍B₎' = v₍A₎"
+    },
+    {
+      "explanation": "Result for part (b): Ball A comes to rest and ball B moves forward with ball A's original velocity.",
+      "notations": "v₍A₎' = 0,  v₍B₎' = v₍A₎"
+    }
+  ]
+}

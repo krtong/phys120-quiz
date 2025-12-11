@@ -1,0 +1,76 @@
+{
+  "problem": "The maximum gauge pressure in a hydraulic lift is 17.0 atm. What is the largest-size vehicle (kg) it can lift if the diameter of the output line is 25.5 cm?",
+  "source": "Quiz 9 - Problem 2",
+  "sourceFile": "sources/Quiz 9 FA25 solution.docx",
+  "chapter": "Quiz 9: Fluids",
+  "variables": [
+    {
+      "symbol": "P₍max₎",
+      "meaning": "gauge pressure limit"
+    },
+    {
+      "symbol": "P₍SI₎",
+      "meaning": "pressure converted to pascals"
+    },
+    {
+      "symbol": "d",
+      "meaning": "output-line diameter"
+    },
+    {
+      "symbol": "r",
+      "meaning": "output piston radius"
+    },
+    {
+      "symbol": "A",
+      "meaning": "output piston area"
+    },
+    {
+      "symbol": "→F₍max₎",
+      "meaning": "force, maximum lift"
+    },
+    {
+      "symbol": "m₍max₎",
+      "meaning": "mass, largest vehicle supported"
+    },
+    {
+      "symbol": "g",
+      "meaning": "gravitational acceleration near Earth"
+    },
+    {
+      "symbol": "P₍atm₎",
+      "meaning": "pressure conversion factor, 1 atm in pascals"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Pressure conversion",
+      "formula": "P₍SI₎ = P₍atm₎ × 1.013 × 10⁵ Pa"
+    },
+    {
+      "name": "Force from pressure",
+      "formula": "F = P A"
+    },
+    {
+      "name": "Mass supported by force",
+      "formula": "m = F / g"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "Convert the gauge pressure into pascals.",
+      "notations": "P₍SI₎ = 17.0 × 1.013 × 10⁵ Pa ≈ 1.72 × 10⁶ Pa"
+    },
+    {
+      "explanation": "Compute the piston area using its radius.",
+      "notations": "A = π (0.1275 m)² ≈ 5.11 × 10⁻² m²"
+    },
+    {
+      "explanation": "Multiply pressure by area to obtain the maximum upward force.",
+      "notations": "F₍max₎ = (1.72 × 10⁶ Pa)(5.11 × 10⁻² m²) ≈ 8.8 × 10⁴ N"
+    },
+    {
+      "explanation": "Divide by g to find the largest mass the lift can support.",
+      "notations": "m₍max₎ = F₍max₎ / g ≈ 8.8 × 10⁴ N / 9.80 m/s² ≈ 9.0 × 10³ kg"
+    }
+  ]
+}

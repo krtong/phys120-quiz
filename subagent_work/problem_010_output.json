@@ -1,0 +1,112 @@
+{
+  "problem": "A 61-cm-diameter wheel accelerates uniformly about its center from 120 rpm to 280 rpm in 4.0 s. Determine (a) its angular acceleration (b) the radial and tangential components of the linear acceleration of a point on the edge of the wheel 2.0 s after it has started accelerating.",
+  "source": "Quiz 8 - Problem 3",
+  "sourceFile": "sources/Quiz 8 solution FA25.docx",
+  "chapter": "Quiz 8: Angular Kinematics",
+  "variables": [
+    {
+      "symbol": "d",
+      "meaning": "wheel diameter"
+    },
+    {
+      "symbol": "r",
+      "meaning": "wheel radius"
+    },
+    {
+      "symbol": "ωᵢ",
+      "meaning": "angular speed, initial value"
+    },
+    {
+      "symbol": "ω₍f₎",
+      "meaning": "angular speed, final value"
+    },
+    {
+      "symbol": "Δt",
+      "meaning": "time interval for speed change"
+    },
+    {
+      "symbol": "α",
+      "meaning": "angular acceleration"
+    },
+    {
+      "symbol": "t₁",
+      "meaning": "elapsed time for part (b)"
+    },
+    {
+      "symbol": "ω(t₁)",
+      "meaning": "angular velocity at t₁"
+    },
+    {
+      "symbol": "a₍r₎",
+      "meaning": "acceleration, radial (centripetal) component"
+    },
+    {
+      "symbol": "a₍t₎",
+      "meaning": "acceleration, tangential component"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Angular acceleration",
+      "formula": "α = (ω₍f₎ − ωᵢ) / Δt"
+    },
+    {
+      "name": "Angular velocity under constant angular acceleration",
+      "formula": "ω(t) = ωᵢ + αt"
+    },
+    {
+      "name": "Tangential acceleration",
+      "formula": "a₍t₎ = αr"
+    },
+    {
+      "name": "Radial (centripetal) acceleration",
+      "formula": "a₍r₎ = ω²r"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "State the fundamental formulas we will use: the definition of angular acceleration, the kinematic equation for angular velocity, and the relationships between angular and linear quantities.",
+      "notations": "α = (ω₍f₎ − ωᵢ) / Δt;  ω(t) = ωᵢ + αt;  a₍t₎ = αr;  a₍r₎ = ω²r"
+    },
+    {
+      "explanation": "Define the given variables from the problem statement.",
+      "notations": "d = 61 cm = 0.61 m;  r = d/2 = 0.305 m;  Initial speed = 120 rpm;  Final speed = 280 rpm;  Δt = 4.0 s;  t₁ = 2.0 s"
+    },
+    {
+      "explanation": "Convert the initial and final rotation rates from rpm to rad/s using the conversion factor (2π rad/rev)(1 min/60 s).",
+      "notations": "ωᵢ = (120 rpm) × (2π/60) = 4π rad/s ≈ 12.57 rad/s;  ω₍f₎ = (280 rpm) × (2π/60) = (28π/3) rad/s ≈ 29.32 rad/s"
+    },
+    {
+      "explanation": "Part (a): Substitute the values into the angular acceleration formula.",
+      "notations": "α = [ω₍f₎ − ωᵢ] / Δt = [(28π/3) − 4π] / 4.0"
+    },
+    {
+      "explanation": "Simplify and calculate the angular acceleration.",
+      "notations": "α = [(28π/3) − (12π/3)] / 4.0 = (16π/3) / 4.0 = (4π/3) rad/s² ≈ 4.19 rad/s²"
+    },
+    {
+      "explanation": "Part (b): Find the angular speed at t₁ = 2.0 s by substituting into the kinematic equation.",
+      "notations": "ω(t₁) = ωᵢ + αt₁ = 4π + (4π/3)(2.0)"
+    },
+    {
+      "explanation": "Calculate the angular speed at t₁ = 2.0 s.",
+      "notations": "ω(t₁) = 4π + (8π/3) = (12π/3) + (8π/3) = (20π/3) rad/s ≈ 20.94 rad/s"
+    },
+    {
+      "explanation": "Calculate the tangential acceleration using the angular acceleration and radius.",
+      "notations": "a₍t₎ = αr = (4π/3)(0.305)"
+    },
+    {
+      "explanation": "Evaluate the tangential acceleration.",
+      "notations": "a₍t₎ ≈ 1.28 m/s²"
+    },
+    {
+      "explanation": "Calculate the radial acceleration using the instantaneous angular speed at t₁ = 2.0 s.",
+      "notations": "a₍r₎ = ω(t₁)²r = [(20π/3)]²(0.305)"
+    },
+    {
+      "explanation": "Evaluate the radial acceleration.",
+      "notations": "a₍r₎ = [(20π/3)²](0.305) ≈ (437.6)(0.305) ≈ 133 m/s² (or 1.34 × 10² m/s²)"
+    }
+  ]
+}

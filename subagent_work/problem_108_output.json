@@ -1,0 +1,76 @@
+{
+  "problem": "ESTIMATE Karate blow. Estimate the impulse and the average force delivered by a karate blow that breaks a board. Assume the hand moves at roughly 10 m/s when it hits the board.",
+  "source": "PS Chap7 - Example 7-6",
+  "sourceFile": "sources/PS Chap7 and solution.pdf",
+  "chapter": "Chapter 7: Momentum & Collisions",
+  "variables": [
+    {
+      "symbol": "m₍hand₎",
+      "meaning": "effective striking mass (arm + fist)"
+    },
+    {
+      "symbol": "vᵢ",
+      "meaning": "initial speed"
+    },
+    {
+      "symbol": "v₍f₎",
+      "meaning": "final speed"
+    },
+    {
+      "symbol": "Δt",
+      "meaning": "time interval"
+    },
+    {
+      "symbol": "J",
+      "meaning": "impulse magnitude"
+    },
+    {
+      "symbol": "F̄",
+      "meaning": "average force magnitude"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Impulse-momentum theorem",
+      "formula": "J = Δp = m Δv"
+    },
+    {
+      "name": "Average force from impulse",
+      "formula": "F̄ = J / Δt"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "State which fundamental formulas will be used to solve the problem.",
+      "notations": "We will use the impulse-momentum theorem: J = Δp = m Δv, and the relation between average force and impulse: F̄ = J / Δt"
+    },
+    {
+      "explanation": "Define variables with estimated values from the problem. The effective striking mass (arm and fist) is estimated as 0.70 kg, initial speed is given as 10 m/s, final speed is estimated as 0 m/s (hand comes to rest), and contact time is estimated as 5 ms.",
+      "notations": "Given: m₍hand₎ ≈ 0.70 kg, vᵢ = 10 m/s, v₍f₎ ≈ 0 m/s, Δt ≈ 5.0 × 10⁻³ s"
+    },
+    {
+      "explanation": "Calculate the change in velocity.",
+      "notations": "Δv = v₍f₎ − vᵢ = 0 − 10 = −10 m/s"
+    },
+    {
+      "explanation": "Substitute the values into the impulse formula.",
+      "notations": "J = m₍hand₎ Δv = (0.70 kg)(−10 m/s)"
+    },
+    {
+      "explanation": "Calculate the impulse magnitude.",
+      "notations": "J = −7.0 kg·m/s = −7.0 N·s (magnitude is 7.0 N·s)"
+    },
+    {
+      "explanation": "Substitute the impulse and time interval into the average force formula.",
+      "notations": "F̄ = J / Δt = 7.0 N·s / (5.0 × 10⁻³ s)"
+    },
+    {
+      "explanation": "Calculate the average force magnitude.",
+      "notations": "F̄ = 1.4 × 10³ N = 1.4 kN"
+    },
+    {
+      "explanation": "State the final results with proper interpretation.",
+      "notations": "Impulse magnitude ≈ 7 N·s (directed opposite to hand motion); average force on the board ≈ 1.4 kN"
+    }
+  ]
+}

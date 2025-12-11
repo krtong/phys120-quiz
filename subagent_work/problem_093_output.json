@@ -1,0 +1,60 @@
+{
+  "problem": "How much work is required to stop an electron moving at a speed of 1.40 × 10⁶ m/s? (Given: mass of electron m = 9.11 × 10⁻³¹ kg)",
+  "source": "Quiz 6 - Problem 4",
+  "sourceFile": "sources/Quiz6_FA25.pdf",
+  "chapter": "Quiz 6 Review",
+  "variables": [
+    {
+      "symbol": "mₑ",
+      "meaning": "mass (e)"
+    },
+    {
+      "symbol": "vᵢ",
+      "meaning": "speed (ᵢ)"
+    },
+    {
+      "symbol": "W",
+      "meaning": "work to stop electron (J)"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Work-energy theorem",
+      "formula": "W = ΔKE"
+    },
+    {
+      "name": "Kinetic energy",
+      "formula": "KE = ½mv²"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "We will use the work-energy theorem, which states that work equals the change in kinetic energy.",
+      "notations": "W = ΔKE = KEf - KEi"
+    },
+    {
+      "explanation": "Define the variables given in the problem.",
+      "notations": "Given: mₑ = 9.11 × 10⁻³¹ kg, vᵢ = 1.40 × 10⁶ m/s, vf = 0 m/s (stopped)"
+    },
+    {
+      "explanation": "Using the kinetic energy formula, express the initial and final kinetic energies.",
+      "notations": "KEi = ½mₑvᵢ², KEf = ½mₑvf² = 0"
+    },
+    {
+      "explanation": "Substitute into the work-energy theorem.",
+      "notations": "W = KEf - KEi = 0 - ½mₑvᵢ² = -½mₑvᵢ²"
+    },
+    {
+      "explanation": "Substitute the numerical values into the formula.",
+      "notations": "W = -½(9.11 × 10⁻³¹ kg)(1.40 × 10⁶ m/s)²"
+    },
+    {
+      "explanation": "Calculate the result.",
+      "notations": "W = -½(9.11 × 10⁻³¹)(1.96 × 10¹²) = -½(17.86 × 10⁻¹⁹) = -8.93 × 10⁻¹⁹ J ≈ -8.9 × 10⁻¹⁹ J"
+    },
+    {
+      "explanation": "The magnitude of work required is 8.9 × 10⁻¹⁹ J. The negative sign indicates that work is done against the motion (removing energy from the electron).",
+      "notations": "|W| = 8.9 × 10⁻¹⁹ J"
+    }
+  ]
+}

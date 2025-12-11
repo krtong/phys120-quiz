@@ -1,0 +1,68 @@
+{
+  "problem": "What is the ratio of (a) the intensities, and (b) the amplitudes, of an earthquake P wave passing through the Earth and detected at two points 15 km and 45 km from the source?",
+  "source": "PS Chap11 and 12.pdf - Problem 6",
+  "sourceFile": "sources/PS Chap11 and 12.pdf",
+  "chapter": "Chapters 11–12: Oscillations & Waves",
+  "variables": [
+    {
+      "symbol": "r₁",
+      "meaning": "distance from source #1"
+    },
+    {
+      "symbol": "r₂",
+      "meaning": "distance from source #2"
+    },
+    {
+      "symbol": "I",
+      "meaning": "intensity (∝ 1/r²)"
+    },
+    {
+      "symbol": "A",
+      "meaning": "wave amplitude (∝ 1/r)"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Inverse-square law for intensity",
+      "formula": "I ∝ 1/r²"
+    },
+    {
+      "name": "Intensity-amplitude relationship",
+      "formula": "I ∝ A²"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "State the fundamental formulas that will be used",
+      "notations": "We will use the inverse-square law for intensity: I ∝ 1/r², which means I₁/I₂ = (r₂/r₁)². We will also use the intensity-amplitude relationship: I ∝ A², which gives A ∝ √I."
+    },
+    {
+      "explanation": "Define variables with values given in the problem",
+      "notations": "Given: r₁ = 15 km (distance to point 1), r₂ = 45 km (distance to point 2)"
+    },
+    {
+      "explanation": "Part (a): Apply the inverse-square law to find the intensity ratio",
+      "notations": "For spherical waves, I ∝ 1/r², so: I₂/I₁ = (r₁/r₂)²"
+    },
+    {
+      "explanation": "Substitute the numerical values for the intensity ratio",
+      "notations": "I₂/I₁ = (15 km / 45 km)² = (1/3)²"
+    },
+    {
+      "explanation": "Calculate the intensity ratio",
+      "notations": "I₂/I₁ = 1/9 ≈ 0.11"
+    },
+    {
+      "explanation": "Part (b): Use the intensity-amplitude relationship to find amplitude ratio",
+      "notations": "Since I ∝ A², we have A ∝ √I, therefore: A₂/A₁ = √(I₂/I₁)"
+    },
+    {
+      "explanation": "Substitute the intensity ratio to find amplitude ratio",
+      "notations": "A₂/A₁ = √(1/9) = 1/3"
+    },
+    {
+      "explanation": "Calculate the amplitude ratio",
+      "notations": "A₂/A₁ = 1/3 ≈ 0.33"
+    }
+  ]
+}

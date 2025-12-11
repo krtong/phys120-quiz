@@ -1,0 +1,68 @@
+{
+  "problem": "Rita goes skiing. She starts from the top of the track, and slides down from rest. The track has an inclination angle θ, length L, and the coefficient of kinetic friction between the ski and the track is μ₍k₎. Suppose Rita's mass is m. (a) Draw the free body diagram for Rita when she is on the inclined track. (b) Find the normal force between Rita and the track. (c) Find the kinetic friction between the ski and the track. (d) Find the work done by kinetic friction between the ski and the track. (e) Using work-kinetic energy theorem, find Rita's speed when she reaches the bottom of the track.",
+  "source": "Worksheet 08 - Problem 3",
+  "sourceFile": "sources/WS_Work_and_Energy_I.pdf",
+  "chapter": "Worksheet 08",
+  "variables": [
+    {
+      "symbol": "m",
+      "meaning": "skier mass"
+    },
+    {
+      "symbol": "θ",
+      "meaning": "incline angle"
+    },
+    {
+      "symbol": "L",
+      "meaning": "track length"
+    },
+    {
+      "symbol": "μ₍k₎",
+      "meaning": "coefficient of kinetic friction"
+    },
+    {
+      "symbol": "g",
+      "meaning": "gravitational acceleration"
+    },
+    {
+      "symbol": "v",
+      "meaning": "speed at bottom"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Normal force on incline",
+      "formula": "N = m g cosθ"
+    },
+    {
+      "name": "Kinetic friction",
+      "formula": "f_k = μ₍k₎ N = μ₍k₎ m g cosθ"
+    },
+    {
+      "name": "Work–energy balance",
+      "formula": "½ m v² = m g L sinθ − f_k L"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "(a) Forces: weight mg, normal N perpendicular to slope, kinetic friction opposite motion.",
+      "notations": "FBD includes mg, N, f_k"
+    },
+    {
+      "explanation": "(b) Resolve weight perpendicular to slope to get N.",
+      "notations": "N = m g cosθ"
+    },
+    {
+      "explanation": "(c) Use μ₍k₎ N to find the friction magnitude.",
+      "notations": "f_k = μ₍k₎ m g cosθ"
+    },
+    {
+      "explanation": "(d) Work by friction is negative since it opposes the motion.",
+      "notations": "W_f = −f_k L = −μ₍k₎ m g cosθ L"
+    },
+    {
+      "explanation": "(e) Combine gravitational and frictional work to solve for v.",
+      "notations": "½ m v² = m g L sinθ − μ₍k₎ m g cosθ L ⇒ v = √[2 g L (sinθ − μ₍k₎ cosθ)]"
+    }
+  ]
+}

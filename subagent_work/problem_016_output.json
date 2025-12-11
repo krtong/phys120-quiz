@@ -1,0 +1,64 @@
+{
+  "problem": "Estimate the air pressure inside a category 5 hurricane, where the wind speed is 300 km/h. (set the pressure outside the hurricane is atmospheric pressure and the speed of the wind outside the hurricane is 0)",
+  "source": "Quiz 9 - Problem 6",
+  "sourceFile": "sources/Quiz 9 FA25 solution.docx",
+  "chapter": "Quiz 9: Fluids",
+  "variables": [
+    {
+      "symbol": "v₍in₎",
+      "meaning": "wind speed, eyewall interior"
+    },
+    {
+      "symbol": "v₍out₎",
+      "meaning": "wind speed, outside storm"
+    },
+    {
+      "symbol": "ρ₍air₎",
+      "meaning": "air density near sea level"
+    },
+    {
+      "symbol": "P₍out₎",
+      "meaning": "pressure, far outside hurricane"
+    },
+    {
+      "symbol": "P₍in₎",
+      "meaning": "pressure, inside hurricane core"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Bernoulli's equation",
+      "formula": "P₁ + ½ρv₁² + ρgh₁ = P₂ + ½ρv₂² + ρgh₂"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "We will use Bernoulli's equation. Since the heights are equal (h₁ = h₂), the gravitational potential energy terms cancel out, leaving us with the dynamic pressure form.",
+      "notations": "P₁ + ½ρv₁² + ρgh₁ = P₂ + ½ρv₂² + ρgh₂  →  P₍out₎ + ½ρ₍air₎ v₍out₎² = P₍in₎ + ½ρ₍air₎ v₍in₎²"
+    },
+    {
+      "explanation": "Define variables with values given in the problem.",
+      "notations": "v₍in₎ = 300 km/h = 83.3 m/s, v₍out₎ = 0 m/s, P₍out₎ = 1.01 × 10⁵ Pa (atmospheric pressure), ρ₍air₎ = 1.20 kg/m³"
+    },
+    {
+      "explanation": "Rearrange Bernoulli's equation to solve for P₍in₎.",
+      "notations": "P₍in₎ = P₍out₎ + ½ρ₍air₎ v₍out₎² − ½ρ₍air₎ v₍in₎²"
+    },
+    {
+      "explanation": "Since v₍out₎ = 0, the equation simplifies.",
+      "notations": "P₍in₎ = P₍out₎ − ½ρ₍air₎ v₍in₎²"
+    },
+    {
+      "explanation": "Substitute the numerical values into the equation.",
+      "notations": "P₍in₎ = 1.01 × 10⁵ Pa − ½(1.20 kg/m³)(83.3 m/s)²"
+    },
+    {
+      "explanation": "Calculate the dynamic pressure drop.",
+      "notations": "½ρ₍air₎ v₍in₎² = 0.5 × 1.20 kg/m³ × (83.3 m/s)² = 0.5 × 1.20 × 6939 m²/s² ≈ 4.2 × 10³ Pa"
+    },
+    {
+      "explanation": "Subtract the pressure drop from atmospheric pressure to find the interior pressure.",
+      "notations": "P₍in₎ = 1.01 × 10⁵ Pa − 4.2 × 10³ Pa ≈ 9.7 × 10⁴ Pa"
+    }
+  ]
+}

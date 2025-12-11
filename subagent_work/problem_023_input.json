@@ -1,0 +1,52 @@
+{
+  "problem": "Estimate the work you do to mow a lawn 10 m by 20 m with a 50-cm wide mower. Assume you push with a force of about 15 N.",
+  "source": "PS Chap6.pdf - Problem 2",
+  "sourceFile": "sources/PS Chap6.pdf",
+  "chapter": "Chapter 6: Work & Energy",
+  "variables": [
+    {
+      "symbol": "L",
+      "meaning": "length"
+    },
+    {
+      "symbol": "W",
+      "meaning": "width of lawn"
+    },
+    {
+      "symbol": "b",
+      "meaning": "mower swath width"
+    },
+    {
+      "symbol": "F",
+      "meaning": "push force magnitude"
+    },
+    {
+      "symbol": "d",
+      "meaning": "total pushing distance (m)"
+    },
+    {
+      "symbol": "W₍mech₎",
+      "meaning": "mechanical work done (J)"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Distance covered to mow area",
+      "formula": "d = (L × W) / b"
+    },
+    {
+      "name": "Work by constant horizontal force",
+      "formula": "W₍mech₎ = F d"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "Covering the 200 m² lawn with a 0.50-m strip requires area/width worth of pushing distance.",
+      "notations": "d = (20 m × 10 m) / 0.50 m = 400 m"
+    },
+    {
+      "explanation": "Multiply the force by this distance to estimate the work you do.",
+      "notations": "W₍mech₎ = 15 N × 400 m = 6.0 × 10³ J"
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "problem": "What speed would a 1.0-g paper clip have if it had the same kinetic energy as a molecule at 22°C?",
+  "source": "PS Chap13 FA25.pdf - Problem 6",
+  "sourceFile": "sources/PS Chap13 FA25.pdf",
+  "chapter": "Chapter 13: Temperature & Kinetic Theory",
+  "variables": [
+    {
+      "symbol": "m",
+      "meaning": "mass"
+    },
+    {
+      "symbol": "T",
+      "meaning": "absolute temperature"
+    },
+    {
+      "symbol": "k₍B₎",
+      "meaning": "Boltzmann constant"
+    },
+    {
+      "symbol": "v",
+      "meaning": "paper-clip speed (m/s)"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Kinetic energy",
+      "formula": "KE = ½mv²"
+    },
+    {
+      "name": "Average kinetic energy of a molecule",
+      "formula": "KE_avg = (3/2)k_B T"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "State the fundamental formulas we will use",
+      "notations": "We will use the kinetic energy formula KE = ½mv² and the average molecular kinetic energy formula KE_avg = (3/2)k_B T"
+    },
+    {
+      "explanation": "Define variables with values given in the problem",
+      "notations": "Given: m = 1.0 g = 1.0 × 10⁻³ kg, T = 22°C = 295 K, k_B = 1.38 × 10⁻²³ J/K"
+    },
+    {
+      "explanation": "Equate the kinetic energy of the paper clip to the average kinetic energy of a molecule",
+      "notations": "½mv² = (3/2)k_B T"
+    },
+    {
+      "explanation": "Solve for the paper clip speed v",
+      "notations": "v² = 3k_B T / m ⇒ v = √(3k_B T / m)"
+    },
+    {
+      "explanation": "Substitute the numerical values into the formula",
+      "notations": "v = √[3(1.38 × 10⁻²³ J/K)(295 K) / (1.0 × 10⁻³ kg)]"
+    },
+    {
+      "explanation": "Calculate the result",
+      "notations": "v = √[1.2219 × 10⁻²⁰ J / (1.0 × 10⁻³ kg)] = √(1.2219 × 10⁻¹⁷ m²/s²) ≈ 3.5 × 10⁻⁹ m/s"
+    }
+  ]
+}

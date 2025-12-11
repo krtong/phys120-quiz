@@ -1,0 +1,80 @@
+{
+  "problem": "A pressure cooker is a sealed pot designed to cook food with the steam produced by boiling water somewhat above 100°C. The pressure cooker in Fig. 13–32 uses a weight of mass m to allow steam to escape at a certain pressure through a small hole (diameter d) in the cooker's lid. If d = 3.0 mm, what should m be in order to cook food at 120°C? Assume that atmospheric pressure outside the cooker is 1.01×10⁵ Pa.",
+  "source": "PS Chap13 FA25.pdf - Problem 9",
+  "sourceFile": "sources/PS Chap13 FA25.pdf",
+  "chapter": "Chapter 13: Temperature & Kinetic Theory",
+  "variables": [
+    {
+      "symbol": "d",
+      "meaning": "diameter of hole"
+    },
+    {
+      "symbol": "r",
+      "meaning": "radius"
+    },
+    {
+      "symbol": "P₍sat₎",
+      "meaning": "pressure (sat)"
+    },
+    {
+      "symbol": "P₍atm₎",
+      "meaning": "pressure (atm)"
+    },
+    {
+      "symbol": "A",
+      "meaning": "π r²"
+    },
+    {
+      "symbol": "m",
+      "meaning": "mass"
+    },
+    {
+      "symbol": "g",
+      "meaning": "gravitational acceleration"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Pressure",
+      "formula": "P = F/A"
+    },
+    {
+      "name": "Weight",
+      "formula": "F = mg"
+    },
+    {
+      "name": "Area of a circle",
+      "formula": "A = πr²"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "State the fundamental formulas and approach: We will use pressure P = F/A, weight F = mg, and area A = πr². The weight on the hole must balance the upward pressure force from the steam inside.",
+      "notations": "P = F/A, F = mg, A = πr²"
+    },
+    {
+      "explanation": "Define the given values from the problem.",
+      "notations": "d = 3.0 mm = 3.0 × 10⁻³ m, r = d/2 = 1.5 × 10⁻³ m, P₍atm₎ = 1.01 × 10⁵ Pa, P₍sat₎ at 120°C = 1.99 × 10⁵ Pa, g = 9.8 m/s²"
+    },
+    {
+      "explanation": "Set up the force balance. The weight of the mass (mg) must equal the net upward pressure force. The upward force is the gauge pressure (P₍sat₎ − P₍atm₎) times the area A.",
+      "notations": "mg = (P₍sat₎ − P₍atm₎) A"
+    },
+    {
+      "explanation": "Calculate the area of the hole.",
+      "notations": "A = πr² = π(1.5 × 10⁻³ m)² = 7.07 × 10⁻⁶ m²"
+    },
+    {
+      "explanation": "Calculate the gauge pressure (pressure difference).",
+      "notations": "P₍sat₎ − P₍atm₎ = (1.99 − 1.01) × 10⁵ Pa = 0.98 × 10⁵ Pa = 9.8 × 10⁴ Pa"
+    },
+    {
+      "explanation": "Substitute the numerical values into the force balance equation and solve for mass m.",
+      "notations": "m = (P₍sat₎ − P₍atm₎) A / g = (9.8 × 10⁴ Pa)(7.07 × 10⁻⁶ m²) / (9.8 m/s²)"
+    },
+    {
+      "explanation": "Perform the calculation to find the mass.",
+      "notations": "m = (9.8 × 10⁴ × 7.07 × 10⁻⁶) / 9.8 kg = 0.693 / 9.8 kg ≈ 0.071 kg = 71 g"
+    }
+  ]
+}

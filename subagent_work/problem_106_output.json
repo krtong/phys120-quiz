@@ -1,0 +1,92 @@
+{
+  "problem": "This problem describes one experimental method for determining the rotational inertia of an irregularly shaped object such as the payload for a satellite. The right figure shows a counterweight of mass m suspended by a cord wound around a spool of radius r, forming part of a turntable supporting the object. The turntable can rotate without friction. When the counterweight is released from rest, it descends through a distance h, acquiring a speed v. Find the rotational inertia of the rotating apparatus in terms of r, v, h, m and g.",
+  "source": "Worksheet 10 - Problem 5",
+  "sourceFile": "sources/WS10_Rotational_Dynamics.pdf",
+  "chapter": "Worksheet 10",
+  "variables": [
+    {
+      "symbol": "m",
+      "meaning": "counterweight mass"
+    },
+    {
+      "symbol": "r",
+      "meaning": "spool radius"
+    },
+    {
+      "symbol": "h",
+      "meaning": "drop distance"
+    },
+    {
+      "symbol": "v",
+      "meaning": "speed after dropping h"
+    },
+    {
+      "symbol": "g",
+      "meaning": "gravitational acceleration"
+    },
+    {
+      "symbol": "I",
+      "meaning": "rotational inertia of apparatus"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Conservation of energy",
+      "formula": "E_i = E_f"
+    },
+    {
+      "name": "Gravitational potential energy",
+      "formula": "PE = mgh"
+    },
+    {
+      "name": "Translational kinetic energy",
+      "formula": "KE_trans = ½mv²"
+    },
+    {
+      "name": "Rotational kinetic energy",
+      "formula": "KE_rot = ½Iω²"
+    },
+    {
+      "name": "Linear-angular velocity relation",
+      "formula": "v = ωr"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "State the fundamental formulas to be used: energy conservation, potential energy, translational kinetic energy, rotational kinetic energy, and the relationship between linear and angular velocity.",
+      "notations": "E_i = E_f, PE = mgh, KE_trans = ½mv², KE_rot = ½Iω², v = ωr"
+    },
+    {
+      "explanation": "Define the initial and final states. Initially, the counterweight is at rest at height h (taking final position as reference). Finally, the counterweight has descended to height 0 with speed v, and the turntable rotates with angular velocity ω.",
+      "notations": "Initial: PE_i = mgh, KE_trans,i = 0, KE_rot,i = 0\nFinal: PE_f = 0, KE_trans,f = ½mv², KE_rot,f = ½Iω²"
+    },
+    {
+      "explanation": "Apply conservation of energy, setting initial energy equal to final energy.",
+      "notations": "mgh + 0 + 0 = 0 + ½mv² + ½Iω²"
+    },
+    {
+      "explanation": "Substitute ω = v/r (from v = ωr) into the rotational kinetic energy term.",
+      "notations": "mgh = ½mv² + ½I(v/r)²"
+    },
+    {
+      "explanation": "Simplify the rotational kinetic energy term.",
+      "notations": "mgh = ½mv² + ½I(v²/r²)"
+    },
+    {
+      "explanation": "Solve for I by isolating it on one side. Subtract ½mv² from both sides.",
+      "notations": "mgh - ½mv² = ½I(v²/r²)"
+    },
+    {
+      "explanation": "Multiply both sides by 2r²/v² to isolate I.",
+      "notations": "I = (2r²/v²)(mgh - ½mv²)"
+    },
+    {
+      "explanation": "Factor out m from the right side and simplify.",
+      "notations": "I = (2mr²/v²)(gh - ½v²) = r²(2mgh - mv²)/v²"
+    },
+    {
+      "explanation": "Final answer for the rotational inertia of the apparatus.",
+      "notations": "I = r²(2mgh - mv²)/v²"
+    }
+  ]
+}

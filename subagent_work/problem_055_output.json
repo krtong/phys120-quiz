@@ -1,0 +1,100 @@
+{
+  "problem": "A novice skier, starting from rest, slides down a frictionless 13.0° incline whose vertical height is 125m. How fast is she going when she reaches the bottom? Use two approaches (a) Newton's 2nd law and kinematics equations (2) Energy conservation to solve this problem. These two approaches result in the same answer.",
+  "source": "Midterm 2 - Problem 4",
+  "sourceFile": "sources/MT2 FA25 solution.docx",
+  "chapter": "Midterm 2 Review",
+  "variables": [
+    {
+      "symbol": "h",
+      "meaning": "height"
+    },
+    {
+      "symbol": "θ",
+      "meaning": "angle"
+    },
+    {
+      "symbol": "g",
+      "meaning": "gravitational acceleration"
+    },
+    {
+      "symbol": "v",
+      "meaning": "speed at bottom (m/s)"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Gravitational potential energy",
+      "formula": "PE = mgh"
+    },
+    {
+      "name": "Kinetic energy",
+      "formula": "KE = ½mv²"
+    },
+    {
+      "name": "Conservation of energy",
+      "formula": "PE₁ + KE₁ = PE₂ + KE₂"
+    },
+    {
+      "name": "Newton's second law",
+      "formula": "F = ma"
+    },
+    {
+      "name": "Kinematic equation",
+      "formula": "v² = v₀² + 2aΔx"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "Approach 1: Energy conservation. We will use conservation of energy: PE₁ + KE₁ = PE₂ + KE₂, where PE = mgh and KE = ½mv².",
+      "notations": "Initial state (top): PE₁ = mgh, KE₁ = 0 (starts from rest)\nFinal state (bottom): PE₂ = 0, KE₂ = ½mv²"
+    },
+    {
+      "explanation": "Define the given values from the problem.",
+      "notations": "Given: h = 125 m, θ = 13.0°, g = 9.80 m/s², v₀ = 0 (starts from rest)"
+    },
+    {
+      "explanation": "Apply energy conservation: initial energy equals final energy.",
+      "notations": "mgh + 0 = 0 + ½mv²"
+    },
+    {
+      "explanation": "Simplify by canceling mass m from both sides.",
+      "notations": "gh = ½v²"
+    },
+    {
+      "explanation": "Solve for v by multiplying both sides by 2 and taking the square root.",
+      "notations": "v² = 2gh\nv = √(2gh)"
+    },
+    {
+      "explanation": "Substitute the numerical values into the formula.",
+      "notations": "v = √(2 × 9.80 m/s² × 125 m)"
+    },
+    {
+      "explanation": "Calculate the final speed.",
+      "notations": "v = √(2450 m²/s²) ≈ 49.5 m/s ≈ 50 m/s"
+    },
+    {
+      "explanation": "Approach 2: Newton's 2nd law and kinematics. We will use F = ma to find acceleration along the incline, then use v² = v₀² + 2aΔx to find final velocity.",
+      "notations": "Forces along incline: F = mg sinθ\nAcceleration: a = g sinθ"
+    },
+    {
+      "explanation": "Find the distance L along the incline using geometry.",
+      "notations": "From geometry: h = L sinθ\nTherefore: L = h / sinθ"
+    },
+    {
+      "explanation": "Substitute numerical values for acceleration and distance.",
+      "notations": "a = 9.80 m/s² × sin(13.0°) = 9.80 × 0.225 ≈ 2.21 m/s²\nL = 125 m / sin(13.0°) = 125 m / 0.225 ≈ 556 m"
+    },
+    {
+      "explanation": "Apply the kinematic equation with v₀ = 0.",
+      "notations": "v² = 0² + 2aL\nv² = 2 × 2.21 m/s² × 556 m"
+    },
+    {
+      "explanation": "Calculate the final speed.",
+      "notations": "v² = 2458 m²/s²\nv = √(2458) ≈ 49.6 m/s ≈ 50 m/s"
+    },
+    {
+      "explanation": "Both methods yield the same result.",
+      "notations": "v ≈ 50 m/s"
+    }
+  ]
+}

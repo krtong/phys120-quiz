@@ -1,0 +1,48 @@
+{
+  "problem": "A ball of radius r rolls on the inside of a track of radius R (see the figure). If the ball starts from rest at the vertical edge of the track, what will be its speed when it reaches the lowest point of the track, rolling without slipping?",
+  "source": "PS_Chap8.pdf - Problem 13",
+  "sourceFile": "sources/PS_Chap8.pdf",
+  "chapter": "Chapter 8: Rotational Motion",
+  "variables": [
+    {
+      "symbol": "m",
+      "meaning": "ball mass"
+    },
+    {
+      "symbol": "g",
+      "meaning": "gravitational acceleration"
+    },
+    {
+      "symbol": "R",
+      "meaning": "track radius"
+    },
+    {
+      "symbol": "r",
+      "meaning": "ball radius"
+    },
+    {
+      "symbol": "v",
+      "meaning": "speed at bottom (m/s)"
+    },
+    {
+      "symbol": "I",
+      "meaning": "moment of inertia"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Energy conservation with rolling",
+      "formula": "mg (R − r) = ½ m v² + ½ I (v/r)²"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "Set initial gravitational potential mgR equal to the sum of potential at the bottom (mgr) plus translational and rotational kinetic energy.",
+      "notations": "mgR = mgr + ½ m v² + ½ (2/5 m r²)(v/r)²"
+    },
+    {
+      "explanation": "Solve the resulting equation for v.",
+      "notations": "v = √[(10/7) g (R − r)]"
+    }
+  ]
+}

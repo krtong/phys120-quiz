@@ -1,0 +1,96 @@
+{
+  "problem": "A 1000-kg car rounds a curve on a flat road of radius 50 m at a speed of 15 m/s (54 km/h). Will the car follow the curve, or will it skid? Assume: (a) the pavement is dry and the coefficient of static friction is μₛ = 0.60; (b) the pavement is icy and μₛ = 0.25.",
+  "source": "PS_Chap5_II.pdf - Problem 5",
+  "sourceFile": "sources/PS_Chap5_II.pdf",
+  "chapter": "Chapter 5: Circular Motion & Gravitation",
+  "variables": [
+    {
+      "symbol": "m",
+      "meaning": "mass of the car"
+    },
+    {
+      "symbol": "r",
+      "meaning": "radius of curve"
+    },
+    {
+      "symbol": "v",
+      "meaning": "speed of car"
+    },
+    {
+      "symbol": "μ₍s,dry₎",
+      "meaning": "coefficient of static friction, dry pavement"
+    },
+    {
+      "symbol": "μ₍s,ice₎",
+      "meaning": "coefficient of static friction, icy pavement"
+    },
+    {
+      "symbol": "g",
+      "meaning": "gravitational acceleration near Earth"
+    },
+    {
+      "symbol": "a₍req₎",
+      "meaning": "acceleration, required centripetal value"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Centripetal acceleration",
+      "formula": "a_c = v² / r"
+    },
+    {
+      "name": "Static friction force",
+      "formula": "F_friction = μₛ N"
+    },
+    {
+      "name": "Normal force on flat surface",
+      "formula": "N = mg"
+    },
+    {
+      "name": "Newton's second law",
+      "formula": "F = ma"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "Identify the fundamental formulas needed: centripetal acceleration, static friction force, normal force, and Newton's second law.",
+      "notations": "a_c = v² / r; F_friction = μₛ N; N = mg; F = ma"
+    },
+    {
+      "explanation": "Define the variables with values given in the problem.",
+      "notations": "m = 1000 kg; r = 50 m; v = 15 m/s; μ₍s,dry₎ = 0.60; μ₍s,ice₎ = 0.25; g = 9.80 m/s²"
+    },
+    {
+      "explanation": "Calculate the required centripetal acceleration by substituting values into the formula.",
+      "notations": "a₍req₎ = v² / r = (15.0 m/s)² / (50.0 m) = 225 m²/s² / 50.0 m = 4.50 m/s²"
+    },
+    {
+      "explanation": "For circular motion, the friction force must equal the required centripetal force.",
+      "notations": "F_friction = m a₍req₎"
+    },
+    {
+      "explanation": "The maximum static friction force available is the coefficient times the normal force.",
+      "notations": "F₍friction,max₎ = μₛ N = μₛ mg"
+    },
+    {
+      "explanation": "For the car not to skid, we need F₍friction,max₎ ≥ m a₍req₎, which simplifies to μₛ mg ≥ m a₍req₎.",
+      "notations": "μₛ mg ≥ m a₍req₎"
+    },
+    {
+      "explanation": "Cancel mass from both sides to get the no-skid condition.",
+      "notations": "μₛ g ≥ a₍req₎  →  μₛ ≥ a₍req₎ / g"
+    },
+    {
+      "explanation": "Calculate the minimum coefficient of static friction needed.",
+      "notations": "μ₍s,min₎ = a₍req₎ / g = 4.50 m/s² / 9.80 m/s² ≈ 0.46"
+    },
+    {
+      "explanation": "Compare the available coefficients to the requirement for each surface condition.",
+      "notations": "Dry: μ₍s,dry₎ = 0.60 > 0.46 → sufficient friction; Icy: μ₍s,ice₎ = 0.25 < 0.46 → insufficient friction"
+    },
+    {
+      "explanation": "State the final answer for each case.",
+      "notations": "(a) Dry pavement: the car will follow the curve. (b) Icy pavement: the car will skid."
+    }
+  ]
+}

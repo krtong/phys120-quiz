@@ -1,0 +1,68 @@
+{
+  "problem": "(a) Calculate the wavelengths in air at 20°C for sounds in the maximum range of human hearing, 20 Hz to 20,000 Hz. (b) What is the wavelength of an 18-MHz ultrasonic wave?",
+  "source": "PS Chap11 and 12.pdf - Problem 9",
+  "sourceFile": "sources/PS Chap11 and 12.pdf",
+  "chapter": "Chapters 11–12: Oscillations & Waves",
+  "variables": [
+    {
+      "symbol": "v₍air₎",
+      "meaning": "speed of sound in air"
+    },
+    {
+      "symbol": "f₁",
+      "meaning": "first sound frequency"
+    },
+    {
+      "symbol": "f₂",
+      "meaning": "second sound frequency"
+    },
+    {
+      "symbol": "f₃",
+      "meaning": "ultrasonic frequency"
+    },
+    {
+      "symbol": "λ",
+      "meaning": "sound wavelength"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Wave equation relating wavelength, speed, and frequency",
+      "formula": "λ = v / f"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "We will use the wave equation that relates wavelength, wave speed, and frequency.",
+      "notations": "λ = v / f"
+    },
+    {
+      "explanation": "Define the given values: the speed of sound in air at 20°C is approximately 343 m/s. For part (a), we have two frequencies: f₁ = 20 Hz and f₂ = 20,000 Hz. For part (b), we have f₃ = 18 MHz.",
+      "notations": "v = 343 m/s, f₁ = 20 Hz, f₂ = 20,000 Hz = 2.0 × 10⁴ Hz, f₃ = 18 MHz = 1.8 × 10⁷ Hz"
+    },
+    {
+      "explanation": "For the 20 Hz sound, substitute the values into the wave equation.",
+      "notations": "λ₁ = v / f₁ = 343 m/s / 20 Hz"
+    },
+    {
+      "explanation": "Calculate the wavelength for 20 Hz.",
+      "notations": "λ₁ = 17.15 m ≈ 17 m"
+    },
+    {
+      "explanation": "For the 20,000 Hz sound, substitute the values into the wave equation.",
+      "notations": "λ₂ = v / f₂ = 343 m/s / (2.0 × 10⁴ Hz)"
+    },
+    {
+      "explanation": "Calculate the wavelength for 20,000 Hz.",
+      "notations": "λ₂ = 1.715 × 10⁻² m ≈ 1.7 × 10⁻² m = 1.7 cm"
+    },
+    {
+      "explanation": "For the 18-MHz ultrasonic wave, substitute the values into the wave equation.",
+      "notations": "λ₃ = v / f₃ = 343 m/s / (1.8 × 10⁷ Hz)"
+    },
+    {
+      "explanation": "Calculate the wavelength for 18 MHz.",
+      "notations": "λ₃ = 1.906 × 10⁻⁵ m ≈ 1.9 × 10⁻⁵ m"
+    }
+  ]
+}

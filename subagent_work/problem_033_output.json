@@ -1,0 +1,108 @@
+{
+  "problem": "A 725-kg two-stage rocket is traveling at a speed of 6.60×10³ m/s away from Earth when a predesigned explosion separates the rocket into two sections of equal mass that then move with a speed of 2.80×10³ m/s relative to each other along the original line of motion. (a) What is the speed and direction of each section (relative to Earth) after the explosion? [Hint: υ₍rel₎ = υ₍A₎' − υ₍B₎'] (b) How much energy was supplied by the explosion? [Hint: What is the change in kinetic energy as a result of the explosion?]",
+  "source": "Quiz 7 - Problem 2",
+  "sourceFile": "sources/Quiz 7 FA25 Solution.docx",
+  "chapter": "Quiz 7: Momentum & Collisions",
+  "variables": [
+    {
+      "symbol": "M",
+      "meaning": "total mass of rocket before separation"
+    },
+    {
+      "symbol": "m",
+      "meaning": "mass of each rocket section"
+    },
+    {
+      "symbol": "→v₀",
+      "meaning": "initial velocity away from Earth"
+    },
+    {
+      "symbol": "Δv₍rel₎",
+      "meaning": "relative speed between sections after explosion"
+    },
+    {
+      "symbol": "→v₍A₎",
+      "meaning": "velocity of front section after explosion"
+    },
+    {
+      "symbol": "→v₍B₎",
+      "meaning": "velocity of rear section after explosion"
+    },
+    {
+      "symbol": "K₀",
+      "meaning": "initial kinetic energy"
+    },
+    {
+      "symbol": "K₍f₎",
+      "meaning": "final kinetic energy"
+    },
+    {
+      "symbol": "ΔK",
+      "meaning": "energy supplied by explosion"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Conservation of momentum",
+      "formula": "p = mv"
+    },
+    {
+      "name": "Kinetic energy",
+      "formula": "K = ½mv²"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "We will use conservation of momentum and the given relative velocity condition. The rocket explodes into two equal masses, and momentum must be conserved.",
+      "notations": "Conservation of momentum: M v₀ = m v₍A₎ + m v₍B₎\nRelative velocity condition: v₍A₎ − v₍B₎ = Δv₍rel₎"
+    },
+    {
+      "explanation": "Define the given values from the problem.",
+      "notations": "M = 725 kg, v₀ = 6.60 × 10³ m/s, Δv₍rel₎ = 2.80 × 10³ m/s\nm = M/2 = 362.5 kg (equal masses)"
+    },
+    {
+      "explanation": "Apply conservation of momentum. Since the masses are equal (m = M/2), we can simplify.",
+      "notations": "M v₀ = m v₍A₎ + m v₍B₎\n(2m) v₀ = m v₍A₎ + m v₍B₎\n2v₀ = v₍A₎ + v₍B₎"
+    },
+    {
+      "explanation": "Set up the system of two equations with two unknowns.",
+      "notations": "v₍A₎ + v₍B₎ = 2v₀\nv₍A₎ − v₍B₎ = Δv₍rel₎"
+    },
+    {
+      "explanation": "Solve for v₍A₎ by adding the two equations.",
+      "notations": "2v₍A₎ = 2v₀ + Δv₍rel₎\nv₍A₎ = (2v₀ + Δv₍rel₎)/2"
+    },
+    {
+      "explanation": "Substitute the numerical values to find v₍A₎.",
+      "notations": "v₍A₎ = (2 × 6.60 × 10³ m/s + 2.80 × 10³ m/s)/2\nv₍A₎ = (13.2 × 10³ m/s + 2.80 × 10³ m/s)/2\nv₍A₎ = 16.0 × 10³ m/s / 2 = 8.00 × 10³ m/s (away from Earth)"
+    },
+    {
+      "explanation": "Solve for v₍B₎ by subtracting the second equation from the first.",
+      "notations": "2v₍B₎ = 2v₀ − Δv₍rel₎\nv₍B₎ = (2v₀ − Δv₍rel₎)/2"
+    },
+    {
+      "explanation": "Substitute the numerical values to find v₍B₎.",
+      "notations": "v₍B₎ = (2 × 6.60 × 10³ m/s − 2.80 × 10³ m/s)/2\nv₍B₎ = (13.2 × 10³ m/s − 2.80 × 10³ m/s)/2\nv₍B₎ = 10.4 × 10³ m/s / 2 = 5.20 × 10³ m/s (away from Earth)"
+    },
+    {
+      "explanation": "For part (b), we use the kinetic energy formula to find the initial kinetic energy.",
+      "notations": "K₀ = ½ M v₀²"
+    },
+    {
+      "explanation": "Substitute the values to calculate K₀.",
+      "notations": "K₀ = ½ (725 kg)(6.60 × 10³ m/s)²\nK₀ = ½ (725 kg)(4.356 × 10⁷ m²/s²)\nK₀ = 1.579 × 10¹⁰ J"
+    },
+    {
+      "explanation": "Calculate the final kinetic energy, which is the sum of kinetic energies of both sections.",
+      "notations": "K₍f₎ = ½ m v₍A₎² + ½ m v₍B₎²"
+    },
+    {
+      "explanation": "Substitute the values to calculate K₍f₎.",
+      "notations": "K₍f₎ = ½ (362.5 kg)(8.00 × 10³ m/s)² + ½ (362.5 kg)(5.20 × 10³ m/s)²\nK₍f₎ = ½ (362.5 kg)(6.40 × 10⁷ m²/s²) + ½ (362.5 kg)(2.704 × 10⁷ m²/s²)\nK₍f₎ = 1.16 × 10¹⁰ J + 4.9 × 10⁹ J\nK₍f₎ = 1.65 × 10¹⁰ J"
+    },
+    {
+      "explanation": "Calculate the energy supplied by the explosion, which is the change in kinetic energy.",
+      "notations": "ΔK = K₍f₎ − K₀\nΔK = 1.65 × 10¹⁰ J − 1.579 × 10¹⁰ J\nΔK ≈ 7.1 × 10⁸ J"
+    }
+  ]
+}

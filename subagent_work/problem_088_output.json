@@ -1,0 +1,80 @@
+{
+  "problem": "In the system shown in the figure, the coefficient of static friction between mass m₍A₎ and the table is 0.40, and the coefficient of kinetic friction is 0.30. (a) What is the minimum value of m₍A₎ that will keep the system from starting to move? (b) What value(s) of m₍A₎ will keep the system moving at constant speed?",
+  "source": "Quiz 5 - Problem 2",
+  "sourceFile": "sources/Quiz5_FA25_solution.pdf",
+  "chapter": "Quiz 5 Review",
+  "variables": [
+    {
+      "symbol": "m₍A₎",
+      "meaning": "mass"
+    },
+    {
+      "symbol": "m₍B₎",
+      "meaning": "hanging mass"
+    },
+    {
+      "symbol": "μₛ",
+      "meaning": "coefficient (s)"
+    },
+    {
+      "symbol": "μₖ",
+      "meaning": "coefficient (k)"
+    },
+    {
+      "symbol": "g",
+      "meaning": "gravitational acceleration"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Static friction force",
+      "formula": "f_s = μₛ N"
+    },
+    {
+      "name": "Kinetic friction force",
+      "formula": "f_k = μₖ N"
+    },
+    {
+      "name": "Normal force on horizontal surface",
+      "formula": "N = mg"
+    },
+    {
+      "name": "Newton's second law",
+      "formula": "F_net = ma"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "Part (a): We will use Newton's second law and the static friction formula. For the system to just start moving, the tension from the hanging mass equals the maximum static friction on block A.",
+      "notations": "f_s = μₛ N and N = m₍A₎ g for block A; F_net = ma for the hanging mass"
+    },
+    {
+      "explanation": "Define the given values from the problem.",
+      "notations": "Given: μₛ = 0.40, μₖ = 0.30, m₍B₎ is the hanging mass"
+    },
+    {
+      "explanation": "For the system at the threshold of motion (a = 0), the tension T equals the weight of the hanging mass and also equals the maximum static friction on block A.",
+      "notations": "T = m₍B₎ g (from hanging mass equilibrium); T = f_s,max = μₛ N = μₛ m₍A₎ g (from block A)"
+    },
+    {
+      "explanation": "Set the two expressions for tension equal and solve for the minimum m₍A₎.",
+      "notations": "m₍B₎ g = μₛ m₍A₎ g ⇒ m₍A₎ = m₍B₎ / μₛ"
+    },
+    {
+      "explanation": "Substitute the value of μₛ to find the minimum mass ratio.",
+      "notations": "m₍A₎ = m₍B₎ / 0.40 = 2.5 m₍B₎"
+    },
+    {
+      "explanation": "Part (b): For constant speed motion (a = 0), use kinetic friction instead. The tension from the hanging mass equals the kinetic friction on block A.",
+      "notations": "T = m₍B₎ g (from hanging mass equilibrium); T = f_k = μₖ N = μₖ m₍A₎ g (from block A)"
+    },
+    {
+      "explanation": "Set the two expressions for tension equal and solve for m₍A₎.",
+      "notations": "m₍B₎ g = μₖ m₍A₎ g ⇒ m₍A₎ = m₍B₎ / μₖ"
+    },
+    {
+      "explanation": "Substitute the value of μₖ to find the required mass ratio.",
+      "notations": "m₍A₎ = m₍B₎ / 0.30 = 3.33 m₍B₎"
+    }
+  ]
+}

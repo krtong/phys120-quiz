@@ -1,0 +1,40 @@
+{
+  "problem": "A fireworks shell explodes 100 m above the ground, creating colorful sparks. How much greater is the sound level of the explosion for a person at a point directly below the explosion than for a person a horizontal distance of 200 m away?",
+  "source": "PS Chap11 and 12.pdf - Problem 12",
+  "sourceFile": "sources/PS Chap11 and 12.pdf",
+  "chapter": "Chapters 11–12: Oscillations & Waves",
+  "variables": [
+    {
+      "symbol": "r₁",
+      "meaning": "distance from explosion (vertical)"
+    },
+    {
+      "symbol": "r₂",
+      "meaning": "distance from explosion (slant)"
+    },
+    {
+      "symbol": "Δβ",
+      "meaning": "difference in sound level"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Inverse-square intensity ratio",
+      "formula": "I₁/I₂ = (r₂/r₁)²"
+    },
+    {
+      "name": "Decibel difference",
+      "formula": "Δβ = 10 log₁₀(I₁/I₂)"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "Compute the intensity ratio from the distances.",
+      "notations": "I₁/I₂ = (r₂/r₁)² = (√5)² = 5"
+    },
+    {
+      "explanation": "Convert the ratio to decibels.",
+      "notations": "Δβ = 10 log₁₀(5) ≈ 7 dB (person underneath hears ~7 dB louder)"
+    }
+  ]
+}

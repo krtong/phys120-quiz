@@ -1,0 +1,100 @@
+{
+  "problem": "A rectangular block has its upper right corner carved out. The carved out portion is a quarter of a cylinder, yielding a circular slope of radius R. The remaining block has a mass M. A small bead of mass m is placed at the top of the slope. All contact surfaces are frictionless. Both the small bead and the block are initially at rest, and the bead slides down from the top of the circular slope. (a) Find the displacement of the block, i.e the distance and direction of its movement, when the small bead slides to the bottom of the circular slope and is just about to leave the block. (b) Find the speed of the small bead with respect to the ground when it reaches the bottom of the circular slope.",
+  "source": "Worksheet 09 - Problem 4",
+  "sourceFile": "sources/WS09_Momentum_and_CM.pdf",
+  "chapter": "Worksheet 09",
+  "variables": [
+    {
+      "symbol": "M",
+      "meaning": "mass of block"
+    },
+    {
+      "symbol": "m",
+      "meaning": "mass of bead"
+    },
+    {
+      "symbol": "R",
+      "meaning": "radius of carved quarter cylinder"
+    },
+    {
+      "symbol": "x",
+      "meaning": "horizontal displacement of block"
+    },
+    {
+      "symbol": "u",
+      "meaning": "bead speed relative to ground at bottom"
+    },
+    {
+      "symbol": "V",
+      "meaning": "block speed"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Conservation of momentum",
+      "formula": "p = mv,   Σp_initial = Σp_final"
+    },
+    {
+      "name": "Kinetic energy",
+      "formula": "KE = ½mv²"
+    },
+    {
+      "name": "Gravitational potential energy",
+      "formula": "PE = mgh"
+    },
+    {
+      "name": "Conservation of energy",
+      "formula": "KE_initial + PE_initial = KE_final + PE_final"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "Part (a): We will use conservation of momentum. Since there are no external horizontal forces, the horizontal momentum remains zero throughout.",
+      "notations": "Σp_horizontal = 0"
+    },
+    {
+      "explanation": "Define the problem variables: The block has mass M and moves left with displacement x (and speed V). The bead has mass m and moves right by (x + R) relative to the ground (with speed u).",
+      "notations": "Block: mass M, displacement x (leftward), speed V\nBead: mass m, displacement (x + R) rightward, speed u"
+    },
+    {
+      "explanation": "Since the center of mass does not move horizontally (no external horizontal forces), we can write the momentum conservation in terms of displacements.",
+      "notations": "M · x + m · (x + R) = 0"
+    },
+    {
+      "explanation": "Solve for the block's displacement x.",
+      "notations": "M x + m x + m R = 0\n(M + m) x = −m R\nx = −m R/(M + m)"
+    },
+    {
+      "explanation": "The negative sign indicates the block moves left. The magnitude of displacement is |x| = m R/(M + m).",
+      "notations": "Block displacement: x = −m R/(M + m) (leftward)"
+    },
+    {
+      "explanation": "Part (b): We will use conservation of momentum and conservation of energy. First, apply momentum conservation at the bottom when the bead has speed u and block has speed V.",
+      "notations": "Initial momentum: p_initial = 0\nFinal momentum: p_final = M(−V) + m u = 0"
+    },
+    {
+      "explanation": "From momentum conservation, relate the block speed V to the bead speed u.",
+      "notations": "M V = m u\nV = (m/M) u"
+    },
+    {
+      "explanation": "Apply conservation of energy. Initially, the system is at rest with the bead at height R. Finally, both objects are moving.",
+      "notations": "PE_initial + KE_initial = PE_final + KE_final\nm g R + 0 = 0 + ½ M V² + ½ m u²"
+    },
+    {
+      "explanation": "Substitute V = (m/M) u into the energy equation.",
+      "notations": "m g R = ½ M (m/M)² u² + ½ m u²\nm g R = ½ M (m²/M²) u² + ½ m u²\nm g R = ½ (m²/M) u² + ½ m u²"
+    },
+    {
+      "explanation": "Factor out ½ u² and solve for u².",
+      "notations": "m g R = ½ u² (m²/M + m)\nm g R = ½ u² · m (m/M + 1)\nm g R = ½ u² · m (m + M)/M\nu² = 2 g R M/(m + M)"
+    },
+    {
+      "explanation": "Take the square root to find the bead's speed relative to the ground.",
+      "notations": "u = √[2 g R M/(M + m)]"
+    },
+    {
+      "explanation": "The block's speed can be found from V = (m/M) u.",
+      "notations": "V = (m/M) √[2 g R M/(M + m)] = √[2 g R m/(M + m)]"
+    }
+  ]
+}

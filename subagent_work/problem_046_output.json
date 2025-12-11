@@ -1,0 +1,104 @@
+{
+  "problem": "Estimate the kinetic energy of the Earth with respect to the Sun as the sum of two terms, (a) that due to its daily rotation about its axis, and (b) that due to its yearly revolution about the Sun. [Assume the Earth is a uniform sphere with mass=6.0×10²⁴ kg, radius=6.4×10⁶ m, and is 1.5×10⁸ km from the Sun.]",
+  "source": "PS_Chap8.pdf - Problem 12",
+  "sourceFile": "sources/PS_Chap8.pdf",
+  "chapter": "Chapter 8: Rotational Motion",
+  "variables": [
+    {
+      "symbol": "M₍E₎",
+      "meaning": "mass of Earth"
+    },
+    {
+      "symbol": "R₍E₎",
+      "meaning": "radius of Earth"
+    },
+    {
+      "symbol": "R₍orb₎",
+      "meaning": "radius of orbital"
+    },
+    {
+      "symbol": "ω₍day₎",
+      "meaning": "angular velocity of daily"
+    },
+    {
+      "symbol": "ω₍year₎",
+      "meaning": "angular velocity of yearly"
+    },
+    {
+      "symbol": "I₍sphere₎",
+      "meaning": "moment of inertia of sphere"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Rotational kinetic energy",
+      "formula": "K = ½ I ω²"
+    },
+    {
+      "name": "Moment of inertia of a uniform sphere",
+      "formula": "I = (2/5) M R²"
+    },
+    {
+      "name": "Translational kinetic energy",
+      "formula": "K = ½ m v²"
+    },
+    {
+      "name": "Linear velocity from angular velocity",
+      "formula": "v = ω R"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "Part (a): We will use rotational kinetic energy K = ½ I ω² with the moment of inertia for a uniform sphere I = (2/5) M R²",
+      "notations": "K₍daily₎ = ½ I₍sphere₎ ω₍day₎² where I₍sphere₎ = (2/5) M₍E₎ R₍E₎²"
+    },
+    {
+      "explanation": "Define the given values for daily rotation",
+      "notations": "M₍E₎ = 6.0 × 10²⁴ kg, R₍E₎ = 6.4 × 10⁶ m, T₍day₎ = 24 hours = 86400 s"
+    },
+    {
+      "explanation": "Calculate the angular velocity for daily rotation",
+      "notations": "ω₍day₎ = 2π / T₍day₎ = 2π / 86400 s ≈ 7.27 × 10⁻⁵ rad/s"
+    },
+    {
+      "explanation": "Substitute the moment of inertia formula into the kinetic energy equation",
+      "notations": "K₍daily₎ = ½ [(2/5) M₍E₎ R₍E₎²] ω₍day₎² = (1/5) M₍E₎ R₍E₎² ω₍day₎²"
+    },
+    {
+      "explanation": "Substitute numerical values for daily rotation",
+      "notations": "K₍daily₎ = (1/5) (6.0 × 10²⁴ kg) (6.4 × 10⁶ m)² (7.27 × 10⁻⁵ rad/s)²"
+    },
+    {
+      "explanation": "Calculate the daily rotational kinetic energy",
+      "notations": "K₍daily₎ ≈ 2.6 × 10²⁹ J"
+    },
+    {
+      "explanation": "Part (b): We will use translational kinetic energy K = ½ m v² with v = ω R for the orbital motion",
+      "notations": "K₍yearly₎ = ½ M₍E₎ v₍orb₎² where v₍orb₎ = ω₍year₎ R₍orb₎"
+    },
+    {
+      "explanation": "Define the given values for yearly revolution",
+      "notations": "M₍E₎ = 6.0 × 10²⁴ kg, R₍orb₎ = 1.5 × 10⁸ km = 1.5 × 10¹¹ m, T₍year₎ = 365.25 days = 3.156 × 10⁷ s"
+    },
+    {
+      "explanation": "Calculate the angular velocity for yearly revolution",
+      "notations": "ω₍year₎ = 2π / T₍year₎ = 2π / (3.156 × 10⁷ s) ≈ 1.99 × 10⁻⁷ rad/s"
+    },
+    {
+      "explanation": "Substitute v = ω R into the kinetic energy formula",
+      "notations": "K₍yearly₎ = ½ M₍E₎ (ω₍year₎ R₍orb₎)²"
+    },
+    {
+      "explanation": "Substitute numerical values for yearly revolution",
+      "notations": "K₍yearly₎ = ½ (6.0 × 10²⁴ kg) (1.99 × 10⁻⁷ rad/s × 1.5 × 10¹¹ m)²"
+    },
+    {
+      "explanation": "Calculate the yearly orbital kinetic energy",
+      "notations": "K₍yearly₎ ≈ 2.7 × 10³³ J"
+    },
+    {
+      "explanation": "Sum the two contributions to get total kinetic energy",
+      "notations": "K₍total₎ = K₍daily₎ + K₍yearly₎ ≈ 2.6 × 10²⁹ J + 2.7 × 10³³ J ≈ 2.7 × 10³³ J (orbital term dominates)"
+    }
+  ]
+}

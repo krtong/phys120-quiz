@@ -1,0 +1,48 @@
+{
+  "problem": "(a) Compare the differences and similarities between the kinetic energy and momentum. (b) In what situations can we use the conservation of energy to help us solve problems? (c) In what situations can we use the conservation of momentum to help us solve problems?",
+  "source": "Worksheet 09 - Problem 1",
+  "sourceFile": "sources/WS09_Momentum_and_CM.pdf",
+  "chapter": "Worksheet 09",
+  "variables": [
+    {
+      "symbol": "K",
+      "meaning": "kinetic energy"
+    },
+    {
+      "symbol": "→p",
+      "meaning": "momentum"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Kinetic energy",
+      "formula": "K = ½ m v²"
+    },
+    {
+      "name": "Momentum",
+      "formula": "p = m v"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "(a) We will compare kinetic energy (K = ½ m v²) and momentum (p = m v) by examining their mathematical forms and physical properties.",
+      "notations": "K = ½ m v² (scalar); p = m v (vector)"
+    },
+    {
+      "explanation": "Similarities: Both kinetic energy and momentum depend on mass (m) and speed (v). Both are zero when the object is at rest (v = 0) and both increase as the object's speed increases.",
+      "notations": "Both depend on m and v; both equal zero when v = 0"
+    },
+    {
+      "explanation": "Differences: Kinetic energy scales with the square of velocity (v²) and is a scalar quantity (no direction), whereas momentum depends linearly on velocity (v) and is a vector quantity (has direction).",
+      "notations": "K ∝ v² (scalar); p ∝ v (vector with direction)"
+    },
+    {
+      "explanation": "(b) Conservation of energy can be applied when only conservative forces (such as gravity or spring forces) do work, or when nonconservative work is negligible or zero.",
+      "notations": "Use energy conservation for: frictionless motion, gravitational potential changes, spring systems"
+    },
+    {
+      "explanation": "(c) Conservation of momentum applies to isolated systems where the net external force is zero (or negligible), such as in collisions and explosions. Momentum conservation holds even when kinetic energy is not conserved (inelastic collisions).",
+      "notations": "Use momentum conservation for: collisions, explosions, recoil problems when F_external = 0"
+    }
+  ]
+}

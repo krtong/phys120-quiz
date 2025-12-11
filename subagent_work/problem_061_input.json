@@ -1,0 +1,52 @@
+{
+  "problem": "What is the volume rate of flow of water from a 1.85-cm-diameter faucet if the pressure head is 12.0 m?",
+  "source": "PS Chap10.pdf - Problem 7",
+  "sourceFile": "sources/PS Chap10.pdf",
+  "chapter": "Chapter 10: Fluids",
+  "variables": [
+    {
+      "symbol": "d",
+      "meaning": "faucet diameter"
+    },
+    {
+      "symbol": "r",
+      "meaning": "faucet radius"
+    },
+    {
+      "symbol": "h",
+      "meaning": "pressure head height"
+    },
+    {
+      "symbol": "v",
+      "meaning": "efflux speed at faucet exit"
+    },
+    {
+      "symbol": "Q",
+      "meaning": "volume flow rate (m³·/s)"
+    },
+    {
+      "symbol": "g",
+      "meaning": "gravitational acceleration near Earth"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Bernoulli (head to speed conversion)",
+      "formula": "v = √(2 g h)"
+    },
+    {
+      "name": "Volume flow rate",
+      "formula": "Q = A v = π r² v"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "Treat the pressure head as a height difference; convert to exit speed via v = √(2gh).",
+      "notations": "v = √[2(9.80)(12.0)] ≈ 15.3 m/s"
+    },
+    {
+      "explanation": "Multiply by the cross-sectional area of the faucet.",
+      "notations": "Q = π (0.00925 m)² (15.3 m/s) ≈ 4.1 × 10⁻³ m³·/s"
+    }
+  ]
+}

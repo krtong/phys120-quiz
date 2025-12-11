@@ -1,0 +1,56 @@
+{
+  "problem": "A 56.5-kg hiker starts at an elevation of 1270 m and climbs to the top of a 2660-m peak. (a) What is the hiker's change in potential energy? (b) What is the minimum work required of the hiker? (c) Can the actual work done be greater than this? Explain.",
+  "source": "PS Chap6.pdf - Problem 7",
+  "sourceFile": "sources/PS Chap6.pdf",
+  "chapter": "Chapter 6: Work & Energy",
+  "variables": [
+    {
+      "symbol": "m",
+      "meaning": "mass of hiker"
+    },
+    {
+      "symbol": "yᵢ",
+      "meaning": "initial elevation"
+    },
+    {
+      "symbol": "y₍f₎",
+      "meaning": "final elevation"
+    },
+    {
+      "symbol": "Δy",
+      "meaning": "vertical displacement"
+    },
+    {
+      "symbol": "g",
+      "meaning": "gravitational acceleration near Earth"
+    },
+    {
+      "symbol": "ΔU",
+      "meaning": "change in gravitational potential energy (J)"
+    },
+    {
+      "symbol": "W₍min₎",
+      "meaning": "minimum work required (J)"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Change in gravitational potential energy",
+      "formula": "ΔU = m g Δy"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "Compute the elevation gain and apply ΔU = m g Δy.",
+      "notations": "ΔU = (56.5 kg)(9.80 m/s²)(1.39 × 10³ m) ≈ 7.7 × 10⁵ J"
+    },
+    {
+      "explanation": "The minimum work the hiker must do equals the increase in potential energy (ignoring losses).",
+      "notations": "W₍min₎ = ΔU ≈ 7.7 × 10⁵ J"
+    },
+    {
+      "explanation": "Yes; real hikes involve inefficiencies (non-vertical paths, friction, metabolic costs), so actual work exceeds this ideal minimum.",
+      "notations": "W₍actual₎ ≥ W₍min₎ due to nonconservative forces"
+    }
+  ]
+}

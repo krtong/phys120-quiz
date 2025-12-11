@@ -1,0 +1,56 @@
+{
+  "problem": "Center of mass (CM) of three guys on a raft. On a lightweight (air-filled) \"banana boat,\" three people of roughly equal mass m sit along the x axis at positions x₍A₎ = 1.0 m, x₍B₎ = 5.0 m, and x₍C₎ = 6.0 m, measured from the left-hand end as shown in Fig. 7–23. Find the position of the CM. Ignore the mass of the boat.",
+  "source": "PS Chap7 - Example 7-12",
+  "sourceFile": "sources/PS Chap7 and solution.pdf",
+  "chapter": "Chapter 7: Momentum & Collisions",
+  "variables": [
+    {
+      "symbol": "x₍A₎",
+      "meaning": "position (A)"
+    },
+    {
+      "symbol": "x₍B₎",
+      "meaning": "position (B)"
+    },
+    {
+      "symbol": "x₍C₎",
+      "meaning": "position (C)"
+    },
+    {
+      "symbol": "x₍CM₎",
+      "meaning": "center-of-mass position"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Center of mass position",
+      "formula": "x₍CM₎ = (m₁x₁ + m₂x₂ + m₃x₃)/(m₁ + m₂ + m₃)"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "Start with the fundamental center of mass formula for discrete particles",
+      "notations": "x₍CM₎ = (m₁x₁ + m₂x₂ + m₃x₃)/(m₁ + m₂ + m₃)"
+    },
+    {
+      "explanation": "Define variables by values given in the problem",
+      "notations": "Given: m₁ = m₂ = m₃ = m (equal masses), x₁ = x₍A₎ = 1.0 m, x₂ = x₍B₎ = 5.0 m, x₃ = x₍C₎ = 6.0 m"
+    },
+    {
+      "explanation": "Substitute the equal mass condition into the formula",
+      "notations": "x₍CM₎ = (m·x₁ + m·x₂ + m·x₃)/(m + m + m) = m(x₁ + x₂ + x₃)/(3m)"
+    },
+    {
+      "explanation": "Simplify by canceling the common mass factor",
+      "notations": "x₍CM₎ = (x₁ + x₂ + x₃)/3"
+    },
+    {
+      "explanation": "Substitute the numerical position values",
+      "notations": "x₍CM₎ = (1.0 m + 5.0 m + 6.0 m)/3"
+    },
+    {
+      "explanation": "Calculate the final result",
+      "notations": "x₍CM₎ = 12.0 m/3 = 4.0 m from the left end"
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "problem": "Suppose the insulating qualities of the wall of a house come mainly from a 4.0-in. layer of brick and an R-19 layer of insulation, as shown in Fig. 14–19. What is the total rate of heat loss through such a wall, if its total area is 195 ft² and the temperature difference across it is 35 F°?",
+  "source": "PS Chap14 FA25.pdf - Problem 8",
+  "sourceFile": "sources/PS Chap14 FA25.pdf",
+  "chapter": "Chapter 14: Heat",
+  "variables": [
+    {
+      "symbol": "A",
+      "meaning": "area"
+    },
+    {
+      "symbol": "ΔT",
+      "meaning": "temperature change"
+    },
+    {
+      "symbol": "R₍brick₎",
+      "meaning": "radius (brick)"
+    },
+    {
+      "symbol": "R₍insul₎",
+      "meaning": "radius (insul)"
+    },
+    {
+      "symbol": "R₍total₎",
+      "meaning": "thermal resistance, brick plus insulation"
+    },
+    {
+      "symbol": "Q̇",
+      "meaning": "heat-loss rate (Btu/h and W)"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Heat transfer rate through thermal resistance",
+      "formula": "Q̇ = A ΔT / R"
+    },
+    {
+      "name": "Series thermal resistance",
+      "formula": "R₍total₎ = R₁ + R₂"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "State the fundamental formulas to be used",
+      "notations": "We will use Q̇ = A ΔT / R for heat transfer rate, and R₍total₎ = R₁ + R₂ for series thermal resistance"
+    },
+    {
+      "explanation": "Define the variables with values given in the problem",
+      "notations": "Given: A = 195 ft², ΔT = 35 F°, R₍brick₎ = 0.69 (for 4.0-in. brick), R₍insul₎ = 19"
+    },
+    {
+      "explanation": "Calculate the total thermal resistance by adding the individual resistances",
+      "notations": "R₍total₎ = R₍brick₎ + R₍insul₎ = 0.69 + 19 = 19.69"
+    },
+    {
+      "explanation": "Substitute the numerical values into the heat transfer formula",
+      "notations": "Q̇ = A ΔT / R₍total₎ = (195 ft²)(35 F°) / (19.69)"
+    },
+    {
+      "explanation": "Calculate the numerator",
+      "notations": "Q̇ = 6825 ft²·F° / 19.69"
+    },
+    {
+      "explanation": "Perform the division to find the heat-loss rate",
+      "notations": "Q̇ ≈ 347 Btu/h ≈ 3.5 × 10² Btu/h"
+    },
+    {
+      "explanation": "Convert to SI units (watts) for reference",
+      "notations": "Q̇ ≈ 350 Btu/h × (0.293 W·h/Btu) ≈ 1.0 × 10² W"
+    }
+  ]
+}

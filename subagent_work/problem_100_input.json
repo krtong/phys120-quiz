@@ -1,0 +1,56 @@
+{
+  "problem": "A rectangular block has its upper right corner carved out. The carved out portion is a quarter of a cylinder, yielding a circular slope of radius R. The remaining block has a mass M. A small bead of mass m is placed at the top of the slope. All contact surfaces are frictionless. Both the small bead and the block are initially at rest, and the bead slides down from the top of the circular slope. (a) Find the displacement of the block, i.e the distance and direction of its movement, when the small bead slides to the bottom of the circular slope and is just about to leave the block. (b) Find the speed of the small bead with respect to the ground when it reaches the bottom of the circular slope.",
+  "source": "Worksheet 09 - Problem 4",
+  "sourceFile": "sources/WS09_Momentum_and_CM.pdf",
+  "chapter": "Worksheet 09",
+  "variables": [
+    {
+      "symbol": "M",
+      "meaning": "mass of block"
+    },
+    {
+      "symbol": "m",
+      "meaning": "mass of bead"
+    },
+    {
+      "symbol": "R",
+      "meaning": "radius of carved quarter cylinder"
+    },
+    {
+      "symbol": "x",
+      "meaning": "horizontal displacement of block"
+    },
+    {
+      "symbol": "u",
+      "meaning": "bead speed relative to ground at bottom"
+    },
+    {
+      "symbol": "V",
+      "meaning": "block speed"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Horizontal momentum conservation",
+      "formula": "M x + m (x + R) = 0,   M (−V) + m u = 0"
+    },
+    {
+      "name": "Energy conservation",
+      "formula": "m g R = ½ M V² + ½ m u²"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "(a) With no external horizontal forces, the system’s center of mass does not move horizontally. When the bead shifts to the right by R relative to the block, the block must recoil left.",
+      "notations": "x = − m R /(M + m) (block moves left by |x|)"
+    },
+    {
+      "explanation": "(b) Use momentum conservation to relate velocities at the bottom: V = (m/M) u. Insert into the energy balance using the drop in potential energy m g R.",
+      "notations": "m g R = ½ M (m²/M²) u² + ½ m u² ⇒ u = √[2 g R M /(M + m)]"
+    },
+    {
+      "explanation": "The block’s speed follows from momentum conservation.",
+      "notations": "V = (m/M) u = √[2 g R m /(M + m)]"
+    }
+  ]
+}

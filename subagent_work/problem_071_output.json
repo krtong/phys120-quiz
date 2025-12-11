@@ -1,0 +1,64 @@
+{
+  "problem": "What is the beat frequency if middle C (262 Hz) and C# (277 Hz) are played together? What if each is played two octaves lower (each frequency reduced by a factor of 4)?",
+  "source": "PS Chap11 and 12.pdf - Problem 14",
+  "sourceFile": "sources/PS Chap11 and 12.pdf",
+  "chapter": "Chapters 11–12: Oscillations & Waves",
+  "variables": [
+    {
+      "symbol": "f₁",
+      "meaning": "frequency (1)"
+    },
+    {
+      "symbol": "f₂",
+      "meaning": "frequency (2)"
+    },
+    {
+      "symbol": "f₁'",
+      "meaning": "frequency (1')"
+    },
+    {
+      "symbol": "f₂'",
+      "meaning": "frequency (2')"
+    },
+    {
+      "symbol": "f₍beat₎",
+      "meaning": "|f₂ − f₁|"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Beat frequency",
+      "formula": "f₍beat₎ = |f₂ − f₁|"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "We will use the beat frequency formula: f₍beat₎ = |f₂ − f₁|",
+      "notations": "f₍beat₎ = |f₂ − f₁|"
+    },
+    {
+      "explanation": "For the original notes, given: f₁ = 262 Hz (middle C), f₂ = 277 Hz (C#)",
+      "notations": "f₁ = 262 Hz, f₂ = 277 Hz"
+    },
+    {
+      "explanation": "Substitute the values into the beat frequency formula",
+      "notations": "f₍beat₎ = |277 Hz − 262 Hz|"
+    },
+    {
+      "explanation": "Calculate the beat frequency for the original notes",
+      "notations": "f₍beat₎ = |15 Hz| = 15 Hz"
+    },
+    {
+      "explanation": "For two octaves lower, each frequency is reduced by a factor of 4: f₁' = 262/4 Hz, f₂' = 277/4 Hz",
+      "notations": "f₁' = 65.5 Hz, f₂' = 69.25 Hz"
+    },
+    {
+      "explanation": "Substitute the lower frequencies into the beat frequency formula",
+      "notations": "f₍beat,lower₎ = |69.25 Hz − 65.5 Hz|"
+    },
+    {
+      "explanation": "Calculate the beat frequency for the lower notes",
+      "notations": "f₍beat,lower₎ = |3.75 Hz| = 3.75 Hz ≈ 3.8 Hz"
+    }
+  ]
+}

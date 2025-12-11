@@ -1,0 +1,36 @@
+{
+  "problem": "A particular string resonates in four loops at a frequency of 240 Hz. Give at least three other frequencies at which it will resonate. What is each called?",
+  "source": "PS Chap11 and 12.pdf - Problem 7",
+  "sourceFile": "sources/PS Chap11 and 12.pdf",
+  "chapter": "Chapters 11–12: Oscillations & Waves",
+  "variables": [
+    {
+      "symbol": "f₄",
+      "meaning": "frequency of four-loop resonance"
+    },
+    {
+      "symbol": "f₁",
+      "meaning": "fundamental frequency"
+    },
+    {
+      "symbol": "fₙ",
+      "meaning": "nth harmonic frequency"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Harmonic series for fixed string",
+      "formula": "fₙ = n f₁"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "Four loops correspond to the fourth harmonic, so f₁ = f₄/4 = 60 Hz.",
+      "notations": "n = 4 ⇒ f₁ = 240/4 = 60 Hz"
+    },
+    {
+      "explanation": "List other resonant frequencies and their names: f₂=120 Hz (first overtone/second harmonic), f₃=180 Hz (second overtone/third harmonic), f₅=300 Hz (fourth overtone/fifth harmonic).",
+      "notations": "f₂ = 2f₁, f₃ = 3f₁, f₅ = 5f₁"
+    }
+  ]
+}

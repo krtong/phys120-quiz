@@ -1,0 +1,52 @@
+{
+  "problem": "Determine the minimum gauge pressure needed in the water pipe leading into a building if water is to come out of a faucet on the fourteenth floor, 44 m above that pipe.",
+  "source": "Quiz 9 - Problem 3",
+  "sourceFile": "sources/Quiz 9 FA25 solution.docx",
+  "chapter": "Quiz 9: Fluids",
+  "variables": [
+    {
+      "symbol": "Δh",
+      "meaning": "change (h)"
+    },
+    {
+      "symbol": "ρ",
+      "meaning": "density"
+    },
+    {
+      "symbol": "g",
+      "meaning": "gravitational acceleration"
+    },
+    {
+      "symbol": "ΔP",
+      "meaning": "required gauge pressure (Pa)"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Hydrostatic pressure",
+      "formula": "ΔP = ρ g Δh"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "State the fundamental formula to use",
+      "notations": "We will use the hydrostatic pressure formula: ΔP = ρ g Δh"
+    },
+    {
+      "explanation": "Define variables by values given in the problem",
+      "notations": "Given: Δh = 44.0 m, ρ = 1.00 × 10³ kg/m³ (density of water), g = 9.80 m/s²"
+    },
+    {
+      "explanation": "Substitute the numerical values into the formula",
+      "notations": "ΔP = (1.00 × 10³ kg/m³)(9.80 m/s²)(44.0 m)"
+    },
+    {
+      "explanation": "Calculate the result",
+      "notations": "ΔP = 4.312 × 10⁵ kg/(m·s²) = 4.3 × 10⁵ Pa"
+    },
+    {
+      "explanation": "Convert to atmospheres for interpretation (1 atm ≈ 1.01 × 10⁵ Pa)",
+      "notations": "ΔP ≈ 4.3 × 10⁵ Pa ÷ 1.01 × 10⁵ Pa/atm ≈ 4.3 atm"
+    }
+  ]
+}

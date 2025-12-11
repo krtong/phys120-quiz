@@ -1,0 +1,108 @@
+{
+  "problem": "Two blocks of mass m₁ and m₂ respectively are placed on a frictionless surface. The block m₂ is initially at rest, and attached with a spring of spring constant k on its back. The block m₁ is then given an initial speed v₀ and collides head onto the block m₂. (a) What is the maximum compression of the spring throughout the entire collision process? (b) Find the velocities v₁f and v₂f of the two blocks respectively after the collision process. What is the condition on m₁ and m₂ such that the block m₁ will move backwards after the collision?",
+  "source": "Worksheet 09 - Problem 3",
+  "sourceFile": "sources/WS09_Momentum_and_CM.pdf",
+  "chapter": "Worksheet 09",
+  "variables": [
+    {
+      "symbol": "m₁",
+      "meaning": "incident block mass"
+    },
+    {
+      "symbol": "m₂",
+      "meaning": "block attached to spring"
+    },
+    {
+      "symbol": "k",
+      "meaning": "spring constant"
+    },
+    {
+      "symbol": "v₀",
+      "meaning": "initial speed of m₁"
+    },
+    {
+      "symbol": "x₍max₎",
+      "meaning": "maximum spring compression"
+    },
+    {
+      "symbol": "v₁f",
+      "meaning": "final speed of m₁ (signed, 1D)"
+    },
+    {
+      "symbol": "v₂f",
+      "meaning": "final speed of m₂ (signed, 1D)"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Conservation of momentum",
+      "formula": "p_i = p_f"
+    },
+    {
+      "name": "Kinetic energy",
+      "formula": "KE = ½mv²"
+    },
+    {
+      "name": "Elastic potential energy in spring",
+      "formula": "PE_spring = ½kx²"
+    },
+    {
+      "name": "Conservation of energy",
+      "formula": "E_i = E_f"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "(a) We will use conservation of momentum and conservation of energy. At maximum compression, both blocks move together with a common velocity v_c.",
+      "notations": "Given: m₁ with initial speed v₀, m₂ initially at rest, spring constant k"
+    },
+    {
+      "explanation": "Apply conservation of momentum to find the common velocity at maximum compression.",
+      "notations": "p_i = p_f → m₁ v₀ + m₂(0) = (m₁ + m₂) v_c → v_c = m₁ v₀ / (m₁ + m₂)"
+    },
+    {
+      "explanation": "Apply conservation of energy. The initial kinetic energy equals the final kinetic energy plus the spring potential energy at maximum compression.",
+      "notations": "E_i = E_f → ½ m₁ v₀² = ½ (m₁ + m₂) v_c² + ½ k x₍max₎²"
+    },
+    {
+      "explanation": "Rearrange to solve for the spring energy.",
+      "notations": "½ k x₍max₎² = ½ m₁ v₀² − ½ (m₁ + m₂) v_c²"
+    },
+    {
+      "explanation": "Substitute the expression for v_c into the energy equation.",
+      "notations": "½ k x₍max₎² = ½ m₁ v₀² − ½ (m₁ + m₂) [m₁ v₀ / (m₁ + m₂)]²"
+    },
+    {
+      "explanation": "Simplify the expression.",
+      "notations": "½ k x₍max₎² = ½ m₁ v₀² − ½ m₁² v₀² / (m₁ + m₂) = ½ m₁ v₀² [1 − m₁/(m₁ + m₂)]"
+    },
+    {
+      "explanation": "Further simplification.",
+      "notations": "½ k x₍max₎² = ½ m₁ v₀² [m₂/(m₁ + m₂)] = ½ m₁ m₂ v₀² / (m₁ + m₂)"
+    },
+    {
+      "explanation": "Solve for x₍max₎.",
+      "notations": "x₍max₎ = v₀ √[m₁ m₂ / ((m₁ + m₂) k)]"
+    },
+    {
+      "explanation": "(b) Since the spring is ideal and there is no friction, the collision is elastic. We apply conservation of momentum and conservation of kinetic energy.",
+      "notations": "Momentum: m₁ v₀ = m₁ v₁f + m₂ v₂f; Energy: ½ m₁ v₀² = ½ m₁ v₁f² + ½ m₂ v₂f²"
+    },
+    {
+      "explanation": "For an elastic collision in 1D where m₂ is initially at rest, the standard solution gives the final velocities.",
+      "notations": "v₁f = [(m₁ − m₂)/(m₁ + m₂)] v₀"
+    },
+    {
+      "explanation": "And for the second block.",
+      "notations": "v₂f = [2 m₁/(m₁ + m₂)] v₀"
+    },
+    {
+      "explanation": "For m₁ to move backwards after collision, v₁f must be negative.",
+      "notations": "v₁f < 0 → (m₁ − m₂)/(m₁ + m₂) < 0 → m₁ − m₂ < 0 → m₂ > m₁"
+    },
+    {
+      "explanation": "The condition for m₁ to move backwards is that m₂ must be greater than m₁.",
+      "notations": "Condition: m₂ > m₁"
+    }
+  ]
+}

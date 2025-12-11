@@ -1,0 +1,76 @@
+{
+  "problem": "Two particles of mass m₁ and m₂ respectively, travels with an initial speed v₀ but with different angles as shown in the right figure. After the two collide, they both fly out with an angle 45° with respect to the horizontal. Find the final speed v₁ and v₂ of the two particles respectively. You can use sin(30°) = cos(60°) = 1/2, cos(30°) = sin(60°) = √3/2, and sin(45°) = cos(45°) = √2/2.",
+  "source": "Worksheet 09 - Problem 5",
+  "sourceFile": "sources/WS09_Momentum_and_CM.pdf",
+  "chapter": "Worksheet 09",
+  "variables": [
+    {
+      "symbol": "m₁",
+      "meaning": "mass of particle 1"
+    },
+    {
+      "symbol": "m₂",
+      "meaning": "mass of particle 2"
+    },
+    {
+      "symbol": "v₀",
+      "meaning": "initial speed of each particle"
+    },
+    {
+      "symbol": "v₁",
+      "meaning": "speed of particle 1 after collision"
+    },
+    {
+      "symbol": "v₂",
+      "meaning": "speed of particle 2 after collision"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Momentum",
+      "formula": "p = mv"
+    },
+    {
+      "name": "Conservation of momentum",
+      "formula": "p_initial = p_final"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "We will use the conservation of momentum principle. Since momentum is a vector, we must apply conservation separately to the x-component and y-component.",
+      "notations": "p_initial = p_final applies to both x and y directions"
+    },
+    {
+      "explanation": "From the figure, particle 1 initially travels at 30° above horizontal and particle 2 travels at 60° below horizontal. After collision, both particles travel at 45° (particle 1 above, particle 2 below horizontal).",
+      "notations": "Initial: particle 1 at 30°, particle 2 at -60°; Final: particle 1 at 45°, particle 2 at -45°"
+    },
+    {
+      "explanation": "Apply conservation of momentum in the x-direction. Initial momentum: m₁v₀cos(30°) from particle 1 moving right and upward, minus m₂v₀cos(60°) from particle 2 moving right and downward. Final momentum: m₁v₁cos(45°) minus m₂v₂cos(45°).",
+      "notations": "m₁ v₀ cos(30°) - m₂ v₀ cos(60°) = m₁ v₁ cos(45°) - m₂ v₂ cos(45°)"
+    },
+    {
+      "explanation": "Apply conservation of momentum in the y-direction. Initial momentum: m₁v₀sin(30°) from particle 1 moving upward, plus m₂v₀sin(60°) from particle 2's upward component. Final momentum: m₁v₁sin(45°) from particle 1 plus m₂v₂sin(45°) from particle 2.",
+      "notations": "m₁ v₀ sin(30°) + m₂ v₀ sin(60°) = m₁ v₁ sin(45°) + m₂ v₂ sin(45°)"
+    },
+    {
+      "explanation": "Substitute the given trigonometric values: sin(30°) = 1/2, cos(30°) = √3/2, sin(60°) = √3/2, cos(60°) = 1/2, sin(45°) = cos(45°) = √2/2.",
+      "notations": "x: m₁ v₀ (√3/2) - m₂ v₀ (1/2) = m₁ v₁ (√2/2) - m₂ v₂ (√2/2)\ny: m₁ v₀ (1/2) + m₂ v₀ (√3/2) = m₁ v₁ (√2/2) + m₂ v₂ (√2/2)"
+    },
+    {
+      "explanation": "Simplify both equations by factoring out common terms.",
+      "notations": "x: v₀(m₁√3 - m₂) = √2(m₁v₁ - m₂v₂)\ny: v₀(m₁ + m₂√3) = √2(m₁v₁ + m₂v₂)"
+    },
+    {
+      "explanation": "Solve the system of two linear equations for v₁ and v₂. Add the two equations to eliminate v₂, then subtract to eliminate v₁.",
+      "notations": "Adding: v₀(m₁√3 - m₂ + m₁ + m₂√3) = 2√2 m₁v₁\nSubtracting: v₀(m₁√3 - m₂ - m₁ - m₂√3) = -2√2 m₂v₂"
+    },
+    {
+      "explanation": "Solve for v₁ by simplifying the addition result.",
+      "notations": "v₁ = v₀[m₁(√3 + 1) + m₂(√3 - 1)] / (2√2 m₁) = (v₀/2√2)[(√3 + 1) + (m₂/m₁)(√3 - 1)]"
+    },
+    {
+      "explanation": "Solve for v₂ by simplifying the subtraction result.",
+      "notations": "v₂ = v₀[m₁(1 - √3) + m₂(1 + √3)] / (2√2 m₂) = (v₀/2√2)[(√3 + 1) + (m₁/m₂)(1 - √3)]"
+    }
+  ]
+}

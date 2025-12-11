@@ -1,0 +1,44 @@
+{
+  "problem": "A novice skier, starting from rest, slides down a frictionless 13.0° incline whose vertical height is 125m. How fast is she going when she reaches the bottom? Use two approaches (a) Newton's 2nd law and kinematics equations (2) Energy conservation to solve this problem. These two approaches result in the same answer.",
+  "source": "Midterm 2 - Problem 4",
+  "sourceFile": "sources/MT2 FA25 solution.docx",
+  "chapter": "Midterm 2 Review",
+  "variables": [
+    {
+      "symbol": "h",
+      "meaning": "height"
+    },
+    {
+      "symbol": "θ",
+      "meaning": "angle"
+    },
+    {
+      "symbol": "g",
+      "meaning": "gravitational acceleration"
+    },
+    {
+      "symbol": "v",
+      "meaning": "speed at bottom (m/s)"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Energy method",
+      "formula": "m g h = ½ m v² ⇒ v = √(2 g h)"
+    },
+    {
+      "name": "Kinematics along incline",
+      "formula": "a = g sinθ,  L = h / sinθ,  v² = 2 a L"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "Using energy conservation (no friction), convert potential energy into kinetic energy.",
+      "notations": "v = √(2 × 9.80 × 125) ≈ 50 m/s"
+    },
+    {
+      "explanation": "Alternatively, use Newton’s second law to find acceleration along the slope and the same final speed.",
+      "notations": "a = g sin13°, L = h / sin13°,  v² = 2 a L → v ≈ 50 m/s"
+    }
+  ]
+}

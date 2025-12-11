@@ -1,0 +1,44 @@
+{
+  "problem": "An arrow with a mass of 85 grams is launched from a bow. The bowstring applies an average force of 105 N to the arrow over a distance of 75 cm. Determine the speed of the arrow as it leaves the bow.",
+  "source": "Quiz 6 - Problem 3",
+  "sourceFile": "sources/Quiz6_FA25.pdf",
+  "chapter": "Quiz 6 Review",
+  "variables": [
+    {
+      "symbol": "m",
+      "meaning": "mass of arrow"
+    },
+    {
+      "symbol": "F₍avg₎",
+      "meaning": "force, average string force"
+    },
+    {
+      "symbol": "d",
+      "meaning": "distance over which bowstring acts"
+    },
+    {
+      "symbol": "v",
+      "meaning": "launch speed (m/s)"
+    },
+    {
+      "symbol": "W",
+      "meaning": "work done (J)"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Work–energy theorem",
+      "formula": "W = F₍avg₎ d = ½ m v²"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "Compute the work done by the string.",
+      "notations": "W = 105 × 0.75 = 78.8 J"
+    },
+    {
+      "explanation": "Set the work equal to the kinetic energy and solve for v.",
+      "notations": "v = √(2 W / m) = √[2(78.8)/0.085] ≈ 43 m/s"
+    }
+  ]
+}

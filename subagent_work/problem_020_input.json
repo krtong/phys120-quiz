@@ -1,0 +1,32 @@
+{
+  "problem": "You are trying to decide between two new stereo amplifiers. One is rated at 75 W per channel and the other is rated at 120 W per channel. In terms of dB, how much louder will the more powerful amplifier be when both are producing sound at their maximum levels?",
+  "source": "Quiz 10 - Problem 4",
+  "sourceFile": "sources/Quiz10 FA25 solution.docx",
+  "chapter": "Quiz 10: Oscillations & Waves",
+  "variables": [
+    {
+      "symbol": "P₁",
+      "meaning": "output power of lower-rated amplifier"
+    },
+    {
+      "symbol": "P₂",
+      "meaning": "output power of higher-rated amplifier"
+    },
+    {
+      "symbol": "Δβ",
+      "meaning": "difference in sound level (dB)"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Sound level difference",
+      "formula": "Δβ = 10 log₁₀(P₂ / P₁)"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "Assuming comparable speakers and efficiencies, sound level scales with acoustic power; take the decibel difference.",
+      "notations": "Δβ = 10 log₁₀(120 / 75) = 10 log₁₀(1.60) ≈ 2.0 dB"
+    }
+  ]
+}

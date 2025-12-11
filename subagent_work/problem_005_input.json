@@ -1,0 +1,64 @@
+{
+  "problem": "(a) For a car traveling with speed v around a curve of radius r, determine a formula for the angle at which a road should be banked so that no friction is required. (b) What is this angle for a road which has a curve of radius 50 m with a design speed of 50 km/h?",
+  "source": "PS_Chap5_II.pdf - Problem 6",
+  "sourceFile": "sources/PS_Chap5_II.pdf",
+  "chapter": "Chapter 5: Circular Motion & Gravitation",
+  "variables": [
+    {
+      "symbol": "v",
+      "meaning": "speed of car"
+    },
+    {
+      "symbol": "r",
+      "meaning": "radius of curve"
+    },
+    {
+      "symbol": "θ",
+      "meaning": "bank angle relative to horizontal"
+    },
+    {
+      "symbol": "g",
+      "meaning": "gravitational acceleration near Earth"
+    },
+    {
+      "symbol": "v₍design₎",
+      "meaning": "speed, design specification"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Force components on a banked curve",
+      "formula": "N cosθ = mg,   N sinθ = m v² / r"
+    },
+    {
+      "name": "Bank angle without reliance on friction",
+      "formula": "tanθ = v² / (rg)"
+    },
+    {
+      "name": "Speed conversion",
+      "formula": "v (m/s) = (50 km/h)(1000 m / km) / (3600 s / h) ≈ 13.9 m/s"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "On a frictionless bank, the normal force provides the necessary centripetal component while also balancing the weight perpendicular to the surface.",
+      "notations": "N cosθ = mg,  N sinθ = m v² / r"
+    },
+    {
+      "explanation": "Divide the force equations to eliminate N and solve for the banking angle.",
+      "notations": "tanθ = (N sinθ) / (N cosθ) = v² / (rg)"
+    },
+    {
+      "explanation": "Convert the stated design speed into SI units.",
+      "notations": "v₍design₎ = 50 km/h = 13.9 m/s"
+    },
+    {
+      "explanation": "Evaluate the tangent of the bank angle for the specified radius.",
+      "notations": "tanθ = (13.9 m/s)² / [(50.0 m)(9.80 m/s²)] ≈ 0.394"
+    },
+    {
+      "explanation": "Take the inverse tangent to find the physical bank angle.",
+      "notations": "θ = arctan(0.394) ≈ 21.5°"
+    }
+  ]
+}

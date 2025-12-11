@@ -1,0 +1,72 @@
+{
+  "problem": "Show that the rms speed of molecules in a gas is given by v₍rms₎ = √(3P/ρ), where P is the pressure in the gas and ρ is the gas density.",
+  "source": "PS Chap13 FA25.pdf - Problem 7",
+  "sourceFile": "sources/PS Chap13 FA25.pdf",
+  "chapter": "Chapter 13: Temperature & Kinetic Theory",
+  "variables": [
+    {
+      "symbol": "v₍rms₎",
+      "meaning": "root-mean-square molecular speed"
+    },
+    {
+      "symbol": "P",
+      "meaning": "gas pressure"
+    },
+    {
+      "symbol": "ρ",
+      "meaning": "gas density"
+    },
+    {
+      "symbol": "k₍B₎",
+      "meaning": "Boltzmann constant"
+    },
+    {
+      "symbol": "T",
+      "meaning": "absolute temperature"
+    },
+    {
+      "symbol": "m",
+      "meaning": "mass"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "RMS speed from kinetic theory",
+      "formula": "v₍rms₎ = √(3k₍B₎ T / m)"
+    },
+    {
+      "name": "Ideal gas law",
+      "formula": "PV = Nk₍B₎T"
+    },
+    {
+      "name": "Density definition",
+      "formula": "ρ = Nm/V"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "Start with the fundamental rms speed formula from kinetic theory.",
+      "notations": "v₍rms₎ = √(3k₍B₎T/m)"
+    },
+    {
+      "explanation": "Use the ideal gas law to express k₍B₎T in terms of pressure.",
+      "notations": "PV = Nk₍B₎T  →  k₍B₎T = PV/N"
+    },
+    {
+      "explanation": "Substitute k₍B₎T = PV/N into the rms speed formula.",
+      "notations": "v₍rms₎ = √(3(PV/N)/m) = √(3PV/(Nm))"
+    },
+    {
+      "explanation": "Simplify by rearranging the expression.",
+      "notations": "v₍rms₎ = √(3PV/(Nm)) = √(3P/(Nm/V))"
+    },
+    {
+      "explanation": "Recognize that Nm/V equals the gas density ρ.",
+      "notations": "ρ = Nm/V"
+    },
+    {
+      "explanation": "Substitute ρ for Nm/V to obtain the final result.",
+      "notations": "v₍rms₎ = √(3P/ρ)"
+    }
+  ]
+}

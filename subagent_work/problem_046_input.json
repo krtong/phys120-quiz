@@ -1,0 +1,56 @@
+{
+  "problem": "Estimate the kinetic energy of the Earth with respect to the Sun as the sum of two terms, (a) that due to its daily rotation about its axis, and (b) that due to its yearly revolution about the Sun. [Assume the Earth is a uniform sphere with mass=6.0×10²⁴ kg, radius=6.4×10⁶ m, and is 1.5×10⁸ km from the Sun.]",
+  "source": "PS_Chap8.pdf - Problem 12",
+  "sourceFile": "sources/PS_Chap8.pdf",
+  "chapter": "Chapter 8: Rotational Motion",
+  "variables": [
+    {
+      "symbol": "M₍E₎",
+      "meaning": "mass of Earth"
+    },
+    {
+      "symbol": "R₍E₎",
+      "meaning": "radius of Earth"
+    },
+    {
+      "symbol": "R₍orb₎",
+      "meaning": "radius of orbital"
+    },
+    {
+      "symbol": "ω₍day₎",
+      "meaning": "angular velocity of daily"
+    },
+    {
+      "symbol": "ω₍year₎",
+      "meaning": "angular velocity of yearly"
+    },
+    {
+      "symbol": "I₍sphere₎",
+      "meaning": "moment of inertia of sphere"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Rotational KE of a rigid body",
+      "formula": "K = ½ I ω²"
+    },
+    {
+      "name": "Orbital KE (treated as point mass)",
+      "formula": "K = ½ M₍E₎ (ω₍year₎ R₍orb₎)²"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "Daily rotation: compute I for a uniform sphere and multiply by ω₍day₎²/2.",
+      "notations": "K₍daily₎ = ½ (2/5 M₍E₎ R₍E₎²) ω₍day₎² ≈ 2.6 × 10²⁹ J"
+    },
+    {
+      "explanation": "Yearly revolution: treat Earth as a point mass at radius R₍orb₎.",
+      "notations": "K₍yearly₎ = ½ M₍E₎ (ω₍year₎ R₍orb₎)² ≈ 2.7 × 10³³ J"
+    },
+    {
+      "explanation": "Sum the contributions to get the total kinetic energy relative to the Sun.",
+      "notations": "K₍total₎ ≈ 2.7 × 10³³ J (orbital term dominates)"
+    }
+  ]
+}

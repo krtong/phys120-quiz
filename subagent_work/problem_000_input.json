@@ -1,0 +1,72 @@
+{
+  "problem": "A 150-g ball at the end of a string is revolving uniformly in a horizontal circle of radius 0.600 m. The ball makes 2.00 revolutions in a second. What is its centripetal acceleration?",
+  "source": "PS_Chap5_II.pdf - Problem 1",
+  "sourceFile": "sources/PS_Chap5_II.pdf",
+  "chapter": "Chapter 5: Circular Motion & Gravitation",
+  "variables": [
+    {
+      "symbol": "m",
+      "meaning": "mass of the ball"
+    },
+    {
+      "symbol": "r",
+      "meaning": "radius of circular path"
+    },
+    {
+      "symbol": "f",
+      "meaning": "rotational frequency"
+    },
+    {
+      "symbol": "T",
+      "meaning": "period of rotation"
+    },
+    {
+      "symbol": "v",
+      "meaning": "linear (tangential) speed"
+    },
+    {
+      "symbol": "a₍c₎",
+      "meaning": "acceleration, centripetal component"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Period–frequency relation",
+      "formula": "T = 1 / f"
+    },
+    {
+      "name": "Linear speed from rotational frequency",
+      "formula": "v = 2πrf"
+    },
+    {
+      "name": "Centripetal acceleration",
+      "formula": "a₍c₎ = v² / r"
+    },
+    {
+      "name": "Centripetal acceleration (frequency form)",
+      "formula": "a₍c₎ = 4π²rf²"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "Uniform circular motion requires a centripetal acceleration directed toward the center; its magnitude can be written either in terms of linear speed or rotational frequency.",
+      "notations": "a₍c₎ = v² / r = 4π²rf²"
+    },
+    {
+      "explanation": "Relate the given revolution rate to the period of motion to check consistency.",
+      "notations": "T = 1 / f = 1 / (2.00 /s) = 0.500 s"
+    },
+    {
+      "explanation": "Compute the tangential speed using the circumference traversed in each revolution.",
+      "notations": "v = 2πrf = 2π(0.600 m)(2.00 /s) = 2.4π ≈ 7.54 m/s"
+    },
+    {
+      "explanation": "Insert the speed and radius into the centripetal acceleration expression.",
+      "notations": "a₍c₎ = v² / r = (7.54 m/s)² / 0.600 m ≈ 9.47 × 10¹ m/s²"
+    },
+    {
+      "explanation": "State the final magnitude (about 9.7 g) directed toward the center of the circular path.",
+      "notations": "a₍c₎ ≈ 9.5 × 10¹ m/s² inward"
+    }
+  ]
+}

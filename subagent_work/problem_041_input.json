@@ -1,0 +1,32 @@
+{
+  "problem": "Determine the moment of inertia of a 10.8-kg sphere of radius 0.648 m when the axis of rotation is through its center.",
+  "source": "PS_Chap8.pdf - Problem 7",
+  "sourceFile": "sources/PS_Chap8.pdf",
+  "chapter": "Chapter 8: Rotational Motion",
+  "variables": [
+    {
+      "symbol": "M",
+      "meaning": "mass of sphere"
+    },
+    {
+      "symbol": "R",
+      "meaning": "sphere radius"
+    },
+    {
+      "symbol": "I",
+      "meaning": "moment of inertia about central axis"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Solid sphere moment of inertia",
+      "formula": "I = (2/5) M R²"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "Insert the given mass and radius into the solid-sphere formula.",
+      "notations": "I = (2/5)(10.8 kg)(0.648 m)² ≈ 1.8 kg·m²"
+    }
+  ]
+}

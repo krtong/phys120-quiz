@@ -1,0 +1,48 @@
+{
+  "problem": "It takes a force of 91.0 N to compress the spring of a toy popgun 0.175 m to \"load\" a 0.160-kg ball. With what speed will the ball leave the gun if fired horizontally?",
+  "source": "PS Chap11 and 12.pdf - Problem 3",
+  "sourceFile": "sources/PS Chap11 and 12.pdf",
+  "chapter": "Chapters 11–12: Oscillations & Waves",
+  "variables": [
+    {
+      "symbol": "→F",
+      "meaning": "loading force needed to compress spring"
+    },
+    {
+      "symbol": "x",
+      "meaning": "compression distance"
+    },
+    {
+      "symbol": "k",
+      "meaning": "spring constant (N/m)"
+    },
+    {
+      "symbol": "m",
+      "meaning": "mass of ball"
+    },
+    {
+      "symbol": "v",
+      "meaning": "launch speed (m/s)"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Hooke’s law for effective spring constant",
+      "formula": "k = F / x"
+    },
+    {
+      "name": "Energy conservation",
+      "formula": "½ k x² = ½ m v²"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "Determine k from the loading force and displacement.",
+      "notations": "k = 91.0 / 0.175 ≈ 5.2 × 10² N/m"
+    },
+    {
+      "explanation": "Convert stored spring energy entirely into the ball’s kinetic energy.",
+      "notations": "v = x √(k / m) ≈ 0.175 √(520/0.160) ≈ 1.0 × 10¹ m/s"
+    }
+  ]
+}

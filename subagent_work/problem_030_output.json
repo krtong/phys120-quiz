@@ -1,0 +1,52 @@
+{
+  "problem": "Two railroad cars, each of mass 56,000 kg, are traveling 95 km/h toward each other. They collide head-on and come to rest. How much thermal energy is produced in this collision?",
+  "source": "PS Chap6.pdf - Problem 9",
+  "sourceFile": "sources/PS Chap6.pdf",
+  "chapter": "Chapter 6: Work & Energy",
+  "variables": [
+    {
+      "symbol": "m",
+      "meaning": "mass of each railroad car"
+    },
+    {
+      "symbol": "v",
+      "meaning": "speed magnitude of each car"
+    },
+    {
+      "symbol": "K₍each₎",
+      "meaning": "kinetic energy of one car (J)"
+    },
+    {
+      "symbol": "ΔEₜ",
+      "meaning": "thermal energy generated (J)"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Kinetic energy",
+      "formula": "K = ½mv²"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "State the fundamental formula to be used for kinetic energy.",
+      "notations": "K = ½mv²"
+    },
+    {
+      "explanation": "Define the variables with values given in the problem.",
+      "notations": "m = 56,000 kg = 5.60 × 10⁴ kg, v = 95 km/h = 95 × (1000 m)/(3600 s) = 26.4 m/s"
+    },
+    {
+      "explanation": "Substitute the numerical values into the kinetic energy formula for one car.",
+      "notations": "K₍each₎ = ½ (5.60 × 10⁴ kg)(26.4 m/s)²"
+    },
+    {
+      "explanation": "Calculate the kinetic energy of one car.",
+      "notations": "K₍each₎ = ½ (5.60 × 10⁴ kg)(696.96 m²/s²) = ½ (3.903 × 10⁷ kg·m²/s²) ≈ 2.0 × 10⁷ J"
+    },
+    {
+      "explanation": "Calculate the total thermal energy produced. Since both cars had kinetic energy and came to rest, the total kinetic energy lost equals the thermal energy produced.",
+      "notations": "ΔEₜ = 2K₍each₎ = 2(2.0 × 10⁷ J) = 4.0 × 10⁷ J"
+    }
+  ]
+}

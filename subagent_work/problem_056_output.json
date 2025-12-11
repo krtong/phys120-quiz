@@ -1,0 +1,60 @@
+{
+  "problem": "The gauge pressure in each of the four tires of an automobile is 240 kPa. If each tire has a \"footprint\" of 190 cm² (area touching the ground), estimate the mass of the car.",
+  "source": "PS Chap10.pdf - Problem 2",
+  "sourceFile": "sources/PS Chap10.pdf",
+  "chapter": "Chapter 10: Fluids",
+  "variables": [
+    {
+      "symbol": "P₍g₎",
+      "meaning": "gauge pressure in each tire"
+    },
+    {
+      "symbol": "A₍tire₎",
+      "meaning": "contact area per tire"
+    },
+    {
+      "symbol": "N",
+      "meaning": "number of tires"
+    },
+    {
+      "symbol": "g",
+      "meaning": "gravitational acceleration near Earth"
+    },
+    {
+      "symbol": "m₍car₎",
+      "meaning": "vehicle mass"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Force from pressure",
+      "formula": "F = PA"
+    },
+    {
+      "name": "Weight",
+      "formula": "W = mg"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "We will use the pressure formula F = PA to find the force from each tire, and the weight formula W = mg. The total upward force from all tires must equal the weight of the car.",
+      "notations": "F = PA and W = mg"
+    },
+    {
+      "explanation": "Define the given values from the problem.",
+      "notations": "P₍g₎ = 240 kPa = 2.40 × 10⁵ Pa, A₍tire₎ = 190 cm² = 1.90 × 10⁻² m², N = 4 tires, g = 9.80 m/s²"
+    },
+    {
+      "explanation": "Calculate the upward force from each tire using the pressure formula.",
+      "notations": "F₍per tire₎ = P₍g₎ A₍tire₎ = (2.40 × 10⁵ Pa)(1.90 × 10⁻² m²) = 4.56 × 10³ N"
+    },
+    {
+      "explanation": "The total upward force from all four tires equals the weight of the car.",
+      "notations": "N F₍per tire₎ = W₍car₎ = m₍car₎ g"
+    },
+    {
+      "explanation": "Substitute the values and solve for the mass of the car.",
+      "notations": "m₍car₎ = (N F₍per tire₎) / g = (4 × 4.56 × 10³ N) / (9.80 m/s²) = (1.824 × 10⁴ N) / (9.80 m/s²) ≈ 1.9 × 10³ kg"
+    }
+  ]
+}

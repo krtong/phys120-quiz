@@ -1,0 +1,44 @@
+{
+  "problem": "The speed of waves on a string is 97 m/s. If the frequency of standing waves is 475 Hz, how far apart are two adjacent nodes?",
+  "source": "PS Chap11 and 12.pdf - Problem 8",
+  "sourceFile": "sources/PS Chap11 and 12.pdf",
+  "chapter": "Chapters 11–12: Oscillations & Waves",
+  "variables": [
+    {
+      "symbol": "v",
+      "meaning": "speed"
+    },
+    {
+      "symbol": "f",
+      "meaning": "frequency"
+    },
+    {
+      "symbol": "λ",
+      "meaning": "wavelength"
+    },
+    {
+      "symbol": "Δx₍node₎",
+      "meaning": "distance between adjacent nodes"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Standing-wave wavelength",
+      "formula": "λ = v / f"
+    },
+    {
+      "name": "Node spacing",
+      "formula": "Δx₍node₎ = λ / 2"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "Compute the wavelength from the given speed and frequency.",
+      "notations": "λ = 97 / 475 ≈ 0.204 m"
+    },
+    {
+      "explanation": "Nodes are half a wavelength apart on a fixed string.",
+      "notations": "Δx₍node₎ = λ/2 ≈ 0.102 m (≈ 0.10 m)"
+    }
+  ]
+}

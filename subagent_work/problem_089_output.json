@@ -1,0 +1,72 @@
+{
+  "problem": "A car of mass m is running on a banked circular track where the banked surface has an angle θ with respect to the horizontal line. The car moves with a horizontal radius R from the symmetric axis of the circular track. Assume negligible friction between the tires and the surface. The car runs at a constant speed. Find the speed v of the car in terms of the given variables and relevant physical constants.",
+  "source": "Quiz 5 - Problem 3",
+  "sourceFile": "sources/Quiz5_FA25_solution.pdf",
+  "chapter": "Quiz 5 Review",
+  "variables": [
+    {
+      "symbol": "m",
+      "meaning": "car mass (cancels)"
+    },
+    {
+      "symbol": "θ",
+      "meaning": "bank angle"
+    },
+    {
+      "symbol": "R",
+      "meaning": "curve radius"
+    },
+    {
+      "symbol": "g",
+      "meaning": "gravitational acceleration"
+    },
+    {
+      "symbol": "v",
+      "meaning": "design speed"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Newton's second law",
+      "formula": "ΣF = ma"
+    },
+    {
+      "name": "Centripetal acceleration",
+      "formula": "a_c = v²/R"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "We will use Newton's second law (ΣF = ma) in both vertical and horizontal directions, and the centripetal acceleration formula (a_c = v²/R).",
+      "notations": "ΣF = ma,   a_c = v²/R"
+    },
+    {
+      "explanation": "Identify the forces: The car experiences a normal force N from the banked surface and gravitational force mg. The normal force has components N cosθ (vertical) and N sinθ (horizontal toward the center).",
+      "notations": "Forces: N (normal force), mg (weight)"
+    },
+    {
+      "explanation": "Apply Newton's second law in the vertical direction. Since there is no vertical acceleration, the vertical forces balance.",
+      "notations": "ΣF_vertical = 0:   N cosθ = mg"
+    },
+    {
+      "explanation": "Apply Newton's second law in the horizontal direction. The horizontal component of the normal force provides the centripetal force.",
+      "notations": "ΣF_horizontal = ma_c:   N sinθ = m(v²/R)"
+    },
+    {
+      "explanation": "Divide the horizontal equation by the vertical equation to eliminate N and m.",
+      "notations": "(N sinθ)/(N cosθ) = [m(v²/R)]/(mg)"
+    },
+    {
+      "explanation": "Simplify the equation.",
+      "notations": "tanθ = v²/(Rg)"
+    },
+    {
+      "explanation": "Solve for the speed v.",
+      "notations": "v² = Rg tanθ"
+    },
+    {
+      "explanation": "Take the square root to obtain the final answer.",
+      "notations": "v = √(Rg tanθ)"
+    }
+  ]
+}

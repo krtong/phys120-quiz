@@ -1,0 +1,60 @@
+{
+  "problem": "Rifle recoil. Calculate the recoil velocity of a 5.0-kg rifle that shoots a 0.020-kg bullet at a speed of 620 m/s.",
+  "source": "PS Chap7 - Example 7-5",
+  "sourceFile": "sources/PS Chap7 and solution.pdf",
+  "chapter": "Chapter 7: Momentum & Collisions",
+  "variables": [
+    {
+      "symbol": "m₍r₎",
+      "meaning": "rifle mass"
+    },
+    {
+      "symbol": "m₍b₎",
+      "meaning": "bullet mass"
+    },
+    {
+      "symbol": "v₍b₎",
+      "meaning": "bullet speed relative to ground"
+    },
+    {
+      "symbol": "→v₍r₎",
+      "meaning": "recoil velocity of rifle"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Momentum",
+      "formula": "p = mv"
+    },
+    {
+      "name": "Conservation of momentum",
+      "formula": "p_initial = p_final"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "We will use conservation of momentum. The total momentum before firing equals the total momentum after firing.",
+      "notations": "p_initial = p_final"
+    },
+    {
+      "explanation": "Define the variables from the problem.",
+      "notations": "Given: m_b = 0.020 kg, v_b = 620 m/s, m_r = 5.0 kg"
+    },
+    {
+      "explanation": "Before firing, the gun-plus-bullet system is at rest, so the initial momentum is zero. After firing, the total momentum is the sum of bullet and rifle momenta.",
+      "notations": "0 = m_b v_b + m_r v_r"
+    },
+    {
+      "explanation": "Solve for the recoil velocity v_r.",
+      "notations": "v_r = −(m_b / m_r) v_b"
+    },
+    {
+      "explanation": "Substitute the numerical values into the equation.",
+      "notations": "v_r = −(0.020 kg / 5.0 kg)(620 m/s)"
+    },
+    {
+      "explanation": "Calculate the final answer. The negative sign indicates the rifle recoils in the opposite direction to the bullet.",
+      "notations": "v_r = −(0.004)(620 m/s) = −2.5 m/s"
+    }
+  ]
+}

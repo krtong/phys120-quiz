@@ -1,0 +1,85 @@
+{
+  "problem": "A pendulum consists of a mass M hanging at the bottom end of a massless rod of length ℓ, which has a frictionless pivot at its top end. A mass m, moving as shown in the figure with velocity v, impacts M and becomes embedded. What is the smallest value of v sufficient to cause the pendulum (with embedded mass m) to swing clear over the top of its arc?",
+  "source": "Midterm 2 - Problem 3",
+  "sourceFile": "sources/MT2 FA25 solution.docx",
+  "image": "images/midterm2-problem3.png",
+  "chapter": "Midterm 2 Review",
+  "variables": [
+    {
+      "symbol": "M",
+      "meaning": "pendulum bob mass"
+    },
+    {
+      "symbol": "m",
+      "meaning": "projectile mass"
+    },
+    {
+      "symbol": "ℓ",
+      "meaning": "pendulum length"
+    },
+    {
+      "symbol": "→v",
+      "meaning": "projectile speed before impact"
+    },
+    {
+      "symbol": "v'",
+      "meaning": "speed of combined mass immediately after impact"
+    },
+    {
+      "symbol": "g",
+      "meaning": "gravitational acceleration"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Conservation of momentum",
+      "formula": "p_initial = p_final"
+    },
+    {
+      "name": "Kinetic energy",
+      "formula": "KE = ½mv²"
+    },
+    {
+      "name": "Gravitational potential energy",
+      "formula": "PE = mgh"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "We will use conservation of momentum for the perfectly inelastic collision, and energy conservation for the pendulum swing.",
+      "notations": "p_initial = p_final and KE = PE"
+    },
+    {
+      "explanation": "Define variables: projectile mass m with initial velocity v, pendulum bob mass M, rod length ℓ, combined mass velocity after impact v', and the height the pendulum must rise is 2ℓ (from bottom to top).",
+      "notations": "Given: masses m and M, length ℓ, initial velocity v, gravitational acceleration g"
+    },
+    {
+      "explanation": "Apply conservation of momentum to the collision. The initial momentum is mv (only the projectile is moving), and the final momentum is (M + m)v' (both masses move together).",
+      "notations": "m v = (M + m) v'"
+    },
+    {
+      "explanation": "Solve for the velocity immediately after impact.",
+      "notations": "v' = (m/(M + m)) v"
+    },
+    {
+      "explanation": "For the pendulum to swing over the top, the kinetic energy immediately after impact must be at least equal to the potential energy gained when rising from bottom to top (height change = 2ℓ).",
+      "notations": "½ (M + m) v'² ≥ (M + m) g (2ℓ)"
+    },
+    {
+      "explanation": "Simplify by canceling (M + m) from both sides.",
+      "notations": "½ v'² ≥ 2gℓ"
+    },
+    {
+      "explanation": "Solve for v'.",
+      "notations": "v'² ≥ 4gℓ ⇒ v' ≥ √(4gℓ) = 2√(gℓ)"
+    },
+    {
+      "explanation": "Substitute the expression for v' in terms of v from the momentum equation.",
+      "notations": "(m/(M + m)) v ≥ 2√(gℓ)"
+    },
+    {
+      "explanation": "Solve for the minimum initial velocity v.",
+      "notations": "v ≥ (M + m)/m × 2√(gℓ)"
+    }
+  ]
+}

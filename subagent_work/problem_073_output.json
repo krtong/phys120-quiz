@@ -1,0 +1,60 @@
+{
+  "problem": "The lowest pressure attainable using the best available vacuum techniques is about 10⁻¹² N/m². At such a pressure, how many molecules are there per cm³ at 0°C?",
+  "source": "PS Chap13 FA25.pdf - Problem 5",
+  "sourceFile": "sources/PS Chap13 FA25.pdf",
+  "chapter": "Chapter 13: Temperature & Kinetic Theory",
+  "variables": [
+    {
+      "symbol": "P",
+      "meaning": "gas pressure"
+    },
+    {
+      "symbol": "T",
+      "meaning": "absolute temperature"
+    },
+    {
+      "symbol": "k₍B₎",
+      "meaning": "Boltzmann constant"
+    },
+    {
+      "symbol": "V",
+      "meaning": "gas volume"
+    },
+    {
+      "symbol": "N",
+      "meaning": "number of molecules in V"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Ideal gas law (microscopic form)",
+      "formula": "P V = N k₍B₎ T"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "Start with the ideal gas law in microscopic form",
+      "notations": "P V = N k₍B₎ T"
+    },
+    {
+      "explanation": "Define the variables from the problem",
+      "notations": "P = 1.0 × 10⁻¹² N/m², T = 0°C = 273 K, V = 1 cm³ = 1.0 × 10⁻⁶ m³, k₍B₎ = 1.38 × 10⁻²³ J/K"
+    },
+    {
+      "explanation": "Solve for N by rearranging the ideal gas law",
+      "notations": "N = P V / (k₍B₎ T)"
+    },
+    {
+      "explanation": "Substitute the numerical values into the formula",
+      "notations": "N = (1.0 × 10⁻¹² N/m²)(1.0 × 10⁻⁶ m³) / [(1.38 × 10⁻²³ J/K)(273 K)]"
+    },
+    {
+      "explanation": "Calculate the numerator and denominator",
+      "notations": "N = (1.0 × 10⁻¹⁸ N·m) / (3.77 × 10⁻²¹ J)"
+    },
+    {
+      "explanation": "Complete the calculation to find the number of molecules",
+      "notations": "N = (1.0 × 10⁻¹⁸) / (3.77 × 10⁻²¹) ≈ 2.65 × 10² ≈ 3.0 × 10² molecules/cm³"
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "problem": "The platter of the hard drive of a computer rotates at 7200 rpm, rpm=revolutions per minute=rev/min. (a) What is the angular velocity (rad/s) of the platter? (b) If the reading head of the drive is located 3.00 cm from the rotation axis, what is the linear speed of the point on the platter just below it? (c) If a single bit requires 0.50 μm of length along the direction of motion, how many bits per second can the writing head write when it is 3.00 cm from the axis?",
+  "source": "Quiz 8 - Problem 2",
+  "sourceFile": "sources/Quiz 8 solution FA25.docx",
+  "chapter": "Quiz 8: Angular Kinematics",
+  "variables": [
+    {
+      "symbol": "f₍rpm₎",
+      "meaning": "rotation rate, revolutions per minute"
+    },
+    {
+      "symbol": "f",
+      "meaning": "rotational frequency, revolutions per second"
+    },
+    {
+      "symbol": "ω",
+      "meaning": "angular speed of platter"
+    },
+    {
+      "symbol": "r",
+      "meaning": "radius to read/write head"
+    },
+    {
+      "symbol": "v",
+      "meaning": "linear speed at radius r"
+    },
+    {
+      "symbol": "ℓ₍bit₎",
+      "meaning": "length per bit"
+    },
+    {
+      "symbol": "R₍bit₎",
+      "meaning": "bit rate"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Angular velocity from frequency",
+      "formula": "ω = 2πf"
+    },
+    {
+      "name": "Linear speed from angular velocity",
+      "formula": "v = ωr"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "State the fundamental formulas to be used: angular velocity from frequency (ω = 2πf) and linear speed from angular velocity (v = ωr).",
+      "notations": "ω = 2πf, v = ωr"
+    },
+    {
+      "explanation": "Define the given values from the problem.",
+      "notations": "f₍rpm₎ = 7200 rpm, r = 3.00 cm = 0.0300 m, ℓ₍bit₎ = 0.50 μm = 5.0 × 10⁻⁷ m"
+    },
+    {
+      "explanation": "Convert the rotation rate from revolutions per minute to revolutions per second.",
+      "notations": "f = 7200 rpm × (1 min / 60 s) = 120 rev/s"
+    },
+    {
+      "explanation": "Substitute the frequency into the angular velocity formula ω = 2πf.",
+      "notations": "ω = 2π(120 rev/s) = 240π rad/s"
+    },
+    {
+      "explanation": "Calculate the numerical value of the angular velocity.",
+      "notations": "ω = 240π rad/s ≈ 754 rad/s = 7.54 × 10² rad/s"
+    },
+    {
+      "explanation": "Substitute the angular velocity and radius into the linear speed formula v = ωr.",
+      "notations": "v = (240π rad/s)(0.0300 m) = 7.2π m/s"
+    },
+    {
+      "explanation": "Calculate the numerical value of the linear speed.",
+      "notations": "v = 7.2π m/s ≈ 22.6 m/s = 2.26 × 10¹ m/s"
+    },
+    {
+      "explanation": "Calculate the bit rate by dividing the linear speed by the length per bit.",
+      "notations": "R₍bit₎ = v / ℓ₍bit₎ = 22.6 m/s / (5.0 × 10⁻⁷ m)"
+    },
+    {
+      "explanation": "Compute the final bit rate.",
+      "notations": "R₍bit₎ = 4.52 × 10⁷ bits/s ≈ 4.5 × 10⁷ bits/s"
+    }
+  ]
+}

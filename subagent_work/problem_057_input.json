@@ -1,0 +1,40 @@
+{
+  "problem": "Water and then oil (which don't mix) are poured into a U-shaped tube, open at both ends. They come to equilibrium as shown in the figure. What is the density of the oil? [Hint: Pressures at points a and b are equal. Why?]",
+  "source": "PS Chap10.pdf - Problem 3",
+  "sourceFile": "sources/PS Chap10.pdf",
+  "chapter": "Chapter 10: Fluids",
+  "variables": [
+    {
+      "symbol": "ρ₍w₎",
+      "meaning": "density of water"
+    },
+    {
+      "symbol": "h₍oil₎",
+      "meaning": "height of oil column above interface"
+    },
+    {
+      "symbol": "h₍water₎",
+      "meaning": "height of displaced water column"
+    },
+    {
+      "symbol": "ρ₍oil₎",
+      "meaning": "unknown oil density (kg/m³)"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Hydrostatic pressure balance in connected columns",
+      "formula": "P₀ + ρ₍oil₎ g h₍oil₎ = P₀ + ρ₍w₎ g h₍water₎"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "Points at equal depth in the connected fluid share the same pressure, so equate pressures at levels a and b.",
+      "notations": "ρ₍oil₎ h₍oil₎ = ρ₍w₎ h₍water₎"
+    },
+    {
+      "explanation": "Solve for oil density using the measured column heights.",
+      "notations": "ρ₍oil₎ = ρ₍w₎ (h₍water₎ / h₍oil₎) = (1.00 × 10³)(0.1858 / 0.272) ≈ 6.8 × 10² kg/m³"
+    }
+  ]
+}

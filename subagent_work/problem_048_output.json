@@ -1,0 +1,116 @@
+{
+  "problem": "Two masses, m₍A₎ = 32.0 kg and m₍B₎ = 38.0 kg, are connected by a rope that hangs over a pulley (as in the figure). The pulley is a uniform cylinder of radius R = 0.311 m and mass 3.1 kg. Initially m₍A₎ is on the ground and m₍B₎ rests 2.5 m above the ground. If the system is released, use conservation of energy to determine the speed of m₍B₎ just before it strikes the ground. Assume the pulley bearing is frictionless.",
+  "source": "PS_Chap8.pdf - Problem 14",
+  "sourceFile": "sources/PS_Chap8.pdf",
+  "chapter": "Chapter 8: Rotational Motion",
+  "variables": [
+    {
+      "symbol": "m₍A₎",
+      "meaning": "mass of A"
+    },
+    {
+      "symbol": "m₍B₎",
+      "meaning": "mass of B"
+    },
+    {
+      "symbol": "M₍p₎",
+      "meaning": "mass of pulley"
+    },
+    {
+      "symbol": "R",
+      "meaning": "radius"
+    },
+    {
+      "symbol": "h",
+      "meaning": "height"
+    },
+    {
+      "symbol": "g",
+      "meaning": "gravitational acceleration"
+    },
+    {
+      "symbol": "v",
+      "meaning": "speed of masses just before impact"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Conservation of energy",
+      "formula": "E_initial = E_final"
+    },
+    {
+      "name": "Gravitational potential energy",
+      "formula": "PE = mgh"
+    },
+    {
+      "name": "Kinetic energy",
+      "formula": "KE = ½mv²"
+    },
+    {
+      "name": "Rotational kinetic energy",
+      "formula": "KE_rot = ½Iω²"
+    },
+    {
+      "name": "Moment of inertia for uniform cylinder",
+      "formula": "I = ½MR²"
+    },
+    {
+      "name": "No-slip condition",
+      "formula": "v = ωR"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "State the fundamental formulas we will use: conservation of energy, kinetic energy, rotational kinetic energy, moment of inertia for a cylinder, and the no-slip condition.",
+      "notations": "E_initial = E_final, PE = mgh, KE = ½mv², KE_rot = ½Iω², I = ½MR², v = ωR"
+    },
+    {
+      "explanation": "Define the given variables from the problem.",
+      "notations": "m₍A₎ = 32.0 kg, m₍B₎ = 38.0 kg, M₍p₎ = 3.1 kg, R = 0.311 m, h = 2.5 m, g = 9.8 m/s²"
+    },
+    {
+      "explanation": "Set up the initial energy state: m₍B₎ has potential energy mgh relative to the ground, m₍A₎ is on the ground, and nothing is moving.",
+      "notations": "E_initial = m₍B₎ g h + 0 + 0 = m₍B₎ g h"
+    },
+    {
+      "explanation": "Set up the final energy state: just before m₍B₎ hits the ground, both masses are moving with speed v, the pulley is rotating with angular velocity ω, m₍B₎ has zero potential energy, and m₍A₎ has risen by height h.",
+      "notations": "E_final = m₍A₎ g h + ½ m₍A₎ v² + ½ m₍B₎ v² + ½ I ω²"
+    },
+    {
+      "explanation": "Apply conservation of energy to equate initial and final energy.",
+      "notations": "m₍B₎ g h = m₍A₎ g h + ½ m₍A₎ v² + ½ m₍B₎ v² + ½ I ω²"
+    },
+    {
+      "explanation": "Simplify the left side by combining potential energy terms.",
+      "notations": "(m₍B₎ − m₍A₎) g h = ½ m₍A₎ v² + ½ m₍B₎ v² + ½ I ω²"
+    },
+    {
+      "explanation": "Substitute the moment of inertia for the pulley and the no-slip condition.",
+      "notations": "(m₍B₎ − m₍A₎) g h = ½ m₍A₎ v² + ½ m₍B₎ v² + ½ (½ M₍p₎ R²)(v/R)²"
+    },
+    {
+      "explanation": "Simplify the rotational kinetic energy term.",
+      "notations": "(m₍B₎ − m₍A₎) g h = ½ m₍A₎ v² + ½ m₍B₎ v² + ¼ M₍p₎ v²"
+    },
+    {
+      "explanation": "Factor out v² from the kinetic energy terms.",
+      "notations": "(m₍B₎ − m₍A₎) g h = ½ v² (m₍A₎ + m₍B₎ + ½ M₍p₎)"
+    },
+    {
+      "explanation": "Solve for v algebraically.",
+      "notations": "v = √[2(m₍B₎ − m₍A₎) g h / (m₍A₎ + m₍B₎ + ½ M₍p₎)]"
+    },
+    {
+      "explanation": "Substitute the numerical values into the formula.",
+      "notations": "v = √[2(38.0 − 32.0)(9.8)(2.5) / (32.0 + 38.0 + ½(3.1))]"
+    },
+    {
+      "explanation": "Calculate the numerator and denominator.",
+      "notations": "v = √[2(6.0)(9.8)(2.5) / (70.0 + 1.55)] = √[294 / 71.55]"
+    },
+    {
+      "explanation": "Complete the calculation to find the final speed.",
+      "notations": "v = √4.109 ≈ 2.0 m/s"
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "problem": "Heat conduction to skin. Suppose 150 W of heat flows by conduction from the blood capillaries beneath the skin to the body's surface area of 1.5 m². If the temperature difference is 0.50 C°, estimate the average distance of capillaries below the skin surface.",
+  "source": "PS Chap14 FA25.pdf - Problem 7",
+  "sourceFile": "sources/PS Chap14 FA25.pdf",
+  "chapter": "Chapter 14: Heat",
+  "variables": [
+    {
+      "symbol": "P",
+      "meaning": "power"
+    },
+    {
+      "symbol": "k",
+      "meaning": "thermal conductivity of tissue"
+    },
+    {
+      "symbol": "A",
+      "meaning": "area"
+    },
+    {
+      "symbol": "ΔT",
+      "meaning": "temperature change"
+    },
+    {
+      "symbol": "ℓ",
+      "meaning": "depth of capillaries (m)"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Conduction rate",
+      "formula": "P = k A ΔT / ℓ"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "Solve Fourier’s law for the characteristic distance ℓ.",
+      "notations": "ℓ = k A ΔT / P = (0.20)(1.5)(0.50)/150 ≈ 1.0 × 10⁻³ m"
+    },
+    {
+      "explanation": "State the result (~1 mm beneath the skin).",
+      "notations": "ℓ ≈ 1 mm"
+    }
+  ]
+}

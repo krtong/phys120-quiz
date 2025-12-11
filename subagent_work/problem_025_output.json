@@ -1,0 +1,64 @@
+{
+  "problem": "How much work is required to stop an electron (m = 9.11×10⁻³¹ kg) which is moving with a speed of 1.40×10⁶ m/s?",
+  "source": "PS Chap6.pdf - Problem 4",
+  "sourceFile": "sources/PS Chap6.pdf",
+  "chapter": "Chapter 6: Work & Energy",
+  "variables": [
+    {
+      "symbol": "m",
+      "meaning": "mass of electron"
+    },
+    {
+      "symbol": "vᵢ",
+      "meaning": "initial speed of electron"
+    },
+    {
+      "symbol": "v₍f₎",
+      "meaning": "final speed after stopping"
+    },
+    {
+      "symbol": "K",
+      "meaning": "kinetic energy"
+    },
+    {
+      "symbol": "W",
+      "meaning": "work done by stopping force (J)"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Work-energy theorem",
+      "formula": "W = ΔK"
+    },
+    {
+      "name": "Kinetic energy",
+      "formula": "K = ½mv²"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "We will use the work-energy theorem and the kinetic energy formula.",
+      "notations": "W = ΔK and K = ½mv²"
+    },
+    {
+      "explanation": "Define variables from the problem.",
+      "notations": "Given: m = 9.11 × 10⁻³¹ kg, vᵢ = 1.40 × 10⁶ m/s, v₍f₎ = 0 m/s (stopped)"
+    },
+    {
+      "explanation": "Apply the work-energy theorem to find the work required.",
+      "notations": "W = ΔK = K₍f₎ − Kᵢ = ½m(v₍f₎)² − ½m(vᵢ)²"
+    },
+    {
+      "explanation": "Since the final speed is zero, the final kinetic energy is zero.",
+      "notations": "W = 0 − ½m(vᵢ)² = −½m(vᵢ)²"
+    },
+    {
+      "explanation": "Substitute the numerical values into the formula.",
+      "notations": "W = −½ (9.11 × 10⁻³¹ kg)(1.40 × 10⁶ m/s)²"
+    },
+    {
+      "explanation": "Calculate the work required.",
+      "notations": "W = −½ (9.11 × 10⁻³¹)(1.96 × 10¹²) J = −8.9 × 10⁻¹⁹ J"
+    }
+  ]
+}

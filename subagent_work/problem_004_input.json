@@ -1,0 +1,72 @@
+{
+  "problem": "A 1000-kg car rounds a curve on a flat road of radius 50 m at a speed of 15 m/s (54 km/h). Will the car follow the curve, or will it skid? Assume: (a) the pavement is dry and the coefficient of static friction is μₛ = 0.60; (b) the pavement is icy and μₛ = 0.25.",
+  "source": "PS_Chap5_II.pdf - Problem 5",
+  "sourceFile": "sources/PS_Chap5_II.pdf",
+  "chapter": "Chapter 5: Circular Motion & Gravitation",
+  "variables": [
+    {
+      "symbol": "m",
+      "meaning": "mass of the car"
+    },
+    {
+      "symbol": "r",
+      "meaning": "radius of curve"
+    },
+    {
+      "symbol": "v",
+      "meaning": "speed of car"
+    },
+    {
+      "symbol": "μ₍s,dry₎",
+      "meaning": "coefficient of static friction, dry pavement"
+    },
+    {
+      "symbol": "μ₍s,ice₎",
+      "meaning": "coefficient of static friction, icy pavement"
+    },
+    {
+      "symbol": "g",
+      "meaning": "gravitational acceleration near Earth"
+    },
+    {
+      "symbol": "a₍req₎",
+      "meaning": "acceleration, required centripetal value"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Centripetal acceleration",
+      "formula": "a₍req₎ = v² / r"
+    },
+    {
+      "name": "Maximum static-friction force",
+      "formula": "F₍max₎ = μₛ N = μₛ mg"
+    },
+    {
+      "name": "No-skid condition on a flat curve",
+      "formula": "μₛ ≥ a₍req₎ / g"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "Only static friction provides the horizontal force necessary for circular motion on a flat road.",
+      "notations": "F₍fric₎ = m a₍req₎"
+    },
+    {
+      "explanation": "Compute the acceleration required to keep the car on the circular path.",
+      "notations": "a₍req₎ = v² / r = (15.0 m/s)² / 50.0 m = 4.50 m/s²"
+    },
+    {
+      "explanation": "Translate that acceleration into the minimum coefficient of static friction.",
+      "notations": "μ₍s,min₎ = a₍req₎ / g = 4.50 / 9.80 ≈ 0.46"
+    },
+    {
+      "explanation": "Compare the available coefficients to the requirement.",
+      "notations": "μ₍s,dry₎ = 0.60 > 0.46 → car follows curve; μ₍s,ice₎ = 0.25 < 0.46 → car skids"
+    },
+    {
+      "explanation": "State the outcome for each surface condition.",
+      "notations": "Dry pavement: safe. Icy pavement: insufficient friction, car slides outward."
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "problem": "The predominant frequency of a certain fire truck’s siren is 1650 Hz when at rest. What frequency do you detect if you move with a speed of 30.0 m/s (a) toward the fire truck, and (b) away from it?",
+  "source": "PS Chap11 and 12.pdf - Problem 15",
+  "sourceFile": "sources/PS Chap11 and 12.pdf",
+  "chapter": "Chapters 11–12: Oscillations & Waves",
+  "variables": [
+    {
+      "symbol": "f₀",
+      "meaning": "frequency (0)"
+    },
+    {
+      "symbol": "v₍obs₎",
+      "meaning": "speed (obs)"
+    },
+    {
+      "symbol": "v₍sound₎",
+      "meaning": "speed (sound)"
+    },
+    {
+      "symbol": "f'",
+      "meaning": "observed frequency"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Doppler shift, moving observer",
+      "formula": "f' = f₀ (1 ± v₍obs₎/v₍sound₎)"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "(a) Moving toward the source increases the detected frequency.",
+      "notations": "f' = 1650 [1 + (30.0/343)] ≈ 1.79 × 10³ Hz"
+    },
+    {
+      "explanation": "(b) Moving away decreases the detected frequency.",
+      "notations": "f' = 1650 [1 − (30.0/343)] ≈ 1.51 × 10³ Hz"
+    }
+  ]
+}

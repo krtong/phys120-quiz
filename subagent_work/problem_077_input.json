@@ -1,0 +1,52 @@
+{
+  "problem": "A pressure cooker is a sealed pot designed to cook food with the steam produced by boiling water somewhat above 100°C. The pressure cooker in Fig. 13–32 uses a weight of mass m to allow steam to escape at a certain pressure through a small hole (diameter d) in the cooker's lid. If d = 3.0 mm, what should m be in order to cook food at 120°C? Assume that atmospheric pressure outside the cooker is 1.01×10⁵ Pa.",
+  "source": "PS Chap13 FA25.pdf - Problem 9",
+  "sourceFile": "sources/PS Chap13 FA25.pdf",
+  "chapter": "Chapter 13: Temperature & Kinetic Theory",
+  "variables": [
+    {
+      "symbol": "d",
+      "meaning": "diameter of hole"
+    },
+    {
+      "symbol": "r",
+      "meaning": "radius"
+    },
+    {
+      "symbol": "P₍sat₎",
+      "meaning": "pressure (sat)"
+    },
+    {
+      "symbol": "P₍atm₎",
+      "meaning": "pressure (atm)"
+    },
+    {
+      "symbol": "A",
+      "meaning": "π r²"
+    },
+    {
+      "symbol": "m",
+      "meaning": "mass"
+    },
+    {
+      "symbol": "g",
+      "meaning": "gravitational acceleration"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Force balance on weight",
+      "formula": "m g = (P₍sat₎ − P₍atm₎) A"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "Compute the gauge pressure required for 120°C boiling and multiply by the orifice area.",
+      "notations": "(P₍sat₎ − P₍atm₎) = (1.99 − 1.01) × 10⁵ Pa"
+    },
+    {
+      "explanation": "Solve for the mass needed to balance that upward force.",
+      "notations": "m = (P₍sat₎ − P₍atm₎) π r² / g ≈ 0.071 kg"
+    }
+  ]
+}

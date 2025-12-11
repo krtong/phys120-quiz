@@ -1,0 +1,52 @@
+{
+  "problem": "(a) How much energy is required to bring a 1.0-L pot of water at 20°C to 100°C? (b) For how long could this amount of energy run a 60-W lightbulb?",
+  "source": "PS Chap14 FA25.pdf - Problem 2",
+  "sourceFile": "sources/PS Chap14 FA25.pdf",
+  "chapter": "Chapter 14: Heat",
+  "variables": [
+    {
+      "symbol": "m",
+      "meaning": "mass"
+    },
+    {
+      "symbol": "c",
+      "meaning": "specific heat of water"
+    },
+    {
+      "symbol": "ΔT",
+      "meaning": "temperature change (20°C → 100°C)"
+    },
+    {
+      "symbol": "Q",
+      "meaning": "heat added (J)"
+    },
+    {
+      "symbol": "P",
+      "meaning": "power draw of lightbulb"
+    },
+    {
+      "symbol": "t",
+      "meaning": "time"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Sensible heat",
+      "formula": "Q = m c ΔT"
+    },
+    {
+      "name": "Energy–power relation",
+      "formula": "t = Q / P"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "Compute the heat needed to raise the water temperature.",
+      "notations": "Q = (1.0)(4186)(80) ≈ 3.35 × 10⁵ J"
+    },
+    {
+      "explanation": "Divide by 60 W to find the equivalent lightbulb time.",
+      "notations": "t = 3.35 × 10⁵ / 60 ≈ 5.6 × 10³ s (≈ 93 min)"
+    }
+  ]
+}

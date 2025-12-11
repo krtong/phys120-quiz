@@ -1,0 +1,43 @@
+{
+  "problem": "Water is in which phase when the pressure is 0.01 atm and the temperature is (a) 90°C, (b) −20°C?",
+  "source": "PS Chap13 FA25.pdf - Problem 8",
+  "sourceFile": "sources/PS Chap13 FA25.pdf",
+  "chapter": "Chapter 13: Temperature & Kinetic Theory",
+  "variables": [
+    {
+      "symbol": "P",
+      "meaning": "pressure"
+    },
+    {
+      "symbol": "T₍a₎",
+      "meaning": "temperature, case (a)"
+    },
+    {
+      "symbol": "T₍b₎",
+      "meaning": "temperature, case (b)"
+    },
+    {
+      "symbol": "phase",
+      "meaning": "phase"
+    }
+  ],
+  "correctFormulas": [],
+  "steps": [
+    {
+      "explanation": "We will use the water phase diagram to determine the phase of water at given temperature and pressure conditions. The phase diagram shows regions for solid (ice), liquid, and vapor (gas) phases separated by phase boundaries.",
+      "notations": "Method: Read phase diagram at point (P, T)"
+    },
+    {
+      "explanation": "Define the given values for both cases.",
+      "notations": "Given: P = 0.01 atm, T₍a₎ = 90°C, T₍b₎ = −20°C"
+    },
+    {
+      "explanation": "For case (a), locate the point on the phase diagram at pressure 0.01 atm and temperature 90°C. At this low pressure and high temperature, we are in the vapor region of the phase diagram, well above the liquid-vapor boundary.",
+      "notations": "Phase at (P = 0.01 atm, T = 90°C): vapor"
+    },
+    {
+      "explanation": "For case (b), locate the point on the phase diagram at pressure 0.01 atm and temperature −20°C. At this low pressure and low (below freezing) temperature, we are in the solid region of the phase diagram.",
+      "notations": "Phase at (P = 0.01 atm, T = −20°C): solid"
+    }
+  ]
+}

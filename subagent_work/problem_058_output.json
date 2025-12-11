@@ -1,0 +1,72 @@
+{
+  "problem": "A spherical balloon has a radius of 7.15 m and is filled with helium. How large a cargo can it lift, assuming that the skin and structure of the balloon have a mass of 930 kg? Neglect the buoyant force on the cargo volume itself.",
+  "source": "PS Chap10.pdf - Problem 4",
+  "sourceFile": "sources/PS Chap10.pdf",
+  "chapter": "Chapter 10: Fluids",
+  "variables": [
+    {
+      "symbol": "R",
+      "meaning": "balloon radius"
+    },
+    {
+      "symbol": "V",
+      "meaning": "balloon volume"
+    },
+    {
+      "symbol": "ρ₍air₎",
+      "meaning": "density of ambient air"
+    },
+    {
+      "symbol": "ρ₍He₎",
+      "meaning": "density of helium fill"
+    },
+    {
+      "symbol": "m₍skin₎",
+      "meaning": "mass of balloon skin and structure"
+    },
+    {
+      "symbol": "m₍cargo₎",
+      "meaning": "maximum cargo mass lifted"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Buoyant force",
+      "formula": "F_b = ρVg"
+    },
+    {
+      "name": "Volume of a sphere",
+      "formula": "V = (4/3)πr³"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "We will use the buoyant force formula and the volume of a sphere formula. For equilibrium, the upward buoyant force must equal the total downward weight.",
+      "notations": "F_b = ρVg and V = (4/3)πr³"
+    },
+    {
+      "explanation": "Define the given values from the problem.",
+      "notations": "R = 7.15 m, m_skin = 930 kg, ρ_air = 1.29 kg/m³, ρ_He = 0.179 kg/m³"
+    },
+    {
+      "explanation": "Set up the force balance equation. The buoyant force (from displaced air) must equal the total weight (helium, skin, and cargo).",
+      "notations": "ρ_air V g = (ρ_He V + m_skin + m_cargo) g"
+    },
+    {
+      "explanation": "Cancel g from both sides and solve algebraically for the cargo mass.",
+      "notations": "ρ_air V = ρ_He V + m_skin + m_cargo\nm_cargo = (ρ_air − ρ_He) V − m_skin"
+    },
+    {
+      "explanation": "Calculate the volume of the spherical balloon.",
+      "notations": "V = (4/3)π(7.15)³ = (4/3)π(365.525875) ≈ 1530.5 m³"
+    },
+    {
+      "explanation": "Substitute all numerical values into the equation for cargo mass.",
+      "notations": "m_cargo = (1.29 − 0.179) kg/m³ × 1530.5 m³ − 930 kg"
+    },
+    {
+      "explanation": "Perform the arithmetic to find the final answer.",
+      "notations": "m_cargo = (1.111 kg/m³) × (1530.5 m³) − 930 kg = 1700.4 kg − 930 kg ≈ 770 kg (≈ 7.6 kN load)"
+    }
+  ]
+}

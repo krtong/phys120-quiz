@@ -1,0 +1,60 @@
+{
+  "problem": "A person stands, hands at his side, on a platform that is rotating at a rate of 0.90 rev/s. If he raises his arms to a horizontal position, the figure, the speed of rotation decreases to 0.60 rev/s. (a) Why? (b) By what factor has his moment of inertia changed?",
+  "source": "PS_Chap8.pdf - Problem 16",
+  "sourceFile": "sources/PS_Chap8.pdf",
+  "chapter": "Chapter 8: Rotational Motion",
+  "variables": [
+    {
+      "symbol": "ωᵢ",
+      "meaning": "angular velocity of initial value (rev/s)"
+    },
+    {
+      "symbol": "ω₍f₎",
+      "meaning": "angular velocity of final value (rev/s)"
+    },
+    {
+      "symbol": "Iᵢ",
+      "meaning": "moment of inertia of initial"
+    },
+    {
+      "symbol": "I₍f₎",
+      "meaning": "moment of inertia of final"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Angular momentum",
+      "formula": "L = Iω"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "We will use the angular momentum formula and the principle of conservation of angular momentum. Since no external torque acts on the person-platform system, angular momentum is conserved.",
+      "notations": "L = Iω, and Lᵢ = L₍f₎ (conservation)"
+    },
+    {
+      "explanation": "Given values from the problem.",
+      "notations": "ωᵢ = 0.90 rev/s, ω₍f₎ = 0.60 rev/s"
+    },
+    {
+      "explanation": "Apply conservation of angular momentum: initial angular momentum equals final angular momentum.",
+      "notations": "Iᵢ ωᵢ = I₍f₎ ω₍f₎"
+    },
+    {
+      "explanation": "Solve for the ratio of moments of inertia by rearranging the equation.",
+      "notations": "I₍f₎/Iᵢ = ωᵢ / ω₍f₎"
+    },
+    {
+      "explanation": "Substitute the numerical values into the ratio.",
+      "notations": "I₍f₎/Iᵢ = 0.90 / 0.60"
+    },
+    {
+      "explanation": "Calculate the final result.",
+      "notations": "I₍f₎/Iᵢ = 1.5"
+    },
+    {
+      "explanation": "Interpretation: The moment of inertia increased by a factor of 1.5 (or 50% increase). This is because raising the arms redistributes mass farther from the rotation axis, increasing the moment of inertia, and forcing the angular velocity to decrease to conserve angular momentum.",
+      "notations": "I₍f₎ = 1.5 Iᵢ"
+    }
+  ]
+}

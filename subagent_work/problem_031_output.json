@@ -1,0 +1,72 @@
+{
+  "problem": "How long will it take a 1750-W motor to lift a 335-kg piano to a sixth-story window 16.0 m above?",
+  "source": "PS Chap6.pdf - Problem 10",
+  "sourceFile": "sources/PS Chap6.pdf",
+  "chapter": "Chapter 6: Work & Energy",
+  "variables": [
+    {
+      "symbol": "m",
+      "meaning": "mass of the piano"
+    },
+    {
+      "symbol": "h",
+      "meaning": "lifting height"
+    },
+    {
+      "symbol": "g",
+      "meaning": "gravitational acceleration near Earth"
+    },
+    {
+      "symbol": "P",
+      "meaning": "motor output power"
+    },
+    {
+      "symbol": "W",
+      "meaning": "work required against gravity"
+    },
+    {
+      "symbol": "t",
+      "meaning": "time required for lift"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Gravitational work",
+      "formula": "W = mgh"
+    },
+    {
+      "name": "Power definition",
+      "formula": "P = W/t"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "We will use the gravitational work formula W = mgh and the power definition P = W/t to find the time required.",
+      "notations": "W = mgh and P = W/t"
+    },
+    {
+      "explanation": "Define the given values from the problem.",
+      "notations": "m = 335 kg, h = 16.0 m, g = 9.80 m/s², P = 1750 W"
+    },
+    {
+      "explanation": "Calculate the work required to lift the piano using W = mgh.",
+      "notations": "W = (335 kg)(9.80 m/s²)(16.0 m)"
+    },
+    {
+      "explanation": "Evaluate the work calculation.",
+      "notations": "W = 5.3 × 10⁴ kg·m²/s² = 5.3 × 10⁴ J"
+    },
+    {
+      "explanation": "Rearrange the power formula P = W/t to solve for time: t = W/P.",
+      "notations": "t = W/P"
+    },
+    {
+      "explanation": "Substitute the values for work and power.",
+      "notations": "t = (5.3 × 10⁴ J)/(1750 W)"
+    },
+    {
+      "explanation": "Calculate the time required.",
+      "notations": "t = (5.3 × 10⁴)/(1750) s ≈ 30 s"
+    }
+  ]
+}

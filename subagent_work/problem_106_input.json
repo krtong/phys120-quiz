@@ -1,0 +1,48 @@
+{
+  "problem": "This problem describes one experimental method for determining the rotational inertia of an irregularly shaped object such as the payload for a satellite. The right figure shows a counterweight of mass m suspended by a cord wound around a spool of radius r, forming part of a turntable supporting the object. The turntable can rotate without friction. When the counterweight is released from rest, it descends through a distance h, acquiring a speed v. Find the rotational inertia of the rotating apparatus in terms of r, v, h, m and g.",
+  "source": "Worksheet 10 - Problem 5",
+  "sourceFile": "sources/WS10_Rotational_Dynamics.pdf",
+  "chapter": "Worksheet 10",
+  "variables": [
+    {
+      "symbol": "m",
+      "meaning": "counterweight mass"
+    },
+    {
+      "symbol": "r",
+      "meaning": "spool radius"
+    },
+    {
+      "symbol": "h",
+      "meaning": "drop distance"
+    },
+    {
+      "symbol": "v",
+      "meaning": "speed after dropping h"
+    },
+    {
+      "symbol": "g",
+      "meaning": "gravitational acceleration"
+    },
+    {
+      "symbol": "I",
+      "meaning": "rotational inertia of apparatus"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Energy conservation",
+      "formula": "m g h = ½ m v² + ½ I (v/r)²"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "The potential energy lost converts into translational kinetic energy of the mass plus rotational kinetic energy of the apparatus.",
+      "notations": "m g h = ½ m v² + ½ I (v/r)²"
+    },
+    {
+      "explanation": "Solve the equation for I.",
+      "notations": "I = r² (2 m g h − m v²)/v²"
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "problem": "Two blocks of mass m₁ and m₂ respectively are placed on a frictionless surface. The block m₂ is initially at rest, and attached with a spring of spring constant k on its back. The block m₁ is then given an initial speed v₀ and collides head onto the block m₂. (a) What is the maximum compression of the spring throughout the entire collision process? (b) Find the velocities v₁f and v₂f of the two blocks respectively after the collision process. What is the condition on m₁ and m₂ such that the block m₁ will move backwards after the collision?",
+  "source": "Worksheet 09 - Problem 3",
+  "sourceFile": "sources/WS09_Momentum_and_CM.pdf",
+  "chapter": "Worksheet 09",
+  "variables": [
+    {
+      "symbol": "m₁",
+      "meaning": "incident block mass"
+    },
+    {
+      "symbol": "m₂",
+      "meaning": "block attached to spring"
+    },
+    {
+      "symbol": "k",
+      "meaning": "spring constant"
+    },
+    {
+      "symbol": "v₀",
+      "meaning": "initial speed of m₁"
+    },
+    {
+      "symbol": "x₍max₎",
+      "meaning": "maximum spring compression"
+    },
+    {
+      "symbol": "v₁f",
+      "meaning": "final speed of m₁ (signed, 1D)"
+    },
+    {
+      "symbol": "v₂f",
+      "meaning": "final speed of m₂ (signed, 1D)"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Momentum conservation",
+      "formula": "m₁ v₀ = (m₁ + m₂) v_c"
+    },
+    {
+      "name": "Energy stored at maximum compression",
+      "formula": "½ m₁ v₀² − ½ (m₁ + m₂) v_c² = ½ k x₍max₎²"
+    },
+    {
+      "name": "Elastic-collision speeds",
+      "formula": "v₁f = (m₁ − m₂)/(m₁ + m₂) v₀,  v₂f = 2 m₁ /(m₁ + m₂) v₀"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "(a) At maximum compression both blocks share a common speed v_c = m₁ v₀ /(m₁ + m₂). The loss of kinetic energy equals the spring energy.",
+      "notations": "½ k x₍max₎² = ½ m₁ v₀² − ½ (m₁ + m₂) v_c² ⇒ x₍max₎ = √[m₁ m₂ v₀² / ((m₁ + m₂) k)]"
+    },
+    {
+      "explanation": "(b) Because the interaction is elastic (spring), use 1-D elastic-collision relations.",
+      "notations": "v₁f = [(m₁ − m₂)/(m₁ + m₂)] v₀,   v₂f = [2 m₁/(m₁ + m₂)] v₀"
+    },
+    {
+      "explanation": "Block m₁ moves backward when v₁f < 0, i.e., when m₂ > m₁.",
+      "notations": "Condition: m₂ > m₁"
+    }
+  ]
+}

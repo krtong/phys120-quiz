@@ -1,0 +1,40 @@
+{
+  "problem": "A uniform disk turns at 3.3 rev/s around a frictionless central axis. A nonrotating rod, of the same mass as the disk and length equal to the disk's diameter, is dropped onto the freely spinning disk, the figure. They then turn together around the axis with their centers superposed. What is the angular frequency in rev/s of the combination?",
+  "source": "PS_Chap8.pdf - Problem 17",
+  "sourceFile": "sources/PS_Chap8.pdf",
+  "chapter": "Chapter 8: Rotational Motion",
+  "variables": [
+    {
+      "symbol": "ωᵢ",
+      "meaning": "angular velocity of initial value (rev/s)"
+    },
+    {
+      "symbol": "I₍disk₎",
+      "meaning": "moment of inertia of disk"
+    },
+    {
+      "symbol": "I₍rod₎",
+      "meaning": "moment of inertia of rod"
+    },
+    {
+      "symbol": "ω₍f₎",
+      "meaning": "angular velocity of final value (rev/s)"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Conservation of angular momentum",
+      "formula": "I₍disk₎ ωᵢ = (I₍disk₎ + I₍rod₎) ω₍f₎"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "Solve for the final angular frequency using the ratio of inertias.",
+      "notations": "ω₍f₎ = ωᵢ [I₍disk₎ / (I₍disk₎ + I₍rod₎)] = ωᵢ [(½) / (½ + 1/3)] = (3/5) ωᵢ"
+    },
+    {
+      "explanation": "Insert ωᵢ = 3.3 rev/s.",
+      "notations": "ω₍f₎ ≈ (3/5)(3.3) ≈ 2.0 rev/s"
+    }
+  ]
+}

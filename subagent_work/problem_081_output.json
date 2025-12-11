@@ -1,0 +1,64 @@
+{
+  "problem": "The heat capacity, C, of an object is defined as the amount of heat needed to raise its temperature by 1 C°. Thus, to raise the temperature by ΔT requires heat Q given by Q = CΔT.",
+  "source": "PS Chap14 FA25.pdf - Problem 4",
+  "sourceFile": "sources/PS Chap14 FA25.pdf",
+  "chapter": "Chapter 14: Heat",
+  "variables": [
+    {
+      "symbol": "m",
+      "meaning": "mass"
+    },
+    {
+      "symbol": "c",
+      "meaning": "specific heat capacity"
+    },
+    {
+      "symbol": "C",
+      "meaning": "heat capacity (J·°/°C)"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Heat transfer",
+      "formula": "Q = mcΔT"
+    },
+    {
+      "name": "Heat capacity relation",
+      "formula": "C = mc"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "(a) We are given Q = CΔT from the problem statement and know the fundamental heat transfer formula Q = mcΔT.",
+      "notations": "Q = CΔT and Q = mcΔT"
+    },
+    {
+      "explanation": "Equating the two expressions for Q gives us the relationship between C and c.",
+      "notations": "CΔT = mcΔT, so C = mc"
+    },
+    {
+      "explanation": "(b) For water, the specific heat capacity is c = 4186 J/(kg·°C). Given mass m = 1.0 kg.",
+      "notations": "m = 1.0 kg, c = 4186 J/(kg·°C)"
+    },
+    {
+      "explanation": "Substitute the values into C = mc.",
+      "notations": "C = (1.0 kg)(4186 J/(kg·°C))"
+    },
+    {
+      "explanation": "Calculate the heat capacity.",
+      "notations": "C = 4186 J/°C ≈ 4.2 × 10³ J/°C"
+    },
+    {
+      "explanation": "(c) For 45 kg of water, use the same formula with m = 45 kg and c = 4186 J/(kg·°C).",
+      "notations": "m = 45 kg, c = 4186 J/(kg·°C)"
+    },
+    {
+      "explanation": "Substitute the values into C = mc.",
+      "notations": "C = (45 kg)(4186 J/(kg·°C))"
+    },
+    {
+      "explanation": "Calculate the heat capacity.",
+      "notations": "C = 188370 J/°C ≈ 1.9 × 10⁵ J/°C"
+    }
+  ]
+}

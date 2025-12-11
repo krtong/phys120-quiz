@@ -1,0 +1,36 @@
+{
+  "problem": "How much work is done by the gravitational force when a 260-kg pile driver falls 2.80 m?",
+  "source": "Quiz 6 - Problem 1",
+  "sourceFile": "sources/Quiz6_FA25.pdf",
+  "chapter": "Quiz 6 Review",
+  "variables": [
+    {
+      "symbol": "m",
+      "meaning": "mass"
+    },
+    {
+      "symbol": "g",
+      "meaning": "gravitational acceleration"
+    },
+    {
+      "symbol": "Δy",
+      "meaning": "vertical displacement (positive downward)"
+    },
+    {
+      "symbol": "W₍g₎",
+      "meaning": "work by gravity (J)"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Work of a constant force",
+      "formula": "W₍g₎ = m g Δy"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "Gravity acts in the direction of motion, so the work is positive.",
+      "notations": "W₍g₎ = (260)(9.80)(2.80) ≈ 7.1 × 10³ J"
+    }
+  ]
+}

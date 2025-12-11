@@ -1,0 +1,32 @@
+{
+  "problem": "How much work is required to stop an electron moving at a speed of 1.40 × 10⁶ m/s? (Given: mass of electron m = 9.11 × 10⁻³¹ kg)",
+  "source": "Quiz 6 - Problem 4",
+  "sourceFile": "sources/Quiz6_FA25.pdf",
+  "chapter": "Quiz 6 Review",
+  "variables": [
+    {
+      "symbol": "mₑ",
+      "meaning": "mass (e)"
+    },
+    {
+      "symbol": "vᵢ",
+      "meaning": "speed (ᵢ)"
+    },
+    {
+      "symbol": "W",
+      "meaning": "work to stop electron (J)"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Change in kinetic energy",
+      "formula": "W = ΔK = ½ mₑ (0² − vᵢ²) = −½ mₑ vᵢ²"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "The required work equals the negative of the initial kinetic energy.",
+      "notations": "W = −½ (9.11 × 10⁻³¹)(1.40 × 10⁶)² ≈ −8.9 × 10⁻¹⁹ J (magnitude 8.9 × 10⁻¹⁹ J)"
+    }
+  ]
+}

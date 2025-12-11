@@ -1,0 +1,52 @@
+{
+  "problem": "A geologist finds that a Moon rock whose mass is 9.28 kg has an apparent mass of 6.18 kg when submerged in water. What is the density of the rock?",
+  "source": "Quiz 9 - Problem 4",
+  "sourceFile": "sources/Quiz 9 FA25 solution.docx",
+  "chapter": "Quiz 9: Fluids",
+  "variables": [
+    {
+      "symbol": "m",
+      "meaning": "true mass of rock in air"
+    },
+    {
+      "symbol": "m₍app₎",
+      "meaning": "apparent mass when submerged"
+    },
+    {
+      "symbol": "ρ₍w₎",
+      "meaning": "density of water"
+    },
+    {
+      "symbol": "V",
+      "meaning": "rock volume (m³)"
+    },
+    {
+      "symbol": "ρ₍rock₎",
+      "meaning": "rock density (kg/m³)"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Buoyant-force relation via mass difference",
+      "formula": "m − m₍app₎ = ρ₍w₎ V"
+    },
+    {
+      "name": "Density definition",
+      "formula": "ρ₍rock₎ = m / V"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "The difference between true mass and apparent mass equals the mass of displaced water.",
+      "notations": "m − m₍app₎ = 9.28 kg − 6.18 kg = 3.10 kg"
+    },
+    {
+      "explanation": "Convert this to volume via water density.",
+      "notations": "V = (m − m₍app₎) / ρ₍w₎ = 3.10 kg / (1.00 × 10³ kg/m³) = 3.10 × 10⁻³ m³"
+    },
+    {
+      "explanation": "Divide the rock’s mass by its volume to find its density.",
+      "notations": "ρ₍rock₎ = m / V = 9.28 kg / 3.10 × 10⁻³ m³ ≈ 3.0 × 10³ kg/m³"
+    }
+  ]
+}

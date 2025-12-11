@@ -1,0 +1,52 @@
+{
+  "problem": "Approximately how long should it take 8.2 kg of ice at 0°C to melt when it is placed in a carefully sealed Styrofoam ice chest of dimensions 25 cm × 35 cm × 55 cm whose walls are 1.5 cm thick? Assume that the conductivity of Styrofoam is double that of air and that the outside temperature is 34°C.",
+  "source": "PS Chap14 FA25.pdf - Problem 9",
+  "sourceFile": "sources/PS Chap14 FA25.pdf",
+  "chapter": "Chapter 14: Heat",
+  "variables": [
+    {
+      "symbol": "m₍ice₎",
+      "meaning": "mass of ice"
+    },
+    {
+      "symbol": "L₍F₎",
+      "meaning": "latent heat, fusion of water"
+    },
+    {
+      "symbol": "k",
+      "meaning": "thermal conductivity of Styrofoam"
+    },
+    {
+      "symbol": "A",
+      "meaning": "surface area of chest walls"
+    },
+    {
+      "symbol": "ΔT",
+      "meaning": "temperature difference (outside − inside)"
+    },
+    {
+      "symbol": "ℓ",
+      "meaning": "wall thickness"
+    },
+    {
+      "symbol": "t",
+      "meaning": "melting time"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Conduction energy balance",
+      "formula": "Q = m₍ice₎ L₍F₎ = k A ΔT t / ℓ"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "Compute the heat needed to melt the ice.",
+      "notations": "Q = (8.2)(3.33 × 10⁵) ≈ 2.7 × 10⁶ J"
+    },
+    {
+      "explanation": "Solve Fourier’s law for the time.",
+      "notations": "t = Q ℓ / (k A ΔT) ≈ 3.1 × 10⁴ s ≈ 8.7 h"
+    }
+  ]
+}

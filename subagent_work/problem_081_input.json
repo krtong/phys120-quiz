@@ -1,0 +1,40 @@
+{
+  "problem": "The heat capacity, C, of an object is defined as the amount of heat needed to raise its temperature by 1 C°. Thus, to raise the temperature by ΔT requires heat Q given by Q = CΔT.",
+  "source": "PS Chap14 FA25.pdf - Problem 4",
+  "sourceFile": "sources/PS Chap14 FA25.pdf",
+  "chapter": "Chapter 14: Heat",
+  "variables": [
+    {
+      "symbol": "m",
+      "meaning": "mass"
+    },
+    {
+      "symbol": "c",
+      "meaning": "specific heat capacity"
+    },
+    {
+      "symbol": "C",
+      "meaning": "heat capacity (J·°/°C)"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Relation between C and c",
+      "formula": "C = m c"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "(a) Equate Q = mcΔT with Q = CΔT to obtain C = m c.",
+      "notations": "C = m c"
+    },
+    {
+      "explanation": "(b) For 1.0 kg of water, C = 1.0 × 4186 ≈ 4.2 × 10³ J·°/°C.",
+      "notations": "C₍1kg water₎ ≈ 4.2 × 10³ J·°/°C"
+    },
+    {
+      "explanation": "(c) For 45 kg of water, multiply c by 45.",
+      "notations": "C₍45kg₎ = 45 × 4186 ≈ 1.9 × 10⁵ J·°/°C"
+    }
+  ]
+}

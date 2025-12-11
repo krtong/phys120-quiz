@@ -1,0 +1,84 @@
+{
+  "problem": "What mass of steam at 100°C must be added to 1.00 kg of ice at 0°C to yield liquid water at 30°C?",
+  "source": "PS Chap14 FA25.pdf - Problem 5",
+  "sourceFile": "sources/PS Chap14 FA25.pdf",
+  "chapter": "Chapter 14: Heat",
+  "variables": [
+    {
+      "symbol": "m₍ice₎",
+      "meaning": "mass of ice"
+    },
+    {
+      "symbol": "ΔT₍water₎",
+      "meaning": "temperature change (water)"
+    },
+    {
+      "symbol": "c₍water₎",
+      "meaning": "specific heat (water)"
+    },
+    {
+      "symbol": "L₍F₎",
+      "meaning": "latent heat, fusion of water"
+    },
+    {
+      "symbol": "L₍V₎",
+      "meaning": "latent heat, vaporization of water"
+    },
+    {
+      "symbol": "m₍steam₎",
+      "meaning": "steam mass required"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Heat for phase change",
+      "formula": "Q = mL"
+    },
+    {
+      "name": "Heat for temperature change",
+      "formula": "Q = mcΔT"
+    },
+    {
+      "name": "Conservation of energy",
+      "formula": "Q₍lost₎ = Q₍gained₎"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "We will use conservation of energy where heat lost by steam equals heat gained by ice. The steam condenses and cools (Q = mL + mcΔT), while ice melts and warms (Q = mL + mcΔT).",
+      "notations": "Q₍lost₎ = Q₍gained₎"
+    },
+    {
+      "explanation": "Define the given values from the problem.",
+      "notations": "m₍ice₎ = 1.00 kg, T₍ice,initial₎ = 0°C, T₍steam,initial₎ = 100°C, T₍final₎ = 30°C, L₍F₎ = 3.33 × 10⁵ J/kg, L₍V₎ = 2.26 × 10⁶ J/kg, c₍water₎ = 4186 J/(kg·°C)"
+    },
+    {
+      "explanation": "Set up the energy balance. Heat lost by steam condensing and cooling from 100°C to 30°C equals heat gained by ice melting and warming from 0°C to 30°C.",
+      "notations": "m₍steam₎[L₍V₎ + c₍water₎ΔT₍steam₎] = m₍ice₎[L₍F₎ + c₍water₎ΔT₍ice₎]"
+    },
+    {
+      "explanation": "Calculate the temperature changes.",
+      "notations": "ΔT₍steam₎ = 100°C - 30°C = 70°C, ΔT₍ice₎ = 30°C - 0°C = 30°C"
+    },
+    {
+      "explanation": "Substitute the temperature changes into the energy balance equation.",
+      "notations": "m₍steam₎[L₍V₎ + c₍water₎(70)] = m₍ice₎[L₍F₎ + c₍water₎(30)]"
+    },
+    {
+      "explanation": "Solve for the mass of steam.",
+      "notations": "m₍steam₎ = m₍ice₎[L₍F₎ + c₍water₎(30)] / [L₍V₎ + c₍water₎(70)]"
+    },
+    {
+      "explanation": "Substitute the numerical values.",
+      "notations": "m₍steam₎ = (1.00 kg)[3.33 × 10⁵ J/kg + 4186 J/(kg·°C) × 30°C] / [2.26 × 10⁶ J/kg + 4186 J/(kg·°C) × 70°C]"
+    },
+    {
+      "explanation": "Calculate the numerator and denominator.",
+      "notations": "m₍steam₎ = (1.00 kg)[3.33 × 10⁵ + 1.26 × 10⁵] J/kg / [2.26 × 10⁶ + 2.93 × 10⁵] J/kg = (1.00 kg)[4.59 × 10⁵] / [2.55 × 10⁶]"
+    },
+    {
+      "explanation": "Simplify to get the final answer.",
+      "notations": "m₍steam₎ ≈ 0.18 kg"
+    }
+  ]
+}

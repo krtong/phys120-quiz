@@ -1,0 +1,80 @@
+{
+  "problem": "The tires of a car make 75 revolutions as the car reduces its speed uniformly from 95 km/h to 55 km/h. The tires have a diameter of 0.80 m. (a) What was the angular acceleration of the tires? If the car continues to decelerate at this rate, (b) how much more time is required for it to stop, and (c) how far does it go?",
+  "source": "PS_Chap8.pdf - Problem 4",
+  "sourceFile": "sources/PS_Chap8.pdf",
+  "chapter": "Chapter 8: Rotational Motion",
+  "variables": [
+    {
+      "symbol": "d",
+      "meaning": "tire diameter"
+    },
+    {
+      "symbol": "v₀",
+      "meaning": "initial car speed"
+    },
+    {
+      "symbol": "v₁",
+      "meaning": "speed after 75 revolutions"
+    },
+    {
+      "symbol": "ω₀",
+      "meaning": "angular speed corresponding to v₀"
+    },
+    {
+      "symbol": "ω₁",
+      "meaning": "angular speed corresponding to v₁"
+    },
+    {
+      "symbol": "θ₇₅",
+      "meaning": "angular displacement for 75 revolutions"
+    },
+    {
+      "symbol": "α",
+      "meaning": "angular acceleration (rad/s²)"
+    },
+    {
+      "symbol": "t₍stop₎",
+      "meaning": "additional time to decelerate from 55 km/h to rest"
+    },
+    {
+      "symbol": "Δx₍total₎",
+      "meaning": "total distance covered during slowdown"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Angular displacement from revolutions",
+      "formula": "θ = (revs) × 2π"
+    },
+    {
+      "name": "Constant-acceleration relation",
+      "formula": "ω₁² = ω₀² + 2 α θ"
+    },
+    {
+      "name": "Time to stop at constant α",
+      "formula": "t = (0 − ω₁)/α"
+    },
+    {
+      "name": "Rolling distance",
+      "formula": "Δx = r θ"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "Convert 95 km/h and 55 km/h to m/s, then to angular speeds by dividing by r.",
+      "notations": "ω₀ = (95/3.6)/0.40 ≈ 66.1 rad/s; ω₁ = (55/3.6)/0.40 ≈ 38.2 rad/s"
+    },
+    {
+      "explanation": "Use ω₁² = ω₀² + 2αθ with θ = 75 × 2π rad to find α.",
+      "notations": "α = (ω₁² − ω₀²)/(2θ) ≈ −3.1 rad/s²"
+    },
+    {
+      "explanation": "Determine the extra time needed to slow from 55 km/h to rest at the same α.",
+      "notations": "t₍stop₎ = −ω₁/α ≈ 12 s"
+    },
+    {
+      "explanation": "Find the angular distance from 55 km/h to rest and convert to meters; add the initial 75-rev distance.",
+      "notations": "θ₂ = −ω₁²/(2α) ≈ 2.38 × 10² rad → r θ₂ ≈ 95 m; initial 75 rev → r (75 × 2π) ≈ 1.88 × 10² m; total ≈ 2.8 × 10² m"
+    }
+  ]
+}

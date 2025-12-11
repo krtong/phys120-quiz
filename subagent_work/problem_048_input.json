@@ -1,0 +1,56 @@
+{
+  "problem": "Two masses, m₍A₎ = 32.0 kg and m₍B₎ = 38.0 kg, are connected by a rope that hangs over a pulley (as in the figure). The pulley is a uniform cylinder of radius R = 0.311 m and mass 3.1 kg. Initially m₍A₎ is on the ground and m₍B₎ rests 2.5 m above the ground. If the system is released, use conservation of energy to determine the speed of m₍B₎ just before it strikes the ground. Assume the pulley bearing is frictionless.",
+  "source": "PS_Chap8.pdf - Problem 14",
+  "sourceFile": "sources/PS_Chap8.pdf",
+  "chapter": "Chapter 8: Rotational Motion",
+  "variables": [
+    {
+      "symbol": "m₍A₎",
+      "meaning": "mass of A"
+    },
+    {
+      "symbol": "m₍B₎",
+      "meaning": "mass of B"
+    },
+    {
+      "symbol": "M₍p₎",
+      "meaning": "mass of pulley"
+    },
+    {
+      "symbol": "R",
+      "meaning": "radius"
+    },
+    {
+      "symbol": "h",
+      "meaning": "height"
+    },
+    {
+      "symbol": "g",
+      "meaning": "gravitational acceleration"
+    },
+    {
+      "symbol": "v",
+      "meaning": "speed of masses just before impact"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Energy conservation",
+      "formula": "(m₍B₎ − m₍A₎) g h = ½ m₍A₎ v² + ½ m₍B₎ v² + ½ I ω²"
+    },
+    {
+      "name": "Pulley inertia and no-slip condition",
+      "formula": "I = ½ M₍p₎ R²,   ω = v / R"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "Write the energy balance using m₍A₎’s potential gain and m₍B₎’s loss; include the pulley's rotational kinetic energy.",
+      "notations": "(m₍B₎ − m₍A₎) g h = ½ (m₍A₎ + m₍B₎) v² + ½ (½ M₍p₎ R²)(v/R)²"
+    },
+    {
+      "explanation": "Solve for v with the given numbers.",
+      "notations": "v = √[2(m₍B₎ − m₍A₎) g h / (m₍A₎ + m₍B₎ + ½ M₍p₎)] ≈ 2.0 m/s"
+    }
+  ]
+}

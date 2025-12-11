@@ -1,0 +1,52 @@
+{
+  "problem": "A mass m at the end of a spring oscillates with a frequency of 0.83 Hz. When an additional 780-g mass is added to m, the frequency is 0.60 Hz. What is the value of m?",
+  "source": "Quiz 10 - Problem 1",
+  "sourceFile": "sources/Quiz10 FA25 solution.docx",
+  "chapter": "Quiz 10: Oscillations & Waves",
+  "variables": [
+    {
+      "symbol": "f₁",
+      "meaning": "oscillation frequency, initial value"
+    },
+    {
+      "symbol": "f₂",
+      "meaning": "oscillation frequency, with added mass"
+    },
+    {
+      "symbol": "m",
+      "meaning": "mass to be determined"
+    },
+    {
+      "symbol": "Δm",
+      "meaning": "added mass"
+    },
+    {
+      "symbol": "k",
+      "meaning": "spring constant"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Mass–spring frequency",
+      "formula": "f = (1 / 2π) √(k / m)"
+    },
+    {
+      "name": "Frequency ratio relation",
+      "formula": "(f₁ / f₂)² = (m + Δm) / m"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "Write the frequency expression for mass m and for m + Δm, then divide to eliminate k.",
+      "notations": "(f₁ / f₂)² = [(k / m) / (k / (m + Δm))] = (m + Δm) / m"
+    },
+    {
+      "explanation": "Insert the numerical frequencies to solve for m.",
+      "notations": "(0.83 / 0.60)² = 1 + Δm / m  ⟹ 1.91 = 1 + 0.780 / m"
+    },
+    {
+      "explanation": "Isolate m from the resulting equation.",
+      "notations": "0.91 = 0.780 / m  ⟹  m ≈ 0.86 kg"
+    }
+  ]
+}

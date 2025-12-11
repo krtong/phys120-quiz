@@ -1,0 +1,72 @@
+{
+  "problem": "What is the force of gravity acting on a 2000-kg spacecraft when it orbits two Earth radii from the Earth's center (that is a distance r₍E₎ = 6380 km above the Earth's surface)? The mass of the Earth is m₍E₎ = 5.98×10²⁴ kg.",
+  "source": "PS_Chap5_II.pdf - Problem 7",
+  "sourceFile": "sources/PS_Chap5_II.pdf",
+  "chapter": "Chapter 5: Circular Motion & Gravitation",
+  "variables": [
+    {
+      "symbol": "m₍s₎",
+      "meaning": "mass, spacecraft"
+    },
+    {
+      "symbol": "m₍E₎",
+      "meaning": "mass, Earth"
+    },
+    {
+      "symbol": "R₍E₎",
+      "meaning": "radius, Earth"
+    },
+    {
+      "symbol": "r",
+      "meaning": "orbital radius from Earth's center"
+    },
+    {
+      "symbol": "G",
+      "meaning": "universal gravitational constant"
+    },
+    {
+      "symbol": "g₀",
+      "meaning": "surface gravitational acceleration"
+    },
+    {
+      "symbol": "→F₍g₎",
+      "meaning": "force, gravitational on spacecraft"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Newton's law of universal gravitation",
+      "formula": "F₍g₎ = G m₁ m₂ / r²"
+    },
+    {
+      "name": "Weight at Earth's surface",
+      "formula": "F₍g₎ = m g₀"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "State the fundamental formula to use: Newton's law of universal gravitation.",
+      "notations": "F₍g₎ = G m₁ m₂ / r²"
+    },
+    {
+      "explanation": "Define the variables with values given in the problem.",
+      "notations": "m₍s₎ = 2000 kg, m₍E₎ = 5.98×10²⁴ kg, R₍E₎ = 6.38 × 10⁶ m, g₀ = 9.80 m/s²"
+    },
+    {
+      "explanation": "Calculate the orbital radius from Earth's center. The spacecraft is at two Earth radii from the center.",
+      "notations": "r = 2R₍E₎ = 2(6.38 × 10⁶ m) = 1.28 × 10⁷ m"
+    },
+    {
+      "explanation": "Recognize that the spacecraft's weight at Earth's surface is m₍s₎ g₀. At orbital radius r = 2R₍E₎, gravity follows the inverse-square law, so F₍g₎(2R₍E₎) = F₍g₎(R₍E₎) × (R₍E₎ / 2R₍E₎)² = F₍g₎(R₍E₎) / 4.",
+      "notations": "F₍g₎ = (m₍s₎ g₀) / 4"
+    },
+    {
+      "explanation": "Substitute the numerical values into the formula.",
+      "notations": "F₍g₎ = (2.00 × 10³ kg)(9.80 m/s²) / 4"
+    },
+    {
+      "explanation": "Perform the calculation to find the gravitational force.",
+      "notations": "F₍g₎ = (1.96 × 10⁴ N) / 4 = 4.9 × 10³ N directed toward Earth"
+    }
+  ]
+}

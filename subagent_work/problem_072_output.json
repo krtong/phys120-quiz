@@ -1,0 +1,76 @@
+{
+  "problem": "The predominant frequency of a certain fire truck's siren is 1650 Hz when at rest. What frequency do you detect if you move with a speed of 30.0 m/s (a) toward the fire truck, and (b) away from it?",
+  "source": "PS Chap11 and 12.pdf - Problem 15",
+  "sourceFile": "sources/PS Chap11 and 12.pdf",
+  "chapter": "Chapters 11–12: Oscillations & Waves",
+  "variables": [
+    {
+      "symbol": "f₀",
+      "meaning": "frequency (0)"
+    },
+    {
+      "symbol": "v₍obs₎",
+      "meaning": "speed (obs)"
+    },
+    {
+      "symbol": "v₍sound₎",
+      "meaning": "speed (sound)"
+    },
+    {
+      "symbol": "f'",
+      "meaning": "observed frequency"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Doppler shift, moving observer",
+      "formula": "f' = f₀ (1 ± v₍obs₎/v₍sound₎)"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "We will use the Doppler shift formula for a moving observer: f' = f₀ (1 ± v₍obs₎/v₍sound₎), where the + sign is used when moving toward the source and the − sign when moving away.",
+      "notations": "f' = f₀ (1 ± v₍obs₎/v₍sound₎)"
+    },
+    {
+      "explanation": "Define the given values from the problem.",
+      "notations": "Given: f₀ = 1650 Hz, v₍obs₎ = 30.0 m/s, v₍sound₎ = 343 m/s (speed of sound in air)"
+    },
+    {
+      "explanation": "(a) Moving toward the fire truck: Use the + sign in the Doppler formula.",
+      "notations": "f' = f₀ (1 + v₍obs₎/v₍sound₎)"
+    },
+    {
+      "explanation": "Substitute the numerical values into the formula.",
+      "notations": "f' = 1650 Hz × (1 + 30.0 m/s / 343 m/s)"
+    },
+    {
+      "explanation": "Calculate the ratio v₍obs₎/v₍sound₎.",
+      "notations": "30.0 / 343 ≈ 0.0875"
+    },
+    {
+      "explanation": "Add 1 to get the factor.",
+      "notations": "1 + 0.0875 = 1.0875"
+    },
+    {
+      "explanation": "Multiply to find the observed frequency.",
+      "notations": "f' = 1650 Hz × 1.0875 ≈ 1794 Hz ≈ 1.79 × 10³ Hz"
+    },
+    {
+      "explanation": "(b) Moving away from the fire truck: Use the − sign in the Doppler formula.",
+      "notations": "f' = f₀ (1 − v₍obs₎/v₍sound₎)"
+    },
+    {
+      "explanation": "Substitute the numerical values into the formula.",
+      "notations": "f' = 1650 Hz × (1 − 30.0 m/s / 343 m/s)"
+    },
+    {
+      "explanation": "Using the ratio v₍obs₎/v₍sound₎ ≈ 0.0875, subtract from 1.",
+      "notations": "1 − 0.0875 = 0.9125"
+    },
+    {
+      "explanation": "Multiply to find the observed frequency.",
+      "notations": "f' = 1650 Hz × 0.9125 ≈ 1506 Hz ≈ 1.51 × 10³ Hz"
+    }
+  ]
+}

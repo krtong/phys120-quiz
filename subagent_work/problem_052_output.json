@@ -1,0 +1,88 @@
+{
+  "problem": "Suppose a 65-kg person stands at the edge of a 5.5-m diameter merry-go-round turntable that is mounted on frictionless bearings and has a moment of inertia of 1850 kg·m². The turntable is at rest initially, but when the person begins running at a speed of 4.0 m/s (with respect to the turntable) around its edge, the turntable begins to rotate in the opposite direction. Calculate the angular velocity of the turntable.",
+  "source": "PS_Chap8.pdf - Problem 18",
+  "sourceFile": "sources/PS_Chap8.pdf",
+  "chapter": "Chapter 8: Rotational Motion",
+  "variables": [
+    {
+      "symbol": "m",
+      "meaning": "mass of runner"
+    },
+    {
+      "symbol": "R",
+      "meaning": "turntable radius"
+    },
+    {
+      "symbol": "I₍T₎",
+      "meaning": "moment of inertia of turntable"
+    },
+    {
+      "symbol": "v₍rel₎",
+      "meaning": "velocity of relative"
+    },
+    {
+      "symbol": "ω₍T₎",
+      "meaning": "angular velocity of turntable"
+    },
+    {
+      "symbol": "ω₍P₎",
+      "meaning": "angular velocity of person"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Conservation of angular momentum",
+      "formula": "L_initial = L_final"
+    },
+    {
+      "name": "Angular momentum",
+      "formula": "L = Iω"
+    },
+    {
+      "name": "Moment of inertia for point mass",
+      "formula": "I = mR²"
+    },
+    {
+      "name": "Relationship between linear and angular velocity",
+      "formula": "v = ωR"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "State the fundamental formulas and approach. We will use conservation of angular momentum: L_initial = L_final. Since the system starts at rest, L_initial = 0. The final angular momentum has contributions from both the turntable and the person.",
+      "notations": "L_initial = L_final → 0 = L_turntable + L_person"
+    },
+    {
+      "explanation": "Express the angular momenta using L = Iω. The turntable has L = I₍T₎ω₍T₎ and the person (treated as a point mass) has L = I₍P₎ω₍P₎ where I₍P₎ = mR².",
+      "notations": "0 = I₍T₎ω₍T₎ + mR²ω₍P₎"
+    },
+    {
+      "explanation": "Define the given values from the problem.",
+      "notations": "m = 65 kg, diameter = 5.5 m so R = 2.75 m, I₍T₎ = 1850 kg·m², v₍rel₎ = 4.0 m/s"
+    },
+    {
+      "explanation": "Find the person's angular velocity relative to the ground. The person runs at v₍rel₎ relative to the turntable. Using v = ωR, the person's speed relative to ground is v₍ground₎ = v₍rel₎ + Rω₍T₎, so ω₍P₎ = v₍ground₎/R = (v₍rel₎ + Rω₍T₎)/R.",
+      "notations": "ω₍P₎ = (v₍rel₎ + Rω₍T₎)/R"
+    },
+    {
+      "explanation": "Substitute the expression for ω₍P₎ into the conservation equation.",
+      "notations": "0 = I₍T₎ω₍T₎ + mR²[(v₍rel₎ + Rω₍T₎)/R] → 0 = I₍T₎ω₍T₎ + mR(v₍rel₎ + Rω₍T₎)"
+    },
+    {
+      "explanation": "Expand and solve for ω₍T₎.",
+      "notations": "0 = I₍T₎ω₍T₎ + mRv₍rel₎ + mR²ω₍T₎ → 0 = (I₍T₎ + mR²)ω₍T₎ + mRv₍rel₎ → ω₍T₎ = −(mRv₍rel₎)/(I₍T₎ + mR²)"
+    },
+    {
+      "explanation": "Substitute the numerical values.",
+      "notations": "ω₍T₎ = −[(65 kg)(2.75 m)(4.0 m/s)] / [1850 kg·m² + (65 kg)(2.75 m)²]"
+    },
+    {
+      "explanation": "Calculate the result.",
+      "notations": "ω₍T₎ = −[715 kg·m²/s] / [1850 kg·m² + 491.4 kg·m²] = −715 / 2341.4 ≈ −0.31 rad/s"
+    },
+    {
+      "explanation": "Interpret the result. The negative sign indicates the turntable rotates in the opposite direction to the person's motion.",
+      "notations": "ω₍T₎ ≈ −0.31 rad/s (opposite the runner)"
+    }
+  ]
+}

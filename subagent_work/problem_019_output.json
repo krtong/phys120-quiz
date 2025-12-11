@@ -1,0 +1,80 @@
+{
+  "problem": "A stone is dropped from the top of a cliff. The splash it makes when striking the water below is heard 2.7 s later. How high is the cliff?",
+  "source": "Quiz 10 - Problem 3",
+  "sourceFile": "sources/Quiz10 FA25 solution.docx",
+  "chapter": "Quiz 10: Oscillations & Waves",
+  "variables": [
+    {
+      "symbol": "t₍total₎",
+      "meaning": "time interval, drop to heard splash"
+    },
+    {
+      "symbol": "t₁",
+      "meaning": "time, stone in free fall"
+    },
+    {
+      "symbol": "t₂",
+      "meaning": "time, sound traveling upward"
+    },
+    {
+      "symbol": "h",
+      "meaning": "height of cliff"
+    },
+    {
+      "symbol": "g",
+      "meaning": "gravitational acceleration near Earth"
+    },
+    {
+      "symbol": "v₍sound₎",
+      "meaning": "speed of sound in air"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Kinematic equation for constant acceleration",
+      "formula": "y = y₀ + v₀t + ½at²"
+    },
+    {
+      "name": "Distance-speed-time relationship",
+      "formula": "d = vt"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "Identify the fundamental formulas: we will use the kinematic equation for constant acceleration for the falling stone, and the distance-speed-time relationship for the sound wave.",
+      "notations": "y = y₀ + v₀t + ½at²  and  d = vt"
+    },
+    {
+      "explanation": "Define variables from the problem: total time is 2.7 s, gravitational acceleration g = 9.80 m/s², speed of sound v₍sound₎ = 343 m/s (standard value), initial velocity v₀ = 0 (dropped), and we need to find height h.",
+      "notations": "t₍total₎ = 2.7 s,  g = 9.80 m/s²,  v₍sound₎ = 343 m/s,  v₀ = 0"
+    },
+    {
+      "explanation": "Apply the kinematic equation to the falling stone: starting from rest (v₀ = 0) at the top (y₀ = 0), the stone falls distance h in time t₁ with acceleration g downward.",
+      "notations": "h = 0 + 0·t₁ + ½gt₁²  ⟹  h = ½gt₁²"
+    },
+    {
+      "explanation": "Apply the distance-speed-time relationship to the sound wave: sound travels upward distance h at constant speed v₍sound₎ in time t₂.",
+      "notations": "h = v₍sound₎·t₂  ⟹  t₂ = h/v₍sound₎"
+    },
+    {
+      "explanation": "Use the timing constraint that the total time is the sum of the fall time and sound travel time.",
+      "notations": "t₁ + t₂ = t₍total₎  ⟹  t₁ + h/v₍sound₎ = 2.7 s"
+    },
+    {
+      "explanation": "Substitute h = ½gt₁² into the timing equation to get a single equation in t₁.",
+      "notations": "t₁ + (½gt₁²)/v₍sound₎ = 2.7 s"
+    },
+    {
+      "explanation": "Substitute the numerical values into the equation.",
+      "notations": "t₁ + (½·9.80·t₁²)/343 = 2.7  ⟹  t₁ + 0.01429t₁² = 2.7"
+    },
+    {
+      "explanation": "Rearrange into standard quadratic form and solve for t₁.",
+      "notations": "0.01429t₁² + t₁ - 2.7 = 0  ⟹  t₁ ≈ 2.60 s (taking the positive root)"
+    },
+    {
+      "explanation": "Substitute t₁ back into h = ½gt₁² to find the height of the cliff.",
+      "notations": "h = ½(9.80 m/s²)(2.60 s)² = ½(9.80)(6.76) ≈ 33.1 m ≈ 3.3 × 10¹ m"
+    }
+  ]
+}

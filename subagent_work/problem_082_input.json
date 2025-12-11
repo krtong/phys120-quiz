@@ -1,0 +1,48 @@
+{
+  "problem": "What mass of steam at 100°C must be added to 1.00 kg of ice at 0°C to yield liquid water at 30°C?",
+  "source": "PS Chap14 FA25.pdf - Problem 5",
+  "sourceFile": "sources/PS Chap14 FA25.pdf",
+  "chapter": "Chapter 14: Heat",
+  "variables": [
+    {
+      "symbol": "m₍ice₎",
+      "meaning": "mass of ice"
+    },
+    {
+      "symbol": "ΔT₍water₎",
+      "meaning": "temperature change (water)"
+    },
+    {
+      "symbol": "c₍water₎",
+      "meaning": "specific heat (water)"
+    },
+    {
+      "symbol": "L₍F₎",
+      "meaning": "latent heat, fusion of water"
+    },
+    {
+      "symbol": "L₍V₎",
+      "meaning": "latent heat, vaporization of water"
+    },
+    {
+      "symbol": "m₍steam₎",
+      "meaning": "steam mass required"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Energy balance",
+      "formula": "m₍steam₎ [L₍V₎ + c₍water₎ (100 − 30)] = m₍ice₎ [L₍F₎ + c₍water₎ (30 − 0)]"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "Set the heat released by condensing/cooling steam equal to the heat gained melting/warming ice.",
+      "notations": "m₍steam₎ = m₍ice₎ [L₍F₎ + c (30)] / [L₍V₎ + c (70)]"
+    },
+    {
+      "explanation": "Insert the latent heats and solve.",
+      "notations": "m₍steam₎ ≈ [3.33 × 10⁵ + 4186 × 30] / [2.26 × 10⁶ + 4186 × 70] ≈ 0.18 kg"
+    }
+  ]
+}

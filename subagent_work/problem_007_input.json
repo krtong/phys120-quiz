@@ -1,0 +1,48 @@
+{
+  "problem": "ESTIMATE Gravity on Everest. Estimate the effective value of g on the top of Mt. Everest, 8850 m (29,035 ft) above sea level. That is, what is the acceleration due to gravity of objects allowed to fall freely at this altitude? Ignore the mass of the mountain itself.",
+  "source": "PS_Chap5_II.pdf - Problem 8",
+  "sourceFile": "sources/PS_Chap5_II.pdf",
+  "chapter": "Chapter 5: Circular Motion & Gravitation",
+  "variables": [
+    {
+      "symbol": "g₀",
+      "meaning": "gravitational acceleration, sea-level reference"
+    },
+    {
+      "symbol": "R₍E₎",
+      "meaning": "radius, Earth"
+    },
+    {
+      "symbol": "h",
+      "meaning": "height above sea level"
+    },
+    {
+      "symbol": "g(h)",
+      "meaning": "gravitational acceleration at altitude"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Gravity variation with altitude",
+      "formula": "g(h) = g₀ (R₍E₎ / (R₍E₎ + h))²"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "Treat Earth as spherically symmetric so that gravity weakens with the square of the distance from Earth's center.",
+      "notations": "g(h) = g₀ [R₍E₎ / (R₍E₎ + h)]²"
+    },
+    {
+      "explanation": "Compute the ratio of Earth's radius to the radius plus the Everest altitude.",
+      "notations": "R₍E₎ / (R₍E₎ + h) = 6.38 × 10⁶ m / 6.38885 × 10⁶ m ≈ 0.9986"
+    },
+    {
+      "explanation": "Square the ratio to obtain the scaling factor for gravity.",
+      "notations": "[R₍E₎ / (R₍E₎ + h)]² ≈ 0.9972"
+    },
+    {
+      "explanation": "Multiply by sea-level gravity to estimate the local gravitational acceleration.",
+      "notations": "g(h) ≈ (0.9972)(9.80 m/s²) ≈ 9.77 m/s² downward"
+    }
+  ]
+}

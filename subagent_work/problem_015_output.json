@@ -1,0 +1,72 @@
+{
+  "problem": "A scuba diver and her gear displace a volume of 69.6 L and have a total mass of 72.8 kg. (a) What is the buoyant force on the diver in seawater? (b) Will the diver sink or float?",
+  "source": "Quiz 9 - Problem 5",
+  "sourceFile": "sources/Quiz 9 FA25 solution.docx",
+  "chapter": "Quiz 9: Fluids",
+  "variables": [
+    {
+      "symbol": "V",
+      "meaning": "volume displaced by diver"
+    },
+    {
+      "symbol": "ρ₍sea₎",
+      "meaning": "density of seawater"
+    },
+    {
+      "symbol": "→B",
+      "meaning": "buoyant force on diver"
+    },
+    {
+      "symbol": "m",
+      "meaning": "mass of diver plus gear"
+    },
+    {
+      "symbol": "→W",
+      "meaning": "weight of diver plus gear"
+    },
+    {
+      "symbol": "g",
+      "meaning": "gravitational acceleration near Earth"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Buoyant force (Archimedes' principle)",
+      "formula": "B = ρ g V"
+    },
+    {
+      "name": "Weight",
+      "formula": "W = m g"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "We will use Archimedes' principle to find the buoyant force and the weight formula to compare with the diver's weight.",
+      "notations": "B = ρ g V and W = m g"
+    },
+    {
+      "explanation": "Define the given values from the problem.",
+      "notations": "V = 69.6 L = 6.96 × 10⁻² m³, m = 72.8 kg, ρ₍sea₎ = 1.025 × 10³ kg/m³, g = 9.80 m/s²"
+    },
+    {
+      "explanation": "Substitute the numerical values into the buoyant force formula.",
+      "notations": "B = (1.025 × 10³ kg/m³)(9.80 m/s²)(6.96 × 10⁻² m³)"
+    },
+    {
+      "explanation": "Calculate the buoyant force.",
+      "notations": "B = 698.9 N ≈ 7.0 × 10² N"
+    },
+    {
+      "explanation": "Substitute the numerical values into the weight formula.",
+      "notations": "W = (72.8 kg)(9.80 m/s²)"
+    },
+    {
+      "explanation": "Calculate the weight of the diver and gear.",
+      "notations": "W = 713.4 N ≈ 7.13 × 10² N"
+    },
+    {
+      "explanation": "Compare the buoyant force and weight to determine if the diver will sink or float.",
+      "notations": "Since W > B (713.4 N > 698.9 N), the diver will sink."
+    }
+  ]
+}

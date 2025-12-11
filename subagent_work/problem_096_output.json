@@ -1,0 +1,92 @@
+{
+  "problem": "A block of mass m is placed on a ramp whose inclination angle is θ. A constant force F is applied horizontally on the block and accelerates the block until the block reaches the highest point of the ramp. The block is initially at rest and at the bottom of the ramp. The length of the ramp is L. (a) Draw the free body diagram for the block. (b) Find the work done by the normal force between the block and the ramp. (c) Find the work done by the gravitational force. (d) Find the work done by the constant force F. (e) Using work-kinetic energy theorem, find the final speed of the block when it reaches the top.",
+  "source": "Worksheet 08 - Problem 2",
+  "sourceFile": "sources/WS_Work_and_Energy_I.pdf",
+  "chapter": "Worksheet 08",
+  "variables": [
+    {
+      "symbol": "m",
+      "meaning": "block mass"
+    },
+    {
+      "symbol": "θ",
+      "meaning": "incline angle"
+    },
+    {
+      "symbol": "F",
+      "meaning": "horizontal push magnitude"
+    },
+    {
+      "symbol": "L",
+      "meaning": "distance along ramp"
+    },
+    {
+      "symbol": "g",
+      "meaning": "gravitational acceleration"
+    },
+    {
+      "symbol": "v",
+      "meaning": "speed at top"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Work",
+      "formula": "W = Fd cosθ"
+    },
+    {
+      "name": "Kinetic energy",
+      "formula": "KE = ½mv²"
+    },
+    {
+      "name": "Work-energy theorem",
+      "formula": "KE_f - KE_i = W_net"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "We will use the work formula W = Fd cosθ for each force, the kinetic energy formula KE = ½mv², and the work-energy theorem KE_f - KE_i = W_net.",
+      "notations": "W = Fd cosθ, KE = ½mv², KE_f - KE_i = W_net"
+    },
+    {
+      "explanation": "Given: block mass m, inclination angle θ, horizontal force F, ramp length L, gravitational acceleration g. The block starts from rest (v_i = 0) and reaches final speed v at the top.",
+      "notations": "m, θ, F, L, g, v_i = 0, v_f = v"
+    },
+    {
+      "explanation": "(a) The free body diagram shows four forces: weight mg acting downward, normal force N perpendicular to the ramp surface, applied horizontal force F, and no friction.",
+      "notations": "FBD includes: F (horizontal), N (perpendicular to ramp), mg (downward)"
+    },
+    {
+      "explanation": "(b) The normal force is perpendicular to the displacement along the ramp. The angle between N and displacement is 90°, so cos(90°) = 0.",
+      "notations": "W_N = Nd cos(90°) = 0"
+    },
+    {
+      "explanation": "(c) For the gravitational force, the displacement is L along the ramp. The component of mg along the ramp (opposing motion) is mg sinθ. The angle between mg and displacement gives a negative work.",
+      "notations": "W_g = −(mg sinθ)(L) = −mgL sinθ"
+    },
+    {
+      "explanation": "(d) For the horizontal force F, we need the component along the ramp. The angle between the horizontal force and the ramp direction is θ, so the component parallel to the ramp is F cosθ.",
+      "notations": "W_F = (F cosθ)(L) = FL cosθ"
+    },
+    {
+      "explanation": "(e) Apply the work-energy theorem. The initial kinetic energy is zero (starts from rest), and the final kinetic energy is ½mv². The net work is the sum of all work done.",
+      "notations": "½mv² - 0 = W_F + W_g + W_N"
+    },
+    {
+      "explanation": "Substitute the work expressions into the work-energy theorem.",
+      "notations": "½mv² = FL cosθ + (−mgL sinθ) + 0"
+    },
+    {
+      "explanation": "Simplify the equation.",
+      "notations": "½mv² = FL cosθ − mgL sinθ"
+    },
+    {
+      "explanation": "Solve for the final speed v by multiplying both sides by 2/m and taking the square root.",
+      "notations": "v² = (2/m)(FL cosθ − mgL sinθ) = 2FL cosθ/m − 2gL sinθ"
+    },
+    {
+      "explanation": "Take the square root to find the final speed.",
+      "notations": "v = √[2(FL cosθ − mgL sinθ)/m] = √[2L(F cosθ − mg sinθ)/m]"
+    }
+  ]
+}

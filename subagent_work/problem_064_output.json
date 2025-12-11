@@ -1,0 +1,60 @@
+{
+  "problem": "What is the period of a simple pendulum 47 cm long (a) on the Earth, and (b) when it is in a freely falling elevator?",
+  "source": "PS Chap11 and 12.pdf - Problem 4",
+  "sourceFile": "sources/PS Chap11 and 12.pdf",
+  "chapter": "Chapters 11–12: Oscillations & Waves",
+  "variables": [
+    {
+      "symbol": "ℓ",
+      "meaning": "pendulum length"
+    },
+    {
+      "symbol": "g",
+      "meaning": "gravitational acceleration near Earth"
+    },
+    {
+      "symbol": "T",
+      "meaning": "pendulum period (s)"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Small-angle pendulum period",
+      "formula": "T = 2π √(ℓ / g)"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "State the fundamental formula for the period of a simple pendulum",
+      "notations": "T = 2π √(ℓ / g)"
+    },
+    {
+      "explanation": "Define the variables from the problem",
+      "notations": "Given: ℓ = 47 cm = 0.47 m, g = 9.80 m/s² (on Earth)"
+    },
+    {
+      "explanation": "Part (a): Substitute the values into the formula for Earth",
+      "notations": "T = 2π √(0.47 m / 9.80 m/s²)"
+    },
+    {
+      "explanation": "Calculate the value inside the square root",
+      "notations": "T = 2π √(0.04796 s²) = 2π (0.219 s)"
+    },
+    {
+      "explanation": "Complete the calculation",
+      "notations": "T ≈ 1.4 s"
+    },
+    {
+      "explanation": "Part (b): In a freely falling elevator, the effective gravitational acceleration in the elevator's reference frame becomes zero",
+      "notations": "g_effective = 0 in free fall"
+    },
+    {
+      "explanation": "Analyze what happens to the period formula when g → 0",
+      "notations": "T = 2π √(ℓ / 0) → undefined"
+    },
+    {
+      "explanation": "Physical interpretation: With no restoring force, the pendulum does not oscillate",
+      "notations": "No oscillation occurs; period is undefined in free fall"
+    }
+  ]
+}

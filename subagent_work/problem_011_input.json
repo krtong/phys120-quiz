@@ -1,0 +1,60 @@
+{
+  "problem": "A bottle has a mass of 35.00 g when empty and 98.44 g when filled with water. When filled with another fluid, the mass is 89.22 g. What is the specific gravity of this other fluid?",
+  "source": "Quiz 9 - Problem 1",
+  "sourceFile": "sources/Quiz 9 FA25 solution.docx",
+  "chapter": "Quiz 9: Fluids",
+  "variables": [
+    {
+      "symbol": "m₍b₎",
+      "meaning": "mass, empty bottle"
+    },
+    {
+      "symbol": "m₍w,total₎",
+      "meaning": "mass, bottle plus water"
+    },
+    {
+      "symbol": "m₍f,total₎",
+      "meaning": "mass, bottle plus unknown fluid"
+    },
+    {
+      "symbol": "m₍w₎",
+      "meaning": "mass, water alone"
+    },
+    {
+      "symbol": "m₍f₎",
+      "meaning": "mass, unknown fluid alone"
+    },
+    {
+      "symbol": "ρ₍w₎",
+      "meaning": "density, water reference"
+    },
+    {
+      "symbol": "SG",
+      "meaning": "specific gravity of unknown fluid"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Mass of contained liquid",
+      "formula": "m₍liquid₎ = m₍filled₎ − m₍b₎"
+    },
+    {
+      "name": "Specific gravity via equal volume comparison",
+      "formula": "SG = m₍f₎ / m₍w₎"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "Subtract the empty bottle mass to find the mass of water occupying the bottle.",
+      "notations": "m₍w₎ = 98.44 g − 35.00 g = 63.44 g"
+    },
+    {
+      "explanation": "Do the same for the unknown fluid.",
+      "notations": "m₍f₎ = 89.22 g − 35.00 g = 54.22 g"
+    },
+    {
+      "explanation": "Because both liquids fill the same volume, the ratio of their masses equals the ratio of densities, i.e., the specific gravity.",
+      "notations": "SG = m₍f₎ / m₍w₎ = 54.22 / 63.44 ≈ 0.855"
+    }
+  ]
+}

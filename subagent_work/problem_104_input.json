@@ -1,0 +1,60 @@
+{
+  "problem": "A small sphere of mass m is attached to a boom of length L (assume to have negligible mass) and is released from rest with an initial angle θ₀. (a) Find the torque exerted by gravity on the small sphere with respect to the hinge when it was released. (b) Show that the kinetic energy of the small sphere due to its translational motion is the same as its rotational kinetic energy with respect to the hinge. (c) Find the speed of the small sphere right before it hits the ground.",
+  "source": "Worksheet 10 - Problem 3",
+  "sourceFile": "sources/WS10_Rotational_Dynamics.pdf",
+  "chapter": "Worksheet 10",
+  "variables": [
+    {
+      "symbol": "m",
+      "meaning": "sphere mass"
+    },
+    {
+      "symbol": "L",
+      "meaning": "boom length"
+    },
+    {
+      "symbol": "θ₀",
+      "meaning": "initial release angle from vertical/downward"
+    },
+    {
+      "symbol": "g",
+      "meaning": "gravitational acceleration"
+    },
+    {
+      "symbol": "τ",
+      "meaning": "torque magnitude about hinge"
+    },
+    {
+      "symbol": "v",
+      "meaning": "speed at bottom"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Torque of gravity about hinge",
+      "formula": "τ = m g L sinθ₀"
+    },
+    {
+      "name": "Rotational kinetic energy with respect to hinge",
+      "formula": "K_rot = ½ I ω² with I = m L², ω = v/L"
+    },
+    {
+      "name": "Energy conservation",
+      "formula": "m g L (1 − cosθ₀) = ½ m v²"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "(a) The lever arm of mg relative to the hinge is L sinθ₀, producing a torque tending to align the boom vertically.",
+      "notations": "τ = m g L sinθ₀ (direction opposite the displacement)"
+    },
+    {
+      "explanation": "(b) Treating the sphere as a point mass at distance L gives I = m L² and ω = v/L, so K_rot = ½ m L² (v/L)² = ½ m v² = K_trans.",
+      "notations": "Translational and rotational kinetic energies are equal"
+    },
+    {
+      "explanation": "(c) equate the loss in gravitational potential energy to the kinetic energy at the bottom.",
+      "notations": "v = √[2 g L (1 − cosθ₀)]"
+    }
+  ]
+}

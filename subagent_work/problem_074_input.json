@@ -1,0 +1,40 @@
+{
+  "problem": "What speed would a 1.0-g paper clip have if it had the same kinetic energy as a molecule at 22°C?",
+  "source": "PS Chap13 FA25.pdf - Problem 6",
+  "sourceFile": "sources/PS Chap13 FA25.pdf",
+  "chapter": "Chapter 13: Temperature & Kinetic Theory",
+  "variables": [
+    {
+      "symbol": "m",
+      "meaning": "mass"
+    },
+    {
+      "symbol": "T",
+      "meaning": "absolute temperature"
+    },
+    {
+      "symbol": "k₍B₎",
+      "meaning": "Boltzmann constant"
+    },
+    {
+      "symbol": "v",
+      "meaning": "paper-clip speed (m/s)"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Average molecular kinetic energy",
+      "formula": "½ m v² = 3/2 k₍B₎ T"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "Equate the translational kinetic energy of the clip to that of a molecule.",
+      "notations": "½ m v² = 3/2 k₍B₎ T ⇒ v = √(3 k₍B₎ T / m)"
+    },
+    {
+      "explanation": "Insert numbers to show the speed is extremely small.",
+      "notations": "v = √[3(1.38 × 10⁻²³)(295) / (1.0 × 10⁻³)] ≈ 3.5 × 10⁻⁹ m/s"
+    }
+  ]
+}

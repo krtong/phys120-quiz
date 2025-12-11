@@ -1,0 +1,52 @@
+{
+  "problem": "Equal masses. Billiard ball A of mass m moving with speed v₍A₎ collides head-on with ball B of equal mass. What are the speeds of the two balls after the collision, assuming it is elastic? Assume (a) both balls are moving initially (v₍A₎ and v₍B₎), (b) ball B is initially at rest (v₍B₎ = 0).",
+  "source": "PS Chap7 - Example 7-7",
+  "sourceFile": "sources/PS Chap7 and solution.pdf",
+  "chapter": "Chapter 7: Momentum & Collisions",
+  "variables": [
+    {
+      "symbol": "m",
+      "meaning": "mass of each ball (identical)"
+    },
+    {
+      "symbol": "→v₍A₎",
+      "meaning": "initial velocity of ball A"
+    },
+    {
+      "symbol": "→v₍B₎",
+      "meaning": "initial velocity of ball B"
+    },
+    {
+      "symbol": "→v₍A₎'",
+      "meaning": "final velocity of ball A"
+    },
+    {
+      "symbol": "→v₍B₎'",
+      "meaning": "final velocity of ball B"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Momentum conservation (1D)",
+      "formula": "m v₍A₎ + m v₍B₎ = m v₍A₎' + m v₍B₎'"
+    },
+    {
+      "name": "Kinetic energy conservation (elastic)",
+      "formula": "½ m v₍A₎² + ½ m v₍B₎² = ½ m v₍A₎'^2 + ½ m v₍B₎'^2"
+    },
+    {
+      "name": "Relative-velocity rule for elastic 1D collisions",
+      "formula": "v₍A₎ − v₍B₎ = −(v₍A₎' − v₍B₎')"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "Because masses are equal, combining momentum and the relative-velocity relation shows the balls exchange velocities.",
+      "notations": "v₍A₎' = v₍B₎,   v₍B₎' = v₍A₎"
+    },
+    {
+      "explanation": "Special case (b): if v₍B₎ = 0, ball A stops and ball B departs with the original speed.",
+      "notations": "v₍A₎' = 0,  v₍B₎' = v₍A₎"
+    }
+  ]
+}

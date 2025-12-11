@@ -1,0 +1,64 @@
+{
+  "problem": "If you were to build a pipe organ with open-tube pipes spanning the range of human hearing (20 Hz to 20 kHz), what would be the range of the lengths of pipes required?",
+  "source": "PS Chap11 and 12.pdf - Problem 13",
+  "sourceFile": "sources/PS Chap11 and 12.pdf",
+  "chapter": "Chapters 11–12: Oscillations & Waves",
+  "variables": [
+    {
+      "symbol": "v₍air₎",
+      "meaning": "speed of sound in air"
+    },
+    {
+      "symbol": "f₍min₎",
+      "meaning": "minimum audible frequency"
+    },
+    {
+      "symbol": "f₍max₎",
+      "meaning": "maximum audible frequency"
+    },
+    {
+      "symbol": "L₍open₎",
+      "meaning": "length of open pipe"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Open-pipe fundamental frequency",
+      "formula": "f₁ = v / (2L)"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "Start with the fundamental formula for an open pipe.",
+      "notations": "f₁ = v / (2L)"
+    },
+    {
+      "explanation": "Rearrange to solve for the pipe length.",
+      "notations": "L = v / (2f₁)"
+    },
+    {
+      "explanation": "Define the given values from the problem.",
+      "notations": "v = 343 m/s (speed of sound in air), f₍min₎ = 20 Hz, f₍max₎ = 20 kHz = 2.0 × 10⁴ Hz"
+    },
+    {
+      "explanation": "Calculate the length for the lowest frequency (longest pipe).",
+      "notations": "L₍max₎ = v / (2f₍min₎) = 343 / (2 × 20)"
+    },
+    {
+      "explanation": "Evaluate the calculation for the longest pipe.",
+      "notations": "L₍max₎ = 343 / 40 = 8.575 m ≈ 8.6 m"
+    },
+    {
+      "explanation": "Calculate the length for the highest frequency (shortest pipe).",
+      "notations": "L₍min₎ = v / (2f₍max₎) = 343 / (2 × 2.0 × 10⁴)"
+    },
+    {
+      "explanation": "Evaluate the calculation for the shortest pipe.",
+      "notations": "L₍min₎ = 343 / (4.0 × 10⁴) = 8.575 × 10⁻³ m ≈ 8.6 mm"
+    },
+    {
+      "explanation": "State the final range of pipe lengths required.",
+      "notations": "Range: 8.6 mm to 8.6 m"
+    }
+  ]
+}

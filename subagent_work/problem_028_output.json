@@ -1,0 +1,72 @@
+{
+  "problem": "A 56.5-kg hiker starts at an elevation of 1270 m and climbs to the top of a 2660-m peak. (a) What is the hiker's change in potential energy? (b) What is the minimum work required of the hiker? (c) Can the actual work done be greater than this? Explain.",
+  "source": "PS Chap6.pdf - Problem 7",
+  "sourceFile": "sources/PS Chap6.pdf",
+  "chapter": "Chapter 6: Work & Energy",
+  "variables": [
+    {
+      "symbol": "m",
+      "meaning": "mass of hiker"
+    },
+    {
+      "symbol": "yᵢ",
+      "meaning": "initial elevation"
+    },
+    {
+      "symbol": "y₍f₎",
+      "meaning": "final elevation"
+    },
+    {
+      "symbol": "Δy",
+      "meaning": "vertical displacement"
+    },
+    {
+      "symbol": "g",
+      "meaning": "gravitational acceleration near Earth"
+    },
+    {
+      "symbol": "ΔU",
+      "meaning": "change in gravitational potential energy (J)"
+    },
+    {
+      "symbol": "W₍min₎",
+      "meaning": "minimum work required (J)"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Change in gravitational potential energy",
+      "formula": "ΔU = m g Δy"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "We will use the change in gravitational potential energy formula.",
+      "notations": "ΔU = m g Δy"
+    },
+    {
+      "explanation": "Define the variables with values given in the problem.",
+      "notations": "m = 56.5 kg, yᵢ = 1270 m, y₍f₎ = 2660 m, g = 9.80 m/s²"
+    },
+    {
+      "explanation": "Calculate the vertical displacement.",
+      "notations": "Δy = y₍f₎ - yᵢ = 2660 m - 1270 m = 1390 m"
+    },
+    {
+      "explanation": "Substitute the numerical values into the formula.",
+      "notations": "ΔU = (56.5 kg)(9.80 m/s²)(1390 m)"
+    },
+    {
+      "explanation": "Calculate the change in potential energy.",
+      "notations": "ΔU = (56.5)(9.80)(1390) kg·m²/s² = 7.69 × 10⁵ J ≈ 7.7 × 10⁵ J"
+    },
+    {
+      "explanation": "For part (b), the minimum work required equals the increase in potential energy when no energy is lost to nonconservative forces.",
+      "notations": "W₍min₎ = ΔU = 7.7 × 10⁵ J"
+    },
+    {
+      "explanation": "For part (c), yes, the actual work done can be greater than this minimum. Real hikes involve inefficiencies such as non-vertical paths, friction, air resistance, and metabolic inefficiencies in the body, so the actual work exceeds the ideal minimum.",
+      "notations": "W₍actual₎ > W₍min₎ due to nonconservative forces"
+    }
+  ]
+}

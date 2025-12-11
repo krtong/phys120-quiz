@@ -1,0 +1,32 @@
+{
+  "problem": "A sound wave in air has a frequency of 282 Hz and travels with a speed of 343 m/s. How far apart are the wave crests (compressions)?",
+  "source": "Quiz 10 - Problem 2",
+  "sourceFile": "sources/Quiz10 FA25 solution.docx",
+  "chapter": "Quiz 10: Oscillations & Waves",
+  "variables": [
+    {
+      "symbol": "f",
+      "meaning": "sound-wave frequency"
+    },
+    {
+      "symbol": "v",
+      "meaning": "wave speed in air"
+    },
+    {
+      "symbol": "λ",
+      "meaning": "wavelength between compressions"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Wave speed relation",
+      "formula": "v = f λ"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "Solve the wave relation for λ, the distance between successive compressions.",
+      "notations": "λ = v / f = 343 m/s / 282 /s ≈ 1.22 m"
+    }
+  ]
+}

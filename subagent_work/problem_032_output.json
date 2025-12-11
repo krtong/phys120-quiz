@@ -1,0 +1,68 @@
+{
+  "problem": "A 7700 kg boxcar traveling 14 m/s strikes a second car at rest. The two stick together and move off with a speed of 5.0 m/s. What is the mass of the second car?",
+  "source": "Quiz 7 - Problem 1",
+  "sourceFile": "sources/Quiz 7 FA25 Solution.docx",
+  "chapter": "Quiz 7: Momentum & Collisions",
+  "variables": [
+    {
+      "symbol": "m₁",
+      "meaning": "mass of incoming boxcar"
+    },
+    {
+      "symbol": "v₁ᵢ",
+      "meaning": "initial speed of boxcar 1"
+    },
+    {
+      "symbol": "m₂",
+      "meaning": "mass of second boxcar"
+    },
+    {
+      "symbol": "v₂ᵢ",
+      "meaning": "initial speed of boxcar 2"
+    },
+    {
+      "symbol": "v₍f₎",
+      "meaning": "common final speed after coupling"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Conservation of linear momentum",
+      "formula": "m₁ v₁ᵢ + m₂ v₂ᵢ = (m₁ + m₂) v₍f₎"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "We will use the conservation of linear momentum formula for an inelastic collision.",
+      "notations": "m₁ v₁ᵢ + m₂ v₂ᵢ = (m₁ + m₂) v₍f₎"
+    },
+    {
+      "explanation": "Given values from the problem.",
+      "notations": "m₁ = 7700 kg = 7.70 × 10³ kg, v₁ᵢ = 14 m/s = 14.0 m/s, v₂ᵢ = 0 m/s (at rest), v₍f₎ = 5.0 m/s"
+    },
+    {
+      "explanation": "Substitute the known quantities into the momentum equation; v₂ᵢ = 0.",
+      "notations": "(7.70 × 10³ kg)(14.0 m/s) + m₂(0) = (7.70 × 10³ kg + m₂)(5.0 m/s)"
+    },
+    {
+      "explanation": "Simplify the equation since v₂ᵢ = 0.",
+      "notations": "(7.70 × 10³ kg)(14.0 m/s) = (7.70 × 10³ kg + m₂)(5.0 m/s)"
+    },
+    {
+      "explanation": "Expand the right side of the equation.",
+      "notations": "1.078 × 10⁵ kg·m/s = (7.70 × 10³ kg)(5.0 m/s) + m₂(5.0 m/s)"
+    },
+    {
+      "explanation": "Simplify the right side.",
+      "notations": "1.078 × 10⁵ kg·m/s = 3.85 × 10⁴ kg·m/s + m₂(5.0 m/s)"
+    },
+    {
+      "explanation": "Solve for m₂ by isolating it.",
+      "notations": "m₂(5.0 m/s) = 1.078 × 10⁵ kg·m/s − 3.85 × 10⁴ kg·m/s = 6.93 × 10⁴ kg·m/s"
+    },
+    {
+      "explanation": "Calculate the final answer for m₂.",
+      "notations": "m₂ = (6.93 × 10⁴ kg·m/s) / (5.0 m/s) = 1.39 × 10⁴ kg"
+    }
+  ]
+}

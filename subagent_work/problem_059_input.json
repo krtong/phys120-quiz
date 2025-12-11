@@ -1,0 +1,44 @@
+{
+  "problem": "The specific gravity of ice is 0.917, whereas that of seawater is 1.025. What percent of an iceberg is above the surface of the water?",
+  "source": "PS Chap10.pdf - Problem 5",
+  "sourceFile": "sources/PS Chap10.pdf",
+  "chapter": "Chapter 10: Fluids",
+  "variables": [
+    {
+      "symbol": "SG₍ice₎",
+      "meaning": "specific gravity of ice relative to water"
+    },
+    {
+      "symbol": "SG₍sea₎",
+      "meaning": "specific gravity of seawater relative to water"
+    },
+    {
+      "symbol": "V₍ice₎",
+      "meaning": "total iceberg volume"
+    },
+    {
+      "symbol": "V₍sub₎",
+      "meaning": "submerged volume"
+    },
+    {
+      "symbol": "V₍above₎",
+      "meaning": "volume above water (V₍ice₎ − V₍sub₎)"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Floating condition",
+      "formula": "ρ₍sea₎ V₍sub₎ = ρ₍ice₎ V₍ice₎"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "Use specific gravities relative to water to ratio the volumes.",
+      "notations": "V₍sub₎/V₍ice₎ = SG₍ice₎ / SG₍sea₎ = 0.917 / 1.025 ≈ 0.895"
+    },
+    {
+      "explanation": "Compute the fraction above the surface.",
+      "notations": "V₍above₎/V₍ice₎ = 1 − 0.895 = 0.105 ⇒ about 10.5% of the iceberg is above water"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "problem": "(a) Compare the differences and similarities between the kinetic energy and momentum. (b) In what situations can we use the conservation of energy to help us solve problems? (c) In what situations can we use the conservation of momentum to help us solve problems?",
+  "source": "Worksheet 09 - Problem 1",
+  "sourceFile": "sources/WS09_Momentum_and_CM.pdf",
+  "chapter": "Worksheet 09",
+  "variables": [
+    {
+      "symbol": "K",
+      "meaning": "kinetic energy"
+    },
+    {
+      "symbol": "→p",
+      "meaning": "momentum"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Kinetic energy",
+      "formula": "K = ½ m v²"
+    },
+    {
+      "name": "Momentum",
+      "formula": "p = m v"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "(a) Both depend on mass and speed, but kinetic energy scales with v² and is scalar, whereas momentum depends linearly on v and is a vector. Both are zero when v = 0 and increase with speed.",
+      "notations": "K uses v², p uses v; p has direction, K does not."
+    },
+    {
+      "explanation": "(b) Mechanical energy is conserved when only conservative forces (gravity, springs, etc.) act or when nonconservative work is negligible.",
+      "notations": "Use energy for frictionless motion, springs, gravitational potential changes."
+    },
+    {
+      "explanation": "(c) Momentum is conserved for isolated systems with no external impulse, such as collisions or explosions; it applies even when kinetic energy is not conserved.",
+      "notations": "Use momentum for collisions, recoil problems, or interacting particles."
+    }
+  ]
+}

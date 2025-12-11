@@ -1,0 +1,68 @@
+{
+  "problem": "The speed of waves on a string is 97 m/s. If the frequency of standing waves is 475 Hz, how far apart are two adjacent nodes?",
+  "source": "PS Chap11 and 12.pdf - Problem 8",
+  "sourceFile": "sources/PS Chap11 and 12.pdf",
+  "chapter": "Chapters 11–12: Oscillations & Waves",
+  "variables": [
+    {
+      "symbol": "v",
+      "meaning": "speed"
+    },
+    {
+      "symbol": "f",
+      "meaning": "frequency"
+    },
+    {
+      "symbol": "λ",
+      "meaning": "wavelength"
+    },
+    {
+      "symbol": "Δx₍node₎",
+      "meaning": "distance between adjacent nodes"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Wave speed relation",
+      "formula": "v = fλ"
+    },
+    {
+      "name": "Node spacing in standing waves",
+      "formula": "Δx₍node₎ = λ / 2"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "We will use the wave speed formula v = fλ to find the wavelength, then use the node spacing formula Δx₍node₎ = λ / 2 to find the distance between adjacent nodes.",
+      "notations": "v = fλ and Δx₍node₎ = λ / 2"
+    },
+    {
+      "explanation": "Define the variables by the values given in the problem.",
+      "notations": "Given: v = 97 m/s, f = 475 Hz"
+    },
+    {
+      "explanation": "Solve for wavelength using v = fλ by rearranging to λ = v / f.",
+      "notations": "λ = v / f"
+    },
+    {
+      "explanation": "Substitute the numerical values into the wavelength formula.",
+      "notations": "λ = 97 m/s / 475 Hz = 97 / 475 m"
+    },
+    {
+      "explanation": "Calculate the wavelength.",
+      "notations": "λ ≈ 0.204 m"
+    },
+    {
+      "explanation": "Use the node spacing formula to find the distance between adjacent nodes.",
+      "notations": "Δx₍node₎ = λ / 2"
+    },
+    {
+      "explanation": "Substitute the wavelength value into the node spacing formula.",
+      "notations": "Δx₍node₎ = 0.204 m / 2"
+    },
+    {
+      "explanation": "Calculate the distance between adjacent nodes.",
+      "notations": "Δx₍node₎ ≈ 0.102 m ≈ 0.10 m"
+    }
+  ]
+}

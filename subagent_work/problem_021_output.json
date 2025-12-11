@@ -1,0 +1,68 @@
+{
+  "problem": "A bat at rest sends out ultrasonic sound waves at 50.0 kHz and receives them returned from an object moving directly away from it at 27.5 m/s. What is the received sound frequency?",
+  "source": "Quiz 10 - Problem 5",
+  "sourceFile": "sources/Quiz10 FA25 solution.docx",
+  "chapter": "Quiz 10: Oscillations & Waves",
+  "variables": [
+    {
+      "symbol": "f₀",
+      "meaning": "frequency of emitted ultrasonic pulse"
+    },
+    {
+      "symbol": "v₍air₎",
+      "meaning": "speed of sound in air"
+    },
+    {
+      "symbol": "u",
+      "meaning": "speed of target moving away"
+    },
+    {
+      "symbol": "f₁",
+      "meaning": "frequency incident on the moving object"
+    },
+    {
+      "symbol": "f₂",
+      "meaning": "frequency received back at the bat"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Doppler shift for moving observer",
+      "formula": "f' = f₀(v ± v_o)/v"
+    },
+    {
+      "name": "Doppler shift for moving source",
+      "formula": "f' = f₀ v/(v ± v_s)"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "We will use the Doppler effect formulas twice: first treating the moving object as an observer receding from the bat, then as a source moving away from the bat.",
+      "notations": "f₁ = f₀(v − v_o)/v for observer moving away; f₂ = f₁ v/(v + v_s) for source moving away"
+    },
+    {
+      "explanation": "Define the given values from the problem.",
+      "notations": "f₀ = 50.0 kHz, u = 27.5 m/s (object speed), v₍air₎ = 343 m/s (speed of sound)"
+    },
+    {
+      "explanation": "Apply the first Doppler shift with the object as a receding observer (v_o = u).",
+      "notations": "f₁ = f₀(v₍air₎ − u)/v₍air₎ = 50.0 kHz × (343 − 27.5)/343"
+    },
+    {
+      "explanation": "Calculate the intermediate frequency.",
+      "notations": "f₁ = 50.0 kHz × 315.5/343 = 50.0 kHz × 0.9198 ≈ 45.99 kHz"
+    },
+    {
+      "explanation": "Apply the second Doppler shift with the object as a receding source (v_s = u).",
+      "notations": "f₂ = f₁ × v₍air₎/(v₍air₎ + u) = 45.99 kHz × 343/(343 + 27.5)"
+    },
+    {
+      "explanation": "Calculate the final received frequency, or combine both shifts into one expression.",
+      "notations": "f₂ = 45.99 kHz × 343/370.5 ≈ 42.6 kHz, or directly: f₂ = f₀(v₍air₎ − u)/(v₍air₎ + u) = 50.0 kHz × 315.5/370.5 ≈ 42.6 kHz"
+    },
+    {
+      "explanation": "Express the final answer in scientific notation.",
+      "notations": "f₂ ≈ 4.3 × 10⁴ Hz"
+    }
+  ]
+}

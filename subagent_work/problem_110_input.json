@@ -1,0 +1,36 @@
+{
+  "problem": "Center of mass (CM) of three guys on a raft. On a lightweight (air-filled) \"banana boat,\" three people of roughly equal mass m sit along the x axis at positions x₍A₎ = 1.0 m, x₍B₎ = 5.0 m, and x₍C₎ = 6.0 m, measured from the left-hand end as shown in Fig. 7–23. Find the position of the CM. Ignore the mass of the boat.",
+  "source": "PS Chap7 - Example 7-12",
+  "sourceFile": "sources/PS Chap7 and solution.pdf",
+  "chapter": "Chapter 7: Momentum & Collisions",
+  "variables": [
+    {
+      "symbol": "x₍A₎",
+      "meaning": "position (A)"
+    },
+    {
+      "symbol": "x₍B₎",
+      "meaning": "position (B)"
+    },
+    {
+      "symbol": "x₍C₎",
+      "meaning": "position (C)"
+    },
+    {
+      "symbol": "x₍CM₎",
+      "meaning": "center-of-mass position"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Equal-mass center of mass",
+      "formula": "x₍CM₎ = (x₍A₎ + x₍B₎ + x₍C₎)/3"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "Average the seating positions since each person has the same mass and the raft’s mass is neglected.",
+      "notations": "x₍CM₎ = (1.0 + 5.0 + 6.0)/3 = 4.0 m from the left end"
+    }
+  ]
+}

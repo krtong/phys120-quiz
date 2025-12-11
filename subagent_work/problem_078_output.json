@@ -1,0 +1,68 @@
+{
+  "problem": "An average active person consumes about 2500 Cal a day. (a) What is this in joules? (b) What is this in kilowatt-hours? (c) If your power company charges about 10 ¢ per kilowatt-hour, how much would your energy cost per day if you bought it from the power company? Could you feed yourself on this much money per day?",
+  "source": "PS Chap14 FA25.pdf - Problem 1",
+  "sourceFile": "sources/PS Chap14 FA25.pdf",
+  "chapter": "Chapter 14: Heat",
+  "variables": [
+    {
+      "symbol": "E₍food₎",
+      "meaning": "daily food energy intake"
+    },
+    {
+      "symbol": "k₍Cal→J₎",
+      "meaning": "conversion factor, 1 Cal in joules"
+    },
+    {
+      "symbol": "kWh₍conv₎",
+      "meaning": "conversion factor, 1 kWh in Calories"
+    },
+    {
+      "symbol": "rate",
+      "meaning": "electricity cost per kilowatt-hour"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Calorie–joule conversion",
+      "formula": "1 Cal = 4.186 × 10³ J"
+    },
+    {
+      "name": "Calorie–kilowatt-hour conversion",
+      "formula": "1 kWh = 860 Cal"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "We will use the Calorie-joule conversion formula and the Calorie-kilowatt-hour conversion formula to solve this problem.",
+      "notations": "1 Cal = 4.186 × 10³ J and 1 kWh = 860 Cal"
+    },
+    {
+      "explanation": "Define the given values from the problem.",
+      "notations": "E₍food₎ = 2500 Cal, rate = $0.10 per kWh"
+    },
+    {
+      "explanation": "(a) Convert food calories to joules by multiplying the energy in Calories by the conversion factor.",
+      "notations": "E = 2500 Cal × 4.186 × 10³ J/Cal"
+    },
+    {
+      "explanation": "Calculate the energy in joules.",
+      "notations": "E = 10,465,000 J ≈ 1.0 × 10⁷ J"
+    },
+    {
+      "explanation": "(b) Convert Calories to kilowatt-hours by dividing the energy in Calories by the conversion factor.",
+      "notations": "E = 2500 Cal ÷ 860 Cal/kWh"
+    },
+    {
+      "explanation": "Calculate the energy in kilowatt-hours.",
+      "notations": "E = 2.907 kWh ≈ 2.9 kWh"
+    },
+    {
+      "explanation": "(c) Calculate the daily cost by multiplying the energy in kilowatt-hours by the utility rate.",
+      "notations": "Cost = 2.9 kWh × $0.10/kWh"
+    },
+    {
+      "explanation": "Calculate the final cost and compare to actual food costs.",
+      "notations": "Cost = $0.29 per day. This is far below real food costs, so you cannot feed yourself on this amount."
+    }
+  ]
+}

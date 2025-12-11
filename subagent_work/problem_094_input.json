@@ -1,0 +1,40 @@
+{
+  "problem": "The right figure shows two blocks connected by a cord (of negligible mass) that passes over a frictionless pulley (also of negligible mass). The blocks have mass m₍A₎ and m₍B₎, respectively, with m₍B₎ < m₍A₎. The two blocks are initially at rest. If the block m₍A₎ falls over a height L, assuming the length of the rope is long enough, what is the work done on m₍B₎ by the gravitational force?",
+  "source": "Quiz 6 - Problem 5",
+  "sourceFile": "sources/Quiz6_FA25.pdf",
+  "chapter": "Quiz 6 Review",
+  "variables": [
+    {
+      "symbol": "m₍A₎",
+      "meaning": "heavier block mass"
+    },
+    {
+      "symbol": "m₍B₎",
+      "meaning": "lighter block mass"
+    },
+    {
+      "symbol": "L",
+      "meaning": "vertical distance moved"
+    },
+    {
+      "symbol": "g",
+      "meaning": "gravitational acceleration"
+    },
+    {
+      "symbol": "W₍g,B₎",
+      "meaning": "work done on block B by gravity"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Work by gravity",
+      "formula": "W = m g Δy (positive for downward displacement)"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "As m₍A₎ descends by L, m₍B₎ rises by the same amount, so gravity acts opposite its displacement.",
+      "notations": "Δy₍B₎ = +L upward ⇒ W₍g,B₎ = m₍B₎ g (−L) = −m₍B₎ g L"
+    }
+  ]
+}

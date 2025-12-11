@@ -1,0 +1,48 @@
+{
+  "problem": "The springs of a 1700-kg car compress 5.0 mm when its 66-kg driver gets into the driver's seat. If the car goes over a bump, what will be the frequency of oscillations? Ignore damping.",
+  "source": "PS Chap11 and 12.pdf - Problem 1",
+  "sourceFile": "sources/PS Chap11 and 12.pdf",
+  "chapter": "Chapters 11–12: Oscillations & Waves",
+  "variables": [
+    {
+      "symbol": "m₍car₎",
+      "meaning": "mass of car chassis"
+    },
+    {
+      "symbol": "m₍driver₎",
+      "meaning": "mass of driver"
+    },
+    {
+      "symbol": "Δx",
+      "meaning": "suspension compression caused by driver"
+    },
+    {
+      "symbol": "k",
+      "meaning": "effective spring constant of suspension (N/m)"
+    },
+    {
+      "symbol": "f",
+      "meaning": "oscillation frequency (Hz)"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Hooke’s law",
+      "formula": "k = F / Δx = m₍driver₎ g / Δx"
+    },
+    {
+      "name": "Mass–spring frequency",
+      "formula": "f = (1/2π) √(k / (m₍car₎ + m₍driver₎))"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "Compute the suspension constant from the driver’s weight and the observed compression.",
+      "notations": "k = (66 × 9.80) / (5.0 × 10⁻³) ≈ 1.29 × 10⁵ N/m"
+    },
+    {
+      "explanation": "Use the total oscillating mass (car + driver) to find the frequency.",
+      "notations": "f = (1/2π) √[1.29 × 10⁵ / (1700 + 66)] ≈ 1.4 Hz"
+    }
+  ]
+}

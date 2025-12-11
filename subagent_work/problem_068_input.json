@@ -1,0 +1,44 @@
+{
+  "problem": "(a) Calculate the wavelengths in air at 20°C for sounds in the maximum range of human hearing, 20 Hz to 20,000 Hz. (b) What is the wavelength of an 18-MHz ultrasonic wave?",
+  "source": "PS Chap11 and 12.pdf - Problem 9",
+  "sourceFile": "sources/PS Chap11 and 12.pdf",
+  "chapter": "Chapters 11–12: Oscillations & Waves",
+  "variables": [
+    {
+      "symbol": "v₍air₎",
+      "meaning": "speed of sound in air"
+    },
+    {
+      "symbol": "f₁",
+      "meaning": "first sound frequency"
+    },
+    {
+      "symbol": "f₂",
+      "meaning": "second sound frequency"
+    },
+    {
+      "symbol": "f₃",
+      "meaning": "ultrasonic frequency"
+    },
+    {
+      "symbol": "λ",
+      "meaning": "sound wavelength"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "λ = v / f",
+      "formula": "λ = v / f"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "At 20 Hz, λ ≈ 343 / 20 ≈ 17 m; at 20 kHz, λ ≈ 343 / (2.0 × 10⁴) ≈ 1.7 × 10⁻² m.",
+      "notations": "λ₍20 Hz₎ ≈ 17 m; λ₍20 kHz₎ ≈ 1.7 cm"
+    },
+    {
+      "explanation": "For an 18-MHz ultrasonic wave, use the same relation.",
+      "notations": "λ₍18 MHz₎ = 343 / (1.8 × 10⁷) ≈ 1.9 × 10⁻⁵ m"
+    }
+  ]
+}

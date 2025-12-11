@@ -1,0 +1,68 @@
+{
+  "problem": "Two blocks are connected by a light string passing over a pulley of radius 0.15 m and moment of inertia I. The blocks move (towards the right) with an acceleration of 1.00 m/s² along their frictionless inclines (see the figure). (a) Draw free-body diagrams for each of the two blocks and the pulley. (b) Determine F₍TA₎ and F₍TB₎, the tensions in the two parts of the string. (c) Find the net torque acting on the pulley, and determine its moment of inertia, I.",
+  "source": "PS_Chap8.pdf - Problem 11",
+  "sourceFile": "sources/PS_Chap8.pdf",
+  "chapter": "Chapter 8: Rotational Motion",
+  "variables": [
+    {
+      "symbol": "m₍A₎",
+      "meaning": "mass of A"
+    },
+    {
+      "symbol": "m₍B₎",
+      "meaning": "mass of B"
+    },
+    {
+      "symbol": "a",
+      "meaning": "acceleration"
+    },
+    {
+      "symbol": "R",
+      "meaning": "radius"
+    },
+    {
+      "symbol": "→F₍TA₎",
+      "meaning": "force of tension A"
+    },
+    {
+      "symbol": "→F₍TB₎",
+      "meaning": "force of tension B"
+    },
+    {
+      "symbol": "τ₍net₎",
+      "meaning": "torque of net"
+    },
+    {
+      "symbol": "I",
+      "meaning": "moment of inertia of pulley (kg·m²)"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Newton's second law along each incline",
+      "formula": "m₍A₎ a = F₍TA₎ − m₍A₎ g sinθ₍A₎;   m₍B₎ a = m₍B₎ g sinθ₍B₎ − F₍TB₎"
+    },
+    {
+      "name": "Pulley torque balance",
+      "formula": "τ₍net₎ = (F₍TB₎ − F₍TA₎) R"
+    },
+    {
+      "name": "Rotational dynamics",
+      "formula": "τ₍net₎ = I α with α = a / R"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "Solve the linear equations for the tensions using the given masses, angles, and acceleration.",
+      "notations": "F₍TA₎ = m₍A₎ (g sin32° + a) ≈ (8.0)[9.80 sin32° + 1.00] ≈ 5.0 × 10¹ N;  F₍TB₎ = m₍B₎ (g sin61° − a) ≈ 7.6 × 10¹ N"
+    },
+    {
+      "explanation": "Compute the torque difference about the pulley axle.",
+      "notations": "τ₍net₎ = (F₍TB₎ − F₍TA₎) R = (75.7 − 49.6) N × 0.15 m ≈ 3.9 N·m (clockwise)"
+    },
+    {
+      "explanation": "Relate τ to I via α = a/R.",
+      "notations": "I = τ₍net₎ R / a = (3.9)(0.15)/1.00 ≈ 0.59 kg·m²"
+    }
+  ]
+}

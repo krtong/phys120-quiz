@@ -1,0 +1,68 @@
+{
+  "problem": "The springs of a 1700-kg car compress 5.0 mm when its 66-kg driver gets into the driver's seat. If the car goes over a bump, what will be the frequency of oscillations? Ignore damping.",
+  "source": "PS Chap11 and 12.pdf - Problem 1",
+  "sourceFile": "sources/PS Chap11 and 12.pdf",
+  "chapter": "Chapters 11–12: Oscillations & Waves",
+  "variables": [
+    {
+      "symbol": "m₍car₎",
+      "meaning": "mass of car chassis"
+    },
+    {
+      "symbol": "m₍driver₎",
+      "meaning": "mass of driver"
+    },
+    {
+      "symbol": "Δx",
+      "meaning": "suspension compression caused by driver"
+    },
+    {
+      "symbol": "k",
+      "meaning": "effective spring constant of suspension (N/m)"
+    },
+    {
+      "symbol": "f",
+      "meaning": "oscillation frequency (Hz)"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Hooke's law",
+      "formula": "F = kΔx"
+    },
+    {
+      "name": "Mass-spring frequency",
+      "formula": "f = (1/2π) √(k/m)"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "State the fundamental formulas that will be used to solve this problem.",
+      "notations": "We will use Hooke's law: F = kΔx, and the mass-spring frequency formula: f = (1/2π) √(k/m)"
+    },
+    {
+      "explanation": "Define the variables with values given in the problem.",
+      "notations": "Given: m₍car₎ = 1700 kg, m₍driver₎ = 66 kg, Δx = 5.0 mm = 5.0 × 10⁻³ m, g = 9.80 m/s²"
+    },
+    {
+      "explanation": "Find the spring constant using Hooke's law. The force compressing the spring is the driver's weight.",
+      "notations": "From F = kΔx, we get k = F/Δx. The force is the driver's weight: F = m₍driver₎ g"
+    },
+    {
+      "explanation": "Substitute the numerical values to calculate the spring constant.",
+      "notations": "k = (66 kg × 9.80 m/s²) / (5.0 × 10⁻³ m) = 646.8 N / (5.0 × 10⁻³ m) = 1.29 × 10⁵ N/m"
+    },
+    {
+      "explanation": "For the frequency calculation, the oscillating mass is the total mass of car plus driver.",
+      "notations": "m = m₍car₎ + m₍driver₎ = 1700 kg + 66 kg = 1766 kg"
+    },
+    {
+      "explanation": "Substitute the values into the frequency formula.",
+      "notations": "f = (1/2π) √(k/m) = (1/2π) √(1.29 × 10⁵ N/m / 1766 kg)"
+    },
+    {
+      "explanation": "Calculate the frequency.",
+      "notations": "f = (1/2π) √(73.05 s⁻²) = (1/2π) × 8.55 s⁻¹ = 1.36 Hz ≈ 1.4 Hz"
+    }
+  ]
+}

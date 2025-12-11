@@ -1,0 +1,64 @@
+{
+  "problem": "ESTIMATE Gravity on Everest. Estimate the effective value of g on the top of Mt. Everest, 8850 m (29,035 ft) above sea level. That is, what is the acceleration due to gravity of objects allowed to fall freely at this altitude? Ignore the mass of the mountain itself.",
+  "source": "PS_Chap5_II.pdf - Problem 8",
+  "sourceFile": "sources/PS_Chap5_II.pdf",
+  "chapter": "Chapter 5: Circular Motion & Gravitation",
+  "variables": [
+    {
+      "symbol": "g₀",
+      "meaning": "gravitational acceleration, sea-level reference"
+    },
+    {
+      "symbol": "R₍E₎",
+      "meaning": "radius, Earth"
+    },
+    {
+      "symbol": "h",
+      "meaning": "height above sea level"
+    },
+    {
+      "symbol": "g(h)",
+      "meaning": "gravitational acceleration at altitude"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Gravitational acceleration",
+      "formula": "g = G M / r²"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "We will use the gravitational acceleration formula g = G M / r², recognizing that gravity varies with the square of the distance from Earth's center.",
+      "notations": "g = G M / r²"
+    },
+    {
+      "explanation": "Define the given values and known constants.",
+      "notations": "h = 8850 m, R₍E₎ = 6.38 × 10⁶ m, g₀ = 9.80 m/s²"
+    },
+    {
+      "explanation": "At sea level, the distance from Earth's center is R₍E₎, so g₀ = G M / R₍E₎². At altitude h, the distance is (R₍E₎ + h), so g(h) = G M / (R₍E₎ + h)².",
+      "notations": "g₀ = G M / R₍E₎², g(h) = G M / (R₍E₎ + h)²"
+    },
+    {
+      "explanation": "Take the ratio of g(h) to g₀ to eliminate G M and express the altitude gravity in terms of sea-level gravity.",
+      "notations": "g(h) / g₀ = [R₍E₎² / (R₍E₎ + h)²] = [R₍E₎ / (R₍E₎ + h)]²"
+    },
+    {
+      "explanation": "Rearrange to solve for g(h).",
+      "notations": "g(h) = g₀ [R₍E₎ / (R₍E₎ + h)]²"
+    },
+    {
+      "explanation": "Compute the ratio of Earth's radius to the radius plus the Everest altitude.",
+      "notations": "R₍E₎ / (R₍E₎ + h) = 6.38 × 10⁶ m / (6.38 × 10⁶ m + 8850 m) = 6.38 × 10⁶ m / 6.38885 × 10⁶ m ≈ 0.9986"
+    },
+    {
+      "explanation": "Square the ratio to obtain the scaling factor for gravity.",
+      "notations": "[R₍E₎ / (R₍E₎ + h)]² ≈ (0.9986)² ≈ 0.9972"
+    },
+    {
+      "explanation": "Substitute the numerical values to find the gravitational acceleration at altitude h.",
+      "notations": "g(h) = (9.80 m/s²)(0.9972) ≈ 9.77 m/s²"
+    }
+  ]
+}

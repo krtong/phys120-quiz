@@ -1,0 +1,80 @@
+{
+  "problem": "A 0.72-m-diameter solid sphere can be rotated about an axis through its center by a torque of 10.8 m·N which accelerates it uniformly from rest through a total of 160 revolutions in 15.0 s. What is the mass of the sphere?",
+  "source": "PS_Chap8.pdf - Problem 10",
+  "sourceFile": "sources/PS_Chap8.pdf",
+  "chapter": "Chapter 8: Rotational Motion",
+  "variables": [
+    {
+      "symbol": "d",
+      "meaning": "distance"
+    },
+    {
+      "symbol": "τ",
+      "meaning": "torque"
+    },
+    {
+      "symbol": "θ",
+      "meaning": "angle"
+    },
+    {
+      "symbol": "t",
+      "meaning": "time"
+    },
+    {
+      "symbol": "α",
+      "meaning": "angular acceleration (rad/s²)"
+    },
+    {
+      "symbol": "M",
+      "meaning": "sphere mass (kg)"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Rotational kinematics for constant acceleration",
+      "formula": "θ = ½αt²"
+    },
+    {
+      "name": "Torque and angular acceleration",
+      "formula": "τ = Iα"
+    },
+    {
+      "name": "Moment of inertia for solid sphere",
+      "formula": "I = (2/5)Mr²"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "Identify the formulas needed: rotational kinematics to find angular acceleration, torque relation, and moment of inertia for a solid sphere",
+      "notations": "θ = ½αt², τ = Iα, I = (2/5)Mr²"
+    },
+    {
+      "explanation": "Define variables from the problem",
+      "notations": "Given: d = 0.72 m, so r = 0.36 m; τ = 10.8 m·N; θ = 160 rev = 320π rad; t = 15.0 s; ω₀ = 0 (starts from rest)"
+    },
+    {
+      "explanation": "Use θ = ½αt² to solve for angular acceleration α",
+      "notations": "α = 2θ/t² = 2(320π rad)/(15.0 s)²"
+    },
+    {
+      "explanation": "Calculate the numerical value of α",
+      "notations": "α = 640π rad / 225 s² = 2.84π rad/s² ≈ 8.93 rad/s²"
+    },
+    {
+      "explanation": "Substitute I = (2/5)Mr² into τ = Iα",
+      "notations": "τ = (2/5)Mr²α"
+    },
+    {
+      "explanation": "Solve for M by rearranging the equation",
+      "notations": "M = 5τ/(2r²α)"
+    },
+    {
+      "explanation": "Substitute numerical values into the equation for M",
+      "notations": "M = 5(10.8 m·N) / [2(0.36 m)²(640π/225 rad/s²)]"
+    },
+    {
+      "explanation": "Simplify and calculate the mass",
+      "notations": "M = 54 / [2(0.1296)(640π/225)] = 54(225) / [2(0.1296)(640π)] = 12150 / [165.89π] ≈ 12150 / 521.1 ≈ 23.3 kg ≈ 2.3 × 10¹ kg"
+    }
+  ]
+}

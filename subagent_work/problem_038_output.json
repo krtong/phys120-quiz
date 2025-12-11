@@ -1,0 +1,112 @@
+{
+  "problem": "The tires of a car make 75 revolutions as the car reduces its speed uniformly from 95 km/h to 55 km/h. The tires have a diameter of 0.80 m. (a) What was the angular acceleration of the tires? If the car continues to decelerate at this rate, (b) how much more time is required for it to stop, and (c) how far does it go?",
+  "source": "PS_Chap8.pdf - Problem 4",
+  "sourceFile": "sources/PS_Chap8.pdf",
+  "chapter": "Chapter 8: Rotational Motion",
+  "variables": [
+    {
+      "symbol": "d",
+      "meaning": "tire diameter"
+    },
+    {
+      "symbol": "v₀",
+      "meaning": "initial car speed"
+    },
+    {
+      "symbol": "v₁",
+      "meaning": "speed after 75 revolutions"
+    },
+    {
+      "symbol": "ω₀",
+      "meaning": "angular speed corresponding to v₀"
+    },
+    {
+      "symbol": "ω₁",
+      "meaning": "angular speed corresponding to v₁"
+    },
+    {
+      "symbol": "θ₇₅",
+      "meaning": "angular displacement for 75 revolutions"
+    },
+    {
+      "symbol": "α",
+      "meaning": "angular acceleration (rad/s²)"
+    },
+    {
+      "symbol": "t₍stop₎",
+      "meaning": "additional time to decelerate from 55 km/h to rest"
+    },
+    {
+      "symbol": "Δx₍total₎",
+      "meaning": "total distance covered during slowdown"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Relationship between linear and angular velocity",
+      "formula": "v = rω"
+    },
+    {
+      "name": "Angular displacement from revolutions",
+      "formula": "θ = (revs) × 2π"
+    },
+    {
+      "name": "Rotational kinematics equation",
+      "formula": "ω² = ω₀² + 2αθ"
+    },
+    {
+      "name": "Rotational kinematics equation for angular velocity",
+      "formula": "ω = ω₀ + αt"
+    },
+    {
+      "name": "Arc length formula",
+      "formula": "s = rθ"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "State the fundamental formulas we will use: v = rω for converting linear to angular velocity, θ = (revs) × 2π for angular displacement, ω² = ω₀² + 2αθ for finding angular acceleration, ω = ω₀ + αt for finding time, and s = rθ for finding distance.",
+      "notations": "v = rω, θ = (revs) × 2π, ω² = ω₀² + 2αθ, ω = ω₀ + αt, s = rθ"
+    },
+    {
+      "explanation": "Define the given values from the problem.",
+      "notations": "v₀ = 95 km/h, v₁ = 55 km/h, revolutions = 75, d = 0.80 m, r = d/2 = 0.40 m"
+    },
+    {
+      "explanation": "Convert the linear speeds from km/h to m/s.",
+      "notations": "v₀ = 95 km/h × (1000 m/km) × (1 h/3600 s) = 95/3.6 m/s ≈ 26.4 m/s; v₁ = 55 km/h × (1000 m/km) × (1 h/3600 s) = 55/3.6 m/s ≈ 15.3 m/s"
+    },
+    {
+      "explanation": "Convert linear speeds to angular speeds using v = rω, which gives ω = v/r.",
+      "notations": "ω₀ = v₀/r = (95/3.6 m/s)/(0.40 m) ≈ 66.1 rad/s; ω₁ = v₁/r = (55/3.6 m/s)/(0.40 m) ≈ 38.2 rad/s"
+    },
+    {
+      "explanation": "Calculate the angular displacement for 75 revolutions using θ = (revs) × 2π.",
+      "notations": "θ₇₅ = 75 × 2π = 150π rad ≈ 471.2 rad"
+    },
+    {
+      "explanation": "Part (a): Use the rotational kinematics equation ω₁² = ω₀² + 2αθ₇₅ to find the angular acceleration α.",
+      "notations": "α = (ω₁² - ω₀²)/(2θ₇₅) = [(38.2)² - (66.1)²]/(2 × 471.2) = [1459 - 4369]/(942.4) = -2910/942.4 ≈ -3.1 rad/s²"
+    },
+    {
+      "explanation": "Part (b): Use ω = ω₀ + αt to find the time to stop from v₁ = 55 km/h (ω₁ = 38.2 rad/s) to rest (ω = 0).",
+      "notations": "0 = ω₁ + αt → t = -ω₁/α = -(38.2 rad/s)/(-3.1 rad/s²) ≈ 12.3 s"
+    },
+    {
+      "explanation": "Part (c): First, find the angular displacement from v₁ to rest using ω² = ω₀² + 2αθ with ω = 0 and ω₀ = ω₁.",
+      "notations": "0 = ω₁² + 2αθ₂ → θ₂ = -ω₁²/(2α) = -(38.2)²/(2 × (-3.1)) = -1459/(-6.2) ≈ 235 rad"
+    },
+    {
+      "explanation": "Convert the angular displacement θ₂ to linear distance using s = rθ.",
+      "notations": "s₂ = rθ₂ = (0.40 m)(235 rad) ≈ 94 m"
+    },
+    {
+      "explanation": "Calculate the distance covered during the first 75 revolutions using s = rθ.",
+      "notations": "s₁ = rθ₇₅ = (0.40 m)(471.2 rad) ≈ 188 m"
+    },
+    {
+      "explanation": "Add the two distances to find the total distance covered from the initial speed to rest.",
+      "notations": "Δx₍total₎ = s₁ + s₂ = 188 m + 94 m = 282 m ≈ 2.8 × 10² m"
+    }
+  ]
+}

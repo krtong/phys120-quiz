@@ -1,0 +1,72 @@
+{
+  "problem": "An 85-g arrow is fired from a bow whose string exerts an average force of 105 N on the arrow over a distance of 75 cm. What is the speed of the arrow as it leaves the bow?",
+  "source": "PS Chap6.pdf - Problem 5",
+  "sourceFile": "sources/PS Chap6.pdf",
+  "chapter": "Chapter 6: Work & Energy",
+  "variables": [
+    {
+      "symbol": "m",
+      "meaning": "mass of the arrow"
+    },
+    {
+      "symbol": "F₍avg₎",
+      "meaning": "average force from the bowstring"
+    },
+    {
+      "symbol": "d",
+      "meaning": "draw distance over which force acts"
+    },
+    {
+      "symbol": "W",
+      "meaning": "work done by the string (J)"
+    },
+    {
+      "symbol": "v",
+      "meaning": "launch speed (m/s)"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Work",
+      "formula": "W = Fd cosθ"
+    },
+    {
+      "name": "Kinetic energy",
+      "formula": "KE = ½mv²"
+    },
+    {
+      "name": "Work-energy theorem",
+      "formula": "W = ΔKE"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "We will use the work formula W = Fd cosθ and the work-energy theorem W = ΔKE, where ΔKE = KEf - KEi = ½mv² - 0 (starting from rest).",
+      "notations": "W = Fd cosθ, W = ΔKE = ½mv²"
+    },
+    {
+      "explanation": "Define variables by values given in the problem.",
+      "notations": "m = 85 g = 0.085 kg, F = 105 N, d = 75 cm = 0.75 m, θ = 0° (force parallel to displacement)"
+    },
+    {
+      "explanation": "Calculate the work done by the bowstring on the arrow. Since the force is parallel to the displacement, cosθ = cos(0°) = 1.",
+      "notations": "W = Fd cos(0°) = (105 N)(0.75 m)(1)"
+    },
+    {
+      "explanation": "Compute the work value.",
+      "notations": "W = 78.75 J"
+    },
+    {
+      "explanation": "Apply the work-energy theorem. The work done equals the change in kinetic energy, and since the arrow starts from rest, W = ½mv².",
+      "notations": "78.75 J = ½(0.085 kg)v²"
+    },
+    {
+      "explanation": "Solve for v by isolating the variable.",
+      "notations": "v² = 2(78.75 J)/(0.085 kg) = 157.5/0.085 m²/s²"
+    },
+    {
+      "explanation": "Calculate v² and then take the square root.",
+      "notations": "v² = 1852.94 m²/s², v = √(1852.94 m²/s²) ≈ 43 m/s"
+    }
+  ]
+}

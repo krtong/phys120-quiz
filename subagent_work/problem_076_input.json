@@ -1,0 +1,40 @@
+{
+  "problem": "Water is in which phase when the pressure is 0.01 atm and the temperature is (a) 90°C, (b) −20°C?",
+  "source": "PS Chap13 FA25.pdf - Problem 8",
+  "sourceFile": "sources/PS Chap13 FA25.pdf",
+  "chapter": "Chapter 13: Temperature & Kinetic Theory",
+  "variables": [
+    {
+      "symbol": "P",
+      "meaning": "pressure"
+    },
+    {
+      "symbol": "T₍a₎",
+      "meaning": "temperature, case (a)"
+    },
+    {
+      "symbol": "T₍b₎",
+      "meaning": "temperature, case (b)"
+    },
+    {
+      "symbol": "phase",
+      "meaning": "phase"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Phase identification",
+      "formula": "Use water phase diagram (qualitative)."
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "At 0.01 atm and 90°C, the phase diagram shows water is vapor.",
+      "notations": "Phase at (0.01 atm, 90°C): vapor"
+    },
+    {
+      "explanation": "At 0.01 atm and −20°C, water is in the solid region.",
+      "notations": "Phase at (0.01 atm, −20°C): solid"
+    }
+  ]
+}

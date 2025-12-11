@@ -1,0 +1,72 @@
+{
+  "problem": "A novice skier, starting from rest, slides down a frictionless 13.0° incline whose vertical height is 125 m. How fast is she going when she reaches the bottom?",
+  "source": "PS Chap6.pdf - Problem 8",
+  "sourceFile": "sources/PS Chap6.pdf",
+  "chapter": "Chapter 6: Work & Energy",
+  "variables": [
+    {
+      "symbol": "h",
+      "meaning": "vertical drop of slope"
+    },
+    {
+      "symbol": "v₀",
+      "meaning": "initial speed at top"
+    },
+    {
+      "symbol": "v",
+      "meaning": "speed at bottom of slope"
+    },
+    {
+      "symbol": "g",
+      "meaning": "gravitational acceleration near Earth"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Gravitational potential energy",
+      "formula": "PE = mgh"
+    },
+    {
+      "name": "Kinetic energy",
+      "formula": "KE = ½mv²"
+    },
+    {
+      "name": "Conservation of mechanical energy",
+      "formula": "KE₀ + PE₀ = KE + PE"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "We will use conservation of mechanical energy. For a frictionless incline, the sum of kinetic and potential energy remains constant.",
+      "notations": "KE₀ + PE₀ = KE + PE"
+    },
+    {
+      "explanation": "Define the variables from the problem. The skier starts from rest at height h and reaches the bottom (height = 0).",
+      "notations": "v₀ = 0 m/s, h = 125 m, g = 9.80 m/s²"
+    },
+    {
+      "explanation": "At the top, the skier has only potential energy (since v₀ = 0). At the bottom, she has only kinetic energy (since height = 0).",
+      "notations": "Initial: KE₀ = 0, PE₀ = mgh; Final: KE = ½mv², PE = 0"
+    },
+    {
+      "explanation": "Apply conservation of energy by setting the initial energy equal to the final energy.",
+      "notations": "0 + mgh = ½mv² + 0"
+    },
+    {
+      "explanation": "Simplify by canceling the mass m from both sides.",
+      "notations": "gh = ½v²"
+    },
+    {
+      "explanation": "Solve for v by rearranging the equation.",
+      "notations": "v² = 2gh, v = √(2gh)"
+    },
+    {
+      "explanation": "Substitute the numerical values into the formula.",
+      "notations": "v = √[2(9.80 m/s²)(125 m)]"
+    },
+    {
+      "explanation": "Calculate the final speed.",
+      "notations": "v = √[2450 m²/s²] = 49.5 m/s ≈ 5.0 × 10¹ m/s"
+    }
+  ]
+}

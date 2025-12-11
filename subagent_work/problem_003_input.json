@@ -1,0 +1,80 @@
+{
+  "problem": "A 0.15-kg ball on the end of a 1.10-m-long cord (negligible mass) is swung in a vertical circle. (a) Determine the minimum speed the ball must have at the top of its arc so that the ball continues moving in a circle. (b) Calculate the tension in the cord at the bottom of the arc, assuming the ball is moving at twice the speed of part (a).",
+  "source": "PS_Chap5_II.pdf - Problem 4",
+  "sourceFile": "sources/PS_Chap5_II.pdf",
+  "chapter": "Chapter 5: Circular Motion & Gravitation",
+  "variables": [
+    {
+      "symbol": "m",
+      "meaning": "mass of the ball"
+    },
+    {
+      "symbol": "r",
+      "meaning": "radius of circular path"
+    },
+    {
+      "symbol": "g",
+      "meaning": "gravitational acceleration near Earth"
+    },
+    {
+      "symbol": "v₍top₎",
+      "meaning": "speed, top of circular path"
+    },
+    {
+      "symbol": "v₍bottom₎",
+      "meaning": "speed, bottom of circular path"
+    },
+    {
+      "symbol": "T₍top₎",
+      "meaning": "tension in cord at top"
+    },
+    {
+      "symbol": "T₍bottom₎",
+      "meaning": "tension in cord at bottom"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Centripetal acceleration magnitude",
+      "formula": "a₍c₎ = v² / r"
+    },
+    {
+      "name": "Force balance at the top of the circle",
+      "formula": "T₍top₎ + mg = m v₍top₎² / r"
+    },
+    {
+      "name": "Minimum-speed condition (no slack)",
+      "formula": "T₍top₎ → 0 ⟹ v₍top₎,min = √(gr)"
+    },
+    {
+      "name": "Force balance at the bottom of the circle",
+      "formula": "T₍bottom₎ − mg = m v₍bottom₎² / r"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "At the top of the trajectory gravity and tension both point toward the center; to keep the cord taut, the required centripetal force must be at least equal to the ball's weight.",
+      "notations": "T₍top₎ + mg = m v₍top₎² / r"
+    },
+    {
+      "explanation": "For the minimum allowable top speed, the tension at the top just reaches zero, so gravity alone supplies the centripetal force.",
+      "notations": "mg = m v₍top₎² / r ⟹ v₍top₎,min = √(gr)"
+    },
+    {
+      "explanation": "Insert the given cord length into the minimum-speed expression.",
+      "notations": "v₍top₎,min = √[(9.80 m/s²)(1.10 m)] ≈ 3.28 m/s"
+    },
+    {
+      "explanation": "Use the stated condition that the bottom speed is twice the top speed.",
+      "notations": "v₍bottom₎ = 2 v₍top₎,min ≈ 6.56 m/s"
+    },
+    {
+      "explanation": "At the bottom the tension must both support the weight and provide the upward centripetal force.",
+      "notations": "T₍bottom₎ = m v₍bottom₎² / r + mg"
+    },
+    {
+      "explanation": "Substitute the numerical values to obtain the bottom tension.",
+      "notations": "T₍bottom₎ = (0.150 kg)(6.56 m/s)² / 1.10 m + (0.150 kg)(9.80 m/s²) ≈ 7.3 N"
+    }
+  ]
+}

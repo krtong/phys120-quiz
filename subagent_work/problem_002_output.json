@@ -1,0 +1,84 @@
+{
+  "problem": "Estimate the force a person must exert on a string attached to a 0.150-kg ball to make the ball revolve in a horizontal circle of radius 0.600 m. The ball makes 2.00 revolutions per second (T = 0.500 s). Ignore the string's mass.",
+  "source": "PS_Chap5_II.pdf - Problem 3",
+  "sourceFile": "sources/PS_Chap5_II.pdf",
+  "chapter": "Chapter 5: Circular Motion & Gravitation",
+  "variables": [
+    {
+      "symbol": "m",
+      "meaning": "mass of the ball"
+    },
+    {
+      "symbol": "r",
+      "meaning": "radius of circular path"
+    },
+    {
+      "symbol": "f",
+      "meaning": "rotational frequency"
+    },
+    {
+      "symbol": "T",
+      "meaning": "period of motion"
+    },
+    {
+      "symbol": "v",
+      "meaning": "linear (tangential) speed"
+    },
+    {
+      "symbol": "a₍c₎",
+      "meaning": "acceleration, centripetal component"
+    },
+    {
+      "symbol": "→F₍c₎",
+      "meaning": "force, centripetal (string tension)"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Linear speed from rotational frequency",
+      "formula": "v = 2πrf"
+    },
+    {
+      "name": "Centripetal acceleration",
+      "formula": "a₍c₎ = v² / r"
+    },
+    {
+      "name": "Newton's second law for centripetal force",
+      "formula": "F₍c₎ = m a₍c₎"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "Identify the fundamental formulas needed: We need to find the linear speed from rotational frequency, then centripetal acceleration, and finally the centripetal force using Newton's second law.",
+      "notations": "v = 2πrf, a₍c₎ = v² / r, F₍c₎ = m a₍c₎"
+    },
+    {
+      "explanation": "Define the variables with values given in the problem.",
+      "notations": "m = 0.150 kg, r = 0.600 m, f = 2.00 rev/s, T = 0.500 s"
+    },
+    {
+      "explanation": "Substitute the numerical values for radius and frequency into the linear speed formula.",
+      "notations": "v = 2π(0.600 m)(2.00 /s)"
+    },
+    {
+      "explanation": "Calculate the linear speed.",
+      "notations": "v = 2.4π m/s ≈ 7.54 m/s"
+    },
+    {
+      "explanation": "Substitute the calculated speed and given radius into the centripetal acceleration formula.",
+      "notations": "a₍c₎ = (7.54 m/s)² / (0.600 m)"
+    },
+    {
+      "explanation": "Calculate the centripetal acceleration.",
+      "notations": "a₍c₎ = 56.85 m²/s² / 0.600 m ≈ 94.7 m/s²"
+    },
+    {
+      "explanation": "Substitute the mass and centripetal acceleration into Newton's second law to find the centripetal force (which equals the string tension).",
+      "notations": "F₍c₎ = (0.150 kg)(94.7 m/s²)"
+    },
+    {
+      "explanation": "Calculate the final force.",
+      "notations": "F₍c₎ ≈ 14.2 N ≈ 1.4 × 10¹ N"
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "problem": "A 150-g ball at the end of a string is revolving uniformly in a horizontal circle of radius 0.600 m. The ball makes 2.00 revolutions in a second. What is its centripetal acceleration?",
+  "source": "PS_Chap5_II.pdf - Problem 1",
+  "sourceFile": "sources/PS_Chap5_II.pdf",
+  "chapter": "Chapter 5: Circular Motion & Gravitation",
+  "variables": [
+    {
+      "symbol": "m",
+      "meaning": "mass of the ball"
+    },
+    {
+      "symbol": "r",
+      "meaning": "radius of circular path"
+    },
+    {
+      "symbol": "f",
+      "meaning": "rotational frequency"
+    },
+    {
+      "symbol": "T",
+      "meaning": "period of rotation"
+    },
+    {
+      "symbol": "v",
+      "meaning": "linear (tangential) speed"
+    },
+    {
+      "symbol": "a₍c₎",
+      "meaning": "acceleration, centripetal component"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Period–frequency relation",
+      "formula": "T = 1 / f"
+    },
+    {
+      "name": "Linear speed from rotational frequency",
+      "formula": "v = 2πrf"
+    },
+    {
+      "name": "Centripetal acceleration",
+      "formula": "a₍c₎ = v² / r"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "We will use the centripetal acceleration formula a₍c₎ = v² / r, along with the linear speed formula v = 2πrf to find the speed from the rotational frequency.",
+      "notations": "a₍c₎ = v² / r and v = 2πrf"
+    },
+    {
+      "explanation": "Define the given values from the problem.",
+      "notations": "m = 150 g = 0.150 kg, r = 0.600 m, f = 2.00 rev/s"
+    },
+    {
+      "explanation": "Calculate the linear speed by substituting the radius and frequency into the formula.",
+      "notations": "v = 2πrf = 2π(0.600 m)(2.00 /s)"
+    },
+    {
+      "explanation": "Evaluate the linear speed numerically.",
+      "notations": "v = 2.4π m/s ≈ 7.54 m/s"
+    },
+    {
+      "explanation": "Substitute the linear speed and radius into the centripetal acceleration formula.",
+      "notations": "a₍c₎ = v² / r = (7.54 m/s)² / (0.600 m)"
+    },
+    {
+      "explanation": "Calculate the centripetal acceleration.",
+      "notations": "a₍c₎ = 56.85 m²/s² / 0.600 m ≈ 94.7 m/s²"
+    },
+    {
+      "explanation": "State the final answer with appropriate significant figures, noting that the acceleration is directed toward the center.",
+      "notations": "a₍c₎ ≈ 9.5 × 10¹ m/s² inward"
+    }
+  ]
+}

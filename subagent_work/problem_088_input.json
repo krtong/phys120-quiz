@@ -1,0 +1,48 @@
+{
+  "problem": "In the system shown in the figure, the coefficient of static friction between mass m₍A₎ and the table is 0.40, and the coefficient of kinetic friction is 0.30. (a) What is the minimum value of m₍A₎ that will keep the system from starting to move? (b) What value(s) of m₍A₎ will keep the system moving at constant speed?",
+  "source": "Quiz 5 - Problem 2",
+  "sourceFile": "sources/Quiz5_FA25_solution.pdf",
+  "chapter": "Quiz 5 Review",
+  "variables": [
+    {
+      "symbol": "m₍A₎",
+      "meaning": "mass"
+    },
+    {
+      "symbol": "m₍B₎",
+      "meaning": "hanging mass"
+    },
+    {
+      "symbol": "μₛ",
+      "meaning": "coefficient (s)"
+    },
+    {
+      "symbol": "μₖ",
+      "meaning": "coefficient (k)"
+    },
+    {
+      "symbol": "g",
+      "meaning": "gravitational acceleration"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Static-friction threshold",
+      "formula": "μₛ N = μₛ m₍A₎ g ≥ m₍B₎ g"
+    },
+    {
+      "name": "Kinetic friction at constant speed",
+      "formula": "μₖ m₍A₎ g = m₍B₎ g (for zero acceleration)"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "(a) To prevent motion, the hanging weight must not exceed the maximum static friction.",
+      "notations": "m₍B₎ g ≤ μₛ m₍A₎ g ⇒ m₍A₎ ≥ m₍B₎ / μₛ"
+    },
+    {
+      "explanation": "(b) For steady motion the tension equals both m₍B₎ g (hanging equilibrium) and the kinetic-friction force on block A.",
+      "notations": "m₍B₎ g = μₖ m₍A₎ g ⇒ m₍A₎ = m₍B₎ / μₖ"
+    }
+  ]
+}

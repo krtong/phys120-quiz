@@ -1,0 +1,48 @@
+{
+  "problem": "An average active person consumes about 2500 Cal a day. (a) What is this in joules? (b) What is this in kilowatt-hours? (c) If your power company charges about 10 ¢ per kilowatt-hour, how much would your energy cost per day if you bought it from the power company? Could you feed yourself on this much money per day?",
+  "source": "PS Chap14 FA25.pdf - Problem 1",
+  "sourceFile": "sources/PS Chap14 FA25.pdf",
+  "chapter": "Chapter 14: Heat",
+  "variables": [
+    {
+      "symbol": "E₍food₎",
+      "meaning": "daily food energy intake"
+    },
+    {
+      "symbol": "k₍Cal→J₎",
+      "meaning": "conversion factor, 1 Cal in joules"
+    },
+    {
+      "symbol": "kWh₍conv₎",
+      "meaning": "conversion factor, 1 kWh in Calories"
+    },
+    {
+      "symbol": "rate",
+      "meaning": "electricity cost per kilowatt-hour"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Calorie–joule conversion",
+      "formula": "1 Cal = 4.186 × 10³ J"
+    },
+    {
+      "name": "Calorie–kilowatt-hour conversion",
+      "formula": "1 kWh = 860 Cal"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "(a) Convert food calories to joules.",
+      "notations": "E = 2500 × 4.186 × 10³ ≈ 1.0 × 10⁷ J"
+    },
+    {
+      "explanation": "(b) Convert to kilowatt-hours.",
+      "notations": "E = 2500 / 860 ≈ 2.9 kWh"
+    },
+    {
+      "explanation": "(c) Multiply by the utility rate to get daily cost; answer is far below real food costs.",
+      "notations": "Cost ≈ 2.9 kWh × $0.10 ≈ $0.29 per day → not enough to buy actual food"
+    }
+  ]
+}

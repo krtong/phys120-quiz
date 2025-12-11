@@ -1,0 +1,56 @@
+{
+  "problem": "How much work is done by the gravitational force when a 280-kg pile driver falls 2.80 m?",
+  "source": "PS Chap6.pdf - Problem 1",
+  "sourceFile": "sources/PS Chap6.pdf",
+  "chapter": "Chapter 6: Work & Energy",
+  "variables": [
+    {
+      "symbol": "m",
+      "meaning": "mass of pile driver"
+    },
+    {
+      "symbol": "g",
+      "meaning": "gravitational acceleration near Earth"
+    },
+    {
+      "symbol": "Δy",
+      "meaning": "vertical displacement (positive downward)"
+    },
+    {
+      "symbol": "W₍g₎",
+      "meaning": "work done by gravity (J)"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Work by a constant force",
+      "formula": "W = F Δr cosθ"
+    },
+    {
+      "name": "Gravitational force magnitude",
+      "formula": "F₍g₎ = m g"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "We will use the work formula for a constant force and the gravitational force formula. Since gravity acts downward and the pile driver moves downward, the angle θ = 0°, so cos(0°) = 1.",
+      "notations": "W = F Δr cosθ and F₍g₎ = m g"
+    },
+    {
+      "explanation": "Define the variables by the values given in the problem.",
+      "notations": "Given: m = 280 kg, g = 9.80 m/s², Δy = 2.80 m, θ = 0°"
+    },
+    {
+      "explanation": "Substitute the gravitational force into the work formula.",
+      "notations": "W₍g₎ = F₍g₎ Δy cos(0°) = (m g) Δy (1) = m g Δy"
+    },
+    {
+      "explanation": "Substitute the numerical values into the formula.",
+      "notations": "W₍g₎ = (280 kg)(9.80 m/s²)(2.80 m)"
+    },
+    {
+      "explanation": "Calculate the final answer.",
+      "notations": "W₍g₎ = 7,683.2 J ≈ 7.7 × 10³ J"
+    }
+  ]
+}

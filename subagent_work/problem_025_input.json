@@ -1,0 +1,44 @@
+{
+  "problem": "How much work is required to stop an electron (m = 9.11×10⁻³¹ kg) which is moving with a speed of 1.40×10⁶ m/s?",
+  "source": "PS Chap6.pdf - Problem 4",
+  "sourceFile": "sources/PS Chap6.pdf",
+  "chapter": "Chapter 6: Work & Energy",
+  "variables": [
+    {
+      "symbol": "m",
+      "meaning": "mass of electron"
+    },
+    {
+      "symbol": "vᵢ",
+      "meaning": "initial speed of electron"
+    },
+    {
+      "symbol": "v₍f₎",
+      "meaning": "final speed after stopping"
+    },
+    {
+      "symbol": "K",
+      "meaning": "kinetic energy"
+    },
+    {
+      "symbol": "W",
+      "meaning": "work done by stopping force (J)"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Work–energy theorem",
+      "formula": "W = ΔK = ½ m v₍f₎² − ½ m vᵢ²"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "Stopping the electron removes its initial kinetic energy; the required work is the negative of that energy.",
+      "notations": "W = −½ m vᵢ²"
+    },
+    {
+      "explanation": "Insert the electron mass and speed.",
+      "notations": "W = −½ (9.11 × 10⁻³¹ kg)(1.40 × 10⁶ m/s)² ≈ −8.9 × 10⁻¹⁹ J"
+    }
+  ]
+}

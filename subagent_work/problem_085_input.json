@@ -1,0 +1,48 @@
+{
+  "problem": "Suppose the insulating qualities of the wall of a house come mainly from a 4.0-in. layer of brick and an R-19 layer of insulation, as shown in Fig. 14–19. What is the total rate of heat loss through such a wall, if its total area is 195 ft² and the temperature difference across it is 35 F°?",
+  "source": "PS Chap14 FA25.pdf - Problem 8",
+  "sourceFile": "sources/PS Chap14 FA25.pdf",
+  "chapter": "Chapter 14: Heat",
+  "variables": [
+    {
+      "symbol": "A",
+      "meaning": "area"
+    },
+    {
+      "symbol": "ΔT",
+      "meaning": "temperature change"
+    },
+    {
+      "symbol": "R₍brick₎",
+      "meaning": "radius (brick)"
+    },
+    {
+      "symbol": "R₍insul₎",
+      "meaning": "radius (insul)"
+    },
+    {
+      "symbol": "R₍total₎",
+      "meaning": "thermal resistance, brick plus insulation"
+    },
+    {
+      "symbol": "Q̇",
+      "meaning": "heat-loss rate (Btu/h and W)"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Series thermal resistance",
+      "formula": "Q̇ = A ΔT / R₍total₎"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "Sum the R-values and compute the conduction rate.",
+      "notations": "Q̇ = (195 ft²)(35 °F)/(0.69 + 19) ≈ 3.5 × 10² Btu/h"
+    },
+    {
+      "explanation": "Convert to SI power for reference (~100 W).",
+      "notations": "≈ 350 Btu/h ≈ 1.0 × 10² W"
+    }
+  ]
+}

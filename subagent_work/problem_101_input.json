@@ -1,0 +1,48 @@
+{
+  "problem": "Two particles of mass m₁ and m₂ respectively, travels with an initial speed v₀ but with different angles as shown in the right figure. After the two collide, they both fly out with an angle 45° with respect to the horizontal. Find the final speed v₁ and v₂ of the two particles respectively. You can use sin(30°) = cos(60°) = 1/2, cos(30°) = sin(60°) = √3/2, and sin(45°) = cos(45°) = √2/2.",
+  "source": "Worksheet 09 - Problem 5",
+  "sourceFile": "sources/WS09_Momentum_and_CM.pdf",
+  "chapter": "Worksheet 09",
+  "variables": [
+    {
+      "symbol": "m₁",
+      "meaning": "mass of particle 1"
+    },
+    {
+      "symbol": "m₂",
+      "meaning": "mass of particle 2"
+    },
+    {
+      "symbol": "v₀",
+      "meaning": "initial speed of each particle"
+    },
+    {
+      "symbol": "v₁",
+      "meaning": "speed of particle 1 after collision"
+    },
+    {
+      "symbol": "v₂",
+      "meaning": "speed of particle 2 after collision"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Momentum conservation (x- and y-components)",
+      "formula": "m₁ v₀ cos30° − m₂ v₀ cos60° = m₁ v₁ cos45° − m₂ v₂ cos45°"
+    },
+    {
+      "name": "Momentum conservation (y-direction)",
+      "formula": "m₁ v₀ sin30° + m₂ v₀ sin60° = m₁ v₁ sin45° + m₂ v₂ sin45°"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "Insert the given trigonometric values and solve the two linear equations for v₁ and v₂.",
+      "notations": "v₁ = \\frac{v₀}{2√2} [ (√3+1) + (m₂/m₁)(√3−1) ],   v₂ = \\frac{v₀}{2√2} [ (√3+1) + (m₁/m₂)(1−√3) ]"
+    },
+    {
+      "explanation": "These expressions ensure both momentum components are conserved; the actual magnitudes depend on the mass ratio.",
+      "notations": "Use the chosen geometry from the figure when applying the formulas."
+    }
+  ]
+}

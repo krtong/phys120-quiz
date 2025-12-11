@@ -1,0 +1,116 @@
+{
+  "problem": "A pulley of mass m₁ and radius R is fixed on the ceiling. The rotational inertial of the pulley is given by I = ½m₁R². A block of mass m₂ is hang by a rope (assuming mass is negligible) that wraps around the pulley. Assume the rope does not slip on the pulley. (a) Find the constraint relation between the angular acceleration of the pulley and the vertical acceleration of the block. (b) Find the tension of the rope. (c) Find the acceleration of the block. (d) When the block falls a distance Δy, what is the angular speed of the pulley?",
+  "source": "Worksheet 10 - Problem 4",
+  "sourceFile": "sources/WS10_Rotational_Dynamics.pdf",
+  "chapter": "Worksheet 10",
+  "variables": [
+    {
+      "symbol": "m₁",
+      "meaning": "pulley mass"
+    },
+    {
+      "symbol": "m₂",
+      "meaning": "block mass"
+    },
+    {
+      "symbol": "R",
+      "meaning": "pulley radius"
+    },
+    {
+      "symbol": "I",
+      "meaning": "moment of inertia (½ m₁ R²)"
+    },
+    {
+      "symbol": "a",
+      "meaning": "downward acceleration of block"
+    },
+    {
+      "symbol": "α",
+      "meaning": "angular acceleration of pulley"
+    },
+    {
+      "symbol": "T",
+      "meaning": "rope tension"
+    },
+    {
+      "symbol": "Δy",
+      "meaning": "distance block falls"
+    },
+    {
+      "symbol": "ω",
+      "meaning": "angular speed after falling Δy"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Tangential acceleration relation",
+      "formula": "a = Rα"
+    },
+    {
+      "name": "Newton's second law",
+      "formula": "F = ma"
+    },
+    {
+      "name": "Torque equation",
+      "formula": "τ = Iα"
+    },
+    {
+      "name": "Kinematic equation",
+      "formula": "v² = v₀² + 2aΔx"
+    },
+    {
+      "name": "Tangential velocity relation",
+      "formula": "v = ωR"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "State the fundamental formulas and variables. We will use the tangential acceleration relation a = Rα for the no-slip constraint, Newton's second law F = ma for the block, the torque equation τ = Iα for the pulley, and kinematic equations v² = v₀² + 2aΔx and v = ωR for part (d).",
+      "notations": "a = Rα, F = ma, τ = Iα, v² = v₀² + 2aΔx, v = ωR"
+    },
+    {
+      "explanation": "Define the variables and given information. The pulley has mass m₁, radius R, and moment of inertia I = ½m₁R². The block has mass m₂. The block falls a distance Δy with downward acceleration a. The pulley has angular acceleration α and angular speed ω. The rope has tension T.",
+      "notations": "Given: I = ½m₁R²"
+    },
+    {
+      "explanation": "(a) Apply the no-slip constraint. Since the rope does not slip on the pulley, the tangential acceleration of the pulley's rim equals the block's linear acceleration.",
+      "notations": "a = Rα"
+    },
+    {
+      "explanation": "(b) Apply Newton's second law to the block. The forces are weight m₂g downward and tension T upward.",
+      "notations": "m₂g − T = m₂a"
+    },
+    {
+      "explanation": "(b) Apply the torque equation to the pulley. The rope exerts torque TR on the pulley.",
+      "notations": "TR = Iα"
+    },
+    {
+      "explanation": "(b) Substitute I = ½m₁R² and α = a/R into the torque equation.",
+      "notations": "TR = (½m₁R²)(a/R) = ½m₁Ra"
+    },
+    {
+      "explanation": "(b) Solve for tension T.",
+      "notations": "T = ½m₁a"
+    },
+    {
+      "explanation": "(c) Substitute T = ½m₁a into the block's force equation.",
+      "notations": "m₂g − ½m₁a = m₂a"
+    },
+    {
+      "explanation": "(c) Combine terms and solve for acceleration a.",
+      "notations": "m₂g = m₂a + ½m₁a = (m₂ + ½m₁)a ⇒ a = m₂g/(m₂ + ½m₁)"
+    },
+    {
+      "explanation": "(d) Apply the kinematic equation to the block, starting from rest (v₀ = 0).",
+      "notations": "v² = 2aΔy"
+    },
+    {
+      "explanation": "(d) Apply the tangential velocity relation to connect the block's speed v to the pulley's angular speed ω.",
+      "notations": "v = ωR"
+    },
+    {
+      "explanation": "(d) Substitute v = ωR into v² = 2aΔy and solve for ω.",
+      "notations": "(ωR)² = 2aΔy ⇒ ω²R² = 2aΔy ⇒ ω = √(2aΔy)/R"
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "problem": "A particular string resonates in four loops at a frequency of 240 Hz. Give at least three other frequencies at which it will resonate. What is each called?",
+  "source": "PS Chap11 and 12.pdf - Problem 7",
+  "sourceFile": "sources/PS Chap11 and 12.pdf",
+  "chapter": "Chapters 11–12: Oscillations & Waves",
+  "variables": [
+    {
+      "symbol": "f₄",
+      "meaning": "frequency of four-loop resonance"
+    },
+    {
+      "symbol": "f₁",
+      "meaning": "fundamental frequency"
+    },
+    {
+      "symbol": "fₙ",
+      "meaning": "nth harmonic frequency"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Harmonic series for fixed string",
+      "formula": "fₙ = n f₁"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "We will use the harmonic series formula for a fixed string.",
+      "notations": "fₙ = n f₁"
+    },
+    {
+      "explanation": "Given: Four loops correspond to the fourth harmonic (n = 4) with frequency f₄ = 240 Hz.",
+      "notations": "n = 4, f₄ = 240 Hz"
+    },
+    {
+      "explanation": "Substitute into the formula to find the fundamental frequency f₁.",
+      "notations": "f₄ = 4 f₁"
+    },
+    {
+      "explanation": "Solve for f₁ by dividing both sides by 4.",
+      "notations": "f₁ = f₄/4 = 240 Hz / 4 = 60 Hz"
+    },
+    {
+      "explanation": "Calculate the second harmonic (first overtone) using n = 2.",
+      "notations": "f₂ = 2 f₁ = 2(60 Hz) = 120 Hz (first overtone, second harmonic)"
+    },
+    {
+      "explanation": "Calculate the third harmonic (second overtone) using n = 3.",
+      "notations": "f₃ = 3 f₁ = 3(60 Hz) = 180 Hz (second overtone, third harmonic)"
+    },
+    {
+      "explanation": "Calculate the fifth harmonic (fourth overtone) using n = 5.",
+      "notations": "f₅ = 5 f₁ = 5(60 Hz) = 300 Hz (fourth overtone, fifth harmonic)"
+    }
+  ]
+}

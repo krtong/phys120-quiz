@@ -1,0 +1,56 @@
+{
+  "problem": "Two blocks, with masses m₍A₎ and m₍B₎, are connected to each other and to a central post by cords. They rotate about the post at frequency f (revolutions per second) on a frictionless horizontal surface at distances r₍A₎ and r₍B₎ from the post. Derive an algebraic expression for the tension in each segment of the cord (assumed massless).",
+  "source": "Quiz 5 - Problem 4",
+  "sourceFile": "sources/Quiz5_FA25_solution.pdf",
+  "chapter": "Quiz 5 Review",
+  "variables": [
+    {
+      "symbol": "m₍A₎",
+      "meaning": "inner mass"
+    },
+    {
+      "symbol": "m₍B₎",
+      "meaning": "outer mass"
+    },
+    {
+      "symbol": "r₍A₎",
+      "meaning": "radius"
+    },
+    {
+      "symbol": "r₍B₎",
+      "meaning": "radius"
+    },
+    {
+      "symbol": "f",
+      "meaning": "rotation frequency (rev/s)"
+    },
+    {
+      "symbol": "ω",
+      "meaning": "angular speed"
+    },
+    {
+      "symbol": "T₍outer₎",
+      "meaning": "tension in outer cord (between masses)"
+    },
+    {
+      "symbol": "T₍inner₎",
+      "meaning": "tension in inner cord (post to m₍A₎)"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Centripetal force requirement",
+      "formula": "F_c = m r ω²"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "The outer mass feels only the tension in the outer cord, so it must supply its centripetal force.",
+      "notations": "T₍outer₎ = m₍B₎ r₍B₎ ω²"
+    },
+    {
+      "explanation": "For the inner mass, the inward force is the difference between the inner tension and the pull from the outer cord.",
+      "notations": "T₍inner₎ − T₍outer₎ = m₍A₎ r₍A₎ ω² ⇒ T₍inner₎ = m₍A₎ r₍A₎ ω² + m₍B₎ r₍B₎ ω²"
+    }
+  ]
+}

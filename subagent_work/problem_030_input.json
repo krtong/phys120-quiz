@@ -1,0 +1,40 @@
+{
+  "problem": "Two railroad cars, each of mass 56,000 kg, are traveling 95 km/h toward each other. They collide head-on and come to rest. How much thermal energy is produced in this collision?",
+  "source": "PS Chap6.pdf - Problem 9",
+  "sourceFile": "sources/PS Chap6.pdf",
+  "chapter": "Chapter 6: Work & Energy",
+  "variables": [
+    {
+      "symbol": "m",
+      "meaning": "mass of each railroad car"
+    },
+    {
+      "symbol": "v",
+      "meaning": "speed magnitude of each car"
+    },
+    {
+      "symbol": "K₍each₎",
+      "meaning": "kinetic energy of one car (J)"
+    },
+    {
+      "symbol": "ΔEₜ",
+      "meaning": "thermal energy generated (J)"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Kinetic energy",
+      "formula": "K = ½ m v²"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "Convert the speed to SI units and compute the kinetic energy of one car.",
+      "notations": "K₍each₎ = ½ (5.60 × 10⁴ kg)(26.4 m/s)² ≈ 2.0 × 10⁷ J"
+    },
+    {
+      "explanation": "Total kinetic energy lost equals the thermal energy produced because the cars stop.",
+      "notations": "ΔEₜ = 2 K₍each₎ ≈ 4.0 × 10⁷ J"
+    }
+  ]
+}

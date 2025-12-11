@@ -1,0 +1,48 @@
+{
+  "problem": "Estimate the air pressure inside a category 5 hurricane, where the wind speed is 300 km/h. (set the pressure outside the hurricane is atmospheric pressure and the speed of the wind outside the hurricane is 0)",
+  "source": "Quiz 9 - Problem 6",
+  "sourceFile": "sources/Quiz 9 FA25 solution.docx",
+  "chapter": "Quiz 9: Fluids",
+  "variables": [
+    {
+      "symbol": "v₍in₎",
+      "meaning": "wind speed, eyewall interior"
+    },
+    {
+      "symbol": "v₍out₎",
+      "meaning": "wind speed, outside storm"
+    },
+    {
+      "symbol": "ρ₍air₎",
+      "meaning": "air density near sea level"
+    },
+    {
+      "symbol": "P₍out₎",
+      "meaning": "pressure, far outside hurricane"
+    },
+    {
+      "symbol": "P₍in₎",
+      "meaning": "pressure, inside hurricane core"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Bernoulli (dynamic pressure drop)",
+      "formula": "P₍out₎ + ½ρ v₍out₎² = P₍in₎ + ½ρ v₍in₎²"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "Assume heights are equal so the Bernoulli equation reduces to equating static plus dynamic pressures along a streamline.",
+      "notations": "P₍out₎ − P₍in₎ = ½ρ₍air₎ (v₍in₎² − v₍out₎²) = ½ρ₍air₎ v₍in₎²"
+    },
+    {
+      "explanation": "Compute the pressure drop associated with 83.3 m/s winds.",
+      "notations": "ΔP = 0.5(1.20 kg/m³)(83.3 m/s)² ≈ 4.2 × 10³ Pa"
+    },
+    {
+      "explanation": "Subtract the drop from atmospheric pressure to estimate the interior pressure.",
+      "notations": "P₍in₎ ≈ 1.01 × 10⁵ Pa − 4.2 × 10³ Pa ≈ 9.7 × 10⁴ Pa"
+    }
+  ]
+}

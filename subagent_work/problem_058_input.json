@@ -1,0 +1,52 @@
+{
+  "problem": "A spherical balloon has a radius of 7.15 m and is filled with helium. How large a cargo can it lift, assuming that the skin and structure of the balloon have a mass of 930 kg? Neglect the buoyant force on the cargo volume itself.",
+  "source": "PS Chap10.pdf - Problem 4",
+  "sourceFile": "sources/PS Chap10.pdf",
+  "chapter": "Chapter 10: Fluids",
+  "variables": [
+    {
+      "symbol": "R",
+      "meaning": "balloon radius"
+    },
+    {
+      "symbol": "V",
+      "meaning": "balloon volume"
+    },
+    {
+      "symbol": "ρ₍air₎",
+      "meaning": "density of ambient air"
+    },
+    {
+      "symbol": "ρ₍He₎",
+      "meaning": "density of helium fill"
+    },
+    {
+      "symbol": "m₍skin₎",
+      "meaning": "mass of balloon skin and structure"
+    },
+    {
+      "symbol": "m₍cargo₎",
+      "meaning": "maximum cargo mass lifted"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Buoyant force equals weight of displaced air",
+      "formula": "F₍b₎ = ρ₍air₎ V g"
+    },
+    {
+      "name": "Force balance for payload",
+      "formula": "ρ₍air₎ V g = (ρ₍He₎ V + m₍skin₎ + m₍cargo₎) g"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "Cancel g and solve for the available payload mass.",
+      "notations": "m₍cargo₎ = (ρ₍air₎ − ρ₍He₎) V − m₍skin₎"
+    },
+    {
+      "explanation": "Insert the numerical values.",
+      "notations": "m₍cargo₎ = (1.29 − 0.179) × (4/3)π(7.15)³ − 930 ≈ 7.7 × 10² kg (≈ 7.6 kN load)"
+    }
+  ]
+}

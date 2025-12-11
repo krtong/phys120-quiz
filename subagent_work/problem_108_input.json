@@ -1,0 +1,56 @@
+{
+  "problem": "ESTIMATE Karate blow. Estimate the impulse and the average force delivered by a karate blow that breaks a board. Assume the hand moves at roughly 10 m/s when it hits the board.",
+  "source": "PS Chap7 - Example 7-6",
+  "sourceFile": "sources/PS Chap7 and solution.pdf",
+  "chapter": "Chapter 7: Momentum & Collisions",
+  "variables": [
+    {
+      "symbol": "m₍hand₎",
+      "meaning": "effective striking mass (arm + fist)"
+    },
+    {
+      "symbol": "vᵢ",
+      "meaning": "initial speed"
+    },
+    {
+      "symbol": "v₍f₎",
+      "meaning": "final speed"
+    },
+    {
+      "symbol": "Δt",
+      "meaning": "time interval"
+    },
+    {
+      "symbol": "J",
+      "meaning": "impulse magnitude"
+    },
+    {
+      "symbol": "F̄",
+      "meaning": "average force magnitude"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Impulse–momentum theorem",
+      "formula": "J = Δp = m₍hand₎ (v₍f₎ − vᵢ)"
+    },
+    {
+      "name": "Average force from impulse",
+      "formula": "F̄ = J / Δt"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "Model the striking arm/hand (≈0.70 kg) as coming nearly to rest upon shattering the board.",
+      "notations": "J = m₍hand₎ (0 − 10) ≈ −7.0 N·s (magnitude 7 N·s)"
+    },
+    {
+      "explanation": "Assuming a contact duration of about 5 ms, estimate the mean force.",
+      "notations": "F̄ ≈ J / Δt = 7.0 / (5.0 × 10⁻³) ≈ 1.4 × 10³ N"
+    },
+    {
+      "explanation": "State that the direction is opposite the motion of the hand.",
+      "notations": "Impulse ≈ 7 N·s opposite motion; average force ≈ 1.4 kN on the board"
+    }
+  ]
+}

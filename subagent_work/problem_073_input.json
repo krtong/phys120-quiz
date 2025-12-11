@@ -1,0 +1,44 @@
+{
+  "problem": "The lowest pressure attainable using the best available vacuum techniques is about 10⁻¹² N/m². At such a pressure, how many molecules are there per cm³ at 0°C?",
+  "source": "PS Chap13 FA25.pdf - Problem 5",
+  "sourceFile": "sources/PS Chap13 FA25.pdf",
+  "chapter": "Chapter 13: Temperature & Kinetic Theory",
+  "variables": [
+    {
+      "symbol": "P",
+      "meaning": "gas pressure"
+    },
+    {
+      "symbol": "T",
+      "meaning": "absolute temperature"
+    },
+    {
+      "symbol": "k₍B₎",
+      "meaning": "Boltzmann constant"
+    },
+    {
+      "symbol": "V",
+      "meaning": "gas volume"
+    },
+    {
+      "symbol": "N",
+      "meaning": "number of molecules in V"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Ideal gas (microscopic form)",
+      "formula": "P V = N k₍B₎ T"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "Solve the ideal-gas relation for N with the given tiny pressure.",
+      "notations": "N = P V / (k₍B₎ T) = (1.0 × 10⁻¹²)(1.0 × 10⁻⁶)/[(1.38 × 10⁻²³)(273)] ≈ 3.0 × 10² molecules"
+    },
+    {
+      "explanation": "Thus there are roughly 300 molecules per cubic centimeter at that pressure.",
+      "notations": "n ≈ 300 /cm³"
+    }
+  ]
+}

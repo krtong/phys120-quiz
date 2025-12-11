@@ -1,0 +1,64 @@
+{
+  "problem": "Heat conduction to skin. Suppose 150 W of heat flows by conduction from the blood capillaries beneath the skin to the body's surface area of 1.5 m². If the temperature difference is 0.50 C°, estimate the average distance of capillaries below the skin surface.",
+  "source": "PS Chap14 FA25.pdf - Problem 7",
+  "sourceFile": "sources/PS Chap14 FA25.pdf",
+  "chapter": "Chapter 14: Heat",
+  "variables": [
+    {
+      "symbol": "P",
+      "meaning": "power"
+    },
+    {
+      "symbol": "k",
+      "meaning": "thermal conductivity of tissue"
+    },
+    {
+      "symbol": "A",
+      "meaning": "area"
+    },
+    {
+      "symbol": "ΔT",
+      "meaning": "temperature change"
+    },
+    {
+      "symbol": "ℓ",
+      "meaning": "depth of capillaries (m)"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Fourier's law of heat conduction",
+      "formula": "P = k A ΔT / ℓ"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "State the fundamental formula we will use.",
+      "notations": "We will use Fourier's law of heat conduction: P = k A ΔT / ℓ"
+    },
+    {
+      "explanation": "Define variables with values given in the problem.",
+      "notations": "Given: P = 150 W, A = 1.5 m², ΔT = 0.50 C°, k = 0.20 W/(m·C°) (thermal conductivity of tissue)"
+    },
+    {
+      "explanation": "Rearrange the formula to solve for ℓ.",
+      "notations": "ℓ = k A ΔT / P"
+    },
+    {
+      "explanation": "Substitute the numerical values into the rearranged formula.",
+      "notations": "ℓ = (0.20 W/(m·C°)) × (1.5 m²) × (0.50 C°) / (150 W)"
+    },
+    {
+      "explanation": "Calculate the numerator.",
+      "notations": "ℓ = (0.20 × 1.5 × 0.50) / 150 = 0.15 / 150 m"
+    },
+    {
+      "explanation": "Complete the division to find ℓ.",
+      "notations": "ℓ = 0.001 m = 1.0 × 10⁻³ m"
+    },
+    {
+      "explanation": "State the result in more familiar units.",
+      "notations": "ℓ ≈ 1 mm"
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "problem": "The platter of the hard drive of a computer rotates at 7200 rpm, rpm=revolutions per minute=rev/min. (a) What is the angular velocity (rad/s) of the platter? (b) If the reading head of the drive is located 3.00 cm from the rotation axis, what is the linear speed of the point on the platter just below it? (c) If a single bit requires 0.50 μm of length along the direction of motion, how many bits per second can the writing head write when it is 3.00 cm from the axis?",
+  "source": "Quiz 8 - Problem 2",
+  "sourceFile": "sources/Quiz 8 solution FA25.docx",
+  "chapter": "Quiz 8: Angular Kinematics",
+  "variables": [
+    {
+      "symbol": "f₍rpm₎",
+      "meaning": "rotation rate, revolutions per minute"
+    },
+    {
+      "symbol": "f",
+      "meaning": "rotational frequency, revolutions per second"
+    },
+    {
+      "symbol": "ω",
+      "meaning": "angular speed of platter"
+    },
+    {
+      "symbol": "r",
+      "meaning": "radius to read/write head"
+    },
+    {
+      "symbol": "v",
+      "meaning": "linear speed at radius r"
+    },
+    {
+      "symbol": "ℓ₍bit₎",
+      "meaning": "length per bit"
+    },
+    {
+      "symbol": "R₍bit₎",
+      "meaning": "bit rate"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Convert rpm to angular velocity",
+      "formula": "ω = f₍rpm₎ × (2π / 60)"
+    },
+    {
+      "name": "Linear speed from angular speed",
+      "formula": "v = ω r"
+    },
+    {
+      "name": "Bit rate from track speed",
+      "formula": "R₍bit₎ = v / ℓ₍bit₎"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "Convert 7200 rpm to revolutions per second, then to radians per second.",
+      "notations": "f = 7200 / 60 = 120 rev/s,   ω = 2πf = 240π rad/s ≈ 7.54 × 10² rad/s"
+    },
+    {
+      "explanation": "Use v = ωr to determine the tangential speed at 3.00 cm.",
+      "notations": "v = (240π rad/s)(0.0300 m) = 7.2π ≈ 2.26 × 10¹ m/s"
+    },
+    {
+      "explanation": "Divide the track speed by the bit length to obtain the maximum writing rate.",
+      "notations": "R₍bit₎ = v / ℓ₍bit₎ = 22.6 m/s / (5.0 × 10⁻⁷ m) ≈ 4.5 × 10⁷ bits·/s"
+    }
+  ]
+}

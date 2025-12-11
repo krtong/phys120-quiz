@@ -1,0 +1,80 @@
+{
+  "problem": "A geologist finds that a Moon rock whose mass is 9.28 kg has an apparent mass of 6.18 kg when submerged in water. What is the density of the rock?",
+  "source": "Quiz 9 - Problem 4",
+  "sourceFile": "sources/Quiz 9 FA25 solution.docx",
+  "chapter": "Quiz 9: Fluids",
+  "variables": [
+    {
+      "symbol": "m",
+      "meaning": "true mass of rock in air"
+    },
+    {
+      "symbol": "m₍app₎",
+      "meaning": "apparent mass when submerged"
+    },
+    {
+      "symbol": "ρ₍w₎",
+      "meaning": "density of water"
+    },
+    {
+      "symbol": "V",
+      "meaning": "rock volume (m³)"
+    },
+    {
+      "symbol": "ρ₍rock₎",
+      "meaning": "rock density (kg/m³)"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Buoyant force",
+      "formula": "F_b = ρ_fluid V g"
+    },
+    {
+      "name": "Density definition",
+      "formula": "ρ = m / V"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "We will use the buoyant force formula and density definition. The buoyant force equals the weight of displaced fluid.",
+      "notations": "F_b = ρ_fluid V g and ρ = m / V"
+    },
+    {
+      "explanation": "Define the given values from the problem.",
+      "notations": "Given: m = 9.28 kg, m₍app₎ = 6.18 kg, ρ₍w₎ = 1.00 × 10³ kg/m³"
+    },
+    {
+      "explanation": "The difference between true weight and apparent weight equals the buoyant force. Since F = mg, the mass difference times g equals the buoyant force.",
+      "notations": "(m − m₍app₎) g = F_b = ρ₍w₎ V g"
+    },
+    {
+      "explanation": "Cancel g from both sides to get the mass difference relation.",
+      "notations": "m − m₍app₎ = ρ₍w₎ V"
+    },
+    {
+      "explanation": "Calculate the mass difference.",
+      "notations": "m − m₍app₎ = 9.28 kg − 6.18 kg = 3.10 kg"
+    },
+    {
+      "explanation": "Solve for the volume of the rock by rearranging the mass difference equation.",
+      "notations": "V = (m − m₍app₎) / ρ₍w₎"
+    },
+    {
+      "explanation": "Substitute the numerical values to find the volume.",
+      "notations": "V = 3.10 kg / (1.00 × 10³ kg/m³) = 3.10 × 10⁻³ m³"
+    },
+    {
+      "explanation": "Use the density definition to find the rock's density.",
+      "notations": "ρ₍rock₎ = m / V"
+    },
+    {
+      "explanation": "Substitute the mass and volume values.",
+      "notations": "ρ₍rock₎ = 9.28 kg / (3.10 × 10⁻³ m³)"
+    },
+    {
+      "explanation": "Calculate the final answer.",
+      "notations": "ρ₍rock₎ = 2.99 × 10³ kg/m³ ≈ 3.0 × 10³ kg/m³"
+    }
+  ]
+}

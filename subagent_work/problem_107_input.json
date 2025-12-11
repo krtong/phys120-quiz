@@ -1,0 +1,40 @@
+{
+  "problem": "Rifle recoil. Calculate the recoil velocity of a 5.0-kg rifle that shoots a 0.020-kg bullet at a speed of 620 m/s.",
+  "source": "PS Chap7 - Example 7-5",
+  "sourceFile": "sources/PS Chap7 and solution.pdf",
+  "chapter": "Chapter 7: Momentum & Collisions",
+  "variables": [
+    {
+      "symbol": "m₍r₎",
+      "meaning": "rifle mass"
+    },
+    {
+      "symbol": "m₍b₎",
+      "meaning": "bullet mass"
+    },
+    {
+      "symbol": "v₍b₎",
+      "meaning": "bullet speed relative to ground"
+    },
+    {
+      "symbol": "→v₍r₎",
+      "meaning": "recoil velocity of rifle"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Conservation of linear momentum (initially zero)",
+      "formula": "0 = m₍b₎ v₍b₎ + m₍r₎ v₍r₎"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "Before firing the gun-plus-bullet system is at rest, so total momentum must remain zero after the shot.",
+      "notations": "m₍b₎ v₍b₎ + m₍r₎ v₍r₎ = 0"
+    },
+    {
+      "explanation": "Solve for v₍r₎; its sign is opposite the bullet’s direction.",
+      "notations": "v₍r₎ = −(m₍b₎ / m₍r₎) v₍b₎ = −(0.020 / 5.0)(620) ≈ −2.5 m/s"
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "problem": "Calculate the moment of inertia of the array of point objects shown in the figure about (a) the y axis, and (b) the x axis. Assume m=2.2 kg, M=3.4 kg, and the objects are wired together by very light, rigid pieces of wire. The array is rectangular and is split through the middle by the x axis. (c) About which axis would it be harder to accelerate this array?",
+  "source": "PS_Chap8.pdf - Problem 9",
+  "sourceFile": "sources/PS_Chap8.pdf",
+  "chapter": "Chapter 8: Rotational Motion",
+  "variables": [
+    {
+      "symbol": "m",
+      "meaning": "mass of each lighter point object"
+    },
+    {
+      "symbol": "M",
+      "meaning": "mass of each heavier point object"
+    },
+    {
+      "symbol": "x₁",
+      "meaning": "position of 1"
+    },
+    {
+      "symbol": "x₂",
+      "meaning": "position of 2"
+    },
+    {
+      "symbol": "y",
+      "meaning": "vertical distance from x-axis"
+    },
+    {
+      "symbol": "I₍y₎",
+      "meaning": "moment of inertia of y-axis"
+    },
+    {
+      "symbol": "I₍x₎",
+      "meaning": "moment of inertia of x-axis"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Point-mass moment about y axis",
+      "formula": "I₍y₎ = Σ mᵢ xᵢ²"
+    },
+    {
+      "name": "Point-mass moment about x axis",
+      "formula": "I₍x₎ = Σ mᵢ yᵢ²"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "Sum m x² terms for each pair of masses at ±0.50 m and ±1.00 m.",
+      "notations": "I₍y₎ = (m + M)[(0.50 m)² + (1.00 m)²] = (5.6 kg)(1.25 m²) ≈ 7.0 kg·m²"
+    },
+    {
+      "explanation": "For the x axis, use the common |y| = 0.25 m displacement of the four masses.",
+      "notations": "I₍x₎ = (2m + 2M)(0.25 m)² = 2(5.6 kg)(0.0625 m²) ≈ 0.70 kg·m²"
+    },
+    {
+      "explanation": "Because I₍y₎ ≫ I₍x₎, the array resists rotation far more about the y axis.",
+      "notations": "Harder to accelerate about the vertical (y) axis"
+    }
+  ]
+}

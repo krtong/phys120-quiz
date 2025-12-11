@@ -1,0 +1,44 @@
+{
+  "problem": "Two blocks, each of mass m, are attached to the ends of a massless rod which pivots as shown in the figure. Initially the rod is held in the horizontal position and then released. Calculate the magnitude and direction of the net torque on this system when it is first released.",
+  "source": "PS_Chap8.pdf - Problem 6",
+  "sourceFile": "sources/PS_Chap8.pdf",
+  "chapter": "Chapter 8: Rotational Motion",
+  "variables": [
+    {
+      "symbol": "m",
+      "meaning": "mass of each block (kg)"
+    },
+    {
+      "symbol": "g",
+      "meaning": "gravitational acceleration"
+    },
+    {
+      "symbol": "ℓ₁",
+      "meaning": "length of 1"
+    },
+    {
+      "symbol": "ℓ₂",
+      "meaning": "length of 2"
+    },
+    {
+      "symbol": "τ",
+      "meaning": "net torque about pivot"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Torque from weight",
+      "formula": "τ = ± m g ℓ"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "Gravity on the left block produces a counterclockwise torque m g ℓ₂; on the right block it produces a clockwise torque m g ℓ₁.",
+      "notations": "τ₍left₎ = + m g ℓ₂, τ₍right₎ = − m g ℓ₁"
+    },
+    {
+      "explanation": "Sum the torques (taking clockwise as positive as in the text).",
+      "notations": "τ = m g (ℓ₂ − ℓ₁), direction clockwise if ℓ₂ > ℓ₁"
+    }
+  ]
+}

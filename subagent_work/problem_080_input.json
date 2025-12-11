@@ -1,0 +1,56 @@
+{
+  "problem": "How long does it take a 750-W coffeepot to bring to a boil 0.75 L of water initially at 11°C? Assume that the part of the pot which is heated with the water is made of 280 g of aluminum, and that no water boils away.",
+  "source": "PS Chap14 FA25.pdf - Problem 3",
+  "sourceFile": "sources/PS Chap14 FA25.pdf",
+  "chapter": "Chapter 14: Heat",
+  "variables": [
+    {
+      "symbol": "m₍Al₎",
+      "meaning": "mass of aluminum"
+    },
+    {
+      "symbol": "c₍Al₎",
+      "meaning": "specific heat (Al)"
+    },
+    {
+      "symbol": "m₍w₎",
+      "meaning": "mass of water"
+    },
+    {
+      "symbol": "c₍w₎",
+      "meaning": "specific heat (w)"
+    },
+    {
+      "symbol": "ΔT",
+      "meaning": "temperature change"
+    },
+    {
+      "symbol": "P",
+      "meaning": "power"
+    },
+    {
+      "symbol": "t",
+      "meaning": "time"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Total heat required",
+      "formula": "Q = (m₍Al₎ c₍Al₎ + m₍w₎ c₍w₎) ΔT"
+    },
+    {
+      "name": "Time from power",
+      "formula": "t = Q / P"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "Compute the combined heat capacity of the water plus the aluminum pot section.",
+      "notations": "Q = [(0.280)(900) + (0.75)(4186)] × 89 ≈ 3.0 × 10⁵ J"
+    },
+    {
+      "explanation": "Divide by the coffeepot power to obtain the heating time.",
+      "notations": "t = 3.0 × 10⁵ / 750 ≈ 4.0 × 10² s ≈ 6.7 min"
+    }
+  ]
+}

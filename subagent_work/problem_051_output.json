@@ -1,0 +1,72 @@
+{
+  "problem": "A uniform disk turns at 3.3 rev/s around a frictionless central axis. A nonrotating rod, of the same mass as the disk and length equal to the disk's diameter, is dropped onto the freely spinning disk, the figure. They then turn together around the axis with their centers superposed. What is the angular frequency in rev/s of the combination?",
+  "source": "PS_Chap8.pdf - Problem 17",
+  "sourceFile": "sources/PS_Chap8.pdf",
+  "chapter": "Chapter 8: Rotational Motion",
+  "variables": [
+    {
+      "symbol": "ωᵢ",
+      "meaning": "angular velocity of initial value (rev/s)"
+    },
+    {
+      "symbol": "I₍disk₎",
+      "meaning": "moment of inertia of disk"
+    },
+    {
+      "symbol": "I₍rod₎",
+      "meaning": "moment of inertia of rod"
+    },
+    {
+      "symbol": "ω₍f₎",
+      "meaning": "angular velocity of final value (rev/s)"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Angular momentum",
+      "formula": "L = Iω"
+    },
+    {
+      "name": "Conservation of angular momentum",
+      "formula": "L_initial = L_final"
+    },
+    {
+      "name": "Moment of inertia of disk",
+      "formula": "I_disk = ½MR²"
+    },
+    {
+      "name": "Moment of inertia of rod rotating about center",
+      "formula": "I_rod = (1/12)ML²"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "Apply conservation of angular momentum. Initially only the disk rotates, finally both rotate together.",
+      "notations": "L_initial = L_final → I₍disk₎ ωᵢ = (I₍disk₎ + I₍rod₎) ω₍f₎"
+    },
+    {
+      "explanation": "Define the given values from the problem.",
+      "notations": "Given: ωᵢ = 3.3 rev/s, the rod and disk have the same mass M, and the rod length L equals the disk diameter (L = 2R)"
+    },
+    {
+      "explanation": "Express the moments of inertia using fundamental formulas.",
+      "notations": "I₍disk₎ = ½MR², I₍rod₎ = (1/12)ML² = (1/12)M(2R)² = (1/3)MR²"
+    },
+    {
+      "explanation": "Solve for the final angular velocity by isolating ω₍f₎.",
+      "notations": "ω₍f₎ = ωᵢ [I₍disk₎ / (I₍disk₎ + I₍rod₎)]"
+    },
+    {
+      "explanation": "Substitute the expressions for moments of inertia.",
+      "notations": "ω₍f₎ = ωᵢ [(½MR²) / (½MR² + (1/3)MR²)] = ωᵢ [(½) / (½ + 1/3)]"
+    },
+    {
+      "explanation": "Simplify the fraction by finding common denominator.",
+      "notations": "ω₍f₎ = ωᵢ [(3/6) / (3/6 + 2/6)] = ωᵢ [(3/6) / (5/6)] = ωᵢ (3/5)"
+    },
+    {
+      "explanation": "Substitute the numerical value for ωᵢ.",
+      "notations": "ω₍f₎ = (3/5)(3.3 rev/s) = 1.98 rev/s ≈ 2.0 rev/s"
+    }
+  ]
+}

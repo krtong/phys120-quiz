@@ -1,0 +1,92 @@
+{
+  "problem": "Rita goes skiing. She starts from the top of the track, and slides down from rest. The track has an inclination angle θ, length L, and the coefficient of kinetic friction between the ski and the track is μ₍k₎. Suppose Rita's mass is m. (a) Draw the free body diagram for Rita when she is on the inclined track. (b) Find the normal force between Rita and the track. (c) Find the kinetic friction between the ski and the track. (d) Find the work done by kinetic friction between the ski and the track. (e) Using work-kinetic energy theorem, find Rita's speed when she reaches the bottom of the track.",
+  "source": "Worksheet 08 - Problem 3",
+  "sourceFile": "sources/WS_Work_and_Energy_I.pdf",
+  "chapter": "Worksheet 08",
+  "variables": [
+    {
+      "symbol": "m",
+      "meaning": "skier mass"
+    },
+    {
+      "symbol": "θ",
+      "meaning": "incline angle"
+    },
+    {
+      "symbol": "L",
+      "meaning": "track length"
+    },
+    {
+      "symbol": "μ₍k₎",
+      "meaning": "coefficient of kinetic friction"
+    },
+    {
+      "symbol": "g",
+      "meaning": "gravitational acceleration"
+    },
+    {
+      "symbol": "v",
+      "meaning": "speed at bottom"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Kinetic friction",
+      "formula": "f_k = μ₍k₎ N"
+    },
+    {
+      "name": "Work",
+      "formula": "W = Fd cosθ"
+    },
+    {
+      "name": "Work-energy theorem",
+      "formula": "W_net = ΔKE = ½mv² - ½mv₀²"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "(a) Draw the free body diagram. The forces acting on Rita are: weight mg (downward), normal force N (perpendicular to slope), and kinetic friction f_k (opposite to motion, up the slope).",
+      "notations": "FBD includes: mg (downward), N (perpendicular to slope), f_k (up the slope)"
+    },
+    {
+      "explanation": "(b) Start with Newton's second law and identify the variables. Rita starts from rest and we need to analyze forces perpendicular to the slope. The component of weight perpendicular to the slope is mg cosθ.",
+      "notations": "Given: mass m, angle θ, length L, coefficient μ₍k₎, initial velocity v₀ = 0"
+    },
+    {
+      "explanation": "(b) Apply Newton's second law perpendicular to the slope. Since there is no acceleration perpendicular to the slope, the normal force equals the perpendicular component of weight.",
+      "notations": "ΣF_perp = 0 ⇒ N - mg cosθ = 0 ⇒ N = mg cosθ"
+    },
+    {
+      "explanation": "(c) Use the kinetic friction formula f_k = μ₍k₎ N to find the friction force.",
+      "notations": "f_k = μ₍k₎ N"
+    },
+    {
+      "explanation": "(c) Substitute the normal force N = mg cosθ into the friction formula.",
+      "notations": "f_k = μ₍k₎(mg cosθ) = μ₍k₎ mg cosθ"
+    },
+    {
+      "explanation": "(d) Calculate the work done by kinetic friction using W = Fd cosθ. The friction force is f_k, the displacement is L, and the angle between friction and displacement is 180° (friction opposes motion).",
+      "notations": "W_f = f_k L cos(180°) = -f_k L"
+    },
+    {
+      "explanation": "(d) Substitute f_k = μ₍k₎ mg cosθ into the work equation.",
+      "notations": "W_f = -μ₍k₎ mg cosθ L"
+    },
+    {
+      "explanation": "(e) Apply the work-energy theorem. The net work equals the change in kinetic energy. Since Rita starts from rest (v₀ = 0), the final kinetic energy is ½mv².",
+      "notations": "W_net = ½mv² - ½m(0)² = ½mv²"
+    },
+    {
+      "explanation": "(e) Calculate the net work. The net work includes work by gravity and work by friction. Work by gravity is W_g = (mg sinθ)L (component of weight along slope times distance).",
+      "notations": "W_net = W_g + W_f = mgL sinθ + (-μ₍k₎ mg cosθ L) = mgL sinθ - μ₍k₎ mg cosθ L"
+    },
+    {
+      "explanation": "(e) Set the net work equal to the change in kinetic energy and solve for v.",
+      "notations": "½mv² = mgL sinθ - μ₍k₎ mg cosθ L"
+    },
+    {
+      "explanation": "(e) Factor out common terms and solve for v.",
+      "notations": "½mv² = mgL(sinθ - μ₍k₎ cosθ) ⇒ v² = 2gL(sinθ - μ₍k₎ cosθ) ⇒ v = √[2gL(sinθ - μ₍k₎ cosθ)]"
+    }
+  ]
+}

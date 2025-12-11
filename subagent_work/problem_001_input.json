@@ -1,0 +1,35 @@
+{
+  "problem": "The Moon's nearly circular orbit around the Earth has a radius of about 384,000 km and a period T of 27.3 days. Determine the acceleration of the Moon toward the Earth.",
+  "source": "PS_Chap5_II.pdf - Problem 2",
+  "sourceFile": "sources/PS_Chap5_II.pdf",
+  "chapter": "Chapter 5: Circular Motion & Gravitation",
+  "variables": [
+    {
+      "symbol": "r",
+      "meaning": "orbital radius of the Moon"
+    },
+    {
+      "symbol": "T",
+      "meaning": "orbital period"
+    },
+    {
+      "symbol": "a₍c₎",
+      "meaning": "acceleration, centripetal toward Earth"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Linear speed in circular motion",
+      "formula": "v = 2πr / T"
+    },
+    {
+      "name": "Centripetal acceleration",
+      "formula": "a₍c₎ = v^2 / r"
+    },
+    {
+      "name": "Centripetal acceleration (combined form)",
+      "formula": "a₍c₎ = 4π^2 r / T^2"
+    }
+  ],
+  "steps": []
+}

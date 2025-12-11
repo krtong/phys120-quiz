@@ -1,0 +1,64 @@
+{
+  "problem": "A stone is dropped from the top of a cliff. The splash it makes when striking the water below is heard 2.7 s later. How high is the cliff?",
+  "source": "Quiz 10 - Problem 3",
+  "sourceFile": "sources/Quiz10 FA25 solution.docx",
+  "chapter": "Quiz 10: Oscillations & Waves",
+  "variables": [
+    {
+      "symbol": "t₍total₎",
+      "meaning": "time interval, drop to heard splash"
+    },
+    {
+      "symbol": "t₁",
+      "meaning": "time, stone in free fall"
+    },
+    {
+      "symbol": "t₂",
+      "meaning": "time, sound traveling upward"
+    },
+    {
+      "symbol": "h",
+      "meaning": "height of cliff"
+    },
+    {
+      "symbol": "g",
+      "meaning": "gravitational acceleration near Earth"
+    },
+    {
+      "symbol": "v₍sound₎",
+      "meaning": "speed of sound in air"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Free-fall distance",
+      "formula": "h = ½ g t₁²"
+    },
+    {
+      "name": "Sound travel time",
+      "formula": "t₂ = h / v₍sound₎"
+    },
+    {
+      "name": "Timing constraint",
+      "formula": "t₁ + t₂ = t₍total₎"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "Let the stone fall for time t₁; relate the height to t₁ using constant-acceleration kinematics.",
+      "notations": "h = ½ g t₁²"
+    },
+    {
+      "explanation": "Express the sound travel time in terms of h and set the total time to 2.7 s.",
+      "notations": "t₁ + h / v₍sound₎ = 2.7 s"
+    },
+    {
+      "explanation": "Substitute h = ½ g t₁² into the timing equation and solve the quadratic for t₁.",
+      "notations": "t₁ + (½ g t₁²)/v₍sound₎ = 2.7 s  ⟹  t₁ ≈ 2.60 s"
+    },
+    {
+      "explanation": "Insert t₁ back into the free-fall relation to find the height.",
+      "notations": "h = ½ (9.80)(2.60)² ≈ 3.3 × 10¹ m"
+    }
+  ]
+}

@@ -1,0 +1,128 @@
+{
+  "problem": "Two blocks are connected by a light string passing over a pulley of radius 0.15 m and moment of inertia I. The blocks move (towards the right) with an acceleration of 1.00 m/s² along their frictionless inclines (see the figure). (a) Draw free-body diagrams for each of the two blocks and the pulley. (b) Determine F₍TA₎ and F₍TB₎, the tensions in the two parts of the string. (c) Find the net torque acting on the pulley, and determine its moment of inertia, I.",
+  "source": "PS_Chap8.pdf - Problem 11",
+  "sourceFile": "sources/PS_Chap8.pdf",
+  "chapter": "Chapter 8: Rotational Motion",
+  "variables": [
+    {
+      "symbol": "m₍A₎",
+      "meaning": "mass of A"
+    },
+    {
+      "symbol": "m₍B₎",
+      "meaning": "mass of B"
+    },
+    {
+      "symbol": "a",
+      "meaning": "acceleration"
+    },
+    {
+      "symbol": "R",
+      "meaning": "radius"
+    },
+    {
+      "symbol": "→F₍TA₎",
+      "meaning": "force of tension A"
+    },
+    {
+      "symbol": "→F₍TB₎",
+      "meaning": "force of tension B"
+    },
+    {
+      "symbol": "τ₍net₎",
+      "meaning": "torque of net"
+    },
+    {
+      "symbol": "I",
+      "meaning": "moment of inertia of pulley (kg·m²)"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Newton's second law",
+      "formula": "F = ma"
+    },
+    {
+      "name": "Torque equation",
+      "formula": "τ = Fr"
+    },
+    {
+      "name": "Rotational dynamics",
+      "formula": "τ = Iα"
+    },
+    {
+      "name": "Linear and angular acceleration relationship",
+      "formula": "a = αR"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "We will use Newton's second law (F = ma) for each block, the torque equation (τ = Fr), rotational dynamics (τ = Iα), and the relationship between linear and angular acceleration (a = αR).",
+      "notations": "F = ma, τ = Fr, τ = Iα, a = αR"
+    },
+    {
+      "explanation": "Define the given values from the problem.",
+      "notations": "m₍A₎ = 8.0 kg, m₍B₎ = 10.0 kg, θ₍A₎ = 32°, θ₍B₎ = 61°, a = 1.00 m/s², R = 0.15 m, g = 9.80 m/s²"
+    },
+    {
+      "explanation": "Apply Newton's second law to block A along the incline. The net force is tension minus the component of gravity along the incline.",
+      "notations": "F₍net,A₎ = m₍A₎ a;  F₍TA₎ − m₍A₎ g sinθ₍A₎ = m₍A₎ a"
+    },
+    {
+      "explanation": "Solve for the tension in string A.",
+      "notations": "F₍TA₎ = m₍A₎ (g sinθ₍A₎ + a) = m₍A₎ (g sin32° + a)"
+    },
+    {
+      "explanation": "Substitute the numerical values for block A.",
+      "notations": "F₍TA₎ = (8.0 kg)[(9.80 m/s²) sin32° + 1.00 m/s²]"
+    },
+    {
+      "explanation": "Calculate the tension in string A.",
+      "notations": "F₍TA₎ = (8.0)[(9.80)(0.530) + 1.00] = (8.0)[5.19 + 1.00] = (8.0)(6.19) ≈ 49.6 N ≈ 5.0 × 10¹ N"
+    },
+    {
+      "explanation": "Apply Newton's second law to block B along the incline. The net force is the component of gravity along the incline minus tension.",
+      "notations": "F₍net,B₎ = m₍B₎ a;  m₍B₎ g sinθ₍B₎ − F₍TB₎ = m₍B₎ a"
+    },
+    {
+      "explanation": "Solve for the tension in string B.",
+      "notations": "F₍TB₎ = m₍B₎ (g sinθ₍B₎ − a) = m₍B₎ (g sin61° − a)"
+    },
+    {
+      "explanation": "Substitute the numerical values for block B.",
+      "notations": "F₍TB₎ = (10.0 kg)[(9.80 m/s²) sin61° − 1.00 m/s²]"
+    },
+    {
+      "explanation": "Calculate the tension in string B.",
+      "notations": "F₍TB₎ = (10.0)[(9.80)(0.875) − 1.00] = (10.0)[8.57 − 1.00] = (10.0)(7.57) ≈ 75.7 N ≈ 7.6 × 10¹ N"
+    },
+    {
+      "explanation": "Calculate the net torque on the pulley using the torque equation. The two tensions create torques in opposite directions.",
+      "notations": "τ₍net₎ = (F₍TB₎ − F₍TA₎) R"
+    },
+    {
+      "explanation": "Substitute the numerical values for the net torque.",
+      "notations": "τ₍net₎ = (75.7 N − 49.6 N) × 0.15 m"
+    },
+    {
+      "explanation": "Calculate the net torque on the pulley.",
+      "notations": "τ₍net₎ = (26.1 N) × (0.15 m) = 3.92 N·m ≈ 3.9 N·m (clockwise)"
+    },
+    {
+      "explanation": "Use the relationship between linear and angular acceleration to find α.",
+      "notations": "α = a / R"
+    },
+    {
+      "explanation": "Use the rotational dynamics equation to solve for the moment of inertia.",
+      "notations": "τ₍net₎ = I α = I (a / R);  I = τ₍net₎ R / a"
+    },
+    {
+      "explanation": "Substitute the numerical values for the moment of inertia.",
+      "notations": "I = (3.92 N·m)(0.15 m) / (1.00 m/s²)"
+    },
+    {
+      "explanation": "Calculate the moment of inertia of the pulley.",
+      "notations": "I = 0.588 N·m² / (m/s²) = 0.588 kg·m² ≈ 0.59 kg·m²"
+    }
+  ]
+}

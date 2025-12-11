@@ -1,0 +1,52 @@
+{
+  "problem": "As shown in the right figure, one applies a force F with an angle φ with respect to the handle of the wrench at a point with a distance r away from the screw. Find the torque τ applied by the force. Does it make the screw rotate counterclockwise (CCW) or clockwise (CW)?",
+  "source": "Worksheet 10 - Problem 1",
+  "sourceFile": "sources/WS10_Rotational_Dynamics.pdf",
+  "chapter": "Worksheet 10",
+  "variables": [
+    {
+      "symbol": "F",
+      "meaning": "applied force magnitude"
+    },
+    {
+      "symbol": "r",
+      "meaning": "lever arm (distance from screw)"
+    },
+    {
+      "symbol": "φ",
+      "meaning": "angle between the force and the wrench handle"
+    },
+    {
+      "symbol": "τ",
+      "meaning": "torque magnitude"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Torque from a force",
+      "formula": "τ = r F sinφ"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "We will use the torque formula for a force applied at an angle",
+      "notations": "τ = r F sinφ"
+    },
+    {
+      "explanation": "Identify the variables from the problem",
+      "notations": "Given: force magnitude F, lever arm r, angle φ between force and wrench handle"
+    },
+    {
+      "explanation": "The perpendicular component of the force is F⊥ = F sinφ, which produces the torque",
+      "notations": "F⊥ = F sinφ"
+    },
+    {
+      "explanation": "Substitute into the torque formula",
+      "notations": "τ = r F sinφ"
+    },
+    {
+      "explanation": "To determine the direction, apply the right-hand rule: point fingers along r (from the screw to the point of application), curl them toward the perpendicular component F⊥. The thumb points in the direction of the torque vector. If the perpendicular force component tends to rotate the wrench counterclockwise when viewed from above, the torque is CCW; otherwise it is CW.",
+      "notations": "Direction: Use right-hand rule or observe the sense of rotation from the perpendicular force component"
+    }
+  ]
+}

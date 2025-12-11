@@ -1,0 +1,72 @@
+{
+  "problem": "Express the following angles in radians: (a) 45.0°, (b) 60.0°, (c) 90.0°, (d) 360.0°, and (e) 445°. Give as numerical values and as fractions of π.",
+  "source": "PS_Chap8.pdf - Problem 1",
+  "sourceFile": "sources/PS_Chap8.pdf",
+  "chapter": "Chapter 8: Rotational Motion",
+  "variables": [
+    {
+      "symbol": "θᵢ",
+      "meaning": "given angle in degrees"
+    },
+    {
+      "symbol": "θ₍rad₎",
+      "meaning": "angle in radians"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Degree-to-radian conversion",
+      "formula": "θ₍rad₎ = θᵢ × π / 180°"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "We will use the degree-to-radian conversion formula",
+      "notations": "θ₍rad₎ = θᵢ × π / 180°"
+    },
+    {
+      "explanation": "Given angles in degrees",
+      "notations": "(a) θᵢ = 45.0°, (b) θᵢ = 60.0°, (c) θᵢ = 90.0°, (d) θᵢ = 360.0°, (e) θᵢ = 445°"
+    },
+    {
+      "explanation": "For part (a), substitute θᵢ = 45.0° into the conversion formula",
+      "notations": "θ₍rad₎ = 45.0° × π / 180°"
+    },
+    {
+      "explanation": "Simplify the fraction",
+      "notations": "θ₍rad₎ = (45.0/180) π = (1/4) π = π/4 rad ≈ 0.785 rad"
+    },
+    {
+      "explanation": "For part (b), substitute θᵢ = 60.0° into the conversion formula",
+      "notations": "θ₍rad₎ = 60.0° × π / 180°"
+    },
+    {
+      "explanation": "Simplify the fraction",
+      "notations": "θ₍rad₎ = (60.0/180) π = (1/3) π = π/3 rad ≈ 1.05 rad"
+    },
+    {
+      "explanation": "For part (c), substitute θᵢ = 90.0° into the conversion formula",
+      "notations": "θ₍rad₎ = 90.0° × π / 180°"
+    },
+    {
+      "explanation": "Simplify the fraction",
+      "notations": "θ₍rad₎ = (90.0/180) π = (1/2) π = π/2 rad ≈ 1.57 rad"
+    },
+    {
+      "explanation": "For part (d), substitute θᵢ = 360.0° into the conversion formula",
+      "notations": "θ₍rad₎ = 360.0° × π / 180°"
+    },
+    {
+      "explanation": "Simplify the fraction",
+      "notations": "θ₍rad₎ = (360.0/180) π = 2π rad ≈ 6.28 rad"
+    },
+    {
+      "explanation": "For part (e), substitute θᵢ = 445° into the conversion formula",
+      "notations": "θ₍rad₎ = 445° × π / 180°"
+    },
+    {
+      "explanation": "Simplify the fraction",
+      "notations": "θ₍rad₎ = (445/180) π = (89/36) π rad ≈ 7.77 rad"
+    }
+  ]
+}

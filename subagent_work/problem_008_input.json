@@ -1,0 +1,36 @@
+{
+  "problem": "Express the following angles in radians: (a) 60.0° and (b) 445°. Give as numerical values and as fractions of π.",
+  "source": "Quiz 8 - Problem 1",
+  "sourceFile": "sources/Quiz 8 solution FA25.docx",
+  "chapter": "Quiz 8: Angular Kinematics",
+  "variables": [
+    {
+      "symbol": "θ₍deg₎",
+      "meaning": "angle value, degrees"
+    },
+    {
+      "symbol": "θ₍rad₎",
+      "meaning": "angle value, radians"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Degree–radian conversion",
+      "formula": "θ₍rad₎ = θ₍deg₎ × π / 180°"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "Multiply degrees by π/180° to convert to radians; express both decimal and fractional results.",
+      "notations": "θ₍rad₎ = θ₍deg₎ × π / 180°"
+    },
+    {
+      "explanation": "Part (a): 60.0° corresponds to 60° × π/180° = (1/3)π rad ≈ 1.05 rad.",
+      "notations": "θ₍rad,a₎ = π/3 ≈ 1.05"
+    },
+    {
+      "explanation": "Part (b): 445° = (445/180)π = (89/36)π rad; numerically ≈ 7.77 rad.",
+      "notations": "θ₍rad,b₎ = (89/36)π ≈ 7.77"
+    }
+  ]
+}

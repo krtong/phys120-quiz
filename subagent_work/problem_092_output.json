@@ -1,0 +1,72 @@
+{
+  "problem": "An arrow with a mass of 85 grams is launched from a bow. The bowstring applies an average force of 105 N to the arrow over a distance of 75 cm. Determine the speed of the arrow as it leaves the bow.",
+  "source": "Quiz 6 - Problem 3",
+  "sourceFile": "sources/Quiz6_FA25.pdf",
+  "chapter": "Quiz 6 Review",
+  "variables": [
+    {
+      "symbol": "m",
+      "meaning": "mass of arrow"
+    },
+    {
+      "symbol": "F₍avg₎",
+      "meaning": "force, average string force"
+    },
+    {
+      "symbol": "d",
+      "meaning": "distance over which bowstring acts"
+    },
+    {
+      "symbol": "v",
+      "meaning": "launch speed (m/s)"
+    },
+    {
+      "symbol": "W",
+      "meaning": "work done (J)"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Work",
+      "formula": "W = Fd"
+    },
+    {
+      "name": "Kinetic energy",
+      "formula": "KE = ½mv²"
+    },
+    {
+      "name": "Work-energy theorem",
+      "formula": "W = ΔKE"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "We will use the work formula W = Fd and the work-energy theorem W = ΔKE = ½mv² (since the arrow starts from rest).",
+      "notations": "W = Fd and W = ½mv²"
+    },
+    {
+      "explanation": "Define variables with values given in the problem.",
+      "notations": "Given: m = 85 g = 0.085 kg, F₍avg₎ = 105 N, d = 75 cm = 0.75 m"
+    },
+    {
+      "explanation": "Calculate the work done by the bowstring on the arrow.",
+      "notations": "W = Fd = (105 N)(0.75 m) = 78.75 J"
+    },
+    {
+      "explanation": "Apply the work-energy theorem: the work done equals the kinetic energy gained.",
+      "notations": "W = ½mv²"
+    },
+    {
+      "explanation": "Solve for the launch speed v by rearranging the equation.",
+      "notations": "v = √(2W/m)"
+    },
+    {
+      "explanation": "Substitute the numerical values into the formula.",
+      "notations": "v = √[2(78.75 J)/(0.085 kg)]"
+    },
+    {
+      "explanation": "Calculate the final answer.",
+      "notations": "v = √(157.5/0.085) = √1852.94 ≈ 43 m/s"
+    }
+  ]
+}

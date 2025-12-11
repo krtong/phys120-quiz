@@ -1,0 +1,36 @@
+{
+  "problem": "Express the following angles in radians: (a) 45.0°, (b) 60.0°, (c) 90.0°, (d) 360.0°, and (e) 445°. Give as numerical values and as fractions of π.",
+  "source": "PS_Chap8.pdf - Problem 1",
+  "sourceFile": "sources/PS_Chap8.pdf",
+  "chapter": "Chapter 8: Rotational Motion",
+  "variables": [
+    {
+      "symbol": "θᵢ",
+      "meaning": "given angle in degrees"
+    },
+    {
+      "symbol": "θ₍rad₎",
+      "meaning": "angle in radians"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Degree-to-radian conversion",
+      "formula": "θ₍rad₎ = θᵢ × π / 180°"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "Multiply each degree measure by π/180° to obtain radians; simplify the fraction of π.",
+      "notations": "θ₍rad₎ = θᵢ × π / 180°"
+    },
+    {
+      "explanation": "(a) 45.0° → π/4 rad ≈ 0.785 rad; (b) 60.0° → π/3 rad ≈ 1.05 rad; (c) 90.0° → π/2 rad ≈ 1.57 rad.",
+      "notations": "θ₍a₎ = π/4, θ₍b₎ = π/3, θ₍c₎ = π/2"
+    },
+    {
+      "explanation": "(d) 360.0° → 2π rad ≈ 6.28 rad; (e) 445° → (89/36)π rad ≈ 7.77 rad.",
+      "notations": "θ₍d₎ = 2π, θ₍e₎ = (89/36)π"
+    }
+  ]
+}

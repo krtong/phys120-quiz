@@ -1,0 +1,76 @@
+{
+  "problem": "(a) For a car traveling with speed v around a curve of radius r, determine a formula for the angle at which a road should be banked so that no friction is required. (b) What is this angle for a road which has a curve of radius 50 m with a design speed of 50 km/h?",
+  "source": "PS_Chap5_II.pdf - Problem 6",
+  "sourceFile": "sources/PS_Chap5_II.pdf",
+  "chapter": "Chapter 5: Circular Motion & Gravitation",
+  "variables": [
+    {
+      "symbol": "v",
+      "meaning": "speed of car"
+    },
+    {
+      "symbol": "r",
+      "meaning": "radius of curve"
+    },
+    {
+      "symbol": "θ",
+      "meaning": "bank angle relative to horizontal"
+    },
+    {
+      "symbol": "g",
+      "meaning": "gravitational acceleration near Earth"
+    },
+    {
+      "symbol": "v₍design₎",
+      "meaning": "speed, design specification"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Centripetal acceleration",
+      "formula": "a_c = v²/r"
+    },
+    {
+      "name": "Newton's second law",
+      "formula": "F = ma"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "We will use Newton's second law F = ma with centripetal acceleration a_c = v²/r for circular motion, along with force component analysis on the banked curve.",
+      "notations": "F = ma, a_c = v²/r"
+    },
+    {
+      "explanation": "For part (b), the given values are: r = 50 m, v₍design₎ = 50 km/h, and g = 9.80 m/s².",
+      "notations": "r = 50 m, v₍design₎ = 50 km/h, g = 9.80 m/s²"
+    },
+    {
+      "explanation": "On a frictionless banked curve, the normal force N has two components: N cosθ balances the car's weight vertically, and N sinθ provides the centripetal force horizontally.",
+      "notations": "N cosθ = mg,  N sinθ = ma_c = m(v²/r)"
+    },
+    {
+      "explanation": "Divide the horizontal force equation by the vertical force equation to eliminate N and m.",
+      "notations": "tanθ = (N sinθ) / (N cosθ) = [m(v²/r)] / (mg) = v² / (rg)"
+    },
+    {
+      "explanation": "This gives the general formula for the banking angle without friction: tanθ = v² / (rg).",
+      "notations": "tanθ = v² / (rg)"
+    },
+    {
+      "explanation": "Convert the design speed from km/h to m/s for part (b).",
+      "notations": "v₍design₎ = 50 km/h × (1000 m / km) / (3600 s / h) = 13.9 m/s"
+    },
+    {
+      "explanation": "Substitute the numerical values into the banking angle formula.",
+      "notations": "tanθ = (13.9 m/s)² / [(50.0 m)(9.80 m/s²)]"
+    },
+    {
+      "explanation": "Calculate the value of tanθ.",
+      "notations": "tanθ = 193.21 / 490.0 ≈ 0.394"
+    },
+    {
+      "explanation": "Take the inverse tangent to find the banking angle.",
+      "notations": "θ = arctan(0.394) ≈ 21.5°"
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "problem": "The Moon's nearly circular orbit around the Earth has a radius of about 384,000 km and a period T of 27.3 days. Determine the acceleration of the Moon toward the Earth.",
+  "source": "PS_Chap5_II.pdf - Problem 2",
+  "sourceFile": "sources/PS_Chap5_II.pdf",
+  "chapter": "Chapter 5: Circular Motion & Gravitation",
+  "variables": [
+    {
+      "symbol": "r",
+      "meaning": "orbital radius of the Moon"
+    },
+    {
+      "symbol": "T",
+      "meaning": "orbital period"
+    },
+    {
+      "symbol": "a₍c₎",
+      "meaning": "acceleration, centripetal toward Earth"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Linear speed in circular motion",
+      "formula": "v = 2πr / T"
+    },
+    {
+      "name": "Centripetal acceleration",
+      "formula": "a₍c₎ = v^2 / r"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "Identify the fundamental formulas needed to solve the problem",
+      "notations": "We will use the linear speed formula: v = 2πr / T, and the centripetal acceleration formula: a₍c₎ = v² / r"
+    },
+    {
+      "explanation": "Define the variables with the values given in the problem",
+      "notations": "Given: r = 384,000 km = 3.84 × 10⁸ m, T = 27.3 days = 27.3 × 24 × 3600 s = 2.36 × 10⁶ s"
+    },
+    {
+      "explanation": "Calculate the linear speed by substituting the values into the speed formula",
+      "notations": "v = 2πr / T = 2π(3.84 × 10⁸ m) / (2.36 × 10⁶ s)"
+    },
+    {
+      "explanation": "Evaluate the linear speed",
+      "notations": "v = (2.41 × 10⁹ m) / (2.36 × 10⁶ s) = 1.02 × 10³ m/s"
+    },
+    {
+      "explanation": "Substitute the linear speed and radius into the centripetal acceleration formula",
+      "notations": "a₍c₎ = v² / r = (1.02 × 10³ m/s)² / (3.84 × 10⁸ m)"
+    },
+    {
+      "explanation": "Calculate the centripetal acceleration",
+      "notations": "a₍c₎ = (1.04 × 10⁶ m²/s²) / (3.84 × 10⁸ m) = 2.71 × 10⁻³ m/s²"
+    }
+  ]
+}

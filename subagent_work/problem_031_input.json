@@ -1,0 +1,52 @@
+{
+  "problem": "How long will it take a 1750-W motor to lift a 335-kg piano to a sixth-story window 16.0 m above?",
+  "source": "PS Chap6.pdf - Problem 10",
+  "sourceFile": "sources/PS Chap6.pdf",
+  "chapter": "Chapter 6: Work & Energy",
+  "variables": [
+    {
+      "symbol": "m",
+      "meaning": "mass of the piano"
+    },
+    {
+      "symbol": "h",
+      "meaning": "lifting height"
+    },
+    {
+      "symbol": "g",
+      "meaning": "gravitational acceleration near Earth"
+    },
+    {
+      "symbol": "P",
+      "meaning": "motor output power"
+    },
+    {
+      "symbol": "W",
+      "meaning": "work required against gravity"
+    },
+    {
+      "symbol": "t",
+      "meaning": "time required for lift"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Gravitational work",
+      "formula": "W = m g h"
+    },
+    {
+      "name": "Power–time relation",
+      "formula": "t = W / P"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "Compute the energy needed to lift the piano.",
+      "notations": "W = (335 kg)(9.80 m/s²)(16.0 m) ≈ 5.3 × 10⁴ J"
+    },
+    {
+      "explanation": "Divide by the motor’s power to obtain the lifting time.",
+      "notations": "t = 5.3 × 10⁴ J / 1750 W ≈ 30 s"
+    }
+  ]
+}

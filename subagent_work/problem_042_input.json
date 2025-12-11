@@ -1,0 +1,36 @@
+{
+  "problem": "An oxygen molecule consists of two oxygen atoms whose total mass is 5.3×10⁻²⁶ kg and whose moment of inertia about an axis perpendicular to the line joining the two atoms, midway between them, is 1.9×10⁻⁴⁶ kg·m². From these data, estimate the effective distance between the atoms.",
+  "source": "PS_Chap8.pdf - Problem 8",
+  "sourceFile": "sources/PS_Chap8.pdf",
+  "chapter": "Chapter 8: Rotational Motion",
+  "variables": [
+    {
+      "symbol": "M",
+      "meaning": "total mass of O₂ molecule"
+    },
+    {
+      "symbol": "I",
+      "meaning": "given moment of inertia about midpoint axis"
+    },
+    {
+      "symbol": "d",
+      "meaning": "distance between atoms (m)"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Moment of inertia for two point masses",
+      "formula": "I = 2 (M/2) (d/2)² = (1/4) M d²"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "Solve the relation I = (1/4) M d² for d.",
+      "notations": "d = √(4I / M)"
+    },
+    {
+      "explanation": "Insert numerical values.",
+      "notations": "d = √[4(1.9 × 10⁻⁴⁶) / (5.3 × 10⁻²⁶)] ≈ 1.2 × 10⁻¹⁰ m"
+    }
+  ]
+}

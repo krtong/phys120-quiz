@@ -1,0 +1,68 @@
+{
+  "problem": "Suppose you are standing on a train accelerating at 0.20 g. What is the minimum coefficient of static friction required between your feet and the floor to prevent slipping?",
+  "source": "Quiz 5 - Problem 1",
+  "sourceFile": "sources/Quiz5_FA25_solution.pdf",
+  "chapter": "Quiz 5 Review",
+  "variables": [
+    {
+      "symbol": "a",
+      "meaning": "acceleration"
+    },
+    {
+      "symbol": "g",
+      "meaning": "gravitational acceleration"
+    },
+    {
+      "symbol": "μₛ",
+      "meaning": "coefficient of static friction required"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Newton's second law",
+      "formula": "F = ma"
+    },
+    {
+      "name": "Static friction force",
+      "formula": "f_s = μ_s N"
+    },
+    {
+      "name": "Normal force on horizontal surface",
+      "formula": "N = mg"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "Identify the fundamental formulas needed: Newton's second law in the horizontal direction, the static friction force formula, and the normal force on a horizontal surface.",
+      "notations": "F = ma, f_s = μ_s N, N = mg"
+    },
+    {
+      "explanation": "Define the given values from the problem.",
+      "notations": "a = 0.20 g"
+    },
+    {
+      "explanation": "Apply Newton's second law in the horizontal direction. The friction force must provide the acceleration.",
+      "notations": "f_s = ma"
+    },
+    {
+      "explanation": "Apply vertical force equilibrium. The normal force equals the weight since there's no vertical acceleration.",
+      "notations": "N = mg"
+    },
+    {
+      "explanation": "Substitute the static friction formula and normal force into the horizontal force equation.",
+      "notations": "μ_s N = ma → μ_s (mg) = ma"
+    },
+    {
+      "explanation": "Simplify by canceling mass from both sides.",
+      "notations": "μ_s g = a → μ_s = a/g"
+    },
+    {
+      "explanation": "Substitute the numerical value a = 0.20 g.",
+      "notations": "μ_s = (0.20 g)/g = 0.20"
+    },
+    {
+      "explanation": "State the final answer for the minimum coefficient of static friction.",
+      "notations": "μ_s ≥ 0.20"
+    }
+  ]
+}

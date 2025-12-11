@@ -1,0 +1,56 @@
+{
+  "problem": "Show that the rms speed of molecules in a gas is given by v₍rms₎ = √(3P/ρ), where P is the pressure in the gas and ρ is the gas density.",
+  "source": "PS Chap13 FA25.pdf - Problem 7",
+  "sourceFile": "sources/PS Chap13 FA25.pdf",
+  "chapter": "Chapter 13: Temperature & Kinetic Theory",
+  "variables": [
+    {
+      "symbol": "v₍rms₎",
+      "meaning": "root-mean-square molecular speed"
+    },
+    {
+      "symbol": "P",
+      "meaning": "gas pressure"
+    },
+    {
+      "symbol": "ρ",
+      "meaning": "gas density"
+    },
+    {
+      "symbol": "k₍B₎",
+      "meaning": "Boltzmann constant"
+    },
+    {
+      "symbol": "T",
+      "meaning": "absolute temperature"
+    },
+    {
+      "symbol": "m",
+      "meaning": "mass"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "RMS speed from kinetic theory",
+      "formula": "v₍rms₎ = √(3k₍B₎ T / m)"
+    },
+    {
+      "name": "Ideal gas law per molecule",
+      "formula": "k₍B₎ T = P V / N"
+    },
+    {
+      "name": "Density relation",
+      "formula": "ρ = (N m) / V"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "Replace k₍B₎ T in the rms-speed formula using the ideal gas relation.",
+      "notations": "v₍rms₎ = √{3 (P V / N) / m}"
+    },
+    {
+      "explanation": "Recognize that N m / V = ρ, yielding the desired expression.",
+      "notations": "v₍rms₎ = √(3P / ρ)"
+    }
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "problem": "A ball of radius r rolls on the inside of a track of radius R (see the figure). If the ball starts from rest at the vertical edge of the track, what will be its speed when it reaches the lowest point of the track, rolling without slipping?",
+  "source": "PS_Chap8.pdf - Problem 13",
+  "sourceFile": "sources/PS_Chap8.pdf",
+  "chapter": "Chapter 8: Rotational Motion",
+  "variables": [
+    {
+      "symbol": "m",
+      "meaning": "ball mass"
+    },
+    {
+      "symbol": "g",
+      "meaning": "gravitational acceleration"
+    },
+    {
+      "symbol": "R",
+      "meaning": "track radius"
+    },
+    {
+      "symbol": "r",
+      "meaning": "ball radius"
+    },
+    {
+      "symbol": "v",
+      "meaning": "speed at bottom (m/s)"
+    },
+    {
+      "symbol": "I",
+      "meaning": "moment of inertia"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Conservation of energy",
+      "formula": "KE_initial + PE_initial = KE_final + PE_final"
+    },
+    {
+      "name": "Translational kinetic energy",
+      "formula": "KE_trans = ½mv²"
+    },
+    {
+      "name": "Rotational kinetic energy",
+      "formula": "KE_rot = ½Iω²"
+    },
+    {
+      "name": "Gravitational potential energy",
+      "formula": "PE = mgh"
+    },
+    {
+      "name": "Rolling without slipping condition",
+      "formula": "v = ωr"
+    },
+    {
+      "name": "Moment of inertia for solid sphere",
+      "formula": "I = (2/5)mr²"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "State the fundamental formulas to be used: conservation of energy with translational and rotational kinetic energy, and rolling without slipping.",
+      "notations": "KE_initial + PE_initial = KE_final + PE_final, where KE = ½mv² + ½Iω², PE = mgh, v = ωr, and I = (2/5)mr² for a solid sphere"
+    },
+    {
+      "explanation": "Define the initial and final states: initially the ball is at rest at height (R - r), finally it is at the bottom with speed v.",
+      "notations": "Initial: v_initial = 0, h_initial = R - r; Final: v_final = v, h_final = 0"
+    },
+    {
+      "explanation": "Apply conservation of energy: initial energy (purely gravitational potential) equals final energy (translational plus rotational kinetic).",
+      "notations": "mg(R - r) = ½mv² + ½Iω²"
+    },
+    {
+      "explanation": "Substitute the rolling without slipping condition ω = v/r into the rotational kinetic energy term.",
+      "notations": "mg(R - r) = ½mv² + ½I(v/r)²"
+    },
+    {
+      "explanation": "Substitute the moment of inertia for a solid sphere I = (2/5)mr².",
+      "notations": "mg(R - r) = ½mv² + ½(2/5)mr²(v/r)²"
+    },
+    {
+      "explanation": "Simplify the rotational kinetic energy term.",
+      "notations": "mg(R - r) = ½mv² + (1/5)mv²"
+    },
+    {
+      "explanation": "Combine the kinetic energy terms.",
+      "notations": "mg(R - r) = (7/10)mv²"
+    },
+    {
+      "explanation": "Solve for v by canceling mass and rearranging.",
+      "notations": "v² = (10/7)g(R - r)"
+    },
+    {
+      "explanation": "Take the square root to find the final speed.",
+      "notations": "v = √[(10/7)g(R - r)]"
+    }
+  ]
+}

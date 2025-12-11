@@ -1,0 +1,116 @@
+{
+  "problem": "A small sphere of mass m is attached to a boom of length L (assume to have negligible mass) and is released from rest with an initial angle θ₀. (a) Find the torque exerted by gravity on the small sphere with respect to the hinge when it was released. (b) Show that the kinetic energy of the small sphere due to its translational motion is the same as its rotational kinetic energy with respect to the hinge. (c) Find the speed of the small sphere right before it hits the ground.",
+  "source": "Worksheet 10 - Problem 3",
+  "sourceFile": "sources/WS10_Rotational_Dynamics.pdf",
+  "chapter": "Worksheet 10",
+  "variables": [
+    {
+      "symbol": "m",
+      "meaning": "sphere mass"
+    },
+    {
+      "symbol": "L",
+      "meaning": "boom length"
+    },
+    {
+      "symbol": "θ₀",
+      "meaning": "initial release angle from vertical/downward"
+    },
+    {
+      "symbol": "g",
+      "meaning": "gravitational acceleration"
+    },
+    {
+      "symbol": "τ",
+      "meaning": "torque magnitude about hinge"
+    },
+    {
+      "symbol": "v",
+      "meaning": "speed at bottom"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Torque",
+      "formula": "τ = rF sinθ"
+    },
+    {
+      "name": "Moment of inertia for point mass",
+      "formula": "I = mr²"
+    },
+    {
+      "name": "Rotational kinetic energy",
+      "formula": "K_rot = ½Iω²"
+    },
+    {
+      "name": "Translational kinetic energy",
+      "formula": "K_trans = ½mv²"
+    },
+    {
+      "name": "Linear speed and angular velocity relation",
+      "formula": "v = rω"
+    },
+    {
+      "name": "Conservation of energy",
+      "formula": "E_initial + W = E_final"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "(a) Start with the torque formula. For gravity acting on the sphere, the force is F = mg, the lever arm distance is r = L, and the angle between the boom and the vertical gravitational force is θ₀.",
+      "notations": "τ = rF sinθ"
+    },
+    {
+      "explanation": "Substitute the values for this problem: r = L, F = mg, θ = θ₀",
+      "notations": "τ = L · (mg) · sinθ₀"
+    },
+    {
+      "explanation": "Simplify to get the torque magnitude",
+      "notations": "τ = mgL sinθ₀"
+    },
+    {
+      "explanation": "(b) Start with the rotational kinetic energy formula and the moment of inertia for a point mass",
+      "notations": "K_rot = ½Iω² and I = mr²"
+    },
+    {
+      "explanation": "For the sphere at distance L from the hinge, substitute r = L",
+      "notations": "I = mL²"
+    },
+    {
+      "explanation": "Use the relationship between linear speed and angular velocity: v = rω, so ω = v/r",
+      "notations": "ω = v/L"
+    },
+    {
+      "explanation": "Substitute I = mL² and ω = v/L into the rotational kinetic energy formula",
+      "notations": "K_rot = ½(mL²)(v/L)²"
+    },
+    {
+      "explanation": "Simplify the expression",
+      "notations": "K_rot = ½(mL²)(v²/L²) = ½mv²"
+    },
+    {
+      "explanation": "Compare with translational kinetic energy K_trans = ½mv²",
+      "notations": "K_rot = ½mv² = K_trans"
+    },
+    {
+      "explanation": "(c) Use conservation of energy. The sphere starts at rest and falls through a vertical height. The height change is Δh = L - L cosθ₀ = L(1 - cosθ₀).",
+      "notations": "E_initial = E_final → PE_initial = KE_final"
+    },
+    {
+      "explanation": "The initial potential energy (taking bottom as reference) equals the final kinetic energy",
+      "notations": "mgΔh = ½mv²"
+    },
+    {
+      "explanation": "Substitute Δh = L(1 - cosθ₀)",
+      "notations": "mgL(1 - cosθ₀) = ½mv²"
+    },
+    {
+      "explanation": "Solve for v by canceling m from both sides and multiplying both sides by 2",
+      "notations": "2gL(1 - cosθ₀) = v²"
+    },
+    {
+      "explanation": "Take the square root to find the speed",
+      "notations": "v = √[2gL(1 - cosθ₀)]"
+    }
+  ]
+}

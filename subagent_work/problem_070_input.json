@@ -1,0 +1,44 @@
+{
+  "problem": "If you were to build a pipe organ with open-tube pipes spanning the range of human hearing (20 Hz to 20 kHz), what would be the range of the lengths of pipes required?",
+  "source": "PS Chap11 and 12.pdf - Problem 13",
+  "sourceFile": "sources/PS Chap11 and 12.pdf",
+  "chapter": "Chapters 11–12: Oscillations & Waves",
+  "variables": [
+    {
+      "symbol": "v₍air₎",
+      "meaning": "speed of sound in air"
+    },
+    {
+      "symbol": "f₍min₎",
+      "meaning": "minimum audible frequency"
+    },
+    {
+      "symbol": "f₍max₎",
+      "meaning": "maximum audible frequency"
+    },
+    {
+      "symbol": "L₍open₎",
+      "meaning": "length of open pipe"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Open-pipe fundamental",
+      "formula": "f₁ = v / (2 L)"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "Solve for length at the lowest tone (20 Hz).",
+      "notations": "L₍min₎ = v / (2 f₍min₎) = 343 / (40) ≈ 8.6 m"
+    },
+    {
+      "explanation": "Similarly find the length for the highest fundamental (20 kHz).",
+      "notations": "L₍max freq₎ = v / (2 f₍max₎) = 343 / (4.0 × 10⁴) ≈ 8.6 × 10⁻³ m"
+    },
+    {
+      "explanation": "Thus pipes ranging from ≈8.6 m down to ≈8.6 mm cover the audible band.",
+      "notations": "Range ≈ 8.6 m → 8.6 mm"
+    }
+  ]
+}

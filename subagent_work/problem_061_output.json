@@ -1,0 +1,68 @@
+{
+  "problem": "What is the volume rate of flow of water from a 1.85-cm-diameter faucet if the pressure head is 12.0 m?",
+  "source": "PS Chap10.pdf - Problem 7",
+  "sourceFile": "sources/PS Chap10.pdf",
+  "chapter": "Chapter 10: Fluids",
+  "variables": [
+    {
+      "symbol": "d",
+      "meaning": "faucet diameter"
+    },
+    {
+      "symbol": "r",
+      "meaning": "faucet radius"
+    },
+    {
+      "symbol": "h",
+      "meaning": "pressure head height"
+    },
+    {
+      "symbol": "v",
+      "meaning": "efflux speed at faucet exit"
+    },
+    {
+      "symbol": "Q",
+      "meaning": "volume flow rate (m³·/s)"
+    },
+    {
+      "symbol": "g",
+      "meaning": "gravitational acceleration near Earth"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Torricelli's theorem (efflux velocity)",
+      "formula": "v = √(2gh)"
+    },
+    {
+      "name": "Volume flow rate",
+      "formula": "Q = Av"
+    },
+    {
+      "name": "Area of a circle",
+      "formula": "A = πr²"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "We will use Torricelli's theorem to find the efflux velocity from the pressure head, then calculate the volume flow rate using Q = Av where A = πr².",
+      "notations": "v = √(2gh), Q = Av, A = πr²"
+    },
+    {
+      "explanation": "Define the given values from the problem.",
+      "notations": "d = 1.85 cm = 0.0185 m, r = d/2 = 0.00925 m, h = 12.0 m, g = 9.80 m/s²"
+    },
+    {
+      "explanation": "Calculate the efflux speed using Torricelli's theorem.",
+      "notations": "v = √(2gh) = √[2(9.80 m/s²)(12.0 m)] = √(235.2 m²/s²) ≈ 15.3 m/s"
+    },
+    {
+      "explanation": "Calculate the cross-sectional area of the faucet.",
+      "notations": "A = πr² = π(0.00925 m)² ≈ 2.69 × 10⁻⁴ m²"
+    },
+    {
+      "explanation": "Calculate the volume flow rate by multiplying area and velocity.",
+      "notations": "Q = Av = (2.69 × 10⁻⁴ m²)(15.3 m/s) ≈ 4.1 × 10⁻³ m³/s"
+    }
+  ]
+}

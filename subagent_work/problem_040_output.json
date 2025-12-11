@@ -1,0 +1,60 @@
+{
+  "problem": "Two blocks, each of mass m, are attached to the ends of a massless rod which pivots as shown in the figure. Initially the rod is held in the horizontal position and then released. Calculate the magnitude and direction of the net torque on this system when it is first released.",
+  "source": "PS_Chap8.pdf - Problem 6",
+  "sourceFile": "sources/PS_Chap8.pdf",
+  "chapter": "Chapter 8: Rotational Motion",
+  "variables": [
+    {
+      "symbol": "m",
+      "meaning": "mass of each block (kg)"
+    },
+    {
+      "symbol": "g",
+      "meaning": "gravitational acceleration"
+    },
+    {
+      "symbol": "ℓ₁",
+      "meaning": "length of 1"
+    },
+    {
+      "symbol": "ℓ₂",
+      "meaning": "length of 2"
+    },
+    {
+      "symbol": "τ",
+      "meaning": "net torque about pivot"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Torque",
+      "formula": "τ = r F sin θ"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "We will use the torque formula for a force applied at a distance from the pivot point. For forces perpendicular to the lever arm, τ = r F, where F is the force and r is the distance from the pivot.",
+      "notations": "τ = r F (when force is perpendicular to lever arm)"
+    },
+    {
+      "explanation": "Identify the forces and distances. Each block experiences a gravitational force F = mg. The left block is at distance ℓ₂ from the pivot, and the right block is at distance ℓ₁ from the pivot. We define counterclockwise torques as positive.",
+      "notations": "F = mg for each block; left block at r = ℓ₂; right block at r = ℓ₁"
+    },
+    {
+      "explanation": "Calculate the torque from each block. The left block's weight produces a counterclockwise (positive) torque, while the right block's weight produces a clockwise (negative) torque.",
+      "notations": "τ₍left₎ = +ℓ₂ · mg = +mgℓ₂; τ₍right₎ = -ℓ₁ · mg = -mgℓ₁"
+    },
+    {
+      "explanation": "Sum the torques to find the net torque on the system.",
+      "notations": "τ_net = τ₍left₎ + τ₍right₎ = mgℓ₂ - mgℓ₁"
+    },
+    {
+      "explanation": "Factor out common terms to get the final expression for net torque.",
+      "notations": "τ_net = mg(ℓ₂ - ℓ₁)"
+    },
+    {
+      "explanation": "The direction is counterclockwise if ℓ₂ > ℓ₁ (positive torque), and clockwise if ℓ₁ > ℓ₂ (negative torque).",
+      "notations": "Direction: counterclockwise if ℓ₂ > ℓ₁; clockwise if ℓ₁ > ℓ₂"
+    }
+  ]
+}

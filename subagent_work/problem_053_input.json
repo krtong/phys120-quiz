@@ -1,0 +1,68 @@
+{
+  "problem": "A 60 g arrow is fired from a bow whose string exerts an average force of 100N on the arrow over a distance of 80cm. (a) What is the speed of the arrow as it leaves the bow? (b) What is the power given to the arrow?",
+  "source": "Midterm 2 - Problem 2",
+  "sourceFile": "sources/MT2 FA25 solution.docx",
+  "chapter": "Midterm 2 Review",
+  "variables": [
+    {
+      "symbol": "m",
+      "meaning": "mass of arrow"
+    },
+    {
+      "symbol": "→F₍avg₎",
+      "meaning": "force of average string force"
+    },
+    {
+      "symbol": "d",
+      "meaning": "distance over which string force acts"
+    },
+    {
+      "symbol": "a",
+      "meaning": "acceleration (m/s²)"
+    },
+    {
+      "symbol": "v",
+      "meaning": "exit speed (m/s)"
+    },
+    {
+      "symbol": "t",
+      "meaning": "acceleration time (s)"
+    },
+    {
+      "symbol": "W",
+      "meaning": "work on arrow (J)"
+    },
+    {
+      "symbol": "P₍avg₎",
+      "meaning": "pressure of average value delivered to arrow"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Work to kinetic energy",
+      "formula": "W = F₍avg₎ d = ½ m v²"
+    },
+    {
+      "name": "Constant-acceleration relations",
+      "formula": "a = F₍avg₎ / m,   v² = 2 a d,   t = v / a"
+    },
+    {
+      "name": "Average power",
+      "formula": "P₍avg₎ = W / t"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "Compute the acceleration and final speed using kinematics/work-energy.",
+      "notations": "a = 100/0.060 ≈ 1.67 × 10³ m/s²,  v = √(2 a d) ≈ 5.2 × 10¹ m/s"
+    },
+    {
+      "explanation": "Work done equals F d (=80 J) and determines the kinetic energy.",
+      "notations": "W = 100 × 0.80 = 80 J = ½ m v²"
+    },
+    {
+      "explanation": "Find the time interval and the corresponding average power.",
+      "notations": "t = v / a ≈ 5.16 × 10¹ / 1.67 × 10³ ≈ 3.1 × 10⁻² s;  P₍avg₎ = 80 / 0.031 ≈ 2.6 kW"
+    }
+  ]
+}

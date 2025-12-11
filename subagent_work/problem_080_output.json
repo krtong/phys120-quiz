@@ -1,0 +1,84 @@
+{
+  "problem": "How long does it take a 750-W coffeepot to bring to a boil 0.75 L of water initially at 11°C? Assume that the part of the pot which is heated with the water is made of 280 g of aluminum, and that no water boils away.",
+  "source": "PS Chap14 FA25.pdf - Problem 3",
+  "sourceFile": "sources/PS Chap14 FA25.pdf",
+  "chapter": "Chapter 14: Heat",
+  "variables": [
+    {
+      "symbol": "m₍Al₎",
+      "meaning": "mass of aluminum"
+    },
+    {
+      "symbol": "c₍Al₎",
+      "meaning": "specific heat (Al)"
+    },
+    {
+      "symbol": "m₍w₎",
+      "meaning": "mass of water"
+    },
+    {
+      "symbol": "c₍w₎",
+      "meaning": "specific heat (w)"
+    },
+    {
+      "symbol": "ΔT",
+      "meaning": "temperature change"
+    },
+    {
+      "symbol": "P",
+      "meaning": "power"
+    },
+    {
+      "symbol": "t",
+      "meaning": "time"
+    }
+  ],
+  "correctFormulas": [
+    {
+      "name": "Heat transfer",
+      "formula": "Q = mcΔT"
+    },
+    {
+      "name": "Power",
+      "formula": "P = Q/t"
+    }
+  ],
+  "steps": [
+    {
+      "explanation": "We will use the heat transfer formula Q = mcΔT and the power formula P = Q/t.",
+      "notations": "Q = mcΔT and P = Q/t"
+    },
+    {
+      "explanation": "Define the given values from the problem.",
+      "notations": "m₍Al₎ = 280 g = 0.280 kg, c₍Al₎ = 900 J/(kg·°C), m₍w₎ = 0.75 L = 0.75 kg, c₍w₎ = 4186 J/(kg·°C), T₍initial₎ = 11°C, T₍final₎ = 100°C, P = 750 W"
+    },
+    {
+      "explanation": "Calculate the temperature change.",
+      "notations": "ΔT = T₍final₎ - T₍initial₎ = 100°C - 11°C = 89°C"
+    },
+    {
+      "explanation": "Calculate the total heat required by adding the heat needed for both the aluminum and the water. Since both materials undergo the same temperature change, we calculate Q for each separately and add them.",
+      "notations": "Q₍total₎ = Q₍Al₎ + Q₍w₎ = m₍Al₎c₍Al₎ΔT + m₍w₎c₍w₎ΔT = (m₍Al₎c₍Al₎ + m₍w₎c₍w₎)ΔT"
+    },
+    {
+      "explanation": "Substitute the numerical values into the heat equation.",
+      "notations": "Q = [(0.280 kg)(900 J/(kg·°C)) + (0.75 kg)(4186 J/(kg·°C))] × 89°C"
+    },
+    {
+      "explanation": "Calculate the total heat required.",
+      "notations": "Q = [252 J/°C + 3139.5 J/°C] × 89°C = (3391.5 J/°C) × 89°C ≈ 3.0 × 10⁵ J"
+    },
+    {
+      "explanation": "Use the power formula P = Q/t, rearranged to solve for time: t = Q/P.",
+      "notations": "t = Q/P = (3.0 × 10⁵ J)/(750 W)"
+    },
+    {
+      "explanation": "Calculate the time in seconds.",
+      "notations": "t = 3.0 × 10⁵/750 = 4.0 × 10² s"
+    },
+    {
+      "explanation": "Convert the time to minutes.",
+      "notations": "t = 4.0 × 10² s × (1 min/60 s) ≈ 6.7 min"
+    }
+  ]
+}
