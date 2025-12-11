@@ -1,27 +1,29 @@
 {
-  "PS Chap13 FA25": [
-    "source_images/PS Chap13 FA25/page-01.jpg",
-    "source_images/PS Chap13 FA25/page-02.jpg",
-    "source_images/PS Chap13 FA25/page-03.jpg"
-  ],
   "PS Chap10": [
     "source_images/PS Chap10/page-01.jpg",
     "source_images/PS Chap10/page-02.jpg"
   ],
-  "PS_Chap5_II": [
-    "source_images/PS_Chap5_II/page-01.jpg",
-    "source_images/PS_Chap5_II/page-02.jpg",
-    "source_images/PS_Chap5_II/page-03.jpg",
-    "source_images/PS_Chap5_II/page-04.jpg",
-    "source_images/PS_Chap5_II/page-05.jpg",
-    "source_images/PS_Chap5_II/page-06.jpg",
-    "source_images/PS_Chap5_II/page-07.jpg"
+  "PS Chap11 and 12": [
+    "source_images/PS Chap11 and 12/page-01.jpg",
+    "source_images/PS Chap11 and 12/page-02.jpg",
+    "source_images/PS Chap11 and 12/page-03.jpg",
+    "source_images/PS Chap11 and 12/page-04.jpg",
+    "source_images/PS Chap11 and 12/page-05.jpg"
+  ],
+  "PS Chap13 FA25": [
+    "source_images/PS Chap13 FA25/page-01.jpg",
+    "source_images/PS Chap13 FA25/page-02.jpg",
+    "source_images/PS Chap13 FA25/page-03.jpg"
   ],
   "PS Chap14 FA25": [
     "source_images/PS Chap14 FA25/page-01.jpg",
     "source_images/PS Chap14 FA25/page-02.jpg",
     "source_images/PS Chap14 FA25/page-03.jpg",
     "source_images/PS Chap14 FA25/page-04.jpg"
+  ],
+  "PS Chap6": [
+    "source_images/PS Chap6/page-01.jpg",
+    "source_images/PS Chap6/page-02.jpg"
   ],
   "PS Chap7 and solution": [
     "source_images/PS Chap7 and solution/page-01.jpg",
@@ -34,16 +36,14 @@
     "source_images/PS Chap7 and solution/page-08.jpg",
     "source_images/PS Chap7 and solution/page-09.jpg"
   ],
-  "PS Chap6": [
-    "source_images/PS Chap6/page-01.jpg",
-    "source_images/PS Chap6/page-02.jpg"
-  ],
-  "PS Chap11 and 12": [
-    "source_images/PS Chap11 and 12/page-01.jpg",
-    "source_images/PS Chap11 and 12/page-02.jpg",
-    "source_images/PS Chap11 and 12/page-03.jpg",
-    "source_images/PS Chap11 and 12/page-04.jpg",
-    "source_images/PS Chap11 and 12/page-05.jpg"
+  "PS_Chap5_II": [
+    "source_images/PS_Chap5_II/page-01.jpg",
+    "source_images/PS_Chap5_II/page-02.jpg",
+    "source_images/PS_Chap5_II/page-03.jpg",
+    "source_images/PS_Chap5_II/page-04.jpg",
+    "source_images/PS_Chap5_II/page-05.jpg",
+    "source_images/PS_Chap5_II/page-06.jpg",
+    "source_images/PS_Chap5_II/page-07.jpg"
   ],
   "PS_Chap8": [
     "source_images/PS_Chap8/page-01.jpg",
@@ -56,5 +56,31 @@
     "source_images/PS_Chap8/page-08.jpg",
     "source_images/PS_Chap8/page-09.jpg",
     "source_images/PS_Chap8/page-10.jpg"
+  ],
+  "Quiz5_FA25_solution": [
+    "source_images/Quiz5_FA25_solution/page-01.jpg",
+    "source_images/Quiz5_FA25_solution/page-02.jpg",
+    "source_images/Quiz5_FA25_solution/page-03.jpg"
+  ],
+  "Quiz6_FA25": [
+    "source_images/Quiz6_FA25/page-01.jpg",
+    "source_images/Quiz6_FA25/page-02.jpg"
+  ],
+  "WS09_Momentum_and_CM": [
+    "source_images/WS09_Momentum_and_CM/page-01.jpg",
+    "source_images/WS09_Momentum_and_CM/page-02.jpg",
+    "source_images/WS09_Momentum_and_CM/page-03.jpg",
+    "source_images/WS09_Momentum_and_CM/page-04.jpg"
+  ],
+  "WS10_Rotational_Dynamics": [
+    "source_images/WS10_Rotational_Dynamics/page-01.jpg",
+    "source_images/WS10_Rotational_Dynamics/page-02.jpg",
+    "source_images/WS10_Rotational_Dynamics/page-03.jpg",
+    "source_images/WS10_Rotational_Dynamics/page-04.jpg"
+  ],
+  "WS_Work_and_Energy_I": [
+    "source_images/WS_Work_and_Energy_I/page-01.jpg",
+    "source_images/WS_Work_and_Energy_I/page-02.jpg",
+    "source_images/WS_Work_and_Energy_I/page-03.jpg"
   ]
 }

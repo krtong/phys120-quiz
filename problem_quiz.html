@@ -213,6 +213,7 @@
                 <button class="close-btn" onclick="closeSourceModal()">&times;</button>
             </div>
             <div class="source-modal-body">
+                <div id="sourceLinkContainer" style="display:none; text-align:right; font-size:0.9em; margin-bottom:6px;"></div>
                 <div class="source-page-frame" id="sourcePageFrame">
                     <div style="color:#ccc;">Loading…</div>
                 </div>
@@ -242,7 +243,6 @@
             <div class="problem-chapter" id="problemChapter"></div>
             <div id="problemText"></div>
             <div id="problemImage" style="text-align: center; margin-top: 15px;"></div>
-            <div style="margin-top:10px;"><button class="nav-btn" id="viewSourceBtn" onclick="viewCurrentSource()">View Source Pages</button></div>
         </div>
         
         <div class="nav-row">
@@ -331,8 +331,30 @@ const ALL_NOTATIONS = ["a₍c₎ = v² / r = 4π²rf²", "T = 1 / f = 1 / (2.00 
         let currentSourcePageIndex = 0;
         let currentSourceName = '';
 
+        // List of original source files available to link (relative to quiz/)
+        const SOURCE_FILES = [
+            'sources/PS Chap10.pdf',
+            'sources/PS Chap11 and 12.pdf',
+            'sources/PS Chap13 FA25.pdf',
+            'sources/PS Chap14 FA25.pdf',
+            'sources/PS Chap6.pdf',
+            'sources/PS Chap7 and solution.pdf',
+            'sources/PS_Chap5_II.pdf',
+            'sources/PS_Chap8.pdf',
+            'sources/Quiz5_FA25_solution.pdf',
+            'sources/Quiz6_FA25.pdf',
+            'sources/Quiz 7 FA25 Solution.docx',
+            'sources/Quiz 8 solution FA25.docx',
+            'sources/Quiz 9 FA25 solution.docx',
+            'sources/Quiz10 FA25 solution.docx',
+            'sources/WS_Work_and_Energy_I.pdf',
+            'sources/WS09_Momentum_and_CM.pdf',
+            'sources/WS10_Rotational_Dynamics.pdf',
+            'sources/MT2 FA25 solution.docx'
+        ];
+
         // Load source image manifest (generated in quiz/source_images/manifest.json)
-        fetch('source_images/manifest.json')
+        fetch('images/source_images/manifest.json')
             .then(r => r.ok ? r.json() : {})
             .then(data => { SOURCE_IMAGE_MANIFEST = data || {}; })
             .catch(() => { SOURCE_IMAGE_MANIFEST = {}; });
@@ -375,8 +397,17 @@ const ALL_NOTATIONS = ["a₍c₎ = v² / r = 4π²rf²", "T = 1 / f = 1 / (2.00 
         }
 
         function openSourceViewer(srcString) {
-            const key = getSourceKey(srcString);
-            const pages = SOURCE_IMAGE_MANIFEST[key] || [];
+            let key = getSourceKey(srcString);
+            let pages = SOURCE_IMAGE_MANIFEST[key];
+            // Fallback: try partial match if exact key missing
+            if (!pages) {
+                const fallback = Object.keys(SOURCE_IMAGE_MANIFEST).find(k => k.includes(key) || key.includes(k));
+                if (fallback) {
+                    key = fallback;
+                    pages = SOURCE_IMAGE_MANIFEST[fallback];
+                }
+            }
+            pages = pages || [];
             currentSourceName = srcString;
             currentSourcePages = pages;
             currentSourcePageIndex = 0;
@@ -385,8 +416,18 @@ const ALL_NOTATIONS = ["a₍c₎ = v² / r = 4π²rf²", "T = 1 / f = 1 / (2.00 
             document.getElementById('sourceModal').style.display = 'flex';
             document.getElementById('overlay').classList.add('show');
 
+            // Show link to original file if present
+            const linkContainer = document.getElementById('sourceLinkContainer');
+            const original = getSourceOriginalPath(srcString);
+            if (original) {
+                linkContainer.innerHTML = '<a href=\"' + original + '\" target=\"_blank\" style=\"color:#00d4ff;text-decoration:none\">Open original file</a>';
+                linkContainer.style.display = 'block';
+            } else {
+                linkContainer.style.display = 'none';
+            }
+
             if (pages.length === 0) {
-                document.getElementById('sourcePageFrame').innerHTML = '<div style=\"color:#ccc;padding:20px;text-align:center\">Images not available for this source yet. Generate JPEGs in <code>quiz/source_images/' + key + '/</code> then reload.</div>';
+                document.getElementById('sourcePageFrame').innerHTML = '<div style=\"color:#ccc;padding:20px;text-align:center\">Images not available for this source yet. Generate JPEGs in <code>quiz/images/source_images/' + key + '/</code> then reload.</div>';
                 document.getElementById('sourcePageIndicator').textContent = 'Page 0 / 0';
                 document.getElementById('sourcePrevBtn').disabled = true;
                 document.getElementById('sourceNextBtn').disabled = true;
@@ -449,8 +490,22 @@ const ALL_NOTATIONS = ["a₍c₎ = v² / r = 4π²rf²", "T = 1 / f = 1 / (2.00 
             sources.forEach(src => {
                 const li = document.createElement('li');
                 li.className = 'problem-item';
-                li.innerHTML = `<div class="problem-item-text">${src}</div>`;
-                li.onclick = () => openSourceViewer(src);
+                const key = getSourceKey(src);
+                const hasImages = SOURCE_IMAGE_MANIFEST[key] ||
+                    Object.keys(SOURCE_IMAGE_MANIFEST).some(k => k.includes(key) || key.includes(k));
+                const originalPath = getSourceOriginalPath(src);
+
+                let inner = `<div class="problem-item-text">${src}</div>`;
+                inner += '<div style="margin-top:6px; display:flex; gap:8px; flex-wrap:wrap;">';
+                inner += `<button class="option-btn" style="padding:6px 10px" onclick="openSourceViewer('${src.replace(/'/g,\"\\'\")}')" ${hasImages ? '' : 'disabled'}>View pages</button>`;
+                if (originalPath) {
+                    inner += `<a class="option-btn" style="padding:6px 10px; text-decoration:none;" href="${originalPath}" target="_blank">Open file</a>`;
+                } else {
+                    inner += `<span style="color:#777;font-size:0.85em">File not found</span>`;
+                }
+                inner += '</div>';
+
+                li.innerHTML = inner;
                 list.appendChild(li);
             });
         }
@@ -803,12 +858,6 @@ const ALL_NOTATIONS = ["a₍c₎ = v² / r = 4π²rf²", "T = 1 / f = 1 / (2.00 
             updateCompletedPhases();
             updateProblemList();
             saveProgress();
-
-            // Enable/disable source view button based on manifest availability
-            const key = getSourceKey(currentItem.source);
-            const btn = document.getElementById('viewSourceBtn');
-            const hasImages = SOURCE_IMAGE_MANIFEST[key] && SOURCE_IMAGE_MANIFEST[key].length > 0;
-            btn.disabled = !hasImages;
         }
 
         function updateDots() {
