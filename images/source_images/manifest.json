@@ -1,4 +1,9 @@
 {
+  "Midterm 2": [
+    "images/source_images/Midterm 2/page-01.jpg",
+    "images/source_images/Midterm 2/page-02.jpg",
+    "images/source_images/Midterm 2/page-03.jpg"
+  ],
   "Worksheet 08": [
     "images/source_images/Worksheet 08/page-01.jpg",
     "images/source_images/Worksheet 08/page-02.jpg",
@@ -31,6 +36,20 @@
   "Quiz 6": [
     "images/source_images/Quiz 6/page-01.jpg",
     "images/source_images/Quiz 6/page-02.jpg"
+  ],
+  "Quiz 8": [
+    "images/source_images/Quiz 8/page-01.jpg"
+  ],
+  "Quiz 10": [
+    "images/source_images/Quiz 10/page-01.jpg",
+    "images/source_images/Quiz 10/page-02.jpg"
+  ],
+  "Quiz 9": [
+    "images/source_images/Quiz 9/page-01.jpg",
+    "images/source_images/Quiz 9/page-02.jpg"
+  ],
+  "Quiz 7": [
+    "images/source_images/Quiz 7/page-01.jpg"
   ],
   "PS Chap14 FA25": [
     "images/source_images/PS Chap14 FA25/page-01.jpg",
