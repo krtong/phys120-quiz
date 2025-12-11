@@ -695,18 +695,18 @@ const ALL_NOTATIONS = ["a₍c₎ = v² / r = 4π²rf²", "T = 1 / f = 1 / (2.00 
                 showVarNextButton();
             } else {
                 btn.classList.add('wrong');
-                // Show correct answer
-                buttons.forEach(b => {
-                    if (b.dataset.value === correct) b.classList.add('correct');
-                });
                 varAnswers[currentVarIndex] = false;
                 lives--;
                 updateLives();
 
                 if (lives > 0) {
+                    // Don't show correct answer, just let them continue
                     showVarNextButton();
                 } else {
-                    // Out of lives
+                    // Out of lives - NOW show the correct answer
+                    buttons.forEach(b => {
+                        if (b.dataset.value === correct) b.classList.add('correct');
+                    });
                     const feedback = document.getElementById('varFeedback');
                     feedback.innerHTML = '✗ Out of lives!<br><br><div class="options-row">' +
                         '<button class="option-btn" onclick="retryPhase()">Try Again</button>' +
@@ -819,17 +819,18 @@ const ALL_NOTATIONS = ["a₍c₎ = v² / r = 4π²rf²", "T = 1 / f = 1 / (2.00 
                 showStepNextButton();
             } else {
                 btn.classList.add('wrong');
-                buttons.forEach(b => {
-                    if (b.dataset.value === correct) b.classList.add('correct');
-                });
                 stepAnswers[currentStepIndex] = false;
                 lives--;
                 updateLives();
 
                 if (lives > 0) {
+                    // Don't show correct answer, just let them continue
                     showStepNextButton();
                 } else {
-                    // Out of lives
+                    // Out of lives - NOW show the correct answer
+                    buttons.forEach(b => {
+                        if (b.dataset.value === correct) b.classList.add('correct');
+                    });
                     const feedback = document.getElementById('stepsFeedback');
                     feedback.innerHTML = '✗ Out of lives!<br><br><div class="options-row">' +
                         '<button class="option-btn" onclick="retryPhase()">Try Again</button>' +
