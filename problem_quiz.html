@@ -663,6 +663,30 @@ const ALL_NOTATIONS = ["a₍c₎ = v² / r = 4π²rf²", "T = 1 / f = 1 / (2.00 
             container.innerHTML = html;
         }
 
+        function showVarNextButton() {
+            const container = document.getElementById('variablesContainer');
+            const existingBtn = container.querySelector('.next-var-btn');
+            if (!existingBtn) {
+                const btn = document.createElement('button');
+                btn.className = 'continue-btn next-var-btn';
+                btn.textContent = 'Next →';
+                btn.onclick = nextVar;
+                btn.style.marginTop = '15px';
+                btn.style.display = 'block';
+                btn.style.width = '100%';
+                container.appendChild(btn);
+            }
+        }
+
+        function nextVar() {
+            if (currentVarIndex < currentItem.variables.length - 1) {
+                currentVarIndex++;
+                showCurrentVariable();
+            } else {
+                checkVariablesComplete();
+            }
+        }
+
         function selectVarChoice(btn, correct) {
             const buttons = document.querySelectorAll('.choice-btn');
             const selected = btn.dataset.value;
@@ -672,16 +696,7 @@ const ALL_NOTATIONS = ["a₍c₎ = v² / r = 4π²rf²", "T = 1 / f = 1 / (2.00 
             if (selected === correct) {
                 btn.classList.add('correct');
                 varAnswers[currentVarIndex] = true;
-
-                setTimeout(() => {
-                    if (currentVarIndex < currentItem.variables.length - 1) {
-                        currentVarIndex++;
-                        showCurrentVariable();
-                    } else {
-                        // All done - check results
-                        checkVariablesComplete();
-                    }
-                }, 600);
+                showVarNextButton();
             } else {
                 btn.classList.add('wrong');
                 // Show correct answer
@@ -693,14 +708,7 @@ const ALL_NOTATIONS = ["a₍c₎ = v² / r = 4π²rf²", "T = 1 / f = 1 / (2.00 
                 updateLives();
 
                 if (lives > 0) {
-                    setTimeout(() => {
-                        if (currentVarIndex < currentItem.variables.length - 1) {
-                            currentVarIndex++;
-                            showCurrentVariable();
-                        } else {
-                            checkVariablesComplete();
-                        }
-                    }, 1200);
+                    showVarNextButton();
                 } else {
                     // Out of lives
                     const feedback = document.getElementById('varFeedback');
@@ -779,6 +787,30 @@ const ALL_NOTATIONS = ["a₍c₎ = v² / r = 4π²rf²", "T = 1 / f = 1 / (2.00 
             container.innerHTML = html;
         }
 
+        function showStepNextButton() {
+            const container = document.getElementById('stepsContainer');
+            const existingBtn = container.querySelector('.next-step-btn');
+            if (!existingBtn) {
+                const btn = document.createElement('button');
+                btn.className = 'continue-btn next-step-btn';
+                btn.textContent = 'Next →';
+                btn.onclick = nextStep;
+                btn.style.marginTop = '15px';
+                btn.style.display = 'block';
+                btn.style.width = '100%';
+                container.appendChild(btn);
+            }
+        }
+
+        function nextStep() {
+            if (currentStepIndex < currentItem.steps.length - 1) {
+                currentStepIndex++;
+                showCurrentStep();
+            } else {
+                checkStepsComplete();
+            }
+        }
+
         function selectStepChoice(btn, correct) {
             const buttons = document.querySelectorAll('.step-choice');
             const selected = btn.dataset.value;
@@ -788,15 +820,7 @@ const ALL_NOTATIONS = ["a₍c₎ = v² / r = 4π²rf²", "T = 1 / f = 1 / (2.00 
             if (selected === correct) {
                 btn.classList.add('correct');
                 stepAnswers[currentStepIndex] = true;
-
-                setTimeout(() => {
-                    if (currentStepIndex < currentItem.steps.length - 1) {
-                        currentStepIndex++;
-                        showCurrentStep();
-                    } else {
-                        checkStepsComplete();
-                    }
-                }, 600);
+                showStepNextButton();
             } else {
                 btn.classList.add('wrong');
                 buttons.forEach(b => {
@@ -807,14 +831,7 @@ const ALL_NOTATIONS = ["a₍c₎ = v² / r = 4π²rf²", "T = 1 / f = 1 / (2.00 
                 updateLives();
 
                 if (lives > 0) {
-                    setTimeout(() => {
-                        if (currentStepIndex < currentItem.steps.length - 1) {
-                            currentStepIndex++;
-                            showCurrentStep();
-                        } else {
-                            checkStepsComplete();
-                        }
-                    }, 1200);
+                    showStepNextButton();
                 } else {
                     // Out of lives
                     const feedback = document.getElementById('stepsFeedback');
