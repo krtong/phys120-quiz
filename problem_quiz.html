@@ -349,18 +349,36 @@ const ALL_NOTATIONS = ["a₍c₎ = v² / r = 4π²rf²", "T = 1 / f = 1 / (2.00 
             'sources/Quiz 9 FA25 solution.pdf',
             'sources/Quiz10 FA25 solution.pdf',
             'sources/MT2 FA25 solution.pdf',
-            'sources/Quiz 7 FA25 Solution.docx',
-            'sources/Quiz 8 solution FA25.docx',
-            'sources/Quiz 9 FA25 solution.docx',
-            'sources/Quiz10 FA25 solution.docx',
             'sources/WS_Work_and_Energy_I.pdf',
             'sources/WS09_Momentum_and_CM.pdf',
-            'sources/WS10_Rotational_Dynamics.pdf',
-            'sources/MT2 FA25 solution.docx'
+            'sources/WS10_Rotational_Dynamics.pdf'
         ];
+
+        const SOURCE_PATH_OVERRIDES = {
+            'ps chap10': 'sources/PS Chap10.pdf',
+            'ps chap11 and 12': 'sources/PS Chap11 and 12.pdf',
+            'ps chap13 fa25': 'sources/PS Chap13 FA25.pdf',
+            'ps chap14 fa25': 'sources/PS Chap14 FA25.pdf',
+            'ps chap6': 'sources/PS Chap6.pdf',
+            'ps chap7': 'sources/PS Chap7 and solution.pdf',
+            'ps chap7 and solution': 'sources/PS Chap7 and solution.pdf',
+            'ps chap8': 'sources/PS_Chap8.pdf',
+            'ps chap5_ii': 'sources/PS_Chap5_II.pdf',
+            'quiz 5': 'sources/Quiz5_FA25_solution.pdf',
+            'quiz 6': 'sources/Quiz6_FA25.pdf',
+            'quiz 7': 'sources/Quiz 7 FA25 Solution.pdf',
+            'quiz 8': 'sources/Quiz 8 solution FA25.pdf',
+            'quiz 9': 'sources/Quiz 9 FA25 solution.pdf',
+            'quiz 10': 'sources/Quiz10 FA25 solution.pdf',
+            'midterm 2': 'sources/MT2 FA25 solution.pdf',
+            'worksheet 08': 'sources/WS_Work_and_Energy_I.pdf',
+            'worksheet 09': 'sources/WS09_Momentum_and_CM.pdf',
+            'worksheet 10': 'sources/WS10_Rotational_Dynamics.pdf'
+        };
 
         function getSourceOriginalPath(srcString) {
             const key = getSourceKey(srcString).toLowerCase();
+            if (SOURCE_PATH_OVERRIDES[key]) return SOURCE_PATH_OVERRIDES[key];
             const candidates = [
                 ...SOURCE_FILES,
                 `sources/${getSourceKey(srcString)}.pdf`,
