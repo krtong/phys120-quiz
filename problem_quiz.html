@@ -381,7 +381,7 @@ const ALL_NOTATIONS = ["a₍c₎ = v² / r = 4π²rf²", "T = 1 / f = 1 / (2.00 
             return str.toLowerCase()
                 .replace(/\.pdf$|\.docx$/g, '')
                 .replace(/[-_]/g, ' ')
-                .replace(/\\s+/g, ' ')
+                .replace(/\s+/g, ' ')
                 .trim();
         }
 
@@ -391,6 +391,9 @@ const ALL_NOTATIONS = ["a₍c₎ = v² / r = 4π²rf²", "T = 1 / f = 1 / (2.00 
 
             // Direct override
             if (SOURCE_PATH_OVERRIDES[key]) return SOURCE_PATH_OVERRIDES[key];
+            // Fuzzy override match (covers cases like "PS Chap7 - Example 7-6")
+            const fuzzy = Object.keys(SOURCE_PATH_OVERRIDES).find(k => key.startsWith(k) || k.startsWith(key));
+            if (fuzzy) return SOURCE_PATH_OVERRIDES[fuzzy];
 
             // Normalize candidates and match flexibly
             const candidates = [
@@ -453,6 +456,7 @@ const ALL_NOTATIONS = ["a₍c₎ = v² / r = 4π²rf²", "T = 1 / f = 1 / (2.00 
                 'PS Chap13 FA25': 'sources/PS Chap13 FA25.pdf',
                 'PS Chap14 FA25': 'sources/PS Chap14 FA25.pdf',
                 'PS Chap6': 'sources/PS Chap6.pdf',
+                'PS Chap7': 'sources/PS Chap7 and solution.pdf',
                 'PS Chap7 and solution': 'sources/PS Chap7 and solution.pdf',
                 'PS_Chap5_II': 'sources/PS_Chap5_II.pdf',
                 'PS_Chap8': 'sources/PS_Chap8.pdf',
