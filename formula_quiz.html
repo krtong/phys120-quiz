@@ -100,7 +100,7 @@
         <!-- Phase 1: Formulas -->
         <div id="phase1" style="display: none;">
             <div class="phase-title">Phase 1: Select the Formulas</div>
-            <div class="phase-subtitle">Check all formulas needed to solve this problem</div>
+            <div class="phase-subtitle" id="formulaSubtitle">Check all formulas needed to solve this problem</div>
             <div id="formulasContainer"></div>
             <button class="lock-btn" id="lockFormulas" onclick="lockFormulas()">Lock In Answers</button>
             <div class="feedback" id="formulaFeedback"></div>
@@ -199,8 +199,13 @@ const ALL_MEANINGS = ["mass of the ball", "radius of circular path", "rotational
         function setupFormulasPhase() {
             const container = document.getElementById('formulasContainer');
             container.innerHTML = '';
-            
+
             const correctFormulas = currentItem.correctFormulas;
+            const numFormulas = correctFormulas.length;
+            document.getElementById('formulaSubtitle').textContent =
+                numFormulas === 1
+                    ? 'Select the 1 formula needed to solve this problem'
+                    : 'Select all ' + numFormulas + ' formulas needed to solve this problem';
             const otherFormulas = ALL_FORMULAS.filter(f => !correctFormulas.some(cf => cf.formula === f.formula));
             const distractors = shuffleArray(otherFormulas).slice(0, Math.min(4, otherFormulas.length));
             const allOptions = shuffleArray([...correctFormulas, ...distractors]);
